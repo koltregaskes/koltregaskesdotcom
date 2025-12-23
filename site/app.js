@@ -70,6 +70,20 @@ function buildOpenUrl(item) {
   return item.notionUrl || "#";
 }
 
+function showError(message, details = "") {
+  const listEl = $("#list");
+  if (!listEl) return;
+  
+  listEl.innerHTML = `
+    <div class="error-box">
+      <h3>⚠️ Error Loading Data</h3>
+      <p><strong>${escapeHtml(message)}</strong></p>
+      ${details ? `<pre class="error-details">${escapeHtml(details)}</pre>` : ""}
+      <p class="muted">Check the GitHub Actions workflow logs and ensure the build completed successfully.</p>
+    </div>
+  `;
+}
+
 function render() {
   const listEl = $("#list");
   const countEl = $("#count");
@@ -133,11 +147,21 @@ async function loadData() {
   const base = getRepoBasePath();
   const jsonUrl = joinBase(base, "data/notion.json");
 
+  console.log(`[DEBUG] Fetching from: ${jsonUrl}`);
+  console.log(`[DEBUG] Current location: ${window.location.href}`);
+  console.log(`[DEBUG] Base path detected: ${base}`);
+
   const res = await fetch(jsonUrl, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load ${jsonUrl}: ${res.status}`);
+  if (!res.ok) {
+    const errorText = await res.text().catch(() => "");
+    throw new Error(`Failed to load ${jsonUrl}: ${res.status} ${res.statusText}\n${errorText}`);
+  }
+  
   const data = await res.json();
+  console.log(`[DEBUG] Loaded data:`, data);
 
   state.items = Array.isArray(data.items) ? data.items : [];
+  console.log(`[DEBUG] Found ${state.items.length} items`);
 
   // Sort newest edited first (nice default)
   state.items.sort((a, b) => {
@@ -154,10 +178,10 @@ async function loadData() {
     await loadData();
     render();
   } catch (err) {
-    console.error(err);
-    const listEl = $("#list");
-    if (listEl) {
-      listEl.innerHTML = `<p class="muted">Error loading data. Check GitHub Actions logs and that notion.json exists.</p>`;
-    }
+    console.error("[ERROR]", err);
+    showError(
+      "Could not load Notion data",
+      `${err.message}\n\nTried URL: ${window.location.origin}${getRepoBasePath()}data/notion.json`
+    );
   }
 })();

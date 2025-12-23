@@ -3,47 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Admin (Test)</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Admin</title>
+  <link rel="stylesheet" href="./home-styles.css" />
 </head>
 <body>
-  <header class="wrap">
-    <h1>Admin (placeholder)</h1>
-    <p class="muted">
-      For this test, “admin” is just a status page. Real admin tools come next (CRUD, auth, drafts, uploads).
-    </p>
-
-    <div class="bar">
-      <a class="btn" href="./index.html">Back</a>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="site-nav">
+        <a href="./" class="logo">Home</a>
+        <div class="nav-links">
+          <a href="./posts/">Posts</a>
+          <a href="./tags/">Tags</a>
+          <a href="./about/">About</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="card">
-      <h2>Data status</h2>
-      <p id="status" class="muted">Loading…</p>
-    </section>
-
-    <section class="card">
-      <h2>How you “edit” right now</h2>
-      <ol class="muted">
-        <li>Edit items in Notion</li>
-        <li>Wait for the next Actions run, or re-run the workflow manually</li>
-        <li>Your GitHub Pages site updates</li>
-      </ol>
-    </section>
+  <main>
+    <div class="wrap">
+      <h1>Admin Status</h1>
+      
+      <section style="margin-top: 40px;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+          <h2 style="margin-bottom: 16px;">Build Information</h2>
+          <p id="status" style="color: var(--text-muted); margin-bottom: 16px;">Loading...</p>
+          
+          <h3 style="margin-top: 24px; margin-bottom: 12px;">How to edit content</h3>
+          <ol style="color: var(--text-muted); padding-left: 24px; line-height: 1.8;">
+            <li>Edit items in your Notion database</li>
+            <li>Ensure the "Publish" checkbox is enabled</li>
+            <li>Wait for the next Actions run (every hour) or trigger manually</li>
+            <li>Your GitHub Pages site updates automatically</li>
+          </ol>
+        </div>
+      </section>
+    </div>
   </main>
 
   <script>
     fetch("./data/notion.json", { cache: "no-store" })
       .then(r => r.json())
       .then(d => {
-        document.getElementById("status").textContent =
-          `Last build: ${d.updatedAt} | Items: ${d.count}`;
+        const count = d.items ? d.items.length : 0;
+        const articles = d.items ? d.items.filter(i => i.kind === 'article').length : 0;
+        document.getElementById("status").innerHTML = 
+          `<strong>Items in database:</strong> ${count}<br>` +
+          `<strong>Published articles:</strong> ${articles}`;
       })
       .catch(() => {
         document.getElementById("status").textContent =
-          "No data yet. Run the workflow once.";
+          "No data yet. Run the workflow once to generate content.";
       });
   </script>
 </body>
