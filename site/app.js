@@ -129,22 +129,48 @@ function wireFilters() {
   });
 }
 
-async function loadData() {
-  // IMPORTANT: use repo base path so this works on GitHub Pages project sites
+function getJsonCandidates() {
+  // Try multiple locations to be resilient to base-path issues on GitHub Pages
   const base = getRepoBasePath();
-  const jsonUrl = joinBase(base, "data/notion.json");
+  const candidates = [
+    joinBase(base, "data/notion.json"),
+    "./data/notion.json",
+    "/data/notion.json",
+  ];
 
-  const res = await fetch(jsonUrl, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load ${jsonUrl}: ${res.status}`);
-  const data = await res.json();
+  // de-duplicate while preserving order
+  return candidates.filter((url, idx) => candidates.indexOf(url) === idx);
+}
+
+async function loadData() {
+  const tried = [];
+  const candidates = getJsonCandidates();
+  let data = null;
+
+  for (const jsonUrl of candidates) {
+    try {
+      tried.push(jsonUrl);
+      const res = await fetch(jsonUrl, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      data = await res.json();
+
+      const metaEl = $("#meta");
+      if (metaEl) {
+        const total = Array.isArray(data.items) ? data.items.length : 0;
+        metaEl.innerHTML = `Loaded <code>${escapeHtml(jsonUrl)}</code> (${total} item${total === 1 ? "" : "s"}).`;
+      }
+
+      break; // success
+    } catch (err) {
+      console.error(`Failed to load ${jsonUrl}:`, err);
+    }
+  }
+
+  if (!data) {
+    throw new Error(`Could not load notion.json. Tried: ${tried.join(", ")}`);
+  }
 
   state.items = Array.isArray(data.items) ? data.items : [];
-
-  const metaEl = $("#meta");
-  if (metaEl) {
-    const total = state.items.length;
-    metaEl.innerHTML = `Loaded <code>${escapeHtml(jsonUrl)}</code> (${total} item${total === 1 ? "" : "s"}).`;
-  }
 
   // Sort newest edited first (nice default)
   state.items.sort((a, b) => {
@@ -164,7 +190,7 @@ async function loadData() {
     console.error(err);
     const listEl = $("#list");
     if (listEl) {
-      listEl.innerHTML = `<p class="muted">Error loading data. Check GitHub Actions logs and that notion.json exists.</p>`;
+      listEl.innerHTML = `<p class="muted">Error loading data. Check GitHub Actions logs and that notion.json exists. ${escapeHtml(err.message || "")}</p>`;
     }
   }
 })();
