@@ -7,16 +7,16 @@
 
 /* CSS Variables for theming */
 :root[data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #242424;
-  --text-primary: #e5e5e5;
-  --text-secondary: #a3a3a3;
-  --text-tertiary: #737373;
-  --accent: #ef4444;
-  --accent-hover: #dc2626;
-  --border: #2a2a2a;
-  --code-bg: #242424;
+  --bg-primary: #0b0a09;
+  --bg-secondary: #0b0a09;
+  --bg-tertiary: #151413;
+  --text-primary: #ebe9e2;
+  --text-secondary: #afa89a;
+  --text-tertiary: #7a7467;
+  --accent: #af3029;
+  --accent-hover: #9a2822;
+  --border: #1f1e1c;
+  --code-bg: #151413;
 }
 
 :root[data-theme="light"] {
