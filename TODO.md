@@ -1,51 +1,54 @@
 # TODO List - Kol's Korner Enhancements
 
-## 🔒 Security
-- [ ] Add Content Security Policy (CSP) headers
-- [ ] Review and secure GitHub Actions secrets usage
-- [ ] Add security headers (X-Frame-Options, etc.)
+## ✅ Completed (v2.1.0 - 2025-12-24)
 
-## 🎵 Music/Audio Features
-- [ ] Add 'music' as new Kind option in Notion setup docs
-- [ ] Create music gallery page with MP3 player
+### 🔒 Security
+- ✅ Add Content Security Policy (CSP) headers
+- ✅ Add security headers (X-Frame-Options, X-XSS-Protection, etc.)
+- ✅ Review GitHub Actions secrets usage (secure)
+
+### 🏠 Home Page Redesign
+- ✅ Implement grid system for all content types
+- ✅ Add multi-select filter for Kind property (articles/images/videos/music)
+- ✅ Add hover effects with border highlighting
+- ✅ Update home page layout (modern grid design)
+- ✅ Show image/video previews in cards
+- ✅ Responsive grid (4 desktop, 2 tablet, 1 mobile)
+
+### 🎵 Music Support (Basic)
+- ✅ Add 'music' as new Kind option
+- ✅ Create music gallery page
+- ✅ Add music navigation link
+- ✅ Music filter on home page
+- ✅ Music placeholder with gradient background
+
+### 🖼️ Gallery Protection
+- ✅ Remove "Save as" download buttons from galleries
+- ✅ Block right-click save context menu on gallery images/videos
+- ✅ Remove caption/title display in opened modal view
+- ✅ Add drag-and-drop protection
+
+### 🔧 Newsletter System (Basic)
+- ✅ Fix 405 error on form submission
+- ✅ Rename page from "Subscribe" to "Newsletter" everywhere
+- ✅ Add subscription preference options (weekly/daily/all posts)
+- ✅ Add temporary JavaScript handler with visual feedback
+
+## 🚧 In Progress / Next Sprint
+
+### 🎵 Music/Audio Features (Advanced)
 - [ ] Add music visualizer for audio playback
 - [ ] Implement persistent music player in sidebar
 - [ ] Add play/pause, repeat, shuffle, volume controls
 - [ ] Display currently playing song name
 - [ ] Support image thumbnails for music (via Upload property)
+- [ ] Add HTML5 audio player to music cards
 
-## 🖼️ Gallery Enhancements
-- [ ] Remove "Save as" download buttons from galleries
-- [ ] Block right-click save context menu on gallery images/videos
+### 🖼️ Gallery Enhancements (Sprint 2)
 - [ ] Add prev/next navigation buttons in modal
 - [ ] Enable mouse wheel navigation in modal (up/down)
-- [ ] Remove caption/title display in opened modal view
 - [ ] Implement keyboard navigation (arrow keys, ESC)
-
-## 📰 Newsletter System
-- [ ] Research third-party newsletter services (Substack, Buttondown, etc.)
-- [ ] Create newsletter page with embedded subscription form
-- [ ] Add subscription preference options (weekly/daily/all posts/digest)
-- [ ] Set up X/Twitter API integration via GitHub Actions
-- [ ] Automate weekly news gathering from X accounts (@koltregaskes, @koltregaskes2, @axylusion)
-- [ ] Implement AI-powered newsletter content summarization
-- [ ] Create newsletter editor workflow/admin interface
-- [ ] Format newsletter with selected media from site
-
-## 🏠 Home Page Redesign
-- [ ] Implement grid system for all content types
-- [ ] Add multi-select filter for Kind property (articles/images/videos/music)
-- [ ] Add hover effects with border highlighting
-- [ ] Integrate AI-generated summaries for articles (Claude API)
-- [ ] Set up ANTHROPIC_API_KEY in GitHub secrets
-- [ ] Update home page layout to match Off by One inspiration
-
-## 🔧 Subscribe Page Fixes
-- [ ] Fix 405 error on form submission
-- [ ] Integrate with chosen newsletter service API
-- [ ] Rename page from "Subscribe" to "Newsletter"
-- [ ] Add latest newsletter preview on page
-- [ ] Implement functional email collection
+- [ ] Circular navigation (loop from last to first)
 
 ## 📋 Admin & Management
 - [ ] Enhance admin page with newsletter editor

@@ -311,6 +311,7 @@ function getHeaderFooter(basePath = "./", activePage = "") {
         <a href="${basePath}tags/"${activePage === 'tags' ? ' class="active"' : ''}>Tags</a>
         <a href="${basePath}images/"${activePage === 'images' ? ' class="active"' : ''}>Images</a>
         <a href="${basePath}videos/"${activePage === 'videos' ? ' class="active"' : ''}>Videos</a>
+        <a href="${basePath}music/"${activePage === 'music' ? ' class="active"' : ''}>Music</a>
         <a href="${basePath}about/"${activePage === 'about' ? ' class="active"' : ''}>About</a>
         <a href="${basePath}subscribe/"${activePage === 'subscribe' ? ' class="active"' : ''}>Newsletter</a>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -417,8 +418,9 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
         <a href="/notion-site-test/tags/">Tags</a>
         <a href="/notion-site-test/images/">Images</a>
         <a href="/notion-site-test/videos/">Videos</a>
+        <a href="/notion-site-test/music/">Music</a>
         <a href="/notion-site-test/about/">About</a>
-        <a href="/notion-site-test/subscribe/">Subscribe</a>
+        <a href="/notion-site-test/subscribe/">Newsletter</a>
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -536,7 +538,8 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
 }
 
 async function writeHomePage(items) {
-  const articles = items.filter(i => i.kind === "article");
+  // Sort all items by date, newest first
+  const sortedItems = items.sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -544,11 +547,11 @@ async function writeHomePage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>Kol's Korner - Tech, Software Development & More</title>
-  <meta name="description" content="Hi. My name is Kol Tregaskes. I'm a software developer and tech enthusiast based in the UK. Here I write about tech, software development, and other topics that interest me." />
+  <title>Kol's Korner - Tech, AI, Development & More</title>
+  <meta name="description" content="Hi. My name is Kol Tregaskes. I'm a software developer and AI enthusiast based in the UK. Articles, images, videos, and music about tech, AI, and development." />
   <meta name="author" content="Kol Tregaskes" />
   <meta property="og:title" content="Kol's Korner" />
-  <meta property="og:description" content="Tech, Software Development & More" />
+  <meta property="og:description" content="Tech, AI, Development & More" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
@@ -567,8 +570,9 @@ async function writeHomePage(items) {
         <a href="./tags/">Tags</a>
         <a href="./images/">Images</a>
         <a href="./videos/">Videos</a>
+        <a href="./music/">Music</a>
         <a href="./about/">About</a>
-        <a href="./subscribe/">Subscribe</a>
+        <a href="./subscribe/">Newsletter</a>
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -587,40 +591,76 @@ async function writeHomePage(items) {
 
   <main class="home-main">
     <div class="home-intro">
-      <img src="https://via.placeholder.com/120x120?text=KT" alt="Kol Tregaskes" class="intro-avatar" />
-      <h1 class="intro-title">Kol's Korner</h1>
-      <p class="intro-text">Hi. My name is Kol Tregaskes. I'm a software developer and tech enthusiast based in the UK.</p>
-      <p class="intro-text">Here I write about tech, software development, and other topics that interest me.</p>
-      <p class="intro-start">Start here:</p>
-      <ul class="intro-list">
-        <li><a href="#">Measuring Engineering Productivity</a></li>
-        <li><a href="#">Jokes. You invented bad jokes.</a></li>
-      </ul>
+      <h1 class="intro-title">Welcome to Kol's Korner</h1>
+      <p class="intro-text">Tech, AI, development, and creative experiments. Articles, images, videos, and more.</p>
     </div>
 
-    <section class="latest-section">
-      <h2 class="section-title">Latest posts</h2>
-      <div class="posts-list">
-        ${articles.map(item => {
-          return `
-            <article class="post-item">
-              <a href="./posts/${item.slug}/" class="post-link">
-                <h3 class="post-item-title">${escapeHtml(item.title)}</h3>
-                <p class="post-item-summary">${escapeHtml(item.summary || "")}</p>
-                <div class="post-item-meta">
-                  <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
-                  <span class="meta-sep">•</span>
-                  <span>${item.readingTime} min read</span>
+    <!-- Content Filters -->
+    <div class="content-filters">
+      <label class="filter-label">
+        <input type="checkbox" value="article" checked> Articles
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" value="image" checked> Images
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" value="video" checked> Videos
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" value="music" checked> Music
+      </label>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="content-grid" id="contentGrid">
+      ${sortedItems.map(item => {
+        const kind = (item.kind || 'unknown').toLowerCase();
+        const title = escapeHtml(item.title);
+        const summary = escapeHtml(item.summary || '');
+        const imageUrl = item.thumbnailUrl || item.driveUrl || '';
+
+        // Determine link based on content type
+        let linkUrl = '#';
+        if (kind === 'article' && item.localPath) {
+          linkUrl = `.${item.localPath}`;
+        } else if (kind === 'image' || kind === 'video') {
+          linkUrl = `./${kind}s/`;
+        } else if (imageUrl) {
+          linkUrl = imageUrl;
+        }
+
+        return `
+          <article class="content-card" data-kind="${kind}">
+            <a href="${linkUrl}" class="content-card-link">
+              ${(kind === 'image' || kind === 'video') && imageUrl ? `
+                <div class="content-card-media">
+                  <img src="${escapeHtml(imageUrl)}" alt="${title}" loading="lazy" />
+                  <span class="content-kind-badge">${kind}</span>
                 </div>
-              </a>
-            </article>
-          `;
-        }).join("")}
-      </div>
-      <div class="see-all">
-        <a href="./posts/" class="see-all-link">See all posts →</a>
-      </div>
-    </section>
+              ` : kind === 'music' ? `
+                <div class="content-card-media music-placeholder">
+                  <span class="music-icon">🎵</span>
+                  <span class="content-kind-badge">${kind}</span>
+                </div>
+              ` : ''}
+
+              <div class="content-card-body">
+                ${kind !== 'image' && kind !== 'video' && kind !== 'music' ? `<span class="content-kind-badge">${kind}</span>` : ''}
+                <h3 class="content-card-title">${title}</h3>
+                ${summary ? `<p class="content-card-summary">${summary}</p>` : ''}
+                ${kind === 'article' && item.readingTime ? `
+                  <div class="content-card-meta">
+                    <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time>
+                    <span class="meta-sep">•</span>
+                    <span>${item.readingTime} min read</span>
+                  </div>
+                ` : ''}
+              </div>
+            </a>
+          </article>
+        `;
+      }).join("")}
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -670,6 +710,29 @@ async function writeHomePage(items) {
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    // Content filtering
+    const filterCheckboxes = document.querySelectorAll('.content-filters input[type="checkbox"]');
+    const contentCards = document.querySelectorAll('.content-card');
+
+    function applyFilters() {
+      const activeFilters = Array.from(filterCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      contentCards.forEach(card => {
+        const cardKind = card.getAttribute('data-kind');
+        if (activeFilters.length === 0 || activeFilters.includes(cardKind)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', applyFilters);
+    });
   </script>
 </body>
 </html>`;
@@ -707,7 +770,7 @@ async function writePostsPage(items) {
         <a href="../images/">Images</a>
         <a href="../videos/">Videos</a>
         <a href="../about/">About</a>
-        <a href="../subscribe/">Subscribe</a>
+        <a href="../subscribe/">Newsletter</a>
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -1141,6 +1204,7 @@ async function writeGalleryPage(items, kind) {
   await writeSubscribePage();
   await writeGalleryPage(items, "image");
   await writeGalleryPage(items, "video");
+  await writeGalleryPage(items, "music");
 
   // Keep the JSON for backwards compatibility
   await fs.mkdir("site/data", { recursive: true });
@@ -1151,8 +1215,9 @@ async function writeGalleryPage(items, kind) {
   console.log(`✓ Posts page: site/posts/index.html`);
   console.log(`✓ Tags page: site/tags/index.html`);
   console.log(`✓ About page: site/about/index.html`);
-  console.log(`✓ Subscribe page: site/subscribe/index.html`);
+  console.log(`✓ Newsletter page: site/subscribe/index.html`);
   console.log(`✓ Images gallery: site/images/index.html`);
   console.log(`✓ Videos gallery: site/videos/index.html`);
+  console.log(`✓ Music gallery: site/music/index.html`);
   console.log(`✓ JSON data: site/data/notion.json`);
 })();

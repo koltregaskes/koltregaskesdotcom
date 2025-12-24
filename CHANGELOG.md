@@ -8,13 +8,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2025-12-24
 
 ### Added
+- **Home Page Redesign**
+  - Unified content grid showing all content types (articles, images, videos, music)
+  - Multi-select filters to toggle content types on/off
+  - 4-column responsive grid (4 desktop, 2 tablet, 1 mobile)
+  - Hover effects with border highlighting and lift animation
+  - Content type badges on cards
+  - Image previews for visual content
+
+- **Music Support**
+  - Added 'music' as new Kind option
+  - Music gallery page with audio player support
+  - Music navigation link in header
+  - Music filter on home page
+  - Music placeholder with gradient background and icon
+
 - **Security Enhancements**
   - Added Content Security Policy (CSP) headers to all pages
   - Added X-Content-Type-Options, X-Frame-Options, X-XSS-Protection headers
   - Implemented referrer policy for better privacy
 
 - **Newsletter System**
-  - Renamed "Subscribe" page to "Newsletter"
+  - Renamed "Subscribe" page to "Newsletter" throughout site
   - Added subscription preference checkboxes (weekly digest, daily updates, all posts)
   - Fixed 405 error with proper form handling
   - Added temporary JavaScript handler with visual feedback
@@ -31,15 +46,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed captions from gallery modal view for cleaner presentation
   - Added modern subscription options UI with hover effects
   - Improved newsletter page with better messaging
+  - Simplified home page intro text
+  - Added content filtering interface
 
 ### Changed
-- Navigation label changed from "Subscribe" to "Newsletter"
+- **Home Page Completely Redesigned**
+  - Now shows all content types in unified grid
+  - Removed old "Latest posts" list-style layout
+  - Added interactive content type filters
+- Navigation label changed from "Subscribe" to "Newsletter" everywhere
 - Gallery modal now shows only media without title overlay
 - Subscribe form now provides instant visual feedback
+- Console log changed from "Subscribe" to "Newsletter"
 
 ### Fixed
 - Subscribe/Newsletter form 405 error eliminated
 - Form submission now handled gracefully with JavaScript
+- "Subscribe" label fixed in all navigation templates
 
 ## [2.0.0] - 2025-12-24
 
