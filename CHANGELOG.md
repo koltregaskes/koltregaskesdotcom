@@ -16,6 +16,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Content type badges on cards
   - Image previews for visual content
 
+- **Gallery Modal Navigation (Sprint 2)**
+  - Previous/Next navigation buttons in modal viewer
+  - Circular navigation (loops from last to first item)
+  - Mouse wheel navigation (scroll up/down to navigate)
+  - Keyboard shortcuts (Arrow Left/Right, ESC to close)
+  - Smooth navigation between all gallery items
+  - Modern circular button design with hover effects
+
 - **Music Support**
   - Added 'music' as new Kind option
   - Music gallery page with audio player support

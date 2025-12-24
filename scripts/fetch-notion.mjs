@@ -1099,9 +1099,11 @@ async function writeGalleryPage(items, kind) {
   </main>
 
   <!-- Modal for full-size view -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <span class="modal-close">&times;</span>
-    <div class="modal-content" oncontextmenu="return false;">
+  <div id="modal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <button class="modal-nav modal-nav-prev" onclick="navigateGallery(-1); event.stopPropagation();" aria-label="Previous">‹</button>
+    <button class="modal-nav modal-nav-next" onclick="navigateGallery(1); event.stopPropagation();" aria-label="Next">›</button>
+    <div class="modal-content" onclick="event.stopPropagation();" oncontextmenu="return false;">
       <img id="modal-image" class="modal-media" oncontextmenu="return false;" ondragstart="return false;" />
       <video id="modal-video" class="modal-media" controls style="display:none;" oncontextmenu="return false;"></video>
     </div>
@@ -1110,23 +1112,47 @@ async function writeGalleryPage(items, kind) {
   ${headerFooter.footer}
 
   <script>
+    // Gallery data for navigation
+    const galleryItems = ${JSON.stringify(kindItems.map(item => ({
+      url: item.driveUrl || item.thumbnailUrl,
+      title: item.title,
+      kind: kind
+    })))};
+
+    let currentIndex = 0;
+
     function openModal(url, title, kind) {
+      // Find the index of the clicked item
+      currentIndex = galleryItems.findIndex(item => item.url === url);
+      if (currentIndex === -1) currentIndex = 0;
+
+      showModalItem(currentIndex);
+
       const modal = document.getElementById('modal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showModalItem(index) {
+      const item = galleryItems[index];
       const img = document.getElementById('modal-image');
       const video = document.getElementById('modal-video');
 
-      if (kind === 'video') {
+      if (item.kind === 'video') {
         img.style.display = 'none';
         video.style.display = 'block';
-        video.src = url;
+        video.src = item.url;
       } else {
         video.style.display = 'none';
         img.style.display = 'block';
-        img.src = url;
+        img.src = item.url;
       }
+    }
 
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+    function navigateGallery(direction) {
+      // Circular navigation: wrap around to start/end
+      currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+      showModalItem(currentIndex);
     }
 
     function closeModal() {
@@ -1137,6 +1163,39 @@ async function writeGalleryPage(items, kind) {
       video.src = '';
       document.body.style.overflow = 'auto';
     }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('modal');
+      if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+          navigateGallery(-1);
+        } else if (e.key === 'ArrowRight') {
+          navigateGallery(1);
+        } else if (e.key === 'Escape') {
+          closeModal();
+        }
+      }
+    });
+
+    // Mouse wheel navigation
+    document.getElementById('modal').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        // Scroll up = previous
+        navigateGallery(-1);
+      } else if (e.deltaY > 0) {
+        // Scroll down = next
+        navigateGallery(1);
+      }
+    });
+
+    // Click backdrop to close (but not content)
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
   </script>
   ${headerFooter.script}
 </body>

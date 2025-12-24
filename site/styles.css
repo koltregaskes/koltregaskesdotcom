@@ -986,6 +986,62 @@ code, pre {
   color: var(--color-primary);
 }
 
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) var(--ease-standard);
+  user-select: none;
+}
+
+.modal-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.modal-nav-prev {
+  left: 20px;
+}
+
+.modal-nav-next {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal-nav {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .modal-nav-prev {
+    left: 10px;
+  }
+
+  .modal-nav-next {
+    right: 10px;
+  }
+}
+
 .empty-message {
   text-align: center;
   color: var(--color-text-secondary);
