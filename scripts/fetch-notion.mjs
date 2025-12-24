@@ -377,7 +377,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : "";
 
   // Calculate reading time (rough estimate: 200 words per minute)
-  const wordCount = contentHtml.split(/\s+/).length;
+  const wordCount = contentHtml.replace(/<[^>]*>/g, '').split(/\s+/).filter(w => w.length > 0).length;
   const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   const html = `<!doctype html>
@@ -385,7 +385,15 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(title)}</title>
+  <title>${escapeHtml(title)} - Kol's Korner</title>
+  <meta name="description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
+  <meta name="author" content="Kol Tregaskes" />
+  <meta property="og:title" content="${escapeHtml(title)}" />
+  <meta property="og:description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@koltregaskes" />
+  <link rel="icon" type="image/x-icon" href="/notion-site-test/favicon.ico" />
   <link rel="stylesheet" href="/notion-site-test/styles.css" />
 </head>
 <body>
@@ -515,7 +523,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
 </html>`;
 
   await fs.writeFile(path.join(outDir, "index.html"), html, "utf8");
-  return `/posts/${slug}/`;
+  return { localPath: `/posts/${slug}/`, readingTime };
 }
 
 async function writeHomePage(items) {
@@ -526,7 +534,15 @@ async function writeHomePage(items) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kol's Korner</title>
+  <title>Kol's Korner - Tech, Software Development & More</title>
+  <meta name="description" content="Hi. My name is Kol Tregaskes. I'm a software developer and tech enthusiast based in the UK. Here I write about tech, software development, and other topics that interest me." />
+  <meta name="author" content="Kol Tregaskes" />
+  <meta property="og:title" content="Kol's Korner" />
+  <meta property="og:description" content="Tech, Software Development & More" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@koltregaskes" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -576,7 +592,6 @@ async function writeHomePage(items) {
       <h2 class="section-title">Latest posts</h2>
       <div class="posts-list">
         ${articles.map(item => {
-          const readingTime = Math.max(1, Math.ceil((item.summary || "").split(/\s+/).length / 200));
           return `
             <article class="post-item">
               <a href="./posts/${item.slug}/" class="post-link">
@@ -585,7 +600,7 @@ async function writeHomePage(items) {
                 <div class="post-item-meta">
                   <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
                   <span class="meta-sep">•</span>
-                  <span>${readingTime} min read</span>
+                  <span>${item.readingTime} min read</span>
                 </div>
               </a>
             </article>
@@ -663,6 +678,9 @@ async function writePostsPage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Posts - Kol's Korner</title>
+  <meta name="description" content="Browse all posts by Kol Tregaskes - Tech, Software Development & More" />
+  <meta name="author" content="Kol Tregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -700,7 +718,6 @@ async function writePostsPage(items) {
 
     <div class="posts-list">
       ${articles.map(item => {
-        const readingTime = Math.max(1, Math.ceil((item.summary || "").split(/\s+/).length / 200));
         return `
           <article class="post-item">
             <a href="../posts/${item.slug}/" class="post-link">
@@ -709,7 +726,7 @@ async function writePostsPage(items) {
               <div class="post-item-meta">
                 <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
                 <span class="meta-sep">•</span>
-                <span>${readingTime} min read</span>
+                <span>${item.readingTime} min read</span>
               </div>
             </a>
           </article>
@@ -788,6 +805,9 @@ async function writeTagsPage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tags - Kol's Korner</title>
+  <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
+  <meta name="author" content="Kol Tregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -805,7 +825,6 @@ async function writeTagsPage(items) {
           </h2>
           <div class="posts-list">
             ${tagPosts.map(item => {
-              const readingTime = Math.max(1, Math.ceil((item.summary || "").split(/\s+/).length / 200));
               return `
                 <article class="post-item">
                   <a href="../posts/${item.slug}/" class="post-link">
@@ -814,7 +833,7 @@ async function writeTagsPage(items) {
                     <div class="post-item-meta">
                       <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
                       <span class="meta-sep">•</span>
-                      <span>${readingTime} min read</span>
+                      <span>${item.readingTime} min read</span>
                     </div>
                   </a>
                 </article>
@@ -845,6 +864,9 @@ async function writeAboutPage() {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - Kol's Korner</title>
+  <meta name="description" content="About Kol Tregaskes - Software developer and tech enthusiast based in the UK" />
+  <meta name="author" content="Kol Tregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -880,6 +902,9 @@ async function writeSubscribePage() {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Subscribe - Kol's Korner</title>
+  <meta name="description" content="Subscribe to get notified when new posts are published by Kol Tregaskes" />
+  <meta name="author" content="Kol Tregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -923,6 +948,9 @@ async function writeGalleryPage(items, kind) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${kindName} - Kol's Korner</title>
+  <meta name="description" content="${kindName} gallery by Kol Tregaskes" />
+  <meta name="author" content="Kol Tregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1025,12 +1053,13 @@ async function writeGalleryPage(items, kind) {
     const slug = slugify(title);
     let localPath = "";
     let headings = [];
+    let readingTime = 1;
 
     if (kind === "article") {
       const blocks = await fetchBlocksAll(page.id);
       headings = extractHeadings(blocks);
       const contentHtml = await blocksToHtml(blocks);
-      localPath = await writeArticlePage({
+      const result = await writeArticlePage({
         title,
         slug,
         contentHtml,
@@ -1038,6 +1067,8 @@ async function writeGalleryPage(items, kind) {
         date: page.last_edited_time,
         headings
       });
+      localPath = result.localPath;
+      readingTime = result.readingTime;
     }
 
     items.push({
@@ -1052,6 +1083,7 @@ async function writeGalleryPage(items, kind) {
       files,
       notionUrl: page.url,
       localPath,
+      readingTime,
       updatedTime: page.last_edited_time,
     });
   }
