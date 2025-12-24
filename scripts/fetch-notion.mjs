@@ -1047,7 +1047,7 @@ async function writeGalleryPage(items, kind) {
     const summary = getRichText(page, "Summary") || "";
     const tags = getMultiSelect(page, "Tags");
     const driveUrl = (getProp(page, "Drive URL")?.url) || "";
-    const files = getFiles(page, "Files");
+    const files = getFiles(page, "Upload");
     const thumbnailUrl = files.length > 0 ? files[0].url : "";
 
     const slug = slugify(title);
