@@ -3,6 +3,50 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
+import { exec } from "node:child_process";
+import { promisify } from "node:util";
+
+const execAsync = promisify(exec);
+
+// ffmpeg path (full path for Windows compatibility)
+const FFMPEG_PATH = process.env.FFMPEG_PATH ||
+  "C:\\Users\\kolin\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.exe";
+
+// Generate video thumbnail using ffmpeg
+async function generateVideoThumbnail(videoPath, outputPath) {
+  try {
+    // Extract frame at 1 second (or first frame if video is shorter)
+    const cmd = `"${FFMPEG_PATH}" -y -i "${videoPath}" -ss 00:00:01 -vframes 1 -vf "scale=640:-1" "${outputPath}"`;
+    await execAsync(cmd);
+    console.log(`  ↳ Generated thumbnail: ${path.basename(outputPath)}`);
+    return true;
+  } catch (error) {
+    // Try first frame if 1 second fails
+    try {
+      const cmd = `"${FFMPEG_PATH}" -y -i "${videoPath}" -vframes 1 -vf "scale=640:-1" "${outputPath}"`;
+      await execAsync(cmd);
+      console.log(`  ↳ Generated thumbnail (first frame): ${path.basename(outputPath)}`);
+      return true;
+    } catch (e) {
+      console.warn(`  ↳ Could not generate thumbnail: ${e.message}`);
+      return false;
+    }
+  }
+}
+
+// Generate audio waveform image using ffmpeg
+async function generateAudioWaveform(audioPath, outputPath) {
+  try {
+    // Create waveform visualization
+    const cmd = `"${FFMPEG_PATH}" -y -i "${audioPath}" -filter_complex "showwavespic=s=640x200:colors=#4f46e5|#818cf8" -frames:v 1 "${outputPath}"`;
+    await execAsync(cmd);
+    console.log(`  ↳ Generated waveform: ${path.basename(outputPath)}`);
+    return true;
+  } catch (error) {
+    console.warn(`  ↳ Could not generate waveform: ${error.message}`);
+    return false;
+  }
+}
 
 // Content source folder
 const CONTENT_DIR = process.env.CONTENT_DIR || "content";
@@ -244,15 +288,15 @@ function generateTOC(headings) {
   `;
 }
 
-// Copy media files to site folder
-async function copyMedia(srcPath, title) {
-  if (!srcPath) return '';
+// Copy media files to site folder and generate thumbnails
+async function copyMedia(srcPath, title, kind = 'image') {
+  if (!srcPath) return { mediaUrl: '', thumbnailUrl: '' };
 
   try {
     const filename = path.basename(srcPath);
     const hash = crypto.createHash('md5').update(srcPath).digest('hex').slice(0, 8);
     const ext = path.extname(filename).toLowerCase();
-    const newFilename = `${slugify(title)}-${hash}${ext}`;
+    const newFilename = `${slugify(title)}${ext}`;
     const destDir = path.join('site', 'media');
     const destPath = path.join(destDir, newFilename);
 
@@ -262,10 +306,32 @@ async function copyMedia(srcPath, title) {
     await fs.copyFile(srcPath, destPath);
     console.log(`  ↳ Copied: ${newFilename}`);
 
-    return `/notion-site-test/media/${newFilename}`;
+    const mediaUrl = `/notion-site-test/media/${newFilename}`;
+    let thumbnailUrl = '';
+
+    // Generate thumbnails for video/audio
+    if (kind === 'video' && ['.mp4', '.webm', '.mov'].includes(ext)) {
+      const thumbFilename = `${slugify(title)}-thumb.jpg`;
+      const thumbPath = path.join(destDir, thumbFilename);
+      const success = await generateVideoThumbnail(destPath, thumbPath);
+      if (success) {
+        thumbnailUrl = `/notion-site-test/media/${thumbFilename}`;
+      }
+    } else if (kind === 'music' && ['.mp3', '.wav', '.ogg', '.m4a'].includes(ext)) {
+      const waveFilename = `${slugify(title)}-waveform.png`;
+      const wavePath = path.join(destDir, waveFilename);
+      const success = await generateAudioWaveform(destPath, wavePath);
+      if (success) {
+        thumbnailUrl = `/notion-site-test/media/${waveFilename}`;
+      }
+    } else if (kind === 'image') {
+      thumbnailUrl = mediaUrl; // Images are their own thumbnails
+    }
+
+    return { mediaUrl, thumbnailUrl };
   } catch (error) {
     console.warn(`  ↳ Error copying media:`, error.message);
-    return '';
+    return { mediaUrl: '', thumbnailUrl: '' };
   }
 }
 
@@ -296,9 +362,52 @@ async function readContentFiles() {
 
       // Handle media files
       let thumbnailUrl = '';
+      let mediaUrl = '';
+
+      // For images, use the image frontmatter
       if (frontmatter.image) {
         const imagePath = path.join(CONTENT_DIR, frontmatter.image);
-        thumbnailUrl = await copyMedia(imagePath, title);
+        const result = await copyMedia(imagePath, title, 'image');
+        thumbnailUrl = result.thumbnailUrl;
+        mediaUrl = result.mediaUrl;
+      }
+
+      // For videos/music, use the url frontmatter
+      if (frontmatter.url && (kind === 'video' || kind === 'music')) {
+        // Check if it's already an absolute URL path (starts with /)
+        if (frontmatter.url.startsWith('/')) {
+          // It's an existing deployed path - check if file exists and generate thumbnail
+          const existingPath = path.join('site', frontmatter.url.replace(/^\/notion-site-test\//, ''));
+          try {
+            await fs.access(existingPath);
+            mediaUrl = frontmatter.url;
+            // Generate thumbnail from existing file
+            const destDir = path.join('site', 'media');
+            if (kind === 'video') {
+              const thumbFilename = `${slugify(title)}-thumb.jpg`;
+              const thumbPath = path.join(destDir, thumbFilename);
+              const success = await generateVideoThumbnail(existingPath, thumbPath);
+              if (success) {
+                thumbnailUrl = `/notion-site-test/media/${thumbFilename}`;
+              }
+            } else if (kind === 'music') {
+              const waveFilename = `${slugify(title)}-waveform.png`;
+              const wavePath = path.join(destDir, waveFilename);
+              const success = await generateAudioWaveform(existingPath, wavePath);
+              if (success) {
+                thumbnailUrl = `/notion-site-test/media/${waveFilename}`;
+              }
+            }
+          } catch {
+            console.warn(`  ↳ Media file not found: ${existingPath}`);
+          }
+        } else {
+          // It's a relative path - copy the file
+          const mediaPath = path.join(CONTENT_DIR, frontmatter.url);
+          const result = await copyMedia(mediaPath, title, kind);
+          mediaUrl = result.mediaUrl;
+          thumbnailUrl = result.thumbnailUrl || thumbnailUrl;
+        }
       }
 
       // Convert markdown to HTML for articles
@@ -322,7 +431,7 @@ async function readContentFiles() {
         summary: frontmatter.summary || '',
         tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
         thumbnailUrl,
-        driveUrl: frontmatter.url || thumbnailUrl,
+        driveUrl: mediaUrl || thumbnailUrl,
         contentHtml,
         headings,
         readingTime,
@@ -614,10 +723,8 @@ async function writeHomePage(items) {
         const kind = (item.kind || 'unknown').toLowerCase();
         const title = escapeHtml(item.title);
         const summary = escapeHtml(item.summary || '');
-        const mediaUrl = item.thumbnailUrl || item.driveUrl || '';
-        const isVideoFile = mediaUrl && mediaUrl.match(/\.(mp4|webm|mov)$/i);
-        const isAudioFile = mediaUrl && mediaUrl.match(/\.(mp3|wav|ogg)$/i);
-        const hasImageThumbnail = item.thumbnailUrl && !item.thumbnailUrl.match(/\.(mp4|webm|mov|mp3|wav|ogg)$/i);
+        // Check if we have a generated thumbnail (jpg/png/gif) for display
+        const hasImageThumbnail = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
         let linkUrl = '#';
         if (kind === 'article') {
@@ -628,21 +735,15 @@ async function writeHomePage(items) {
           linkUrl = `./videos/`;
         } else if (kind === 'music') {
           linkUrl = `./music/`;
-        } else if (mediaUrl) {
-          linkUrl = mediaUrl;
         }
 
         return `
           <article class="content-card" data-kind="${kind}">
             <a href="${linkUrl}" class="content-card-link">
-              ${kind === 'image' && hasImageThumbnail ? `
-                <div class="content-card-media">
+              ${hasImageThumbnail ? `
+                <div class="content-card-media${kind === 'video' ? ' has-thumbnail' : ''}">
                   <img src="${escapeHtml(item.thumbnailUrl)}" alt="${title}" loading="lazy" />
-                  <span class="content-kind-badge">${kind}</span>
-                </div>
-              ` : kind === 'image' && mediaUrl && !isVideoFile && !isAudioFile ? `
-                <div class="content-card-media">
-                  <img src="${escapeHtml(mediaUrl)}" alt="${title}" loading="lazy" />
+                  ${kind === 'video' ? `<svg class="play-overlay" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>` : ''}
                   <span class="content-kind-badge">${kind}</span>
                 </div>
               ` : kind === 'video' ? `
@@ -1307,16 +1408,19 @@ async function writeGalleryPage(items, kind) {
 
     <div class="gallery-grid">
       ${kindItems.map(item => {
-        const mediaUrl = item.thumbnailUrl || item.driveUrl;
-        const isVideo = kind === 'video' || (mediaUrl && mediaUrl.match(/\.(mp4|webm|mov)$/i));
-        const isAudio = kind === 'music' || (mediaUrl && mediaUrl.match(/\.(mp3|wav|ogg)$/i));
-        const hasImageThumbnail = item.thumbnailUrl && !item.thumbnailUrl.match(/\.(mp4|webm|mov|mp3|wav|ogg)$/i);
+        // driveUrl is the actual media file (mp4, mp3), thumbnailUrl is the generated thumbnail
+        const playableUrl = item.driveUrl || '';
+        const isVideo = kind === 'video';
+        const isAudio = kind === 'music';
+        // Check if we have a generated thumbnail (jpg/png) for video/music
+        const hasImageThumbnail = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
         return `
         <article class="gallery-item">
-          <div class="gallery-thumbnail" onclick="openModal('${escapeHtml(mediaUrl || '')}', '${escapeHtml(item.title)}', '${kind}')">
+          <div class="gallery-thumbnail${hasImageThumbnail && isVideo ? ' has-thumbnail' : ''}" onclick="openModal('${escapeHtml(playableUrl)}', '${escapeHtml(item.title)}', '${kind}')">
             ${hasImageThumbnail ? `
               <img src="${escapeHtml(item.thumbnailUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
+              ${isVideo ? `<svg class="play-overlay" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>` : ''}
             ` : isVideo ? `
               <div class="gallery-placeholder video-placeholder">
                 <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
@@ -1331,8 +1435,8 @@ async function writeGalleryPage(items, kind) {
                 </svg>
                 <span class="gallery-icon-label">Music</span>
               </div>
-            ` : mediaUrl ? `
-              <img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
+            ` : playableUrl ? `
+              <img src="${escapeHtml(playableUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
             ` : `
               <div class="gallery-placeholder">
                 <span class="gallery-icon">${kind === 'image' ? '🖼️' : kind === 'video' ? '🎥' : '🎵'}</span>
