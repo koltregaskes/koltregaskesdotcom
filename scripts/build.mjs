@@ -1362,6 +1362,15 @@ async function writeGalleryPage(items, kind) {
     <div class="modal-content" onclick="event.stopPropagation();">
       <img id="modal-image" class="modal-media" />
       <video id="modal-video" class="modal-media" controls style="display:none;"></video>
+      <div id="modal-audio-container" class="modal-audio-container" style="display:none;">
+        <div class="audio-artwork">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="80" height="80">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+          </svg>
+        </div>
+        <h3 id="modal-audio-title" class="audio-title"></h3>
+        <audio id="modal-audio" controls></audio>
+      </div>
     </div>
   </div>
 
@@ -1420,13 +1429,23 @@ async function writeGalleryPage(items, kind) {
       if (!item || !item.url) return;
       const img = document.getElementById('modal-image');
       const video = document.getElementById('modal-video');
+      const audioContainer = document.getElementById('modal-audio-container');
+      const audio = document.getElementById('modal-audio');
+      const audioTitle = document.getElementById('modal-audio-title');
+
+      // Hide all first
+      img.style.display = 'none';
+      video.style.display = 'none';
+      audioContainer.style.display = 'none';
 
       if (item.kind === 'video') {
-        img.style.display = 'none';
         video.style.display = 'block';
         video.src = item.url;
+      } else if (item.kind === 'music') {
+        audioContainer.style.display = 'flex';
+        audio.src = item.url;
+        audioTitle.textContent = item.title;
       } else {
-        video.style.display = 'none';
         img.style.display = 'block';
         img.src = item.url;
       }
@@ -1440,9 +1459,12 @@ async function writeGalleryPage(items, kind) {
     function closeModal() {
       const modal = document.getElementById('modal');
       const video = document.getElementById('modal-video');
+      const audio = document.getElementById('modal-audio');
       modal.style.display = 'none';
       video.pause();
       video.src = '';
+      audio.pause();
+      audio.src = '';
       document.body.style.overflow = 'auto';
     }
 
