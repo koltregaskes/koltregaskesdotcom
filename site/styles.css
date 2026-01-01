@@ -908,9 +908,35 @@ code, pre {
   height: 100%;
   background: var(--color-secondary);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-4xl);
+  gap: 8px;
+}
+
+.gallery-placeholder.video-placeholder {
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(var(--color-teal-500-rgb), 0.8) 100%);
+  color: white;
+}
+
+.gallery-placeholder.music-placeholder {
+  background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+  color: white;
+}
+
+.gallery-placeholder .play-icon,
+.gallery-placeholder .music-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.9;
+}
+
+.gallery-placeholder .gallery-icon-label {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
 }
 
 .gallery-info {
@@ -1254,15 +1280,29 @@ code, pre {
   transform: scale(1.05);
 }
 
-.content-card-media.music-placeholder {
+.content-card-media.video-placeholder {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(var(--color-teal-500-rgb), 0.8) 100%);
+  color: white;
 }
 
-.music-icon {
-  font-size: var(--font-size-4xl);
+.content-card-media.music-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #9333ea 0%, #c084fc 100%);
+  color: white;
+}
+
+.content-card-media .play-icon,
+.content-card-media .music-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.9;
 }
 
 .content-kind-badge {

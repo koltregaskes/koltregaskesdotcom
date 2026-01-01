@@ -614,28 +614,49 @@ async function writeHomePage(items) {
         const kind = (item.kind || 'unknown').toLowerCase();
         const title = escapeHtml(item.title);
         const summary = escapeHtml(item.summary || '');
-        const imageUrl = item.thumbnailUrl || item.driveUrl || '';
+        const mediaUrl = item.thumbnailUrl || item.driveUrl || '';
+        const isVideoFile = mediaUrl && mediaUrl.match(/\.(mp4|webm|mov)$/i);
+        const isAudioFile = mediaUrl && mediaUrl.match(/\.(mp3|wav|ogg)$/i);
+        const hasImageThumbnail = item.thumbnailUrl && !item.thumbnailUrl.match(/\.(mp4|webm|mov|mp3|wav|ogg)$/i);
 
         let linkUrl = '#';
         if (kind === 'article') {
           linkUrl = `./posts/${item.slug}/`;
-        } else if (kind === 'image' || kind === 'video') {
-          linkUrl = `./${kind}s/`;
-        } else if (imageUrl) {
-          linkUrl = imageUrl;
+        } else if (kind === 'image') {
+          linkUrl = `./images/`;
+        } else if (kind === 'video') {
+          linkUrl = `./videos/`;
+        } else if (kind === 'music') {
+          linkUrl = `./music/`;
+        } else if (mediaUrl) {
+          linkUrl = mediaUrl;
         }
 
         return `
           <article class="content-card" data-kind="${kind}">
             <a href="${linkUrl}" class="content-card-link">
-              ${(kind === 'image' || kind === 'video') && imageUrl ? `
+              ${kind === 'image' && hasImageThumbnail ? `
                 <div class="content-card-media">
-                  <img src="${escapeHtml(imageUrl)}" alt="${title}" loading="lazy" />
+                  <img src="${escapeHtml(item.thumbnailUrl)}" alt="${title}" loading="lazy" />
+                  <span class="content-kind-badge">${kind}</span>
+                </div>
+              ` : kind === 'image' && mediaUrl && !isVideoFile && !isAudioFile ? `
+                <div class="content-card-media">
+                  <img src="${escapeHtml(mediaUrl)}" alt="${title}" loading="lazy" />
+                  <span class="content-kind-badge">${kind}</span>
+                </div>
+              ` : kind === 'video' ? `
+                <div class="content-card-media video-placeholder">
+                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
                   <span class="content-kind-badge">${kind}</span>
                 </div>
               ` : kind === 'music' ? `
                 <div class="content-card-media music-placeholder">
-                  <span class="music-icon">🎵</span>
+                  <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                  </svg>
                   <span class="content-kind-badge">${kind}</span>
                 </div>
               ` : ''}
@@ -1236,9 +1257,11 @@ async function writeGalleryPage(items, kind) {
     .filter(i => i.kind === kind)
     .sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
 
-  const kindName = kind.charAt(0).toUpperCase() + kind.slice(1) + "s";
+  // Proper pluralization (music stays music, not musics)
+  const kindPlural = kind === 'music' ? 'music' : kind + 's';
+  const kindName = kind.charAt(0).toUpperCase() + kind.slice(1) + (kind === 'music' ? '' : 's');
 
-  await fs.mkdir(`site/${kind}s`, { recursive: true });
+  await fs.mkdir(`site/${kindPlural}`, { recursive: true });
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -1287,12 +1310,32 @@ async function writeGalleryPage(items, kind) {
 
     <div class="gallery-grid">
       ${kindItems.map(item => {
-        const imageUrl = item.thumbnailUrl || item.driveUrl;
+        const mediaUrl = item.thumbnailUrl || item.driveUrl;
+        const isVideo = kind === 'video' || (mediaUrl && mediaUrl.match(/\.(mp4|webm|mov)$/i));
+        const isAudio = kind === 'music' || (mediaUrl && mediaUrl.match(/\.(mp3|wav|ogg)$/i));
+        const hasImageThumbnail = item.thumbnailUrl && !item.thumbnailUrl.match(/\.(mp4|webm|mov|mp3|wav|ogg)$/i);
+
         return `
         <article class="gallery-item">
-          <div class="gallery-thumbnail" onclick="openModal('${escapeHtml(imageUrl || '')}', '${escapeHtml(item.title)}', '${kind}')">
-            ${imageUrl ? `
-              <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
+          <div class="gallery-thumbnail" onclick="openModal('${escapeHtml(mediaUrl || '')}', '${escapeHtml(item.title)}', '${kind}')">
+            ${hasImageThumbnail ? `
+              <img src="${escapeHtml(item.thumbnailUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
+            ` : isVideo ? `
+              <div class="gallery-placeholder video-placeholder">
+                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span class="gallery-icon-label">Video</span>
+              </div>
+            ` : isAudio ? `
+              <div class="gallery-placeholder music-placeholder">
+                <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <span class="gallery-icon-label">Music</span>
+              </div>
+            ` : mediaUrl ? `
+              <img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
             ` : `
               <div class="gallery-placeholder">
                 <span class="gallery-icon">${kind === 'image' ? '🖼️' : kind === 'video' ? '🎥' : '🎵'}</span>
@@ -1434,7 +1477,7 @@ async function writeGalleryPage(items, kind) {
 </body>
 </html>`;
 
-  await fs.writeFile(`site/${kind}s/index.html`, html, "utf8");
+  await fs.writeFile(`site/${kindPlural}/index.html`, html, "utf8");
 }
 
 // Main build function

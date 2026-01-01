@@ -9,8 +9,8 @@
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Musics - Kol's Korner</title>
-  <meta name="description" content="Musics gallery by Kol Tregaskes" />
+  <title>Music - Kol's Korner</title>
+  <meta name="description" content="Music gallery by Kol Tregaskes" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -46,14 +46,19 @@
   </header>
 
   <main class="content-main">
-    <h1 class="page-title">Musics</h1>
+    <h1 class="page-title">Music</h1>
 
     <div class="gallery-grid">
       
         <article class="gallery-item">
           <div class="gallery-thumbnail" onclick="openModal('/notion-site-test/media/ad-infinitum.mp3', 'Ad Infinitum', 'music')">
             
-              <img src="/notion-site-test/media/ad-infinitum.mp3" alt="Ad Infinitum" loading="lazy" />
+              <div class="gallery-placeholder music-placeholder">
+                <svg class="music-icon" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <span class="gallery-icon-label">Music</span>
+              </div>
             
           </div>
           <div class="gallery-info">
