@@ -385,7 +385,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/notion-site-test/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -938,8 +938,9 @@ async function writeTagsPage(items) {
 
     ${sortedTags.map(([tag, count]) => {
       const tagPosts = items.filter(i => i.kind === "article" && i.tags.includes(tag));
+      const tagId = slugify(tag);
       return `
-        <section class="tag-group">
+        <section class="tag-group" id="${tagId}">
           <h2 class="tag-group-title">
             <span class="hash">#</span>${escapeHtml(tag)} <span class="tag-group-count">(${count})</span>
           </h2>
