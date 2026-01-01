@@ -1,14 +1,11 @@
-// scripts/fetch-notion.mjs
+// scripts/build.mjs
+// Builds static site from Obsidian markdown files
 import fs from "node:fs/promises";
 import path from "node:path";
+import crypto from "node:crypto";
 
-const NOTION_TOKEN = process.env.NOTION_TOKEN;
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
-
-if (!NOTION_TOKEN || !NOTION_DATABASE_ID) {
-  console.error("Missing NOTION_TOKEN or NOTION_DATABASE_ID env vars.");
-  process.exit(1);
-}
+// Content source folder
+const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
@@ -17,24 +14,6 @@ const getSecurityHeaders = () => `
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
-
-const notionFetch = async (url, options = {}) => {
-  const res = await fetch(url, {
-    ...options,
-    headers: {
-      "Authorization": `Bearer ${NOTION_TOKEN}`,
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json",
-      ...(options.headers || {}),
-    },
-  });
-
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(`Notion API error ${res.status}: ${text}`);
-  }
-  return res.json();
-};
 
 const slugify = (s) =>
   (s || "")
@@ -45,84 +24,6 @@ const slugify = (s) =>
     .replace(/^-+|-+$/g, "")
     .slice(0, 80) || "untitled";
 
-const getProp = (page, name) => page?.properties?.[name];
-
-const getTitle = (page) => {
-  const p = getProp(page, "Name");
-  const title = p?.title?.map(t => t.plain_text).join("") || "";
-  return title || "Untitled";
-};
-
-const getSelect = (page, name) => getProp(page, name)?.select?.name || "";
-const getCheckbox = (page, name) => !!getProp(page, name)?.checkbox;
-const getRichText = (page, name) =>
-  (getProp(page, name)?.rich_text || []).map(t => t.plain_text).join("");
-const getMultiSelect = (page, name) =>
-  (getProp(page, name)?.multi_select || []).map(t => t.name);
-const getFiles = (page, name) => {
-  const files = getProp(page, name)?.files || [];
-  return files.map(f => ({
-    name: f.name,
-    url: f.file?.url || f.external?.url || ""
-  }));
-};
-
-async function queryDatabaseAll() {
-  const out = [];
-  let cursor = undefined;
-
-  while (true) {
-    const body = {
-      page_size: 100,
-      filter: {
-        property: "Publish",
-        checkbox: { equals: true },
-      },
-      ...(cursor ? { start_cursor: cursor } : {}),
-    };
-
-    const data = await notionFetch(
-      `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
-      { method: "POST", body: JSON.stringify(body) }
-    );
-
-    out.push(...(data.results || []));
-    if (!data.has_more) break;
-    cursor = data.next_cursor;
-  }
-
-  return out;
-}
-
-async function fetchBlocksAll(blockId) {
-  const blocks = [];
-  let cursor = undefined;
-
-  while (true) {
-    const url = new URL(`https://api.notion.com/v1/blocks/${blockId}/children`);
-    url.searchParams.set("page_size", "100");
-    if (cursor) url.searchParams.set("start_cursor", cursor);
-
-    const data = await notionFetch(url.toString(), { method: "GET" });
-
-    blocks.push(...(data.results || []));
-    if (!data.has_more) break;
-    cursor = data.next_cursor;
-  }
-
-  return blocks;
-}
-
-const rtToHtml = (rtArr = []) =>
-  rtArr.map(t => {
-    const text = escapeHtml(t.plain_text || "");
-    // very minimal formatting
-    if (t.annotations?.code) return `<code>${text}</code>`;
-    if (t.annotations?.bold) return `<strong>${text}</strong>`;
-    if (t.annotations?.italic) return `<em>${text}</em>`;
-    return text;
-  }).join("");
-
 function escapeHtml(s) {
   return (s || "")
     .replaceAll("&", "&amp;")
@@ -132,157 +33,201 @@ function escapeHtml(s) {
     .replaceAll("'", "&#039;");
 }
 
-function blockToHtml(block) {
-  const t = block.type;
-
-  if (t === "paragraph") {
-    const html = rtToHtml(block.paragraph?.rich_text || []);
-    return html ? `<p>${html}</p>` : "";
+// Parse YAML frontmatter from markdown
+function parseFrontmatter(content) {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  if (!match) {
+    return { frontmatter: {}, body: content };
   }
 
-  if (t === "heading_1") return `<h2 id="${slugify(rtToHtml(block.heading_1?.rich_text || []))}"><span class="hash">#</span> ${rtToHtml(block.heading_1?.rich_text || [])}</h2>`;
-  if (t === "heading_2") return `<h3 id="${slugify(rtToHtml(block.heading_2?.rich_text || []))}"><span class="hash">##</span> ${rtToHtml(block.heading_2?.rich_text || [])}</h3>`;
-  if (t === "heading_3") return `<h4 id="${slugify(rtToHtml(block.heading_3?.rich_text || []))}"><span class="hash">###</span> ${rtToHtml(block.heading_3?.rich_text || [])}</h4>`;
+  const yamlStr = match[1];
+  const body = match[2];
+  const frontmatter = {};
 
-  if (t === "quote") {
-    const html = rtToHtml(block.quote?.rich_text || []);
-    return html ? `<blockquote>${html}</blockquote>` : "";
+  // Simple YAML parser for common fields
+  for (const line of yamlStr.split('\n')) {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex === -1) continue;
+
+    const key = line.slice(0, colonIndex).trim();
+    let value = line.slice(colonIndex + 1).trim();
+
+    // Handle arrays like [tag1, tag2]
+    if (value.startsWith('[') && value.endsWith(']')) {
+      value = value.slice(1, -1).split(',').map(v => v.trim().replace(/^["']|["']$/g, ''));
+    }
+    // Handle booleans
+    else if (value === 'true') value = true;
+    else if (value === 'false') value = false;
+    // Handle quoted strings
+    else if ((value.startsWith('"') && value.endsWith('"')) ||
+             (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+
+    frontmatter[key] = value;
   }
 
-  if (t === "divider") return `<hr />`;
-
-  if (t === "bulleted_list_item") {
-    const html = rtToHtml(block.bulleted_list_item?.rich_text || []);
-    return html ? `<li>${html}</li>` : "";
-  }
-
-  if (t === "numbered_list_item") {
-    const html = rtToHtml(block.numbered_list_item?.rich_text || []);
-    return html ? `<li>${html}</li>` : "";
-  }
-
-  if (t === "code") {
-    const code = rtToHtml(block.code?.rich_text || []);
-    const lang = escapeHtml(block.code?.language || "");
-    return `<pre><code data-lang="${lang}">${code}</code></pre>`;
-  }
-
-  if (t === "image") {
-    const src = block.image?.file?.url || block.image?.external?.url || "";
-    const cap = rtToHtml(block.image?.caption || []);
-    if (!src) return "";
-    return `<figure><img src="${escapeHtml(src)}" alt="" loading="lazy" />${cap ? `<figcaption>${cap}</figcaption>` : ""}</figure>`;
-  }
-
-  if (t === "table") {
-    // Tables in Notion have rows which are stored as children blocks
-    // We'll need to handle this separately when we fetch children
-    return ""; // Will be handled in blocksToHtml when processing children
-  }
-
-  if (t === "table_row") {
-    const cells = block.table_row?.cells || [];
-    const cellsHtml = cells.map(cell => {
-      const content = rtToHtml(cell);
-      return `<td>${content}</td>`;
-    }).join("");
-    return `<tr>${cellsHtml}</tr>`;
-  }
-
-  return "";
+  return { frontmatter, body };
 }
 
-async function blocksToHtml(blocks) {
-  let html = "";
-  let inBullets = false;
-  let inNumbers = false;
+// Convert markdown to HTML (improved implementation)
+function markdownToHtml(md) {
+  let html = md;
 
-  for (let i = 0; i < blocks.length; i++) {
-    const b = blocks[i];
+  // Step 1: Extract and protect code blocks first (before any other processing)
+  const codeBlocks = [];
+  html = html.replace(/```(\w*)\r?\n([\s\S]*?)```/g, (match, lang, code) => {
+    const placeholder = `CODEBLOCKPLACEHOLDER${codeBlocks.length}ENDCODEBLOCK`;
+    codeBlocks.push(`<pre><code data-lang="${escapeHtml(lang)}">${escapeHtml(code.trim())}</code></pre>`);
+    return placeholder;
+  });
 
-    if (b.type === "table") {
-      if (inBullets) { html += `</ul>`; inBullets = false; }
-      if (inNumbers) { html += `</ol>`; inNumbers = false; }
+  // Step 2: Extract and process tables
+  const tableRegex = /^\|(.+)\|\r?\n\|[-:\| ]+\|\r?\n((?:\|.+\|\r?\n?)+)/gm;
+  html = html.replace(tableRegex, (match, headerRow, bodyRows) => {
+    const headers = headerRow.split('|').map(h => h.trim()).filter(h => h);
+    const rows = bodyRows.trim().split('\n').map(row =>
+      row.split('|').map(cell => cell.trim()).filter(cell => cell)
+    );
 
-      // Fetch table row children
-      const tableRows = b.has_children ? await fetchBlocksAll(b.id) : [];
+    let table = '<table>\n<thead>\n<tr>';
+    headers.forEach(h => { table += `<th>${h}</th>`; });
+    table += '</tr>\n</thead>\n<tbody>\n';
+    rows.forEach(row => {
+      table += '<tr>';
+      row.forEach(cell => { table += `<td>${cell}</td>`; });
+      table += '</tr>\n';
+    });
+    table += '</tbody>\n</table>';
+    return table;
+  });
 
-      // Start table
-      const hasHeader = b.table?.has_column_header || false;
-      html += `<table>`;
+  // Step 3: Process block-level elements
 
-      // Add rows
-      tableRows.forEach((row, idx) => {
-        if (row.type !== "table_row") return;
+  // Headings (process before inline formatting)
+  html = html.replace(/^### (.+)$/gm, (match, text) => {
+    return `<h4 id="${slugify(text)}"><span class="hash">###</span> ${text}</h4>`;
+  });
+  html = html.replace(/^## (.+)$/gm, (match, text) => {
+    return `<h3 id="${slugify(text)}"><span class="hash">##</span> ${text}</h3>`;
+  });
+  html = html.replace(/^# (.+)$/gm, (match, text) => {
+    return `<h2 id="${slugify(text)}"><span class="hash">#</span> ${text}</h2>`;
+  });
 
-        if (idx === 0 && hasHeader) {
-          html += `<thead><tr>`;
-          const cells = row.table_row?.cells || [];
-          cells.forEach(cell => {
-            const content = rtToHtml(cell);
-            html += `<th>${content}</th>`;
-          });
-          html += `</tr></thead><tbody>`;
-        } else {
-          if (idx === 0) html += `<tbody>`;
-          html += `<tr>`;
-          const cells = row.table_row?.cells || [];
-          cells.forEach(cell => {
-            const content = rtToHtml(cell);
-            html += `<td>${content}</td>`;
-          });
-          html += `</tr>`;
-        }
-      });
+  // Blockquotes
+  html = html.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
 
-      html += `</tbody></table>`;
+  // Horizontal rules
+  html = html.replace(/^---$/gm, '<hr />');
+  html = html.replace(/^\*\*\*$/gm, '<hr />');
+
+  // Step 4: Process lists
+  // Process unordered lists
+  const lines = html.split('\n');
+  const processedLines = [];
+  let inUl = false;
+  let inOl = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    // Check for unordered list item
+    const ulMatch = trimmed.match(/^[\-\*] (.+)$/);
+    // Check for ordered list item
+    const olMatch = trimmed.match(/^\d+\. (.+)$/);
+
+    if (ulMatch) {
+      if (inOl) { processedLines.push('</ol>'); inOl = false; }
+      if (!inUl) { processedLines.push('<ul>'); inUl = true; }
+      processedLines.push(`<li>${ulMatch[1]}</li>`);
+    } else if (olMatch) {
+      if (inUl) { processedLines.push('</ul>'); inUl = false; }
+      if (!inOl) { processedLines.push('<ol>'); inOl = true; }
+      processedLines.push(`<li>${olMatch[1]}</li>`);
+    } else {
+      if (inUl) { processedLines.push('</ul>'); inUl = false; }
+      if (inOl) { processedLines.push('</ol>'); inOl = false; }
+      processedLines.push(line);
+    }
+  }
+  if (inUl) processedLines.push('</ul>');
+  if (inOl) processedLines.push('</ol>');
+
+  html = processedLines.join('\n');
+
+  // Step 5: Process inline formatting
+
+  // Images (before links to avoid conflict)
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<figure><img src="$2" alt="$1" loading="lazy" /></figure>');
+
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+  // Bold and italic (order matters: longest patterns first)
+  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  html = html.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+  html = html.replace(/_([^_]+)_/g, '<em>$1</em>');
+
+  // Inline code (after bold/italic to avoid conflicts)
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // Step 6: Wrap remaining lines in paragraphs
+  const finalLines = html.split('\n');
+  const wrapped = [];
+
+  for (let line of finalLines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      wrapped.push('');
       continue;
     }
-
-    if (b.type === "table_row") {
-      // Skip standalone table rows (they should be handled as part of table)
+    // Skip lines that are already HTML elements or code block placeholders
+    if (trimmed.startsWith('<') || trimmed.startsWith('CODEBLOCKPLACEHOLDER')) {
+      wrapped.push(line);
       continue;
     }
-
-    if (b.type === "bulleted_list_item") {
-      if (inNumbers) { html += `</ol>`; inNumbers = false; }
-      if (!inBullets) { html += `<ul>`; inBullets = true; }
-      html += blockToHtml(b);
-      continue;
-    }
-    if (b.type === "numbered_list_item") {
-      if (inBullets) { html += `</ul>`; inBullets = false; }
-      if (!inNumbers) { html += `<ol>`; inNumbers = true; }
-      html += blockToHtml(b);
-      continue;
-    }
-
-    if (inBullets) { html += `</ul>`; inBullets = false; }
-    if (inNumbers) { html += `</ol>`; inNumbers = false; }
-
-    html += blockToHtml(b);
+    wrapped.push(`<p>${line}</p>`);
   }
 
-  if (inBullets) html += `</ul>`;
-  if (inNumbers) html += `</ol>`;
+  html = wrapped.join('\n');
+
+  // Step 7: Restore code blocks
+  codeBlocks.forEach((block, i) => {
+    html = html.replace(`CODEBLOCKPLACEHOLDER${i}ENDCODEBLOCK`, block);
+    html = html.replace(`<p>CODEBLOCKPLACEHOLDER${i}ENDCODEBLOCK</p>`, block);
+  });
+
+  // Clean up
+  html = html.replace(/<p>\s*<\/p>/g, '');
+  html = html.replace(/<p>(<h[234])/g, '$1');
+  html = html.replace(/(<\/h[234]>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<table)/g, '$1');
+  html = html.replace(/(<\/table>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<ul|<ol|<\/ul|<\/ol|<li|<\/li|<hr|<blockquote|<\/blockquote|<figure|<pre)/g, '$1');
+
   return html;
 }
 
-function extractHeadings(blocks) {
+// Extract headings for TOC
+function extractHeadings(html) {
   const headings = [];
-  
-  for (const b of blocks) {
-    if (b.type === "heading_1" || b.type === "heading_2" || b.type === "heading_3") {
-      const text = rtToHtml(b[b.type]?.rich_text || []);
-      const level = b.type === "heading_1" ? 2 : b.type === "heading_2" ? 3 : 4;
-      headings.push({
-        text,
-        id: slugify(text),
-        level
-      });
-    }
+  const regex = /<h([234]) id="([^"]+)">.*?<\/span>\s*(.+?)<\/h\1>/g;
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    headings.push({
+      level: parseInt(match[1]),
+      id: match[2],
+      text: match[3].replace(/<[^>]+>/g, '')
+    });
   }
-  
+
   return headings;
 }
 
@@ -299,95 +244,148 @@ function generateTOC(headings) {
   `;
 }
 
-function getHeaderFooter(basePath = "./", activePage = "") {
-  const header = `<header class="site-header">
-    <div class="header-content">
-      <a href="${basePath}" class="site-logo">
-        <span class="logo-icon">K</span>
-        <span class="logo-text">Kol's Korner</span>
-      </a>
-      <nav class="site-nav">
-        <a href="${basePath}posts/"${activePage === 'posts' ? ' class="active"' : ''}>Posts</a>
-        <a href="${basePath}tags/"${activePage === 'tags' ? ' class="active"' : ''}>Tags</a>
-        <a href="${basePath}images/"${activePage === 'images' ? ' class="active"' : ''}>Images</a>
-        <a href="${basePath}videos/"${activePage === 'videos' ? ' class="active"' : ''}>Videos</a>
-        <a href="${basePath}music/"${activePage === 'music' ? ' class="active"' : ''}>Music</a>
-        <a href="${basePath}about/"${activePage === 'about' ? ' class="active"' : ''}>About</a>
-        <a href="${basePath}subscribe/"${activePage === 'subscribe' ? ' class="active"' : ''}>Newsletter</a>
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
-            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
-            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
-            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
-            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
-          </svg>
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
-          </svg>
-        </button>
-      </nav>
-    </div>
-  </header>`;
+// Copy media files to site folder
+async function copyMedia(srcPath, title) {
+  if (!srcPath) return '';
 
-  const footer = `<footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 All rights reserved.</p>
-      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
-    </div>
-    <div class="footer-social">
-      <a href="https://twitter.com/koltregaskes" aria-label="Twitter" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a>
-      <a href="https://instagram.com/koltregaskes" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-        </svg>
-      </a>
-      <a href="https://youtube.com/@koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-      </a>
-      <a href="https://justoffbyone.com" aria-label="Website" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
-      </a>
-    </div>
-  </footer>`;
+  try {
+    const filename = path.basename(srcPath);
+    const hash = crypto.createHash('md5').update(srcPath).digest('hex').slice(0, 8);
+    const ext = path.extname(filename).toLowerCase();
+    const newFilename = `${slugify(title)}-${hash}${ext}`;
+    const destDir = path.join('site', 'media');
+    const destPath = path.join(destDir, newFilename);
 
-  const script = `<script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-  </script>`;
+    await fs.mkdir(destDir, { recursive: true });
 
-  return { header, footer, script };
+    // Copy file
+    await fs.copyFile(srcPath, destPath);
+    console.log(`  ↳ Copied: ${newFilename}`);
+
+    return `/notion-site-test/media/${newFilename}`;
+  } catch (error) {
+    console.warn(`  ↳ Error copying media:`, error.message);
+    return '';
+  }
 }
 
-async function writeArticlePage({ title, slug, contentHtml, tags, date, headings }) {
+// Read all content files
+async function readContentFiles() {
+  const items = [];
+
+  try {
+    const files = await fs.readdir(CONTENT_DIR, { recursive: true });
+
+    for (const file of files) {
+      if (!file.endsWith('.md')) continue;
+      // Skip CLAUDE.md files (workspace documentation)
+      if (file.toUpperCase().includes('CLAUDE.MD')) continue;
+
+      const filePath = path.join(CONTENT_DIR, file);
+      const content = await fs.readFile(filePath, 'utf8');
+      const { frontmatter, body } = parseFrontmatter(content);
+
+      // Skip unpublished items
+      if (frontmatter.publish === false) continue;
+
+      const title = frontmatter.title || path.basename(file, '.md');
+      const kind = (frontmatter.kind || 'article').toLowerCase();
+      const slug = slugify(title);
+
+      console.log(`Processing: ${title} (${kind})`);
+
+      // Handle media files
+      let thumbnailUrl = '';
+      if (frontmatter.image) {
+        const imagePath = path.join(CONTENT_DIR, frontmatter.image);
+        thumbnailUrl = await copyMedia(imagePath, title);
+      }
+
+      // Convert markdown to HTML for articles
+      let contentHtml = '';
+      let headings = [];
+      let readingTime = 1;
+
+      if (kind === 'article') {
+        contentHtml = markdownToHtml(body);
+        headings = extractHeadings(contentHtml);
+
+        // Calculate reading time
+        const wordCount = body.split(/\s+/).filter(w => w.length > 0).length;
+        readingTime = Math.max(1, Math.ceil(wordCount / 200));
+      }
+
+      items.push({
+        title,
+        slug,
+        kind,
+        summary: frontmatter.summary || '',
+        tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
+        thumbnailUrl,
+        driveUrl: frontmatter.url || thumbnailUrl,
+        contentHtml,
+        headings,
+        readingTime,
+        date: frontmatter.date || new Date().toISOString().split('T')[0],
+        updatedTime: frontmatter.date || new Date().toISOString()
+      });
+    }
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.log(`Content directory "${CONTENT_DIR}" not found. Creating sample content...`);
+      await createSampleContent();
+      return readContentFiles();
+    }
+    throw error;
+  }
+
+  return items;
+}
+
+// Create sample content folder and files
+async function createSampleContent() {
+  await fs.mkdir(CONTENT_DIR, { recursive: true });
+
+  const samplePost = `---
+title: Welcome to Kol's Korner
+kind: article
+date: 2026-01-01
+tags: [welcome, intro]
+summary: Welcome to my new site! Here I'll share thoughts on tech, AI, and development.
+publish: true
+---
+
+# Welcome
+
+Hello and welcome to my new site!
+
+## What to Expect
+
+I'll be sharing:
+
+- **Tech insights** - Latest developments in software
+- **AI explorations** - Experiments and discoveries
+- **Development tips** - Things I've learned along the way
+
+## Stay Tuned
+
+More content coming soon. Feel free to explore and check back regularly!
+
+---
+
+*Thanks for visiting!*
+`;
+
+  await fs.writeFile(path.join(CONTENT_DIR, 'welcome.md'), samplePost, 'utf8');
+  console.log('Created sample content file: welcome.md');
+}
+
+async function writeArticlePage({ title, slug, contentHtml, tags, date, headings, readingTime }) {
   const outDir = path.join("site", "posts", slug);
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : "";
-
-  // Calculate reading time (rough estimate: 200 words per minute)
-  const wordCount = contentHtml.replace(/<[^>]*>/g, '').split(/\s+/).filter(w => w.length > 0).length;
-  const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -451,7 +449,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
           <div class="post-meta">
             <span class="post-author">Kol Tregaskes</span>
             <span class="meta-sep">•</span>
-            <time class="post-date">${date ? new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
+            <time class="post-date">${date ? new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
             <span class="meta-sep">•</span>
             <span class="reading-time">${readingTime} min read</span>
           </div>
@@ -466,7 +464,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2025 All rights reserved.</p>
+      <p>&copy; 2026 All rights reserved.</p>
       <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
     </div>
     <div class="footer-social">
@@ -538,7 +536,6 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
 }
 
 async function writeHomePage(items) {
-  // Sort all items by date, newest first
   const sortedItems = items.sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
 
   const html = `<!doctype html>
@@ -619,10 +616,9 @@ async function writeHomePage(items) {
         const summary = escapeHtml(item.summary || '');
         const imageUrl = item.thumbnailUrl || item.driveUrl || '';
 
-        // Determine link based on content type
         let linkUrl = '#';
-        if (kind === 'article' && item.localPath) {
-          linkUrl = `.${item.localPath}`;
+        if (kind === 'article') {
+          linkUrl = `./posts/${item.slug}/`;
         } else if (kind === 'image' || kind === 'video') {
           linkUrl = `./${kind}s/`;
         } else if (imageUrl) {
@@ -650,7 +646,7 @@ async function writeHomePage(items) {
                 ${summary ? `<p class="content-card-summary">${summary}</p>` : ''}
                 ${kind === 'article' && item.readingTime ? `
                   <div class="content-card-meta">
-                    <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time>
+                    <time>${new Date(item.updatedTime).toLocaleDateString("en-GB", { month: "short", day: "numeric", year: "numeric" })}</time>
                     <span class="meta-sep">•</span>
                     <span>${item.readingTime} min read</span>
                   </div>
@@ -665,7 +661,7 @@ async function writeHomePage(items) {
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2025 All rights reserved.</p>
+      <p>&copy; 2026 All rights reserved.</p>
       <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
     </div>
     <div class="footer-social">
@@ -769,6 +765,7 @@ async function writePostsPage(items) {
         <a href="../tags/">Tags</a>
         <a href="../images/">Images</a>
         <a href="../videos/">Videos</a>
+        <a href="../music/">Music</a>
         <a href="../about/">About</a>
         <a href="../subscribe/">Newsletter</a>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -794,11 +791,11 @@ async function writePostsPage(items) {
       ${articles.map(item => {
         return `
           <article class="post-item">
-            <a href="../posts/${item.slug}/" class="post-link">
+            <a href="./${item.slug}/" class="post-link">
               <h3 class="post-item-title">${escapeHtml(item.title)}</h3>
               <p class="post-item-summary">${escapeHtml(item.summary || "")}</p>
               <div class="post-item-meta">
-                <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+                <time>${new Date(item.date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</time>
                 <span class="meta-sep">•</span>
                 <span>${item.readingTime} min read</span>
               </div>
@@ -811,7 +808,7 @@ async function writePostsPage(items) {
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2025 All rights reserved.</p>
+      <p>&copy; 2026 All rights reserved.</p>
       <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
     </div>
     <div class="footer-social">
@@ -871,8 +868,6 @@ async function writeTagsPage(items) {
 
   await fs.mkdir("site/tags", { recursive: true });
 
-  const headerFooter = getHeaderFooter("../", "tags");
-
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -881,15 +876,44 @@ async function writeTagsPage(items) {
   ${getSecurityHeaders()}
   <title>Tags - Kol's Korner</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
-  <meta name="author" content="Kol Tregaskes" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${headerFooter.header}
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">Kol's Korner</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../posts/">Posts</a>
+        <a href="./" class="active">Tags</a>
+        <a href="../images/">Images</a>
+        <a href="../videos/">Videos</a>
+        <a href="../music/">Music</a>
+        <a href="../about/">About</a>
+        <a href="../subscribe/">Newsletter</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
   <main class="content-main">
     <h1 class="page-title">Tags</h1>
+
+    ${sortedTags.length === 0 ? '<p class="empty-message">No tags yet. Add tags to your posts!</p>' : ''}
 
     ${sortedTags.map(([tag, count]) => {
       const tagPosts = items.filter(i => i.kind === "article" && i.tags.includes(tag));
@@ -906,7 +930,7 @@ async function writeTagsPage(items) {
                     <h3 class="post-item-title">${escapeHtml(item.title)}</h3>
                     <p class="post-item-summary">${escapeHtml(item.summary || "")}</p>
                     <div class="post-item-meta">
-                      <time>${new Date(item.updatedTime).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+                      <time>${new Date(item.date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</time>
                       <span class="meta-sep">•</span>
                       <span>${item.readingTime} min read</span>
                     </div>
@@ -920,8 +944,50 @@ async function writeTagsPage(items) {
     }).join("")}
   </main>
 
-  ${headerFooter.footer}
-  ${headerFooter.script}
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 All rights reserved.</p>
+      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://twitter.com/koltregaskes" aria-label="Twitter" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/koltregaskes" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <a href="https://koltregaskes.com" aria-label="Website" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+  </script>
 </body>
 </html>`;
 
@@ -931,8 +997,6 @@ async function writeTagsPage(items) {
 async function writeAboutPage() {
   await fs.mkdir("site/about", { recursive: true });
 
-  const headerFooter = getHeaderFooter("../", "about");
-
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -941,12 +1005,39 @@ async function writeAboutPage() {
   ${getSecurityHeaders()}
   <title>About - Kol's Korner</title>
   <meta name="description" content="About Kol Tregaskes - Software developer and tech enthusiast based in the UK" />
-  <meta name="author" content="Kol Tregaskes" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${headerFooter.header}
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">Kol's Korner</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../posts/">Posts</a>
+        <a href="../tags/">Tags</a>
+        <a href="../images/">Images</a>
+        <a href="../videos/">Videos</a>
+        <a href="../music/">Music</a>
+        <a href="./" class="active">About</a>
+        <a href="../subscribe/">Newsletter</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
   <main class="content-main">
     <article class="about-content">
@@ -959,8 +1050,50 @@ async function writeAboutPage() {
     </article>
   </main>
 
-  ${headerFooter.footer}
-  ${headerFooter.script}
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 All rights reserved.</p>
+      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://twitter.com/koltregaskes" aria-label="Twitter" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/koltregaskes" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <a href="https://koltregaskes.com" aria-label="Website" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+  </script>
 </body>
 </html>`;
 
@@ -970,8 +1103,6 @@ async function writeAboutPage() {
 async function writeSubscribePage() {
   await fs.mkdir("site/subscribe", { recursive: true });
 
-  const headerFooter = getHeaderFooter("../", "subscribe");
-
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -980,12 +1111,39 @@ async function writeSubscribePage() {
   ${getSecurityHeaders()}
   <title>Newsletter - Kol's Korner</title>
   <meta name="description" content="Subscribe to Kol's Korner newsletter - Weekly digests, daily updates, or all new posts about tech, AI, and development" />
-  <meta name="author" content="Kol Tregaskes" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${headerFooter.header}
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">Kol's Korner</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../posts/">Posts</a>
+        <a href="../tags/">Tags</a>
+        <a href="../images/">Images</a>
+        <a href="../videos/">Videos</a>
+        <a href="../music/">Music</a>
+        <a href="../about/">About</a>
+        <a href="./" class="active">Newsletter</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
   <main class="content-main">
     <div class="subscribe-content">
@@ -1002,39 +1160,71 @@ async function writeSubscribePage() {
       </form>
       <p class="subscribe-note" id="subscribeMessage">No spam, unsubscribe at any time.</p>
       <p class="subscribe-note" style="margin-top: 24px; font-size: 14px; color: var(--color-text-secondary);">
-        Note: Newsletter functionality coming soon. We'll use a third-party service (like Buttondown) for reliable email delivery.
+        Note: Newsletter functionality coming soon.
       </p>
     </div>
   </main>
 
-  ${headerFooter.footer}
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 All rights reserved.</p>
+      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://twitter.com/koltregaskes" aria-label="Twitter" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/koltregaskes" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <a href="https://koltregaskes.com" aria-label="Website" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
 
   <script>
-    // Temporary form handler until newsletter service is integrated
     document.getElementById('subscribeForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('emailInput').value;
       const message = document.getElementById('subscribeMessage');
       const button = document.querySelector('.subscribe-button');
 
-      // Show success message
       button.disabled = true;
       button.textContent = 'Subscribing...';
 
       setTimeout(() => {
-        message.textContent = '✓ Thanks! Newsletter service integration coming soon. Your interest is noted: ' + email;
+        message.textContent = '✓ Thanks! Newsletter integration coming soon.';
         message.style.color = 'var(--color-primary)';
         button.textContent = 'Subscribed!';
-
-        // Log to console for now (you'll see this in browser dev tools)
-        console.log('Newsletter subscription request:', {
-          email: email,
-          preferences: Array.from(document.querySelectorAll('input[name="frequency"]:checked')).map(cb => cb.value)
-        });
       }, 1000);
     });
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
   </script>
-  ${headerFooter.script}
 </body>
 </html>`;
 
@@ -1044,14 +1234,11 @@ async function writeSubscribePage() {
 async function writeGalleryPage(items, kind) {
   const kindItems = items
     .filter(i => i.kind === kind)
-    .sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime))
-    .slice(0, 8); // Show latest 8 items (4x2 grid)
+    .sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
 
   const kindName = kind.charAt(0).toUpperCase() + kind.slice(1) + "s";
 
   await fs.mkdir(`site/${kind}s`, { recursive: true });
-
-  const headerFooter = getHeaderFooter("../", `${kind}s`);
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -1061,12 +1248,39 @@ async function writeGalleryPage(items, kind) {
   ${getSecurityHeaders()}
   <title>${kindName} - Kol's Korner</title>
   <meta name="description" content="${kindName} gallery by Kol Tregaskes" />
-  <meta name="author" content="Kol Tregaskes" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${headerFooter.header}
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">Kol's Korner</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../posts/">Posts</a>
+        <a href="../tags/">Tags</a>
+        <a href="../images/"${kind === 'image' ? ' class="active"' : ''}>Images</a>
+        <a href="../videos/"${kind === 'video' ? ' class="active"' : ''}>Videos</a>
+        <a href="../music/"${kind === 'music' ? ' class="active"' : ''}>Music</a>
+        <a href="../about/">About</a>
+        <a href="../subscribe/">Newsletter</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
   <main class="content-main">
     <h1 class="page-title">${kindName}</h1>
@@ -1074,16 +1288,14 @@ async function writeGalleryPage(items, kind) {
     <div class="gallery-grid">
       ${kindItems.map(item => {
         const imageUrl = item.thumbnailUrl || item.driveUrl;
-        const fullUrl = item.driveUrl || item.thumbnailUrl;
-
         return `
         <article class="gallery-item">
-          <div class="gallery-thumbnail" onclick="openModal('${escapeHtml(fullUrl)}', '${escapeHtml(item.title)}', '${kind}')" oncontextmenu="return false;">
+          <div class="gallery-thumbnail" onclick="openModal('${escapeHtml(imageUrl || '')}', '${escapeHtml(item.title)}', '${kind}')">
             ${imageUrl ? `
-              <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" oncontextmenu="return false;" ondragstart="return false;" />
+              <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title)}" loading="lazy" />
             ` : `
               <div class="gallery-placeholder">
-                <span class="gallery-icon">${kind === 'image' ? '🖼️' : '🎥'}</span>
+                <span class="gallery-icon">${kind === 'image' ? '🖼️' : kind === 'video' ? '🎥' : '🎵'}</span>
               </div>
             `}
           </div>
@@ -1095,26 +1307,55 @@ async function writeGalleryPage(items, kind) {
       `}).join("")}
     </div>
 
-    ${kindItems.length === 0 ? `<p class="empty-message">No ${kind}s yet. Add some in Notion!</p>` : ""}
+    ${kindItems.length === 0 ? `<p class="empty-message">No ${kind}s yet. Add some to your content folder!</p>` : ""}
   </main>
 
   <!-- Modal for full-size view -->
   <div id="modal" class="modal">
     <span class="modal-close" onclick="closeModal()">&times;</span>
-    <button class="modal-nav modal-nav-prev" onclick="navigateGallery(-1); event.stopPropagation();" aria-label="Previous">‹</button>
-    <button class="modal-nav modal-nav-next" onclick="navigateGallery(1); event.stopPropagation();" aria-label="Next">›</button>
-    <div class="modal-content" onclick="event.stopPropagation();" oncontextmenu="return false;">
-      <img id="modal-image" class="modal-media" oncontextmenu="return false;" ondragstart="return false;" />
-      <video id="modal-video" class="modal-media" controls style="display:none;" oncontextmenu="return false;"></video>
+    <button class="modal-nav modal-nav-prev" onclick="navigateGallery(-1); event.stopPropagation();">‹</button>
+    <button class="modal-nav modal-nav-next" onclick="navigateGallery(1); event.stopPropagation();">›</button>
+    <div class="modal-content" onclick="event.stopPropagation();">
+      <img id="modal-image" class="modal-media" />
+      <video id="modal-video" class="modal-media" controls style="display:none;"></video>
     </div>
   </div>
 
-  ${headerFooter.footer}
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 All rights reserved.</p>
+      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://twitter.com/koltregaskes" aria-label="Twitter" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/koltregaskes" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://youtube.com/@koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <a href="https://koltregaskes.com" aria-label="Website" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
 
   <script>
-    // Gallery data for navigation
     const galleryItems = ${JSON.stringify(kindItems.map(item => ({
-      url: item.driveUrl || item.thumbnailUrl,
+      url: item.thumbnailUrl || item.driveUrl || '',
       title: item.title,
       kind: kind
     })))};
@@ -1122,19 +1363,17 @@ async function writeGalleryPage(items, kind) {
     let currentIndex = 0;
 
     function openModal(url, title, kind) {
-      // Find the index of the clicked item
+      if (!url) return;
       currentIndex = galleryItems.findIndex(item => item.url === url);
       if (currentIndex === -1) currentIndex = 0;
-
       showModalItem(currentIndex);
-
-      const modal = document.getElementById('modal');
-      modal.style.display = 'flex';
+      document.getElementById('modal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
 
     function showModalItem(index) {
       const item = galleryItems[index];
+      if (!item || !item.url) return;
       const img = document.getElementById('modal-image');
       const video = document.getElementById('modal-video');
 
@@ -1150,7 +1389,6 @@ async function writeGalleryPage(items, kind) {
     }
 
     function navigateGallery(direction) {
-      // Circular navigation: wrap around to start/end
       currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
       showModalItem(currentIndex);
     }
@@ -1164,95 +1402,63 @@ async function writeGalleryPage(items, kind) {
       document.body.style.overflow = 'auto';
     }
 
-    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
       const modal = document.getElementById('modal');
       if (modal.style.display === 'flex') {
-        if (e.key === 'ArrowLeft') {
-          navigateGallery(-1);
-        } else if (e.key === 'ArrowRight') {
-          navigateGallery(1);
-        } else if (e.key === 'Escape') {
-          closeModal();
-        }
+        if (e.key === 'ArrowLeft') navigateGallery(-1);
+        else if (e.key === 'ArrowRight') navigateGallery(1);
+        else if (e.key === 'Escape') closeModal();
       }
     });
 
-    // Mouse wheel navigation
     document.getElementById('modal').addEventListener('wheel', function(e) {
       e.preventDefault();
-      if (e.deltaY < 0) {
-        // Scroll up = previous
-        navigateGallery(-1);
-      } else if (e.deltaY > 0) {
-        // Scroll down = next
-        navigateGallery(1);
-      }
+      navigateGallery(e.deltaY > 0 ? 1 : -1);
     });
 
-    // Click backdrop to close (but not content)
     document.getElementById('modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
+      if (e.target === this) closeModal();
     });
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
   </script>
-  ${headerFooter.script}
 </body>
 </html>`;
 
   await fs.writeFile(`site/${kind}s/index.html`, html, "utf8");
 }
 
+// Main build function
 (async () => {
-  const pages = await queryDatabaseAll();
+  console.log('Building site from Obsidian markdown files...\n');
+  console.log(`Content directory: ${CONTENT_DIR}\n`);
 
-  const items = [];
-  for (const page of pages) {
-    const title = getTitle(page);
-    const kind = getSelect(page, "Kind") || "unknown";
-    const summary = getRichText(page, "Summary") || "";
-    const tags = getMultiSelect(page, "Tags");
-    const driveUrl = (getProp(page, "Drive URL")?.url) || "";
-    const files = getFiles(page, "Upload");
-    const thumbnailUrl = files.length > 0 ? files[0].url : "";
+  // Read all content
+  const items = await readContentFiles();
 
-    const slug = slugify(title);
-    let localPath = "";
-    let headings = [];
-    let readingTime = 1;
-
-    if (kind === "article") {
-      const blocks = await fetchBlocksAll(page.id);
-      headings = extractHeadings(blocks);
-      const contentHtml = await blocksToHtml(blocks);
+  // Write article pages
+  for (const item of items) {
+    if (item.kind === 'article') {
       const result = await writeArticlePage({
-        title,
-        slug,
-        contentHtml,
-        tags,
-        date: page.last_edited_time,
-        headings
+        title: item.title,
+        slug: item.slug,
+        contentHtml: item.contentHtml,
+        tags: item.tags,
+        date: item.date,
+        headings: item.headings,
+        readingTime: item.readingTime
       });
-      localPath = result.localPath;
-      readingTime = result.readingTime;
+      item.localPath = result.localPath;
     }
-
-    items.push({
-      id: page.id,
-      title,
-      slug,
-      kind,
-      summary,
-      tags,
-      driveUrl,
-      thumbnailUrl,
-      files,
-      notionUrl: page.url,
-      localPath,
-      readingTime,
-      updatedTime: page.last_edited_time,
-    });
   }
 
   // Write all pages
@@ -1265,11 +1471,11 @@ async function writeGalleryPage(items, kind) {
   await writeGalleryPage(items, "video");
   await writeGalleryPage(items, "music");
 
-  // Keep the JSON for backwards compatibility
+  // Write JSON data for reference
   await fs.mkdir("site/data", { recursive: true });
-  await fs.writeFile("site/data/notion.json", JSON.stringify({ items }, null, 2), "utf8");
+  await fs.writeFile("site/data/content.json", JSON.stringify({ items }, null, 2), "utf8");
 
-  console.log(`✓ Generated ${items.length} items`);
+  console.log(`\n✓ Generated ${items.length} items`);
   console.log(`✓ Home page: site/index.html`);
   console.log(`✓ Posts page: site/posts/index.html`);
   console.log(`✓ Tags page: site/tags/index.html`);
@@ -1278,5 +1484,6 @@ async function writeGalleryPage(items, kind) {
   console.log(`✓ Images gallery: site/images/index.html`);
   console.log(`✓ Videos gallery: site/videos/index.html`);
   console.log(`✓ Music gallery: site/music/index.html`);
-  console.log(`✓ JSON data: site/data/notion.json`);
+  console.log(`✓ JSON data: site/data/content.json`);
+  console.log('\nBuild complete!');
 })();

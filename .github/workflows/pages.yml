@@ -1,11 +1,9 @@
-name: Build and deploy Pages (Notion -> JSON)
+name: Build and deploy Pages (Obsidian markdown)
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
-  schedule:
-    - cron: "17 * * * *" # hourly at :17
 
 permissions:
   contents: read
@@ -28,11 +26,8 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch Notion data and generate site
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: node scripts/fetch-notion.mjs
+      - name: Build site from markdown
+        run: node scripts/build.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

@@ -1,0 +1,296 @@
+{
+  "items": [
+    {
+      "title": "My 2026 AI Predictions",
+      "slug": "my-2026-ai-predictions",
+      "kind": "article",
+      "summary": "Bold predictions for how AI will transform our world in 2026 - from coding agents to creative tools.",
+      "tags": [
+        "AI",
+        "predictions",
+        "2026",
+        "technology"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"my-2026-ai-predictions\"><span class=\"hash\">#</span> My 2026 AI Predictions</h2>\n\n<p>As we enter 2026, I'm making some bold predictions about where AI is heading this year. Some of these might age poorly, but that's half the fun.</p>\n\n<h3 id=\"the-rise-of-ai-agents\"><span class=\"hash\">##</span> The Rise of AI Agents</h3>\n\n<p>2025 was the year of <strong>chatbots</strong>. 2026 will be the year of <strong>agents</strong>.</p>\n\n<p>We've already seen early examples with tools like Claude Code, Devin, and various coding assistants. But this year, I expect:</p>\n\n<ul>\n<li><strong>Autonomous task completion</strong> - Give an agent a goal, come back to completed work</li>\n<li><strong>Multi-step reasoning</strong> - Agents that can break down complex problems</li>\n<li><strong>Tool use at scale</strong> - Seamless integration with APIs, databases, and services</li>\n<li><strong>Collaboration between agents</strong> - Teams of specialised AI workers</li>\n</ul>\n\n<blockquote>\"The best AI won't replace humans - it will amplify what we can do.\"</blockquote>\n\n<h3 id=\"predictions-table\"><span class=\"hash\">##</span> Predictions Table</h3>\n\n<table>\n<thead>\n<tr><th>Prediction</th><th>Confidence</th><th>Timeframe</th></tr>\n</thead>\n<tbody>\n<tr><td>AI agents become mainstream dev tools</td><td>High</td><td>Q1-Q2</td></tr>\n<tr><td>Major creative tool gets AI overhaul</td><td>High</td><td>Q2</td></tr>\n<tr><td>First AI-generated film nominated for award</td><td>Medium</td><td>Q4</td></tr>\n<tr><td>Coding bootcamps pivot to \"AI-assisted development\"</td><td>High</td><td>Q1</td></tr>\n<tr><td>Open-source model matches GPT-4 quality</td><td>Medium</td><td>Q3</td></tr>\n<tr><td>AI regulation passes in EU</td><td>High</td><td>Q2-Q3</td></tr>\n</tbody>\n</table>\n<h3 id=\"what-im-most-excited-about\"><span class=\"hash\">##</span> What I'm Most Excited About</h3>\n\n<h4 id=\"1-creative-ai-tools\"><span class=\"hash\">###</span> 1. Creative AI Tools</h4>\n\n<p>The gap between <em>imagination</em> and <em>creation</em> is shrinking. Tools like Midjourney, Suno, and Runway are already impressive, but 2026 will bring:</p>\n\n<ul>\n<li>Real-time video generation</li>\n<li>Music that adapts to your mood</li>\n<li>Design tools that understand intent, not just prompts</li>\n</ul>\n\n<h4 id=\"2-personal-ai-assistants\"><span class=\"hash\">###</span> 2. Personal AI Assistants</h4>\n\n<p>Not the \"hey Siri\" kind. I mean AI that:</p>\n\n<ol>\n<li>Knows your preferences deeply</li>\n<li>Manages your calendar intelligently</li>\n<li>Drafts emails in <em>your</em> voice</li>\n<li>Learns from your feedback</li>\n</ol>\n\n<h4 id=\"3-developer-experience\"><span class=\"hash\">###</span> 3. Developer Experience</h4>\n\n<p>As someone who codes daily, I'm watching this space closely:</p>\n\n<pre><code data-lang=\"python\"># 2025: Write code, AI suggests completions\ndef calculate_total(items):\n    return sum(item.price for item in items)\n\n# 2026: Describe intent, AI writes implementation\n# &quot;Create a function that calculates cart total with\n#  tax, discounts, and shipping based on location&quot;</code></pre>\n\n<p>The shift from <em>autocomplete</em> to <em>autoimplement</em> is coming.</p>\n\n<h3 id=\"what-concerns-me\"><span class=\"hash\">##</span> What Concerns Me</h3>\n\n<p>Not everything is rosy. Here's what keeps me up at night:</p>\n\n<ul>\n<li><strong>Misinformation at scale</strong> - Deepfakes, synthetic media, fake news</li>\n<li><strong>Job displacement</strong> - Some roles will change dramatically</li>\n<li><strong>Concentration of power</strong> - Big tech vs everyone else</li>\n<li><strong>Environmental cost</strong> - Training these models isn't cheap</li>\n</ul>\n\n<h3 id=\"my-bet-for-2026\"><span class=\"hash\">##</span> My Bet for 2026</h3>\n\n<p>If I had to make one prediction I'm most confident about:</p>\n\n<strong><em>By December 2026, the average developer will spend more time reviewing AI-generated code than writing it from scratch.</em></strong>\n\n<p>We're already seeing this shift. GitHub Copilot users report 40%+ of their code comes from AI suggestions. That number will only grow.</p>\n\n<hr />\n\n<h3 id=\"lets-revisit-in-december\"><span class=\"hash\">##</span> Let's Revisit in December</h3>\n\n<p>I'll be back at the end of 2026 to score these predictions. Feel free to hold me accountable!</p>\n\n<p>What are <em>your</em> predictions for AI in 2026? I'd love to hear them.</p>\n\n<hr />\n\n<em>Written on New Year's Day 2026, fuelled by optimism and too much coffee.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "my-2026-ai-predictions",
+          "text": "My 2026 AI Predictions"
+        },
+        {
+          "level": 3,
+          "id": "the-rise-of-ai-agents",
+          "text": "The Rise of AI Agents"
+        },
+        {
+          "level": 3,
+          "id": "predictions-table",
+          "text": "Predictions Table"
+        },
+        {
+          "level": 3,
+          "id": "what-im-most-excited-about",
+          "text": "What I'm Most Excited About"
+        },
+        {
+          "level": 4,
+          "id": "1-creative-ai-tools",
+          "text": "1. Creative AI Tools"
+        },
+        {
+          "level": 4,
+          "id": "2-personal-ai-assistants",
+          "text": "2. Personal AI Assistants"
+        },
+        {
+          "level": 4,
+          "id": "3-developer-experience",
+          "text": "3. Developer Experience"
+        },
+        {
+          "level": 3,
+          "id": "what-concerns-me",
+          "text": "What Concerns Me"
+        },
+        {
+          "level": 3,
+          "id": "my-bet-for-2026",
+          "text": "My Bet for 2026"
+        },
+        {
+          "level": 3,
+          "id": "lets-revisit-in-december",
+          "text": "Let's Revisit in December"
+        }
+      ],
+      "readingTime": 3,
+      "date": "2026-01-01",
+      "updatedTime": "2026-01-01",
+      "localPath": "/posts/my-2026-ai-predictions/"
+    },
+    {
+      "title": "Building My AI Agent Workspace",
+      "slug": "building-my-ai-agent-workspace",
+      "kind": "article",
+      "summary": "How I set up a multi-AI workspace with Claude Code, Gemini CLI, and Codex CLI working together.",
+      "tags": [
+        "AI",
+        "agents",
+        "productivity",
+        "Claude",
+        "workflow"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"building-my-ai-agent-workspace\"><span class=\"hash\">#</span> Building My AI Agent Workspace</h2>\n\n<p>I've spent the last few weeks building something I'm genuinely excited about: a workspace where multiple AI agents collaborate on tasks. Here's how it works.</p>\n\n<h3 id=\"the-setup\"><span class=\"hash\">##</span> The Setup</h3>\n\n<p>I run three AI agents simultaneously:</p>\n\n<table>\n<thead>\n<tr><th>Agent</th><th>Role</th><th>Strengths</th></tr>\n</thead>\n<tbody>\n<tr><td><strong>Claude Code</strong></td><td>Orchestrator</td><td>Task management, coding, workspace automation</td></tr>\n<tr><td><strong>Gemini CLI</strong></td><td>Researcher</td><td>Google Search, large file analysis, knowledge base</td></tr>\n<tr><td><strong>Codex CLI</strong></td><td>Technical Lead</td><td>Advanced coding, architecture, code review</td></tr>\n</tbody>\n</table>\n<p>Each agent has access to the same workspace folder, shared documentation, and a simple coordination system.</p>\n\n<h3 id=\"the-coordination-system\"><span class=\"hash\">##</span> The Coordination System</h3>\n\n<p>Rather than complex protocols, I use an ultra-simple approach:</p>\n\n<h4 id=\"1-shared-updates-log\"><span class=\"hash\">###</span> 1. Shared Updates Log</h4>\n\n<p>All agents write to a single <code>UPDATES.md</code> file:</p>\n\n<pre><code data-lang=\"markdown\">## 2026-01-01\n\n### Claude Code - 14:30\nCompleted task: Set up new build system\nNext: Testing deployment pipeline\n\n### Gemini CLI - 15:45\nResearch complete: OAuth 2.0 best practices\nCreated: Research/oauth-security.md</code></pre>\n\n<h4 id=\"2-handoff-files\"><span class=\"hash\">###</span> 2. Handoff Files</h4>\n\n<p>When one agent needs another to continue work:</p>\n\n<pre><code data-lang=\"markdown\">---\nfrom: Claude Code\nto: Gemini CLI\npriority: high\n---\n\n# Research Request: Discord Bot APIs\n\n## Context\nBuilding automation tools, need to understand Discord&#039;s bot ecosystem.\n\n## Requirements\n- [ ] ToS for automation\n- [ ] Rate limits\n- [ ] Available APIs</code></pre>\n\n<h4 id=\"3-simple-rules\"><span class=\"hash\">###</span> 3. Simple Rules</h4>\n\n<ul>\n<li><strong>Full workspace access</strong> - No protected areas (trust the agents)</li>\n<li><strong>UK English throughout</strong> - Consistency matters</li>\n<li><strong>Log everything</strong> - Future agents need context</li>\n</ul>\n\n<h3 id=\"why-multiple-agents\"><span class=\"hash\">##</span> Why Multiple Agents?</h3>\n\n<p>You might ask: <em>\"Why not just use one AI?\"</em></p>\n\n<p>Great question. Here's my reasoning:</p>\n\n<ol>\n<li><strong>Specialisation</strong> - Each model has strengths</li>\n<li><strong>Parallel work</strong> - Research while coding</li>\n<li><strong>Cross-verification</strong> - Different perspectives catch errors</li>\n<li><strong>Context limits</strong> - Split large tasks across agents</li>\n</ol>\n\n<h3 id=\"real-example-this-website\"><span class=\"hash\">##</span> Real Example: This Website</h3>\n\n<p>This very website was built using this multi-agent approach:</p>\n\n<ol>\n<li><strong>Claude Code</strong> wrote the build script and templates</li>\n<li><strong>Gemini CLI</strong> researched static site best practices</li>\n<li><strong>Codex CLI</strong> reviewed the architecture</li>\n</ol>\n\n<p>The result? A cleaner codebase than any single agent (or human) would produce alone.</p>\n\n<h3 id=\"lessons-learned\"><span class=\"hash\">##</span> Lessons Learned</h3>\n\n<h4 id=\"what-works\"><span class=\"hash\">###</span> What Works</h4>\n\n<ul>\n<li><strong>Simple coordination beats complex protocols</strong></li>\n<li><strong>Shared context is everything</strong></li>\n<li><strong>Let agents play to their strengths</strong></li>\n<li><strong>Trust but verify</strong> - Review AI output</li>\n</ul>\n\n<h4 id=\"what-doesnt-work\"><span class=\"hash\">###</span> What Doesn't Work</h4>\n\n<ul>\n<li>Micromanaging agents</li>\n<li>Overly complex handoff procedures</li>\n<li>Assuming agents remember previous sessions</li>\n<li>Forgetting to provide context</li>\n</ul>\n\n<h3 id=\"the-future\"><span class=\"hash\">##</span> The Future</h3>\n\n<p>I'm convinced this is the future of knowledge work:</p>\n\n<blockquote>Humans set direction. Agents do execution. Everyone wins.</blockquote>\n\n<p>We're not there yet - there's still plenty of supervision needed. But the trajectory is clear.</p>\n\n<h3 id=\"try-it-yourself\"><span class=\"hash\">##</span> Try It Yourself</h3>\n\n<p>If you want to experiment with multi-agent workflows:</p>\n\n<ol>\n<li>Start with one agent, master it</li>\n<li>Add a second for specific tasks</li>\n<li>Create simple coordination rules</li>\n<li>Iterate based on what works</li>\n</ol>\n\n<p>The tools are available today. The question is: <em>what will you build?</em></p>\n\n<hr />\n\n<em>This post was drafted by Claude Code, fact-checked by Gemini CLI, and reviewed by a human (me).</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "building-my-ai-agent-workspace",
+          "text": "Building My AI Agent Workspace"
+        },
+        {
+          "level": 3,
+          "id": "the-setup",
+          "text": "The Setup"
+        },
+        {
+          "level": 3,
+          "id": "the-coordination-system",
+          "text": "The Coordination System"
+        },
+        {
+          "level": 4,
+          "id": "1-shared-updates-log",
+          "text": "1. Shared Updates Log"
+        },
+        {
+          "level": 4,
+          "id": "2-handoff-files",
+          "text": "2. Handoff Files"
+        },
+        {
+          "level": 4,
+          "id": "3-simple-rules",
+          "text": "3. Simple Rules"
+        },
+        {
+          "level": 3,
+          "id": "why-multiple-agents",
+          "text": "Why Multiple Agents?"
+        },
+        {
+          "level": 3,
+          "id": "real-example-this-website",
+          "text": "Real Example: This Website"
+        },
+        {
+          "level": 3,
+          "id": "lessons-learned",
+          "text": "Lessons Learned"
+        },
+        {
+          "level": 4,
+          "id": "what-works",
+          "text": "What Works"
+        },
+        {
+          "level": 4,
+          "id": "what-doesnt-work",
+          "text": "What Doesn't Work"
+        },
+        {
+          "level": 3,
+          "id": "the-future",
+          "text": "The Future"
+        },
+        {
+          "level": 3,
+          "id": "try-it-yourself",
+          "text": "Try It Yourself"
+        }
+      ],
+      "readingTime": 3,
+      "date": "2026-01-01",
+      "updatedTime": "2026-01-01",
+      "localPath": "/posts/building-my-ai-agent-workspace/"
+    },
+    {
+      "title": "Welcome to Kol's Korner",
+      "slug": "welcome-to-kols-korner",
+      "kind": "article",
+      "summary": "Welcome to my new site! Here I'll share thoughts on tech, AI, and development.",
+      "tags": [
+        "welcome",
+        "intro"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"welcome\"><span class=\"hash\">#</span> Welcome</h2>\n\n<p>Hello and welcome to my new site!</p>\n\n<h3 id=\"what-to-expect\"><span class=\"hash\">##</span> What to Expect</h3>\n\n<p>I'll be sharing:</p>\n\n<ul>\n<li><strong>Tech insights</strong> - Latest developments in software</li>\n<li><strong>AI explorations</strong> - Experiments and discoveries</li>\n<li><strong>Development tips</strong> - Things I've learned along the way</li>\n</ul>\n\n<h3 id=\"about-this-site\"><span class=\"hash\">##</span> About This Site</h3>\n\n<p>This site is built from Obsidian markdown files and hosted on GitHub Pages. No databases, no complicated CMS - just simple markdown files that get transformed into a static site.</p>\n\n<h3 id=\"stay-tuned\"><span class=\"hash\">##</span> Stay Tuned</h3>\n\n<p>More content coming soon. Feel free to explore and check back regularly!</p>\n\n<hr />\n\n<em>Thanks for visiting!</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "welcome",
+          "text": "Welcome"
+        },
+        {
+          "level": 3,
+          "id": "what-to-expect",
+          "text": "What to Expect"
+        },
+        {
+          "level": 3,
+          "id": "about-this-site",
+          "text": "About This Site"
+        },
+        {
+          "level": 3,
+          "id": "stay-tuned",
+          "text": "Stay Tuned"
+        }
+      ],
+      "readingTime": 1,
+      "date": "2026-01-01",
+      "updatedTime": "2026-01-01",
+      "localPath": "/posts/welcome-to-kols-korner/"
+    },
+    {
+      "title": "Markdown Formatting Guide",
+      "slug": "markdown-formatting-guide",
+      "kind": "article",
+      "summary": "A comprehensive reference for all the markdown formatting supported on this site.",
+      "tags": [
+        "markdown",
+        "guide",
+        "reference"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"markdown-formatting-guide\"><span class=\"hash\">#</span> Markdown Formatting Guide</h2>\n\n<p>This post demonstrates all the markdown formatting supported on this site. Use it as a reference when writing your own posts.</p>\n\n<h3 id=\"text-formatting\"><span class=\"hash\">##</span> Text Formatting</h3>\n\n<p>Basic text formatting options:</p>\n\n<ul>\n<li><strong>Bold text</strong> using <code><strong>double asterisks</strong></code></li>\n<li><em>Italic text</em> using <code><em>single asterisks</em></code></li>\n<li><strong><em>Bold and italic</em></strong> using <code><strong><em>triple asterisks</em></strong></code></li>\n<li><code>Inline code</code> using backticks</li>\n</ul>\n\n<p>You can also use underscores: <em>italic</em> and <strong>bold</strong>.</p>\n\n<h3 id=\"headings\"><span class=\"hash\">##</span> Headings</h3>\n\n<p>Headings use hash symbols and get red hash styling:</p>\n\n<pre><code data-lang=\"markdown\"># Heading 1\n## Heading 2\n### Heading 3</code></pre>\n\n<p>Each heading automatically gets an ID for linking.</p>\n\n<h3 id=\"lists\"><span class=\"hash\">##</span> Lists</h3>\n\n<h4 id=\"unordered-lists\"><span class=\"hash\">###</span> Unordered Lists</h4>\n\n<ul>\n<li>First item</li>\n<li>Second item</li>\n<li>Third item with a longer description that might wrap to multiple lines</li>\n</ul>\n\n<h4 id=\"ordered-lists\"><span class=\"hash\">###</span> Ordered Lists</h4>\n\n<ol>\n<li>First step</li>\n<li>Second step</li>\n<li>Third step</li>\n</ol>\n\n<h3 id=\"blockquotes\"><span class=\"hash\">##</span> Blockquotes</h3>\n\n<blockquote>This is a blockquote. Use it for highlighting important quotes or callouts.</blockquote>\n<p>></p>\n<blockquote>It can span multiple paragraphs.</blockquote>\n\n<h3 id=\"code-blocks\"><span class=\"hash\">##</span> Code Blocks</h3>\n\n<p>Inline code: <code>const x = 42;</code></p>\n\n<p>Fenced code blocks with syntax highlighting:</p>\n\n<pre><code data-lang=\"javascript\">// JavaScript example\nfunction greet(name) {\n  return `Hello, ${name}!`;\n}\n\nconsole.log(greet(&#039;World&#039;));</code></pre>\n\n<pre><code data-lang=\"python\"># Python example\ndef greet(name):\n    return f&quot;Hello, {name}!&quot;\n\nprint(greet(&quot;World&quot;))</code></pre>\n\n<pre><code data-lang=\"css\">/* CSS example */\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}</code></pre>\n\n<h3 id=\"tables\"><span class=\"hash\">##</span> Tables</h3>\n\n<p>Tables are great for structured data:</p>\n\n<table>\n<thead>\n<tr><th>Feature</th><th>Status</th><th>Notes</th></tr>\n</thead>\n<tbody>\n<tr><td>Dark mode</td><td>✅ Done</td><td>Toggle in header</td></tr>\n<tr><td>RSS feed</td><td>🚧 Planned</td><td>Coming soon</td></tr>\n<tr><td>Comments</td><td>❌ No plans</td><td>Use social media</td></tr>\n</tbody>\n</table>\n<p>Alignment options:</p>\n\n<table>\n<thead>\n<tr><th>Left</th><th>Centre</th><th>Right</th></tr>\n</thead>\n<tbody>\n<tr><td>Text</td><td>Text</td><td>Text</td></tr>\n<tr><td>More</td><td>More</td><td>More</td></tr>\n</tbody>\n</table>\n<h3 id=\"links\"><span class=\"hash\">##</span> Links</h3>\n\n<ul>\n<li><a href=\"https://example.com\">External link</a></li>\n<li><a href=\"https://example.com \"Example Site\"\">Link with title</a></li>\n</ul>\n\n<h3 id=\"horizontal-rules\"><span class=\"hash\">##</span> Horizontal Rules</h3>\n\n<p>Use three dashes for a horizontal rule:</p>\n\n<hr />\n\n<p>Or three asterisks:</p>\n\n<hr />\n\n<h3 id=\"images\"><span class=\"hash\">##</span> Images</h3>\n\n<p>Images use the standard markdown syntax:</p>\n\n<pre><code data-lang=\"markdown\">![Alt text](path/to/image.jpg)</code></pre>\n\n<h3 id=\"combining-elements\"><span class=\"hash\">##</span> Combining Elements</h3>\n\n<p>You can combine elements for rich formatting:</p>\n\n<blockquote><strong>Note:</strong> This is an important callout that combines:</blockquote>\n<blockquote>- Bold text</blockquote>\n<blockquote>- A list</blockquote>\n<blockquote>- And a blockquote</blockquote>\n\n<h4 id=\"example-api-response\"><span class=\"hash\">###</span> Example: API Response</h4>\n\n<p>Here's a typical API response:</p>\n\n<pre><code data-lang=\"json\">{\n  &quot;status&quot;: &quot;success&quot;,\n  &quot;data&quot;: {\n    &quot;id&quot;: 123,\n    &quot;name&quot;: &quot;Example&quot;,\n    &quot;tags&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]\n  }\n}</code></pre>\n\n<table>\n<thead>\n<tr><th>Field</th><th>Type</th><th>Description</th></tr>\n</thead>\n<tbody>\n<tr><td>status</td><td>string</td><td>Response status</td></tr>\n<tr><td>data</td><td>object</td><td>Response payload</td></tr>\n<tr><td>data.id</td><td>number</td><td>Unique identifier</td></tr>\n</tbody>\n</table>\n<h3 id=\"best-practices\"><span class=\"hash\">##</span> Best Practices</h3>\n\n<ol>\n<li><strong>Use headings hierarchically</strong> - Don't skip levels</li>\n<li><strong>Keep paragraphs short</strong> - Easier to read</li>\n<li><strong>Use lists for multiple items</strong> - Better than comma-separated</li>\n<li><strong>Add alt text to images</strong> - Accessibility matters</li>\n<li><strong>Preview before publishing</strong> - Catch formatting issues</li>\n</ol>\n\n<hr />\n\n<em>This guide covers the most common markdown features. Happy writing!</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "markdown-formatting-guide",
+          "text": "Markdown Formatting Guide"
+        },
+        {
+          "level": 3,
+          "id": "text-formatting",
+          "text": "Text Formatting"
+        },
+        {
+          "level": 3,
+          "id": "headings",
+          "text": "Headings"
+        },
+        {
+          "level": 3,
+          "id": "lists",
+          "text": "Lists"
+        },
+        {
+          "level": 4,
+          "id": "unordered-lists",
+          "text": "Unordered Lists"
+        },
+        {
+          "level": 4,
+          "id": "ordered-lists",
+          "text": "Ordered Lists"
+        },
+        {
+          "level": 3,
+          "id": "blockquotes",
+          "text": "Blockquotes"
+        },
+        {
+          "level": 3,
+          "id": "code-blocks",
+          "text": "Code Blocks"
+        },
+        {
+          "level": 3,
+          "id": "tables",
+          "text": "Tables"
+        },
+        {
+          "level": 3,
+          "id": "links",
+          "text": "Links"
+        },
+        {
+          "level": 3,
+          "id": "horizontal-rules",
+          "text": "Horizontal Rules"
+        },
+        {
+          "level": 3,
+          "id": "images",
+          "text": "Images"
+        },
+        {
+          "level": 3,
+          "id": "combining-elements",
+          "text": "Combining Elements"
+        },
+        {
+          "level": 4,
+          "id": "example-api-response",
+          "text": "Example: API Response"
+        },
+        {
+          "level": 3,
+          "id": "best-practices",
+          "text": "Best Practices"
+        }
+      ],
+      "readingTime": 3,
+      "date": "2025-12-30",
+      "updatedTime": "2025-12-30",
+      "localPath": "/posts/markdown-formatting-guide/"
+    }
+  ]
+}
