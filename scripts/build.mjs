@@ -9,7 +9,7 @@ const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; frame-src https://substack.com https://*.substack.com; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -1170,19 +1170,15 @@ async function writeSubscribePage() {
   <main class="content-main">
     <div class="subscribe-content">
       <h1 class="page-title">Newsletter</h1>
-      <p class="subscribe-text">Get notified when new posts are published. Choose your subscription preferences:</p>
-      <form class="subscribe-form" id="subscribeForm">
-        <input type="email" id="emailInput" placeholder="your@email.com" required class="subscribe-input" />
-        <div class="subscribe-options">
-          <label><input type="checkbox" name="frequency" value="weekly" checked> Weekly digest</label>
-          <label><input type="checkbox" name="frequency" value="daily"> Daily updates</label>
-          <label><input type="checkbox" name="frequency" value="all"> All new posts</label>
-        </div>
-        <button type="submit" class="subscribe-button">Subscribe</button>
-      </form>
-      <p class="subscribe-note" id="subscribeMessage">No spam, unsubscribe at any time.</p>
-      <p class="subscribe-note" style="margin-top: 24px; font-size: 14px; color: var(--color-text-secondary);">
-        Note: Newsletter functionality coming soon.
+      <p class="subscribe-text">Get notified when new posts are published. Articles on tech, AI, and development delivered to your inbox.</p>
+
+      <div class="substack-embed">
+        <iframe src="https://koltregaskes.substack.com/embed" width="100%" height="320" style="border:1px solid var(--color-card-border); border-radius: 8px; background: var(--color-surface);" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <p class="subscribe-note">No spam, unsubscribe at any time.</p>
+      <p class="subscribe-note" style="margin-top: 16px;">
+        <a href="https://koltregaskes.substack.com" target="_blank" rel="noopener" style="color: var(--color-primary);">View on Substack →</a>
       </p>
     </div>
   </main>
