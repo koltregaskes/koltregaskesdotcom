@@ -104,7 +104,13 @@ function parseFrontmatter(content) {
 
 // Read news items for a given date
 async function readNewsItems(date) {
+  // Priority order:
+  // 1. YYYY-MM-DD-digest.md (curated /news-gatherer output)
+  // 2. YYYY-MM-DD/ directory (JSON files)
+  // 3. YYYY-MM-DD.json
+  // 4. YYYY-MM-DD.md
   const possiblePaths = [
+    path.join(CONFIG.newsSourcePath, `${date}-digest.md`),  // Curated digest first!
     path.join(CONFIG.newsSourcePath, date),
     path.join(CONFIG.newsSourcePath, 'daily', date),
     path.join(CONFIG.newsSourcePath, `${date}.json`),
@@ -117,6 +123,10 @@ async function readNewsItems(date) {
 
       if (stats.isDirectory()) {
         return await readNewsFromDirectory(newsPath);
+      } else if (newsPath.endsWith('-digest.md')) {
+        // Parse curated digest format from /news-gatherer
+        const content = await fs.readFile(newsPath, 'utf-8');
+        return parseNewsGathererDigest(content);
       } else if (newsPath.endsWith('.json')) {
         const content = await fs.readFile(newsPath, 'utf-8');
         const data = JSON.parse(content);
@@ -131,6 +141,82 @@ async function readNewsItems(date) {
   }
 
   return [];
+}
+
+// Parse the /news-gatherer digest format
+// Format: - **Title** ([Source](URL)) _YYYY-MM-DD_
+//           Summary text here.
+function parseNewsGathererDigest(content) {
+  const items = [];
+  let currentCategory = 'Top Stories';
+
+  // Split into lines
+  const lines = content.split('\n');
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Detect category headers (## Top Stories, ## Research, etc.)
+    const categoryMatch = line.match(/^##\s+(.+)$/);
+    if (categoryMatch) {
+      currentCategory = categoryMatch[1].trim();
+      continue;
+    }
+
+    // Parse news items: - **Title** ([Source](URL)) _date_
+    const itemMatch = line.match(/^-\s+\*\*(.+?)\*\*\s+\(\[(.+?)\]\((.+?)\)\)(?:\s+_(.+?)_)?$/);
+    if (itemMatch) {
+      const [, title, sourceName, url, date] = itemMatch;
+
+      // Get summary from next line(s) - indented text
+      let summary = '';
+      let j = i + 1;
+      while (j < lines.length && lines[j].match(/^\s{2,}/)) {
+        summary += lines[j].trim() + ' ';
+        j++;
+      }
+
+      // Skip navigation/junk items
+      if (isJunkItem(title, url)) {
+        continue;
+      }
+
+      items.push({
+        title: title.trim(),
+        source: sourceName.trim(),
+        url: url.trim(),
+        summary: summary.trim(),
+        category: currentCategory,
+        date: date ? date.trim() : null
+      });
+    }
+  }
+
+  return items;
+}
+
+// Filter out navigation links and junk items
+function isJunkItem(title, url) {
+  const junkTitles = [
+    'Browse Business',
+    'Browse Sustainability',
+    'Sponsored Content',
+    'View All Latest',
+    'Momentum AI'
+  ];
+
+  const junkUrlPatterns = [
+    /\/business\/?$/,
+    /\/sustainability\/?$/,
+    /\/sponsored\/?$/,
+    /events\.reutersevents\.com/,
+    /artificial-intelligence-news\/?$/
+  ];
+
+  if (junkTitles.some(t => title.includes(t))) return true;
+  if (junkUrlPatterns.some(p => p.test(url))) return true;
+
+  return false;
 }
 
 // Read news from a directory of markdown/json files
