@@ -121,21 +121,33 @@ async function readNewsFromDirectory(dirPath) {
   const files = await fs.readdir(dirPath);
   const items = [];
 
-  for (const file of files) {
-    const filePath = path.join(dirPath, file);
+  // Prefer JSON files - only fall back to MD if no JSON exists
+  const jsonFiles = files.filter(f => f.endsWith('.json') && !f.startsWith('_') && !f.includes('metadata'));
+  const mdFiles = files.filter(f => f.endsWith('.md') && !f.includes('CLAUDE'));
 
-    if (file.endsWith('.md') && !file.includes('CLAUDE')) {
+  // If we have JSON files, use those (they're structured data from gather.py)
+  if (jsonFiles.length > 0) {
+    for (const file of jsonFiles) {
+      const filePath = path.join(dirPath, file);
+      const content = await fs.readFile(filePath, 'utf-8');
+      try {
+        const data = JSON.parse(content);
+        if (Array.isArray(data)) {
+          items.push(...data);
+        } else if (data.title) {
+          items.push(data);
+        }
+      } catch {
+        // Skip malformed JSON
+      }
+    }
+  } else {
+    // Fall back to markdown files
+    for (const file of mdFiles) {
+      const filePath = path.join(dirPath, file);
       const content = await fs.readFile(filePath, 'utf-8');
       const item = parseNewsMarkdown(content, file);
       if (item) items.push(item);
-    } else if (file.endsWith('.json') && !file.includes('metadata')) {
-      const content = await fs.readFile(filePath, 'utf-8');
-      const data = JSON.parse(content);
-      if (Array.isArray(data)) {
-        items.push(...data);
-      } else if (data.title) {
-        items.push(data);
-      }
     }
   }
 
@@ -209,7 +221,9 @@ Welcome to today's roundup of the most interesting developments in AI and techno
         markdown += `${item.summary}\n\n`;
       }
 
-      if (item.source) {
+      if (item.url) {
+        markdown += `[Read more](${item.url})\n\n`;
+      } else if (item.source && item.source.startsWith('http')) {
         markdown += `[Read more](${item.source})\n\n`;
       }
 
