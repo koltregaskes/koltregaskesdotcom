@@ -17,8 +17,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
+// Priority: ENV var > local news/ folder > Agent Workspace (for local dev)
+const getNewsSourcePath = () => {
+  if (process.env.NEWS_SOURCE_PATH) return process.env.NEWS_SOURCE_PATH;
+
+  const localNews = path.join(__dirname, '..', 'news');
+  try {
+    // Check if local news folder exists and has content
+    const fs = require('fs');
+    if (fs.existsSync(localNews) && fs.readdirSync(localNews).length > 0) {
+      return localNews;
+    }
+  } catch {}
+
+  // Fall back to Agent Workspace for local development
+  return 'W:/Agent Workspace/Content/News';
+};
+
 const CONFIG = {
-  newsSourcePath: process.env.NEWS_SOURCE_PATH || 'W:/Agent Workspace/Content/News',
+  newsSourcePath: getNewsSourcePath(),
   contentOutputPath: process.env.CONTENT_OUTPUT_PATH || path.join(__dirname, '..', 'content'),
   author: 'Kol',
   defaultTags: ['ai', 'news', 'digest']
