@@ -19,7 +19,20 @@ class NewsApp {
     async init() {
         await this.loadArticles();
         this.setupEventListeners();
-        this.updateQuickFilterButtons('all');
+
+        // Default to Last 24 Hours (yesterday's date to today)
+        // This works better than "Today" since news may not have been gathered yet today
+        const today = new Date();
+        const yesterday = new Date();
+        yesterday.setDate(today.getDate() - 1);
+
+        const fromDate = document.getElementById('fromDate');
+        const toDate = document.getElementById('toDate');
+        if (fromDate) fromDate.value = yesterday.toISOString().split('T')[0];
+        if (toDate) toDate.value = today.toISOString().split('T')[0];
+
+        this.updateQuickFilterButtons('24h');
+        this.filterArticles();
         this.displayArticles();
     }
 
@@ -125,17 +138,33 @@ class NewsApp {
                 const tags = this.generateTags(title);
                 tags.forEach(t => this.tags.add(t));
 
+                // Use the actual article date if available, otherwise fall back to file date
+                let articleDate = fileDate;
+                let articleDateString = dateString;
+                if (itemDate && itemDate.trim()) {
+                    const parsedDate = new Date(itemDate.trim());
+                    if (!isNaN(parsedDate.getTime())) {
+                        articleDate = parsedDate;
+                        articleDateString = parsedDate.toLocaleDateString('en-GB', {
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                    }
+                }
+
                 articles.push({
                     title: title.trim(),
                     source: source,
                     url: url.trim(),
                     summary: summary.trim(),
                     category: currentCategory,
-                    date: fileDate,
-                    dateString: dateString,
+                    date: articleDate,
+                    dateString: articleDateString,
                     filename: filename,
                     tags: tags,
-                    time: itemDate ? itemDate.trim() : dateString,
+                    time: articleDateString,
                     imageUrl: null,
                     isNoNews: false
                 });
@@ -271,7 +300,7 @@ class NewsApp {
         const toDate = document.getElementById('toDate');
         const sourceContainer = document.getElementById('sourceCheckboxes');
         const archivePicker = document.getElementById('archivePicker');
-        const quickToday = document.getElementById('quickToday');
+        const quick24h = document.getElementById('quick24h');
         const quickLastWeek = document.getElementById('quickLastWeek');
         const quickAll = document.getElementById('quickAll');
         const groupBy = document.getElementById('groupBy');
@@ -293,12 +322,14 @@ class NewsApp {
         if (highlightOnly) highlightOnly.addEventListener('change', () => this.filterArticles());
         if (hideNotAI) hideNotAI.addEventListener('change', () => this.filterArticles());
 
-        if (quickToday) quickToday.addEventListener('click', () => {
-            const today = new Date().toISOString().split('T')[0];
-            if (fromDate) fromDate.value = today;
-            if (toDate) toDate.value = today;
+        if (quick24h) quick24h.addEventListener('click', () => {
+            const today = new Date();
+            const yesterday = new Date();
+            yesterday.setDate(today.getDate() - 1);
+            if (fromDate) fromDate.value = yesterday.toISOString().split('T')[0];
+            if (toDate) toDate.value = today.toISOString().split('T')[0];
             if (archivePicker) archivePicker.value = '';
-            this.updateQuickFilterButtons('today');
+            this.updateQuickFilterButtons('24h');
             this.filterArticles();
         });
 
@@ -338,16 +369,16 @@ class NewsApp {
     }
 
     updateQuickFilterButtons(active = null) {
-        const quickToday = document.getElementById('quickToday');
+        const quick24h = document.getElementById('quick24h');
         const quickLastWeek = document.getElementById('quickLastWeek');
         const quickAll = document.getElementById('quickAll');
 
-        if (quickToday) quickToday.classList.remove('active');
+        if (quick24h) quick24h.classList.remove('active');
         if (quickLastWeek) quickLastWeek.classList.remove('active');
         if (quickAll) quickAll.classList.remove('active');
 
-        if (active === 'today' && quickToday) {
-            quickToday.classList.add('active');
+        if (active === '24h' && quick24h) {
+            quick24h.classList.add('active');
         } else if (active === 'week' && quickLastWeek) {
             quickLastWeek.classList.add('active');
         } else if (active === 'all' && quickAll) {
