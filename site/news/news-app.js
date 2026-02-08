@@ -105,17 +105,17 @@ class NewsApp {
         });
 
         const articles = [];
-        let currentCategory = 'News';
+        let articleCountInDigest = 0;  // Track position for Top Stories ranking
+        const TOP_STORIES_LIMIT = 5;   // First 5 articles are "Top Stories"
 
         const lines = content.split('\n');
 
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i];
 
-            // Detect category headers (## Top Stories, ## Research, etc.)
+            // Skip category headers - we use position-based ranking instead
             const categoryMatch = line.match(/^##\s+(.+)$/);
             if (categoryMatch) {
-                currentCategory = categoryMatch[1].trim();
                 continue;
             }
 
@@ -123,6 +123,7 @@ class NewsApp {
             const itemMatch = line.match(/^-\s+\*\*(.+?)\*\*\s+\(\[(.+?)\]\((.+?)\)\)(?:\s+_(.+?)_)?$/);
             if (itemMatch) {
                 const [, title, sourceName, url, itemDate] = itemMatch;
+                articleCountInDigest++;
 
                 // Get summary from next line(s) - indented text
                 let summary = '';
@@ -160,12 +161,15 @@ class NewsApp {
                     }
                 }
 
+                // Position-based category: first 5 are "Top Stories", rest are "News"
+                const category = articleCountInDigest <= TOP_STORIES_LIMIT ? 'Top Stories' : 'News';
+
                 articles.push({
                     title: title.trim(),
                     source: source,
                     url: url.trim(),
                     summary: summary.trim(),
-                    category: currentCategory,
+                    category: category,
                     date: articleDate,
                     dateString: articleDateString,
                     filename: filename,
