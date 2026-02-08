@@ -320,6 +320,7 @@ function getHeaderHTML(basePath = '/notion-site-test/') {
       </a>
       <nav class="site-nav">
         <a href="${basePath}posts/">Posts</a>
+        <a href="${basePath}news/">News</a>
         <a href="${basePath}tags/">Tags</a>
         <a href="${basePath}about/">About</a>
         <a href="${basePath}subscribe/">Newsletter</a>
@@ -1361,6 +1362,25 @@ async function writeRssFeed(items) {
   await fs.mkdir("site/data", { recursive: true });
   await fs.writeFile("site/data/content.json", JSON.stringify({ items }, null, 2), "utf8");
   await writeRssFeed(items);
+
+  // Copy news-digests to site folder for the /news page
+  const newsDigestsDir = path.join(process.cwd(), 'news-digests');
+  const siteNewsDigestsDir = path.join(process.cwd(), 'site', 'news-digests');
+  try {
+    await fs.mkdir(siteNewsDigestsDir, { recursive: true });
+    const digestFiles = await fs.readdir(newsDigestsDir);
+    for (const file of digestFiles) {
+      if (file.endsWith('.md')) {
+        await fs.copyFile(
+          path.join(newsDigestsDir, file),
+          path.join(siteNewsDigestsDir, file)
+        );
+      }
+    }
+    console.log(`✓ Copied ${digestFiles.filter(f => f.endsWith('.md')).length} news digests`);
+  } catch (err) {
+    console.warn('⚠ Could not copy news-digests:', err.message);
+  }
 
   console.log(`\n✓ Generated ${items.length} items`);
   console.log(`✓ Home page: site/index.html`);

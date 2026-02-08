@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; media-src 'self' https: blob:; frame-src https://buttondown.com https://buttondown.email; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://buttondown.email;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>AI News - Kol's Korner</title>
+  <meta name="description" content="Daily curated AI news from 68+ sources. Stay updated on the latest in artificial intelligence, machine learning, and technology." />
+  <meta name="author" content="Kol Tregaskes" />
+  <meta property="og:title" content="AI News - Kol's Korner" />
+  <meta property="og:description" content="Daily curated AI news from 68+ sources" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@koltregaskes" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="news-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">Kol's Korner</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../posts/">Posts</a>
+        <a href="./" class="active">News</a>
+        <a href="../tags/">Tags</a>
+        <a href="../about/">About</a>
+        <a href="../subscribe/">Newsletter</a>
+        <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="news-layout">
+    <!-- Sidebar -->
+    <aside class="news-sidebar">
+      <div class="sidebar-section">
+        <h3><i class="fas fa-search"></i> Search</h3>
+        <input type="text" id="searchInput" placeholder="Search articles..." class="search-input">
+      </div>
+
+      <div class="sidebar-section">
+        <h3><i class="fas fa-calendar"></i> Date Range</h3>
+        <div class="quick-filters">
+          <button id="quickToday" class="quick-btn">Today</button>
+          <button id="quickLastWeek" class="quick-btn">Last 7 Days</button>
+          <button id="quickAll" class="quick-btn active">All</button>
+        </div>
+        <div class="date-inputs">
+          <input type="date" id="fromDate" class="date-input">
+          <span>to</span>
+          <input type="date" id="toDate" class="date-input">
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3><i class="fas fa-archive"></i> Archive</h3>
+        <select id="archivePicker" class="archive-select">
+          <option value="">All Months</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <h3><i class="fas fa-layer-group"></i> Group By</h3>
+        <select id="groupBy" class="group-select">
+          <option value="none">None</option>
+          <option value="date">Date</option>
+          <option value="source">Source</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <h3><i class="fas fa-filter"></i> Sources</h3>
+        <div id="sourceCheckboxes" class="source-list"></div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3><i class="fas fa-sliders-h"></i> Options</h3>
+        <label class="checkbox-label">
+          <input type="checkbox" id="highlightOnly">
+          <span>Highlights only</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="hideNotAI">
+          <span>Hide "Not AI"</span>
+        </label>
+      </div>
+
+      <button id="clearFilters" class="clear-btn">
+        <i class="fas fa-times"></i> Clear Filters
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="news-main">
+      <div class="news-header">
+        <h1>AI News</h1>
+        <p class="news-subtitle">Daily curated news from 68+ AI sources</p>
+      </div>
+
+      <div id="filterSummary" class="filter-summary" style="display: none;">
+        <span id="filterSummaryText"></span>
+      </div>
+
+      <div id="loading" class="loading-state">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading articles...</p>
+      </div>
+
+      <!-- Highlighted/Favorite Articles -->
+      <section id="favoriteNews" class="news-section" style="display: none;">
+        <h2 class="section-title"><i class="fas fa-star"></i> Highlights</h2>
+        <div id="favoriteGrid" class="news-grid"></div>
+      </section>
+
+      <!-- Today's News -->
+      <section id="todaysNews" class="news-section" style="display: none;">
+        <h2 class="section-title"><i class="fas fa-bolt"></i> Today's News</h2>
+        <div id="todaysGrid" class="news-grid"></div>
+      </section>
+
+      <!-- All News -->
+      <section id="allNews" class="news-section" style="display: none;">
+        <h2 class="section-title"><i class="fas fa-newspaper"></i> All Articles</h2>
+        <div id="allGrid" class="news-grid"></div>
+      </section>
+
+      <div id="noResults" class="no-results" style="display: none;">
+        <i class="fas fa-search"></i>
+        <p>No articles found matching your filters.</p>
+        <button onclick="document.getElementById('clearFilters').click()">Clear Filters</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Duplicate Dialog -->
+  <div id="duplicateDialog" class="modal" style="display: none;">
+    <div class="modal-content dialog-content">
+      <h3>Mark as Duplicate</h3>
+      <input type="text" id="duplicateSearch" placeholder="Search for original article...">
+      <ul id="duplicateResults"></ul>
+      <button id="closeDuplicateDialog" class="close-dialog-btn">Cancel</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 All rights reserved.</p>
+      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+    </div>
+  </footer>
+
+  <script src="news-app.js"></script>
+  <script>
+    // Theme toggle (integrated with site)
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      document.body.classList.toggle('dark', newTheme === 'dark');
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    document.body.classList.toggle('dark', savedTheme === 'dark');
+  </script>
+</body>
+</html>
