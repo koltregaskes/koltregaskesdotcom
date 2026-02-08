@@ -40,18 +40,24 @@ class NewsApp {
         // Generate file list for digests (YYYY-MM-DD-digest.md format)
         const fileList = this.generateFileList();
 
-        for (const filename of fileList) {
+        // Load files in parallel for much faster performance
+        // (Instead of 90 sequential requests, load them all at once)
+        const loadPromises = fileList.map(async (filename) => {
             try {
                 const response = await fetch(`../news-digests/${filename}`);
                 if (response.ok) {
                     const content = await response.text();
-                    const articles = this.parseDigest(content, filename);
-                    this.articles.push(...articles);
+                    return this.parseDigest(content, filename);
                 }
             } catch (error) {
-                console.log(`Could not load ${filename}:`, error);
+                // File doesn't exist, skip silently
             }
-        }
+            return [];
+        });
+
+        // Wait for all files to load in parallel
+        const results = await Promise.all(loadPromises);
+        results.forEach(articles => this.articles.push(...articles));
 
         // Sort articles by date (newest first)
         this.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -201,21 +207,37 @@ class NewsApp {
     }
 
     generateTags(title) {
-        const aiKeywords = ['ai', 'artificial intelligence', 'machine learning', 'ml', 'llm', 'gpt', 'claude', 'gemini', 'openai', 'anthropic', 'google', 'microsoft', 'meta', 'nvidia', 'robot', 'agent', 'chatbot'];
+        // Semantic tag categories instead of keyword matching
+        const tagPatterns = {
+            'agents': /\b(agent|agents|agentic)\b/i,
+            'models': /\b(gpt|claude|gemini|llama|mistral|model|llm|foundation)\b/i,
+            'research': /\b(research|paper|study|breakthrough|discover)\b/i,
+            'funding': /\b(raises|funding|invest|valuation|series [a-c]|million|billion|\$\d+[mb])\b/i,
+            'product': /\b(launch|release|announce|feature|update|new|beta)\b/i,
+            'enterprise': /\b(enterprise|business|company|corporate|b2b)\b/i,
+            'open-source': /\b(open source|open-source|opensource|github|hugging face)\b/i,
+            'safety': /\b(safety|alignment|ethics|regulation|govern|policy)\b/i,
+            'robotics': /\b(robot|robotics|hardware|humanoid|physical)\b/i,
+            'vision': /\b(image|video|vision|multimodal|visual)\b/i,
+            'voice': /\b(voice|speech|audio|sound|music)\b/i,
+            'coding': /\b(code|coding|developer|programming|github copilot)\b/i,
+            'healthcare': /\b(health|medical|doctor|patient|diagnos)\b/i,
+            'Anthropic': /\b(anthropic|claude)\b/i,
+            'OpenAI': /\b(openai|gpt|chatgpt)\b/i,
+            'Google': /\b(google|deepmind|gemini)\b/i,
+            'Meta': /\b(meta|llama|facebook)\b/i,
+            'Microsoft': /\b(microsoft|copilot|azure)\b/i
+        };
 
-        const words = title.toLowerCase()
-            .replace(/[^a-z0-9 ]/g, '')
-            .split(' ')
-            .filter(w => w.length > 2);
-
-        const tags = words.filter(w => aiKeywords.some(k => w.includes(k) || k.includes(w)));
-
-        // Add first few unique words as tags if no AI keywords found
-        if (tags.length === 0) {
-            return words.slice(0, 3);
+        const tags = [];
+        for (const [tag, pattern] of Object.entries(tagPatterns)) {
+            if (pattern.test(title)) {
+                tags.push(tag);
+            }
         }
 
-        return [...new Set(tags)].slice(0, 5);
+        // Limit to 4 most relevant tags
+        return tags.slice(0, 4);
     }
 
     extractSource(url) {

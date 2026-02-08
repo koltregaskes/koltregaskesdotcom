@@ -227,7 +227,7 @@ None currently! All Sprint 1 & 2 features are working as designed.
 
 ## 📞 Need Help?
 
-- **Setup Issues:** See [SETUP.md](SETUP.md)
+- **Setup Issues:** See [SETUP.md](Repos/_My%20Websites/notion-site-test/SETUP.md)
 - **Usage Questions:** See [USAGE.md](USAGE.md)
 - **Technical Details:** See [ARCHITECTURE.md](ARCHITECTURE.md)
 - **Troubleshooting:** See [TROUBLESHOOTING.md](TROUBLESHOOTING.md)

@@ -351,7 +351,7 @@ curl -X POST 'https://api.notion.com/v1/databases/YOUR_DB_ID/query' \
 
 ## Still Having Issues?
 
-1. Review [SETUP.md](SETUP.md) - Ensure initial setup correct
+1. Review [SETUP.md](Repos/_My%20Websites/notion-site-test/SETUP.md) - Ensure initial setup correct
 2. Check [ARCHITECTURE.md](ARCHITECTURE.md) - Understand how it works
 3. Review [USAGE.md](USAGE.md) - Confirm you're using correctly
 4. Check [CHANGELOG.md](CHANGELOG.md) - See if it's a known change
