@@ -520,26 +520,12 @@ class NewsApp {
     }
 
     displayArticles() {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
         const highlightOnlyEl = document.getElementById('highlightOnly');
         const highlightOnly = highlightOnlyEl ? highlightOnlyEl.checked : false;
         const groupByEl = document.getElementById('groupBy');
         const groupBy = groupByEl ? groupByEl.value : 'none';
         const favoriteArticles = this.filteredArticles.filter(a => this.favorites.has(a.title));
         const remainingArticles = this.filteredArticles.filter(a => !this.favorites.has(a.title));
-
-        const todaysArticles = remainingArticles.filter(article => {
-            const articleDate = new Date(article.date);
-            articleDate.setHours(0, 0, 0, 0);
-            return articleDate.getTime() === today.getTime();
-        });
-
-        const otherArticles = remainingArticles.filter(article => {
-            const articleDate = new Date(article.date);
-            articleDate.setHours(0, 0, 0, 0);
-            return articleDate.getTime() !== today.getTime();
-        });
 
         // Display highlighted favorites
         const favSection = document.getElementById('favoriteNews');
@@ -557,8 +543,10 @@ class NewsApp {
             }
         }
 
+        // Hide the legacy "Today's News" section - we now group by date dynamically
         const todaysSection = document.getElementById('todaysNews');
-        const todaysGrid = document.getElementById('todaysGrid');
+        if (todaysSection) todaysSection.style.display = 'none';
+
         const allSection = document.getElementById('allNews');
         const allGrid = document.getElementById('allGrid');
         const noResults = document.getElementById('noResults');
@@ -566,41 +554,46 @@ class NewsApp {
         if (highlightOnly) {
             if (favSection) favSection.style.display = favoriteArticles.length > 0 ? 'block' : 'none';
             if (allSection) allSection.style.display = 'none';
-            if (todaysSection) todaysSection.style.display = 'none';
-            if (favGrid) {
-                favGrid.innerHTML = '';
-                favoriteArticles.forEach(a => favGrid.appendChild(this.createArticleCard(a, false, true)));
-            }
             if (noResults) noResults.style.display = favoriteArticles.length ? 'none' : 'block';
             return;
         }
 
-        // Display today's news
-        if (todaysSection && todaysGrid) {
-            if (todaysArticles.length > 0) {
-                todaysSection.style.display = 'block';
-                todaysGrid.innerHTML = '';
-                todaysArticles.forEach(article => {
-                    todaysGrid.appendChild(this.createArticleCard(article, true));
-                });
-            } else {
-                todaysSection.style.display = 'none';
-            }
-        }
-
-        // Display all news
+        // Display articles - always grouped by date for clarity
         if (allSection && allGrid) {
-            if (otherArticles.length > 0 || todaysArticles.length === 0) {
+            if (remainingArticles.length > 0) {
                 allSection.style.display = 'block';
                 if (noResults) noResults.style.display = 'none';
-
                 allGrid.innerHTML = '';
 
-                const articlesToShow = todaysArticles.length === 0 ? remainingArticles : otherArticles;
+                // Helper to get relative date label
+                const getDateLabel = (dateString) => {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    const yesterday = new Date(today);
+                    yesterday.setDate(yesterday.getDate() - 1);
+
+                    // Parse the dateString back to compare
+                    const parts = dateString.match(/(\d+)\s+(\w+)\s+(\d+)/);
+                    if (parts) {
+                        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                        'July', 'August', 'September', 'October', 'November', 'December'];
+                        const day = parseInt(parts[1]);
+                        const month = months.indexOf(parts[2]);
+                        const year = parseInt(parts[3]);
+                        const articleDate = new Date(year, month, day);
+
+                        if (articleDate.getTime() === today.getTime()) {
+                            return 'Today';
+                        } else if (articleDate.getTime() === yesterday.getTime()) {
+                            return 'Yesterday';
+                        }
+                    }
+                    return dateString;
+                };
 
                 if (groupBy === 'source') {
                     const groups = {};
-                    articlesToShow.forEach(a => {
+                    remainingArticles.forEach(a => {
                         groups[a.source] = groups[a.source] || [];
                         groups[a.source].push(a);
                     });
@@ -614,25 +607,37 @@ class NewsApp {
                         groups[src].forEach(a => g.appendChild(this.createArticleCard(a, false)));
                         allGrid.appendChild(g);
                     });
-                } else if (groupBy === 'date') {
+                } else {
+                    // Default: Always group by date with relative labels
                     const groups = {};
-                    articlesToShow.forEach(a => {
+                    remainingArticles.forEach(a => {
                         groups[a.dateString] = groups[a.dateString] || [];
                         groups[a.dateString].push(a);
                     });
-                    Object.keys(groups).forEach(date => {
+
+                    // Sort dates newest first
+                    const sortedDates = Object.keys(groups).sort((a, b) => {
+                        const parseDate = (str) => {
+                            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                                            'July', 'August', 'September', 'October', 'November', 'December'];
+                            const parts = str.match(/(\d+)\s+(\w+)\s+(\d+)/);
+                            if (parts) {
+                                return new Date(parseInt(parts[3]), months.indexOf(parts[2]), parseInt(parts[1]));
+                            }
+                            return new Date(0);
+                        };
+                        return parseDate(b) - parseDate(a);
+                    });
+
+                    sortedDates.forEach(date => {
                         const h = document.createElement('h3');
                         h.className = 'group-title';
-                        h.textContent = date;
+                        h.textContent = getDateLabel(date);
                         allGrid.appendChild(h);
                         const g = document.createElement('div');
                         g.className = 'news-grid';
                         groups[date].forEach(a => g.appendChild(this.createArticleCard(a, false)));
                         allGrid.appendChild(g);
-                    });
-                } else {
-                    articlesToShow.forEach(article => {
-                        allGrid.appendChild(this.createArticleCard(article, false));
                     });
                 }
             } else {
