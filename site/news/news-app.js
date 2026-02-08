@@ -105,7 +105,7 @@ class NewsApp {
         });
 
         const articles = [];
-        let currentCategory = 'Top Stories';
+        let currentCategory = 'News';
 
         const lines = content.split('\n');
 
@@ -234,6 +234,11 @@ class NewsApp {
             if (pattern.test(title)) {
                 tags.push(tag);
             }
+        }
+
+        // Fallback tag if none matched - at least give it "news"
+        if (tags.length === 0) {
+            tags.push('news');
         }
 
         // Limit to 4 most relevant tags
