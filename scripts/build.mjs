@@ -239,7 +239,7 @@ function markdownToHtml(md) {
   html = html.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, noteName, displayText) => {
     const slug = noteName.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]/g, '').replace(/--+/g, '-');
     const linkText = displayText?.trim() || noteName.trim();
-    return `<a href="/notion-site-test/posts/${slug}/" class="wikilink">${linkText}</a>`;
+    return `<a href="/posts/${slug}/" class="wikilink">${linkText}</a>`;
   });
 
   // Step 6: Wrap remaining lines in paragraphs
@@ -310,7 +310,7 @@ function generateTOC(headings) {
 }
 
 // Reusable header/navigation HTML (blog-only navigation)
-function getHeaderHTML(basePath = '/notion-site-test/') {
+function getHeaderHTML(basePath = '/') {
   return `
   <header class="site-header">
     <div class="header-content">
@@ -414,7 +414,7 @@ async function copyMedia(srcPath, title, kind = 'image') {
     await fs.copyFile(srcPath, destPath);
     console.log(`  ↳ Copied: ${newFilename}`);
 
-    const mediaUrl = `/notion-site-test/media/${newFilename}`;
+    const mediaUrl = `/media/${newFilename}`;
     let thumbnailUrl = '';
 
     // Generate thumbnails for video/audio
@@ -423,14 +423,14 @@ async function copyMedia(srcPath, title, kind = 'image') {
       const thumbPath = path.join(destDir, thumbFilename);
       const success = await generateVideoThumbnail(destPath, thumbPath);
       if (success) {
-        thumbnailUrl = `/notion-site-test/media/${thumbFilename}`;
+        thumbnailUrl = `/media/${thumbFilename}`;
       }
     } else if (kind === 'music' && ['.mp3', '.wav', '.ogg', '.m4a'].includes(ext)) {
       const waveFilename = `${slugify(title)}-waveform.png`;
       const wavePath = path.join(destDir, waveFilename);
       const success = await generateAudioWaveform(destPath, wavePath);
       if (success) {
-        thumbnailUrl = `/notion-site-test/media/${waveFilename}`;
+        thumbnailUrl = `/media/${waveFilename}`;
       }
     } else if (kind === 'image') {
       thumbnailUrl = mediaUrl; // Images are their own thumbnails
@@ -498,14 +498,14 @@ async function readContentFiles() {
               const thumbPath = path.join(destDir, thumbFilename);
               const success = await generateVideoThumbnail(existingPath, thumbPath);
               if (success) {
-                thumbnailUrl = `/notion-site-test/media/${thumbFilename}`;
+                thumbnailUrl = `/media/${thumbFilename}`;
               }
             } else if (kind === 'music') {
               const waveFilename = `${slugify(title)}-waveform.png`;
               const wavePath = path.join(destDir, waveFilename);
               const success = await generateAudioWaveform(existingPath, wavePath);
               if (success) {
-                thumbnailUrl = `/notion-site-test/media/${waveFilename}`;
+                thumbnailUrl = `/media/${waveFilename}`;
               }
             }
           } catch {
@@ -604,7 +604,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/notion-site-test/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -620,11 +620,11 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="/notion-site-test/favicon.ico" />
-  <link rel="stylesheet" href="/notion-site-test/styles.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('/notion-site-test/')}
+  ${getHeaderHTML('/')}
 
   <div class="page-container">
     ${toc ? `<aside class="sidebar">
@@ -708,7 +708,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
     year: 'numeric'
   });
 
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/notion-site-test/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   // External link icon SVG
   const externalLinkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
@@ -727,11 +727,11 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="/notion-site-test/favicon.ico" />
-  <link rel="stylesheet" href="/notion-site-test/styles.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('/notion-site-test/')}
+  ${getHeaderHTML('/')}
 
   <main class="content-main">
     <article class="post">
