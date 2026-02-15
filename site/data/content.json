@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "title": "AI News Digest — 2026-02-15",
+      "slug": "ai-news-digest-2026-02-15",
+      "kind": "digest",
+      "summary": "xAI safety concerns, Hollywood pushback on Seedance 2.0, India's $1.1B AI fund, Airbnb AI features, Meta smart glasses facial recognition.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
+      "date": "2026-02-15",
+      "updatedTime": "2026-02-15"
+    },
+    {
       "title": "AI Can Now Predict Diseases From How You Sleep",
       "slug": "ai-can-now-predict-diseases-from-how-you-sleep",
       "kind": "article",
@@ -388,6 +406,60 @@
       "readingTime": 1,
       "date": "2026-02-11",
       "updatedTime": "2026-02-11"
+    },
+    {
+      "title": "AI News Digest — 2026-02-10",
+      "slug": "ai-news-digest-2026-02-10",
+      "kind": "digest",
+      "summary": "Retrospective digest capturing major AI developments from Feb 10. News gathering system initialized on Feb 11.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
+      "date": "2026-02-10",
+      "updatedTime": "2026-02-10"
+    },
+    {
+      "title": "AI News Digest — 2026-02-09",
+      "slug": "ai-news-digest-2026-02-09",
+      "kind": "digest",
+      "summary": "Retrospective digest capturing major AI developments from Feb 9. News gathering system initialized on Feb 11.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
+      "date": "2026-02-09",
+      "updatedTime": "2026-02-09"
+    },
+    {
+      "title": "AI News Digest — 2026-02-08",
+      "slug": "ai-news-digest-2026-02-08",
+      "kind": "digest",
+      "summary": "Retrospective digest capturing major AI developments from Feb 8. News gathering system initialized on Feb 11.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
+      "date": "2026-02-08",
+      "updatedTime": "2026-02-08"
     }
   ]
 }
