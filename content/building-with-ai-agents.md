@@ -4,7 +4,7 @@ kind: article
 date: 2026-01-01
 tags: [AI, agents, productivity, Claude, workflow]
 summary: How I set up a multi-AI workspace with Claude Code, Gemini CLI, and Codex CLI working together.
-publish: true
+publish: false
 ---
 
 # Building My AI Agent Workspace

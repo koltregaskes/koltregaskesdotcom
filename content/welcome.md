@@ -1,7 +1,7 @@
 ---
 title: Welcome to Kol's Korner
 kind: article
-date: 2026-01-01
+date: 2026-02-14
 tags: [welcome, intro, AI]
 summary: Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.
 publish: true
