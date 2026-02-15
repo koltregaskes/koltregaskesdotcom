@@ -1,3 +1,13 @@
+---
+title: AI News Digest — 2026-02-13
+kind: digest
+date: 2026-02-13
+tags: [ai, news, digest]
+summary: Daily roundup - Pinterest search claims, IBM hiring surge, Musk's Moonbase Alpha, Didero raises $30M, Anthropic's $30B Series G.
+publish: true
+image: daily-ai-news-feb13.png
+---
+
 # AI News Digest — 2026-02-13
 
 > Generated automatically by News Scout. 74 stories from 3 sources.

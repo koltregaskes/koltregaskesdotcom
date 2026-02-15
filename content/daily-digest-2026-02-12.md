@@ -1,3 +1,13 @@
+---
+title: AI News Digest — 2026-02-12
+kind: digest
+date: 2026-02-12
+tags: [ai, news, digest]
+summary: Daily roundup - xAI's interplanetary plans, Modal Labs raises at $2.5B valuation, OpenAI disbands alignment team, Uber Eats AI assistant.
+publish: true
+image: daily-ai-news-feb12.png
+---
+
 # AI News Digest — 2026-02-12
 
 > Generated automatically by News Scout. 73 stories from 3 sources.

@@ -1,3 +1,13 @@
+---
+title: AI News Digest — 2026-02-14
+kind: digest
+date: 2026-02-14
+tags: [ai, news, digest]
+summary: Daily roundup - Airbnb's AI features, xAI talent exodus, OpenAI removes sycophantic GPT-4o, Anthropic's Super Bowl success, Cohere IPO prep.
+publish: true
+image: daily-ai-news-feb14.png
+---
+
 # AI News Digest — 2026-02-14
 
 > Generated automatically by News Scout. 73 stories from 3 sources.

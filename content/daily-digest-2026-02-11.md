@@ -1,3 +1,13 @@
+---
+title: AI News Digest — 2026-02-11
+kind: digest
+date: 2026-02-11
+tags: [ai, news, digest]
+summary: Daily roundup of AI news - xAI founding team exits, Amazon's AI content marketplace, insurance AI deployments, and latest research.
+publish: true
+image: daily-ai-news-feb11.png
+---
+
 # AI News Digest — 2026-02-11
 
 *Combined morning + evening digest*
