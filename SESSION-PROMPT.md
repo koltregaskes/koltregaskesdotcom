@@ -18,7 +18,7 @@ Current status: Sprint 1 and 2 are complete (see CURRENT-STATUS.md for full deta
 
 The repo was just renamed from notion-site-test to koltregaskesdotcom. References to the old name exist throughout the codebase and documentation — these need updating.
 
-There is a detailed Gemini Deep Think prompt at W:\Agent Workspace 2\prompts\13-main-website-koltregaskes.md that covers the full architecture and planned improvements. No response has been generated for it yet.
+There is a detailed Gemini Deep Think prompt at docs/DEEP-THINK-PROMPT.md in this repo that covers the full architecture and planned improvements.
 
 Your tasks for this session, in priority order:
 
@@ -26,7 +26,7 @@ Your tasks for this session, in priority order:
 
 2. REVIEW THE DAILY DIGEST SYSTEM — Check the news-digests/ directory. Digests are being generated daily (latest is 21 Feb 2026). Verify the content quality and that the build picks them up correctly.
 
-3. HOMEPAGE REVIEW — The homepage design was inspired by justoffbyone.com but needs to be elevated beyond that. Review the current homepage and identify specific improvements. Read Prompt 13 for design direction.
+3. HOMEPAGE REVIEW — The homepage design was inspired by justoffbyone.com but needs to be elevated beyond that. Review the current homepage and identify specific improvements. Read docs/DEEP-THINK-PROMPT.md for design direction.
 
 4. CHECK BUILD AND DEPLOY — Run the build locally (node scripts/build.mjs) and verify the output. Check the GitHub Actions workflow is functioning.
 
