@@ -1,4 +1,4 @@
-# notion-site-test Action Plan
+# koltregaskesdotcom Action Plan
 
 **Created:** 2026-01-01
 **Priority:** HIGH - User's new homepage, 2026 AI predictions launch
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-The site at https://koltregaskes.github.io/notion-site-test/ has critical issues that prevent a proper launch:
+The site at https://koltregaskes.github.io/koltregaskesdotcom/ has critical issues that prevent a proper launch:
 
 1. **Broken images/videos** - All media shows broken image placeholders
 2. **Design mismatch** - Current 4-column grid doesn't match the desired minimal justoffbyone.com style
@@ -64,7 +64,7 @@ async function downloadAndSaveFile(url, filename) {
   const buffer = await response.arrayBuffer();
   const localPath = `site/media/${filename}`;
   await fs.writeFile(localPath, Buffer.from(buffer));
-  return `/notion-site-test/media/${filename}`;
+  return `/koltregaskesdotcom/media/${filename}`;
 }
 ```
 
@@ -230,7 +230,7 @@ async function downloadMedia(url, title) {
     await fs.writeFile(localPath, buffer);
 
     console.log(`✓ Downloaded: ${filename}`);
-    return `/notion-site-test/media/${filename}`;
+    return `/koltregaskesdotcom/media/${filename}`;
   } catch (error) {
     console.warn(`Error downloading ${url}:`, error.message);
     return '';
@@ -315,7 +315,7 @@ body {
 ## Resources
 
 - **Design inspiration:** https://justoffbyone.com/
-- **Current site:** https://koltregaskes.github.io/notion-site-test/
+- **Current site:** https://koltregaskes.github.io/koltregaskesdotcom/
 - **Notion API docs:** https://developers.notion.com/
 - **GitHub Actions:** Check `.github/workflows/` folder
 

@@ -6,14 +6,14 @@ const state = {
 };
 
 function getRepoBasePath() {
-  // Works for GitHub project pages like /notion-site-test/...
-  // and keeps working when you're on /notion-site-test/posts/slug/ too.
+  // Works for GitHub project pages like /koltregaskesdotcom/...
+  // and keeps working when you're on /koltregaskesdotcom/posts/slug/ too.
   const parts = window.location.pathname.split("/").filter(Boolean);
   return parts.length ? `/${parts[0]}/` : "/";
 }
 
 function joinBase(base, p) {
-  // base like "/notion-site-test/"
+  // base like "/koltregaskesdotcom/"
   // p like "/posts/slug/" or "posts/slug/"
   const clean = (p || "").replace(/^\//, "");
   return `${base}${clean}`;

@@ -487,7 +487,7 @@ async function readContentFiles() {
         // Check if it's already an absolute URL path (starts with /)
         if (frontmatter.url.startsWith('/')) {
           // It's an existing deployed path - check if file exists and generate thumbnail
-          const existingPath = path.join('site', frontmatter.url.replace(/^\/notion-site-test\//, ''));
+          const existingPath = path.join('site', frontmatter.url.replace(/^\/(koltregaskesdotcom|notion-site-test)\//, ''));
           try {
             await fs.access(existingPath);
             mediaUrl = frontmatter.url;
@@ -1287,7 +1287,7 @@ async function writeSubscribePage() {
 
 // Generate RSS feed
 async function writeRssFeed(items) {
-  const siteUrl = 'https://koltregaskes.github.io/notion-site-test';
+  const siteUrl = 'https://koltregaskes.github.io/koltregaskesdotcom';
   const articles = items
     .filter(item => item.kind === 'article')
     .sort((a, b) => new Date(b.date) - new Date(a.date))

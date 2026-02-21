@@ -97,10 +97,10 @@ The `scripts/build.mjs` file has significant code duplication:
 
 ### Local Testing
 ```bash
-cd "W:\Repos\_My Websites\notion-site-test"
+cd "W:\Repos\_My Websites\koltregaskesdotcom"
 node scripts/build.mjs
 cd site && npx http-server -p 8080
-# Visit: http://localhost:8080/notion-site-test/
+# Visit: http://localhost:8080/koltregaskesdotcom/
 ```
 
 ---

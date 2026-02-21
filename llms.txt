@@ -23,14 +23,14 @@ $env:NOTION_TOKEN="secret_your_token_here"
 $env:NOTION_DATABASE_ID="your_database_id_here"
 
 # Build the site
-cd "e:\My Drive\Coding\My Github\notion-site-test"
+cd "e:\My Drive\Coding\My Github\koltregaskesdotcom"
 node scripts/fetch-notion.mjs
 
 # Serve locally
 cd site
 npx http-server -p 8080
 
-# Visit: http://localhost:8080/notion-site-test/
+# Visit: http://localhost:8080/koltregaskesdotcom/
 ```
 
 ```bash
@@ -39,14 +39,14 @@ export NOTION_TOKEN="secret_your_token_here"
 export NOTION_DATABASE_ID="your_database_id_here"
 
 # Build the site
-cd notion-site-test
+cd koltregaskesdotcom
 node scripts/fetch-notion.mjs
 
 # Serve locally
 cd site
 npx http-server -p 8080
 
-# Visit: http://localhost:8080/notion-site-test/
+# Visit: http://localhost:8080/koltregaskesdotcom/
 ```
 
 ---
@@ -111,7 +111,7 @@ npx http-server -p 8080
 3. For each item, script generates appropriate HTML based on "Kind" property
 4. Security headers, navigation, and styling added to all pages
 5. Static files deployed to GitHub Pages
-6. Site is live at: https://koltregaskes.github.io/notion-site-test/
+6. Site is live at: https://koltregaskes.github.io/koltregaskesdotcom/
 
 **Data Flow:**
 ```
@@ -290,7 +290,7 @@ Never commit secrets to git. They're in .gitignore.
 1. Build locally: `node scripts/fetch-notion.mjs`
 2. Check for errors in console output
 3. Serve: `cd site && npx http-server -p 8080`
-4. Open: http://localhost:8080/notion-site-test/
+4. Open: http://localhost:8080/koltregaskesdotcom/
 5. Test:
    - Home page grid and filters work
    - Gallery modal navigation (prev/next, keyboard, mouse wheel)
@@ -343,7 +343,7 @@ For troubleshooting, see: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 4. Wait ~2 minutes for build to complete
 
 **Live Site:**
-https://koltregaskes.github.io/notion-site-test/
+https://koltregaskes.github.io/koltregaskesdotcom/
 
 ---
 
@@ -398,10 +398,10 @@ For complete roadmap, see: [TODO.md](TODO.md)
 
 ## Contact and Links
 
-- **Live Site:** https://koltregaskes.github.io/notion-site-test/
-- **GitHub Repo:** https://github.com/koltregaskes/notion-site-test
+- **Live Site:** https://koltregaskes.github.io/koltregaskesdotcom/
+- **GitHub Repo:** https://github.com/koltregaskes/koltregaskesdotcom
 - **Notion Integrations:** https://www.notion.so/my-integrations
-- **GitHub Actions:** https://github.com/koltregaskes/notion-site-test/actions
+- **GitHub Actions:** https://github.com/koltregaskes/koltregaskesdotcom/actions
 
 ---
 
