@@ -414,7 +414,7 @@ async function copyMedia(srcPath, title, kind = 'image') {
     await fs.copyFile(srcPath, destPath);
     console.log(`  ↳ Copied: ${newFilename}`);
 
-    const mediaUrl = `/media/${newFilename}`;
+    const mediaUrl = `./media/${newFilename}`;
     let thumbnailUrl = '';
 
     // Generate thumbnails for video/audio
@@ -423,14 +423,14 @@ async function copyMedia(srcPath, title, kind = 'image') {
       const thumbPath = path.join(destDir, thumbFilename);
       const success = await generateVideoThumbnail(destPath, thumbPath);
       if (success) {
-        thumbnailUrl = `/media/${thumbFilename}`;
+        thumbnailUrl = `./media/${thumbFilename}`;
       }
     } else if (kind === 'music' && ['.mp3', '.wav', '.ogg', '.m4a'].includes(ext)) {
       const waveFilename = `${slugify(title)}-waveform.png`;
       const wavePath = path.join(destDir, waveFilename);
       const success = await generateAudioWaveform(destPath, wavePath);
       if (success) {
-        thumbnailUrl = `/media/${waveFilename}`;
+        thumbnailUrl = `./media/${waveFilename}`;
       }
     } else if (kind === 'image') {
       thumbnailUrl = mediaUrl; // Images are their own thumbnails
@@ -498,14 +498,14 @@ async function readContentFiles() {
               const thumbPath = path.join(destDir, thumbFilename);
               const success = await generateVideoThumbnail(existingPath, thumbPath);
               if (success) {
-                thumbnailUrl = `/media/${thumbFilename}`;
+                thumbnailUrl = `./media/${thumbFilename}`;
               }
             } else if (kind === 'music') {
               const waveFilename = `${slugify(title)}-waveform.png`;
               const wavePath = path.join(destDir, waveFilename);
               const success = await generateAudioWaveform(existingPath, wavePath);
               if (success) {
-                thumbnailUrl = `/media/${waveFilename}`;
+                thumbnailUrl = `./media/${waveFilename}`;
               }
             }
           } catch {
