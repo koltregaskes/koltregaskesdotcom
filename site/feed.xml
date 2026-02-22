@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kol's Korner</title>
-    <link>https://koltregaskes.github.io/notion-site-test</link>
+    <link>https://koltregaskes.github.io/koltregaskesdotcom</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 22 Feb 2026 06:33:44 GMT</lastBuildDate>
-    <atom:link href="https://koltregaskes.github.io/notion-site-test/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sun, 22 Feb 2026 09:15:49 GMT</lastBuildDate>
+    <atom:link href="https://koltregaskes.github.io/koltregaskesdotcom/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
       <title>AI Can Now Predict Diseases From How You Sleep</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/ai-can-now-predict-diseases-from-how-you-sleep/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/ai-can-now-predict-diseases-from-how-you-sleep/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/ai-can-now-predict-diseases-from-how-you-sleep/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/ai-can-now-predict-diseases-from-how-you-sleep/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>New research shows AI can predict neurodegenerative diseases from sleep patterns - but the implications go beyond medical diagnosis.</description>
       <category>AI</category>
@@ -22,8 +22,8 @@
     </item>
     <item>
       <title>JPMorgan Drops $30 Billion on AI Infrastructure</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</description>
       <category>AI</category>
@@ -34,8 +34,8 @@
     </item>
     <item>
       <title>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</description>
       <category>AI</category>
@@ -46,8 +46,8 @@
     </item>
     <item>
       <title>Elon Musk Merges SpaceX and xAI Because Of Course He Does</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.</description>
       <category>AI</category>
@@ -58,8 +58,8 @@
     </item>
     <item>
       <title>Welcome to Kol&#039;s Korner</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/welcome-to-kols-korner/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/welcome-to-kols-korner/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.</description>
       <category>welcome</category>
@@ -68,8 +68,8 @@
     </item>
     <item>
       <title>California Just Told Grok to Stop Making Deepfake Porn</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/california-just-told-grok-to-stop-making-deepfake-porn/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/california-just-told-grok-to-stop-making-deepfake-porn/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/california-just-told-grok-to-stop-making-deepfake-porn/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/california-just-told-grok-to-stop-making-deepfake-porn/</guid>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <description>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</description>
       <category>AI</category>
@@ -81,8 +81,8 @@
     </item>
     <item>
       <title>AI&#039;s Efficiency Promise Has a Catch - You</title>
-      <link>https://koltregaskes.github.io/notion-site-test/posts/ais-efficiency-promise-has-a-catch-you/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/notion-site-test/posts/ais-efficiency-promise-has-a-catch-you/</guid>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/ais-efficiency-promise-has-a-catch-you/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/ais-efficiency-promise-has-a-catch-you/</guid>
       <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
       <description>AI makes work faster, but that speed comes with a hidden cost - you&#039;re expected to do more, not less.</description>
       <category>AI</category>

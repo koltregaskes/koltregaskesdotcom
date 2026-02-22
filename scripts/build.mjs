@@ -239,7 +239,7 @@ function markdownToHtml(md) {
   html = html.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, noteName, displayText) => {
     const slug = noteName.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]/g, '').replace(/--+/g, '-');
     const linkText = displayText?.trim() || noteName.trim();
-    return `<a href="/posts/${slug}/" class="wikilink">${linkText}</a>`;
+    return `<a href="../${slug}/" class="wikilink">${linkText}</a>`;
   });
 
   // Step 6: Wrap remaining lines in paragraphs
@@ -604,7 +604,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -620,11 +620,11 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('/')}
+  ${getHeaderHTML('../../')}
 
   <div class="page-container">
     ${toc ? `<aside class="sidebar">
@@ -708,7 +708,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
     year: 'numeric'
   });
 
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="/tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   // External link icon SVG
   const externalLinkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
@@ -727,11 +727,11 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('/')}
+  ${getHeaderHTML('../../')}
 
   <main class="content-main">
     <article class="post">
