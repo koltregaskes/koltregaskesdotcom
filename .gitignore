@@ -1,0 +1,14 @@
+# Environment variables (tokens, secrets)
+.env
+.env.local
+.env.*
+
+# Vercel CLI local config
+.vercel/
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
