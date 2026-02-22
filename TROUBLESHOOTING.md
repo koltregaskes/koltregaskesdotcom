@@ -145,11 +145,11 @@ Common issues and solutions for Kol's Korner.
 1. **Hard Refresh**: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
 
 2. **Check CSS Path**:
-   - Posts should load from: `/notion-site-test/styles.css`
+   - Posts should load from: `/koltregaskesdotcom/styles.css`
    - Home should load from: `./styles.css`
 
 3. **Verify File Exists**:
-   - Go to: `https://<username>.github.io/notion-site-test/styles.css`
+   - Go to: `https://<username>.github.io/koltregaskesdotcom/styles.css`
    - Should show CSS code, not 404
 
 4. **Check Browser Console**:
@@ -259,12 +259,12 @@ echo $env:NOTION_TOKEN  # Windows PS
 **Issue**: Paths are different locally vs GitHub Pages
 
 **Local URLs**:
-- `http://localhost:8080/notion-site-test/`
+- `http://localhost:8080/koltregaskesdotcom/`
 
 **If broken**:
 1. Check base path in HTML matches
 2. Serve from correct directory: `cd site && npx http-server`
-3. Access with full path including `/notion-site-test/`
+3. Access with full path including `/koltregaskesdotcom/`
 
 ### "Permission Denied" Errors
 
@@ -351,7 +351,7 @@ curl -X POST 'https://api.notion.com/v1/databases/YOUR_DB_ID/query' \
 
 ## Still Having Issues?
 
-1. Review [SETUP.md](Repos/_My%20Websites/notion-site-test/SETUP.md) - Ensure initial setup correct
+1. Review [SETUP.md](Repos/_My%20Websites/koltregaskesdotcom/SETUP.md) - Ensure initial setup correct
 2. Check [ARCHITECTURE.md](ARCHITECTURE.md) - Understand how it works
 3. Review [USAGE.md](USAGE.md) - Confirm you're using correctly
 4. Check [CHANGELOG.md](CHANGELOG.md) - See if it's a known change

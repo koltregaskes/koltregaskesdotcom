@@ -357,7 +357,7 @@ interface Author {
 | **Styling** | Tailwind CSS 4 | Utility-first, matches design system, fast iteration |
 | **CMS** | Notion API (existing) | Already set up with fetch-notion.mjs script |
 | **Hosting** | Cloudflare Pages | Free, global CDN, edge functions, analytics |
-| **Domain** | koltregaskes.com | Migrate from notion-site-test |
+| **Domain** | koltregaskes.com | Migrate from koltregaskesdotcom |
 | **Images** | Cloudflare Images or R2 | Automatic resizing, WebP/AVIF, lazy loading |
 | **Search** | Pagefind (static) | Zero-JS search, built at compile time |
 | **Analytics** | Cloudflare Web Analytics | Privacy-respecting, no cookie banner needed |
@@ -388,7 +388,7 @@ Automated via GitHub Actions on push + scheduled Notion sync (every 6 hours).
 
 ## 8. Migration Notes
 
-The current site (notion-site-test) already has:
+The current site (koltregaskesdotcom) already has:
 - ✅ Notion API integration
 - ✅ Content categories (articles, videos, images, music)
 - ✅ RSS feed

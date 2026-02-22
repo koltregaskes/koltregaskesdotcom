@@ -221,9 +221,9 @@ Loop continues...
    ```
 
 3. **Visit galleries:**
-   - Images: `http://localhost:8080/notion-site-test/images/`
-   - Videos: `http://localhost:8080/notion-site-test/videos/`
-   - Music: `http://localhost:8080/notion-site-test/music/`
+   - Images: `http://localhost:8080/koltregaskesdotcom/images/`
+   - Videos: `http://localhost:8080/koltregaskesdotcom/videos/`
+   - Music: `http://localhost:8080/koltregaskesdotcom/music/`
 
 ### What to Test
 

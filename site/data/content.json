@@ -10,8 +10,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-15.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-15.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-15.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-15.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -30,8 +30,8 @@
         "medical",
         "prediction"
       ],
-      "thumbnailUrl": "/media/ai-can-now-predict-diseases-from-how-you-sleep.png",
-      "driveUrl": "/media/ai-can-now-predict-diseases-from-how-you-sleep.png",
+      "thumbnailUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
+      "driveUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
       "contentHtml": "\n<h2 id=\"ai-can-now-predict-diseases-from-how-you-sleep\"><span class=\"hash\">#</span> AI Can Now Predict Diseases From How You Sleep</h2>\n\n<p>Researchers have developed AI models that can <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">predict neurodegenerative diseases</a> years before symptoms appear, just by analysing sleep patterns. Early detection for Parkinson's, Alzheimer's, and similar conditions. Potentially life-changing.</p>\n\n<p>Also potentially a privacy nightmare, depending on who has access to your sleep data.</p>\n\n<h3 id=\"how-it-works\"><span class=\"hash\">##</span> How It Works</h3>\n\n<p>Your sleep isn't just rest - it's diagnostic data. REM cycles, movement patterns, breathing irregularities, heart rate variability during different sleep stages. All of it changes subtly as neurodegenerative diseases develop, often years before conscious symptoms appear.</p>\n\n<p>AI models trained on thousands of sleep studies can spot these patterns. Feed them data from a smartwatch or sleep tracker, and they can flag early warning signs that human doctors would miss.</p>\n\n<p>The medical potential is real. Early intervention can slow disease progression. Catching Parkinson's five years earlier could meaningfully improve quality of life.</p>\n\n<h3 id=\"the-privacy-problem\"><span class=\"hash\">##</span> The Privacy Problem</h3>\n\n<p>Here's the issue: your sleep data reveals more than just disease risk.</p>\n\n<p>Sleep patterns correlate with mental health, stress levels, substance use, pregnancy, and dozens of other conditions. Feed that into an AI model, and you've got a remarkably complete health profile - without ever seeing a doctor.</p>\n\n<p>Now ask yourself: who owns that data?</p>\n\n<p>If it's your smartwatch company, they know. If they share it with insurers (which they will, given the right incentive structure), your premiums adjust before you even know you're at risk. If employers get access (and in the US, health insurance is often tied to employment), suddenly your job security depends on how well you sleep.</p>\n\n<p>This isn't hypothetical. We've seen this pattern before with genetic testing, fitness tracking, and mental health apps. Data that seems purely personal and medical ends up in corporate databases, getting used for risk assessment and pricing decisions.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>Medical AI like this will improve. The models will get better. The predictions more accurate. That's inevitable and probably net-positive for human health.</p>\n\n<p>But without robust data protection laws, we're building a system where your biology becomes legible to institutions that profit from knowing your risks before you do.</p>\n\n<p>The tech isn't the problem. The governance is.</p>\n\n<p>If you're using sleep trackers, fitness wearables, or any device that monitors biometric data, ask yourself: <em>who has access to this, and what are they allowed to do with it?</em></p>\n\n<p>Because the answer probably isn't \"just you and your doctor.\"</p>\n",
       "headings": [
         {
@@ -70,8 +70,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-14.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-14.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-14.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-14.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -90,8 +90,8 @@
         "infrastructure",
         "banking"
       ],
-      "thumbnailUrl": "/media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
-      "driveUrl": "/media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
+      "thumbnailUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
+      "driveUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
       "contentHtml": "\n<h2 id=\"jpmorgan-drops-30-billion-on-ai-infrastructure\"><span class=\"hash\">#</span> JPMorgan Drops $30 Billion on AI Infrastructure</h2>\n\n<p>JPMorgan has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">announced a $30 billion investment</a> in AI infrastructure over the next three years. That's not a typo. Thirty billion dollars. For context, that's roughly the GDP of Iceland.</p>\n\n<p>This isn't enthusiasm. This is existential necessity dressed up as innovation.</p>\n\n<h3 id=\"what-theyre-actually-buying\"><span class=\"hash\">##</span> What They're Actually Buying</h3>\n\n<p>The headline number is massive, but what's it actually funding?</p>\n\n<strong>Compute capacity.</strong> Lots of it. JPMorgan processes millions of transactions daily, monitors fraud in real-time, and manages risk across global markets. All of that now needs AI models running continuously. That means GPUs, data centres, and the power infrastructure to run them.\n\n<strong>Talent.</strong> You can't just buy servers and hope AI happens. They're hiring hundreds of ML engineers, data scientists, and AI researchers. These aren't cheap hires - top AI talent commands seven-figure compensation packages.\n\n<strong>Regulatory compliance infrastructure.</strong> Banks can't just deploy models and hope for the best. Every AI system needs audit trails, explainability frameworks, and fail-safes. Building that costs serious money.\n\n<h3 id=\"why-now\"><span class=\"hash\">##</span> Why Now?</h3>\n\n<p>Simple: because their competitors are doing it. This isn't innovation for innovation's sake. It's defensive.</p>\n\n<p>If Goldman Sachs can underwrite loans faster because they've got better credit risk models, JPMorgan loses market share. If Morgan Stanley automates wealth management advice and cuts fees, JPMorgan's private banking clients start looking elsewhere.</p>\n\n<p>AI in finance isn't about doing new things. It's about doing the same things faster, cheaper, and at larger scale than your competitors.</p>\n\n<h3 id=\"the-quiet-bit\"><span class=\"hash\">##</span> The Quiet Bit</h3>\n\n<p>Here's what the press release doesn't emphasise: most of this spending replaces human labour.</p>\n\n<p>\"AI-powered customer service\" means fewer call centre staff. \"Automated compliance monitoring\" means fewer analysts reviewing transactions. \"Algorithmic trading optimisation\" means fewer traders on the floor.</p>\n\n<p>JPMorgan employs over 250,000 people. They're not going to announce layoffs in the same breath as a $30B AI investment, but the math is straightforward. You don't spend that much on automation while planning to maintain headcount.</p>\n\n<h3 id=\"what-this-signals\"><span class=\"hash\">##</span> What This Signals</h3>\n\n<p>When a bank this large commits this much capital to AI infrastructure, it's not a bet - it's a certainty. They've run the numbers. They know AI integration is cheaper than the alternative (losing competitive position).</p>\n\n<p>This is the financial industry acknowledging that AI is now table stakes. Not a differentiator. Not optional. Just the cost of doing business.</p>\n\n<p>If you work in finance and your employer isn't making similar investments, start asking questions. Because the firms that do invest will eat the ones that don't.</p>\n",
       "headings": [
         {
@@ -137,8 +137,8 @@
         "space",
         "robotics"
       ],
-      "thumbnailUrl": "/media/nasas-mars-rover-just-got-smarter-than-its-engineers.png",
-      "driveUrl": "/media/nasas-mars-rover-just-got-smarter-than-its-engineers.png",
+      "thumbnailUrl": "./media/nasas-mars-rover-just-got-smarter-than-its-engineers.png",
+      "driveUrl": "./media/nasas-mars-rover-just-got-smarter-than-its-engineers.png",
       "contentHtml": "\n<h2 id=\"nasas-mars-rover-just-got-smarter-than-its-engineers\"><span class=\"hash\">#</span> NASA's Mars Rover Just Got Smarter Than Its Engineers</h2>\n\n<p>NASA's latest Mars rover has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">achieved autonomous navigation</a> using onboard AI. It can now plan routes, avoid obstacles, and make real-time decisions without waiting for commands from Earth.</p>\n\n<p>This is a bigger deal than it sounds.</p>\n\n<h3 id=\"the-light-speed-problem\"><span class=\"hash\">##</span> The Light-Speed Problem</h3>\n\n<p>Mars is far away. Depending on orbital positions, radio signals take between 4 and 24 minutes to travel between Earth and Mars. That means every command sent to a rover has a minimum 8-minute round-trip delay.</p>\n\n<p>If the rover encounters an unexpected obstacle, it can't just ask mission control what to do. By the time the question reaches Earth and the answer comes back, the rover could have driven off a cliff (or at minimum, wasted precious operational time sitting idle).</p>\n\n<p>Previous rovers dealt with this through extreme caution. Move slowly. Stop frequently. Send images back to Earth. Wait for human analysis. Proceed conservatively.</p>\n\n<p>It worked, but it was painfully slow.</p>\n\n<h3 id=\"the-ai-solution\"><span class=\"hash\">##</span> The AI Solution</h3>\n\n<p>The new system uses computer vision and pathfinding AI trained on Martian terrain data. The rover can:</p>\n\n<ul>\n<li>Identify obstacles (rocks, slopes, soft sand) in real-time</li>\n<li>Evaluate multiple route options and pick the safest path</li>\n<li>Assess risk and make go/no-go decisions autonomously</li>\n<li>Adjust plans based on what it encounters</li>\n</ul>\n\n<p>Humans still set high-level goals (\"investigate that crater\"), but the rover handles tactical execution itself.</p>\n\n<p>Result? Faster exploration, more ground covered, better science return per mission day.</p>\n\n<h3 id=\"why-this-matters-beyond-mars\"><span class=\"hash\">##</span> Why This Matters Beyond Mars</h3>\n\n<p>Autonomous navigation under communication constraints isn't just a Mars problem. It's relevant for:</p>\n\n<strong>Deep space missions.</strong> Once you get past Mars, communication delays get even worse. Missions to Jupiter or Saturn moons need full autonomy.\n\n<strong>Disaster response on Earth.</strong> When communication infrastructure is down (earthquakes, floods), autonomous systems that can operate without constant connectivity become valuable.\n\n<strong>Military applications.</strong> Obviously. Autonomous systems that don't need real-time human oversight are of considerable interest to defence sectors globally.\n\n<h3 id=\"the-trust-problem\"><span class=\"hash\">##</span> The Trust Problem</h3>\n\n<p>Here's the uncomfortable question: at what point does \"autonomous decision-making\" become \"we're not really in control anymore\"?</p>\n\n<p>NASA's rover operates in an environment where the stakes are relatively low. If it makes a bad call, you lose some science data and possibly a multi-billion-dollar robot. Not ideal, but not catastrophic.</p>\n\n<p>But the same AI principles - operate independently, make real-time decisions, adapt to unforeseen circumstances - scale to systems where mistakes have much higher costs.</p>\n\n<p>Self-driving cars. Autonomous weapons. Critical infrastructure management. We're building systems that are too fast and too complex for meaningful human oversight, and we're doing it because the alternative (slow, manual control) isn't competitive.</p>\n\n<p>The Mars rover is a proof of concept. The question isn't whether the tech works - it clearly does. The question is where else we deploy it, and what happens when it makes a decision we wouldn't have made.</p>\n",
       "headings": [
         {
@@ -184,8 +184,8 @@
         "Elon Musk",
         "Mars"
       ],
-      "thumbnailUrl": "/media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
-      "driveUrl": "/media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
+      "thumbnailUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
+      "driveUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
       "contentHtml": "\n<h2 id=\"elon-musk-merges-spacex-and-xai-because-of-course-he-does\"><span class=\"hash\">#</span> Elon Musk Merges SpaceX and xAI Because Of Course He Does</h2>\n\n<p>Elon Musk <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">has announced a merger</a> between SpaceX and xAI. The stated goal: embed Grok deeply into SpaceX operations to accelerate \"fully autonomous spacecraft and robotic Mars colonies.\"</p>\n\n<p>Right. Because the bottleneck on Mars colonisation was definitely the AI chatbot situation.</p>\n\n<h3 id=\"what-this-actually-means\"><span class=\"hash\">##</span> What This Actually Means</h3>\n\n<p>SpaceX already uses AI for various operational tasks. Adding xAI's models into the mix isn't revolutionary - it's just vertical integration within Musk's empire. The real story is what this says about where xAI fits in the broader portfolio.</p>\n\n<p>xAI has been the scrappy underdog in the foundation model race. Late to market, fewer resources than OpenAI or Anthropic, and mostly known for Grok's edgy personality rather than technical breakthroughs. Merging it into SpaceX gives it a captive enterprise customer and a narrative about \"real-world\" applications.</p>\n\n<p>It also conveniently shields xAI's financials inside SpaceX's balance sheet. Hard to scrutinise burn rate when it's all mixed in with rocket development costs.</p>\n\n<h3 id=\"the-mars-angle\"><span class=\"hash\">##</span> The Mars Angle</h3>\n\n<p>\"Robotic Mars colonies\" is doing a lot of work in that announcement. We're nowhere near that timeline. But it sounds visionary, and vision is half of Musk's brand. The other half is moving fast and breaking things, which is fine for software but less ideal when you're talking about spacecraft autonomy.</p>\n\n<p>There's a legitimate case for AI in space operations. Route planning, anomaly detection, real-time decision-making when Earth is 20 light-minutes away. But that's not what this merger is really about. This is about corporate structure and narrative control.</p>\n\n<h3 id=\"the-quiet-part\"><span class=\"hash\">##</span> The Quiet Part</h3>\n\n<p>If you wanted your AI company to avoid the regulatory scrutiny currently hammering the rest of the industry, embedding it inside an aerospace contractor is a clever move. Different agencies, different oversight frameworks, different public perception.</p>\n\n<p>SpaceX gets to say it's \"AI-powered\" now. xAI gets to say it's mission-critical for space exploration. And Musk gets to keep both narratives running without having to explain xAI's standalone business case.</p>\n\n<p>Efficient, if nothing else.</p>\n",
       "headings": [
         {
@@ -277,8 +277,8 @@
         "Grok",
         "California"
       ],
-      "thumbnailUrl": "/media/california-just-told-grok-to-stop-making-deepfake-porn.png",
-      "driveUrl": "/media/california-just-told-grok-to-stop-making-deepfake-porn.png",
+      "thumbnailUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
+      "driveUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
       "contentHtml": "\n<h2 id=\"california-just-told-grok-to-stop-making-deepfake-porn\"><span class=\"hash\">#</span> California Just Told Grok to Stop Making Deepfake Porn</h2>\n\n<p>California has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">passed legislation</a> banning AI-generated deepfake pornography, and xAI's Grok is the first major model explicitly called out for non-compliance.</p>\n\n<p>The law is straightforward: if your AI model can generate pornographic deepfakes of real people without their consent, you can't operate in California. Comply or face penalties.</p>\n\n<p>xAI now has 90 days to implement safeguards or face enforcement action.</p>\n\n<h3 id=\"why-grok\"><span class=\"hash\">##</span> Why Grok?</h3>\n\n<p>Most major AI companies already have guardrails against this. OpenAI, Anthropic, Google - they all block attempts to generate non-consensual sexual imagery. Their models refuse the request outright.</p>\n\n<p>Grok, positioned as the \"uncensored\" alternative, took a different approach. Fewer restrictions. More user freedom. Market yourself as the AI that doesn't lecture you about ethics.</p>\n\n<p>Turns out, that creates liability.</p>\n\n<p>California's law doesn't care about your brand positioning. If your model can generate deepfake porn, and you operate in California (or serve California users), you need to stop or leave.</p>\n\n<p>xAI can't really leave - California is too large a market. So they'll implement filters, like everyone else.</p>\n\n<h3 id=\"the-broader-pattern\"><span class=\"hash\">##</span> The Broader Pattern</h3>\n\n<p>This is the second time in six months that \"uncensored AI\" has run face-first into regulation. The first was Italy banning ChatGPT clones that had no age verification or content controls.</p>\n\n<p>There's a recurring assumption in AI circles that restrictions on model outputs are purely ideological - companies being overly cautious or performatively ethical.</p>\n\n<p>But the restrictions exist because <em>this exact scenario</em> keeps happening. Unrestricted models get used for harassment, fraud, and abuse. Legislators notice. Laws get written.</p>\n\n<p>The companies that built safeguards early aren't doing it out of altruism. They're doing it because they saw this coming.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>xAI will patch Grok to block deepfake porn generation. They'll probably complain loudly about censorship while doing it. The \"free speech\" branding will take a hit.</p>\n\n<p>But here's the thing: this was always coming. You can't build a consumer AI product in 2026 without content moderation. The regulatory environment won't allow it, and the reputational risk is too high.</p>\n\n<p>The era of \"move fast and break things\" is over. Now it's \"move fast, implement safeguards, and hope your compliance team can keep up with legislation.\"</p>\n\n<p>Grok learned this the hard way. The next wave of AI startups is watching and adjusting accordingly.</p>\n",
       "headings": [
         {
@@ -317,8 +317,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-13.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-13.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-13.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-13.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -336,8 +336,8 @@
         "burnout",
         "workplace"
       ],
-      "thumbnailUrl": "/media/ais-efficiency-promise-has-a-catch-you.png",
-      "driveUrl": "/media/ais-efficiency-promise-has-a-catch-you.png",
+      "thumbnailUrl": "./media/ais-efficiency-promise-has-a-catch-you.png",
+      "driveUrl": "./media/ais-efficiency-promise-has-a-catch-you.png",
       "contentHtml": "\n<h2 id=\"ais-efficiency-promise-has-a-catch-you\"><span class=\"hash\">#</span> AI's Efficiency Promise Has a Catch - You</h2>\n\n<p>AI makes work faster, but that speed comes with a hidden cost: you're expected to do more, not less.</p>\n\n<h3 id=\"the-productivity-paradox\"><span class=\"hash\">##</span> The Productivity Paradox</h3>\n\n<p>Every new AI tool promises the same thing: \"Work smarter, save time, focus on what matters.\" But here's what actually happens: you do complete tasks faster. Then your manager notices. Now you're expected to hit that pace permanently.</p>\n\n<p>The efficiency gains don't free up your time. They raise the baseline.</p>\n\n<p>This isn't new - it's the <a href=\"https://en.wikipedia.org/wiki/Jevons_paradox\">Jevons paradox</a> playing out in knowledge work. When you make something more efficient, you don't use less of it. You use more. Coal-fired engines didn't reduce coal consumption; they made coal so efficient that consumption exploded.</p>\n\n<p>AI does this to your capacity. You're the coal.</p>\n\n<h3 id=\"the-burnout-treadmill\"><span class=\"hash\">##</span> The Burnout Treadmill</h3>\n\n<p>When AI makes you 2x faster at writing emails, you don't write half as many emails. You write twice as many. Same with reports, analysis, presentations - anything that can be accelerated gets expanded to fill the time saved.</p>\n\n<p>The brutal bit? This feels like your fault. You're using the best tools. You're getting more done. Why do you feel exhausted?</p>\n\n<p>Because your output doubled, but your capacity didn't.</p>\n\n<h3 id=\"what-actually-helps\"><span class=\"hash\">##</span> What Actually Helps</h3>\n\n<p>If you want AI to improve your work life rather than just intensify it, you need boundaries:</p>\n\n<strong>Define \"done\" before you start.</strong> AI makes it trivially easy to add \"just one more thing\" to any deliverable. Set the scope up front and stop when you hit it.\n\n<strong>Track what you eliminate, not what you produce.</strong> The win isn't doing more. It's doing the same amount with less friction. Measure time saved, not tasks completed.\n\n<strong>Push back on scope creep.</strong> When someone says \"but with AI you can just...\", the answer is \"yes, and I've already allocated that capacity elsewhere.\" AI doesn't create infinite time.\n\n<strong>Use efficiency gains for recovery, not more work.</strong> If AI saves you two hours, spend one of them not working. Your brain needs processing time. Constant output without rest is how you burn out.\n\n<h3 id=\"the-long-game\"><span class=\"hash\">##</span> The Long Game</h3>\n\n<p>AI will keep getting faster. The pressure to do more will keep increasing. The only sustainable path is to decouple your value from your velocity.</p>\n\n<p>Your worth isn't how much you produce in a sprint. It's the judgment, creativity, and context you bring to what you do produce. Those don't scale linearly with tools.</p>\n\n<p>If your role is purely about speed and volume, AI will eventually do it better than you. The people who thrive aren't the ones doing more - they're the ones deciding what's worth doing at all.</p>\n\n<p>That's the skill to invest in.</p>\n",
       "headings": [
         {
@@ -381,8 +381,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-12.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-12.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-12.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-12.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -399,8 +399,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-11.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-11.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-11.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-11.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -417,8 +417,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-10.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-10.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-10.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-10.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -435,8 +435,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-09.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-09.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-09.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-09.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,
@@ -453,8 +453,8 @@
         "news",
         "digest"
       ],
-      "thumbnailUrl": "/media/ai-news-digest-2026-02-08.png",
-      "driveUrl": "/media/ai-news-digest-2026-02-08.png",
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-08.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-08.png",
       "contentHtml": "",
       "headings": [],
       "readingTime": 1,

@@ -104,7 +104,7 @@ These headers make your site more secure against:
    npx http-server -p 8080
    ```
 
-4. Visit: `http://localhost:8080/notion-site-test/`
+4. Visit: `http://localhost:8080/koltregaskesdotcom/`
 
 ### What to Test
 

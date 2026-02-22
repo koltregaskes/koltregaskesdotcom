@@ -1,6 +1,6 @@
 # Kol's Korner - Personal Blog
 
-**Live:** https://koltregaskes.github.io/notion-site-test/
+**Live:** https://koltregaskes.github.io/koltregaskesdotcom/
 **Stack:** Custom Node.js static site generator, GitHub Pages
 
 ## Build & Deploy
@@ -26,10 +26,11 @@ git push origin main       # Deploys via GitHub Actions
 
 ## Content
 
-- Blog posts only (no galleries)
-- Navigation: Posts, Tags, About, Newsletter
+- Blog posts and daily news digests
+- Navigation: Posts, News, Tags, About, Newsletter
 - Frontmatter: title, date, tags, summary, image, publish
 - Posts with `publish: false` are excluded from build
+- News digests generated daily into `news-digests/` directory
 
 ## Conventions
 

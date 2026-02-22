@@ -2,7 +2,7 @@
 
 Personal website built from Obsidian markdown files, deployed to GitHub Pages.
 
-**Live site:** https://koltregaskes.github.io/notion-site-test/
+**Live site:** https://koltregaskes.github.io/koltregaskesdotcom/
 
 ## Features
 
@@ -50,7 +50,7 @@ cd site
 npx http-server -p 8080
 ```
 
-Visit: http://localhost:8080/notion-site-test/
+Visit: http://localhost:8080/koltregaskesdotcom/
 
 ### 3. Deploy
 
@@ -89,7 +89,7 @@ publish: true             # Set false to hide
 ## Folder Structure
 
 ```
-notion-site-test/
+koltregaskesdotcom/
   content/              # Your markdown content
     welcome.md
     images/             # Images for posts
@@ -134,7 +134,7 @@ node scripts/build.mjs
 # Serve locally
 cd site && npx http-server -p 8080
 
-# Visit http://localhost:8080/notion-site-test/
+# Visit http://localhost:8080/koltregaskesdotcom/
 ```
 
 ### Customisation

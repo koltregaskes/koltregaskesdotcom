@@ -12,7 +12,7 @@ Your Notion-powered static site is fully operational with modern features!
 
 ### ✅ Core Functionality
 - **Notion CMS Integration** - Write content in Notion, auto-publishes to site
-- **GitHub Pages Hosting** - Live at [https://koltregaskes.github.io/notion-site-test/](https://koltregaskes.github.io/notion-site-test/)
+- **GitHub Pages Hosting** - Live at [https://koltregaskes.github.io/koltregaskesdotcom/](https://koltregaskes.github.io/koltregaskesdotcom/)
 - **Automatic Deployment** - Rebuilds every hour at :17 minutes via GitHub Actions
 - **Multiple Content Types** - Articles, Images, Videos, Music all supported
 
@@ -131,7 +131,7 @@ Your Notion-powered static site is fully operational with modern features!
    - Or manually trigger in GitHub Actions
 
 4. **Check your live site:**
-   - Visit: [https://koltregaskes.github.io/notion-site-test/](https://koltregaskes.github.io/notion-site-test/)
+   - Visit: [https://koltregaskes.github.io/koltregaskesdotcom/](https://koltregaskes.github.io/koltregaskesdotcom/)
 
 ### Testing Locally
 
@@ -147,7 +147,7 @@ node scripts/fetch-notion.mjs
 cd site
 npx http-server -p 8080
 
-# Visit: http://localhost:8080/notion-site-test/
+# Visit: http://localhost:8080/koltregaskesdotcom/
 ```
 
 ---
@@ -227,7 +227,7 @@ None currently! All Sprint 1 & 2 features are working as designed.
 
 ## 📞 Need Help?
 
-- **Setup Issues:** See [SETUP.md](Repos/_My%20Websites/notion-site-test/SETUP.md)
+- **Setup Issues:** See [SETUP.md](Repos/_My%20Websites/koltregaskesdotcom/SETUP.md)
 - **Usage Questions:** See [USAGE.md](USAGE.md)
 - **Technical Details:** See [ARCHITECTURE.md](ARCHITECTURE.md)
 - **Troubleshooting:** See [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
@@ -236,9 +236,9 @@ None currently! All Sprint 1 & 2 features are working as designed.
 
 ## 🎯 Quick Links
 
-- **Live Site:** [https://koltregaskes.github.io/notion-site-test/](https://koltregaskes.github.io/notion-site-test/)
-- **GitHub Repo:** [https://github.com/koltregaskes/notion-site-test](https://github.com/koltregaskes/notion-site-test)
-- **GitHub Actions:** [View Workflows](https://github.com/koltregaskes/notion-site-test/actions)
+- **Live Site:** [https://koltregaskes.github.io/koltregaskesdotcom/](https://koltregaskes.github.io/koltregaskesdotcom/)
+- **GitHub Repo:** [https://github.com/koltregaskes/koltregaskesdotcom](https://github.com/koltregaskes/koltregaskesdotcom)
+- **GitHub Actions:** [View Workflows](https://github.com/koltregaskes/koltregaskesdotcom/actions)
 - **Notion Integrations:** [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
 
 ---

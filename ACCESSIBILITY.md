@@ -262,13 +262,13 @@ Use semantic HTML first, ARIA second. Only add ARIA when HTML alone isn't clear 
    npm install -g pa11y
 
    # Run against live site
-   pa11y https://koltregaskes.github.io/notion-site-test/
+   pa11y https://koltregaskes.github.io/koltregaskesdotcom/
 
    # Or local build
-   cd "e:\My Drive\Coding\My Github\notion-site-test\site"
+   cd "e:\My Drive\Coding\My Github\koltregaskesdotcom\site"
    npx http-server -p 8080
    # In another terminal:
-   pa11y http://localhost:8080/notion-site-test/
+   pa11y http://localhost:8080/koltregaskesdotcom/
    ```
 
 **How Often to Test:**
