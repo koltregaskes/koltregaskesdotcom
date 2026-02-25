@@ -1,8 +1,8 @@
 {
-  "name": "notion-gh-pages-test",
+  "name": "koltregaskesdotcom",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/fetch-notion.mjs"
+    "build": "node scripts/build.mjs"
   }
 }

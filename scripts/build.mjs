@@ -68,6 +68,30 @@ const slugify = (s) =>
     .replace(/^-+|-+$/g, "")
     .slice(0, 80) || "untitled";
 
+// Deterministic colour index (1-8) for a tag name
+function tagColorIndex(tag) {
+  let hash = 0;
+  for (const ch of tag) hash = ((hash << 5) - hash + ch.charCodeAt(0)) | 0;
+  return (Math.abs(hash) % 8) + 1;
+}
+
+// IntersectionObserver script for fade-in-up entrance animations
+function getAnimationScript() {
+  return `
+    // Entrance animations
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
+    }`;
+}
+
 function escapeHtml(s) {
   return (s || "")
     .replaceAll("&", "&amp;")
@@ -604,7 +628,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -708,7 +732,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
     year: 'numeric'
   });
 
-  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
 
   // External link icon SVG
   const externalLinkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
@@ -819,7 +843,7 @@ async function writeHomePage(items) {
         const hasImage = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
         return `
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="${linkUrl}" class="content-card-link">
               ${hasImage ? `
                 <div class="content-card-media">
@@ -865,6 +889,8 @@ async function writeHomePage(items) {
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    ${getAnimationScript()}
   </script>
 </body>
 </html>`;
@@ -898,7 +924,7 @@ async function writePostsPage(items) {
     <div class="posts-list">
       ${articles.map(item => {
         return `
-          <article class="post-item">
+          <article class="post-item fade-in-up">
             <a href="./${item.slug}/" class="post-link">
               <h3 class="post-item-title">${escapeHtml(item.title)}</h3>
               <p class="post-item-summary">${escapeHtml(item.summary || "")}</p>
@@ -927,6 +953,8 @@ async function writePostsPage(items) {
     });
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    ${getAnimationScript()}
   </script>
 </body>
 </html>`;

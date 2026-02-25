@@ -59,7 +59,7 @@
     <!-- Article Grid -->
     <div class="content-grid" id="contentGrid">
       
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/ai-can-now-predict-diseases-from-how-you-sleep/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -80,7 +80,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/jpmorgan-drops-30-billion-on-ai-infrastructure/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -101,7 +101,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -122,7 +122,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -143,7 +143,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/welcome-to-kols-korner/" class="content-card-link">
               
                 <div class="content-card-media placeholder">
@@ -164,7 +164,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -185,7 +185,7 @@
             </a>
           </article>
         
-          <article class="content-card">
+          <article class="content-card fade-in-up">
             <a href="./posts/ais-efficiency-promise-has-a-catch-you/" class="content-card-link">
               
                 <div class="content-card-media">
@@ -276,6 +276,20 @@
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    
+    // Entrance animations
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
+    }
   </script>
 </body>
 </html>
