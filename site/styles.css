@@ -2029,6 +2029,7 @@ del {
   padding: var(--space-24);
   background: var(--color-secondary);
   border: 1px solid var(--color-border);
+  text-align: center;
   border-radius: var(--radius-lg);
 }
 
@@ -2133,7 +2134,7 @@ del {
 
 .about-hero {
   text-align: center;
-  margin-bottom: var(--space-48);
+  margin-bottom: 4rem;
 }
 
 .about-avatar {

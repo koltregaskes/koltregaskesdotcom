@@ -1,53 +1,86 @@
 {
   "items": [
     {
-      "title": "AI News Digest — 2026-02-15",
-      "slug": "ai-news-digest-2026-02-15",
-      "kind": "digest",
-      "summary": "xAI safety concerns, Hollywood pushback on Seedance 2.0, India's $1.1B AI fund, Airbnb AI features, Meta smart glasses facial recognition.",
-      "tags": [
-        "ai",
-        "news",
-        "digest"
-      ],
-      "thumbnailUrl": "./media/ai-news-digest-2026-02-15.png",
-      "driveUrl": "./media/ai-news-digest-2026-02-15.png",
-      "contentHtml": "",
-      "headings": [],
-      "readingTime": 1,
-      "date": "2026-02-15",
-      "updatedTime": "2026-02-15"
-    },
-    {
-      "title": "AI Can Now Predict Diseases From How You Sleep",
-      "slug": "ai-can-now-predict-diseases-from-how-you-sleep",
+      "title": "Welcome to Kol's Korner",
+      "slug": "welcome-to-kols-korner",
       "kind": "article",
-      "summary": "New research shows AI can predict neurodegenerative diseases from sleep patterns - but the implications go beyond medical diagnosis.",
+      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
       "tags": [
-        "AI",
-        "health",
-        "sleep",
-        "medical",
-        "prediction"
+        "welcome",
+        "intro",
+        "AI"
       ],
-      "thumbnailUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
-      "driveUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
-      "contentHtml": "\n<h2 id=\"ai-can-now-predict-diseases-from-how-you-sleep\"><span class=\"hash\">#</span> AI Can Now Predict Diseases From How You Sleep</h2>\n\n<p>Researchers have developed AI models that can <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">predict neurodegenerative diseases</a> years before symptoms appear, just by analysing sleep patterns. Early detection for Parkinson's, Alzheimer's, and similar conditions. Potentially life-changing.</p>\n\n<p>Also potentially a privacy nightmare, depending on who has access to your sleep data.</p>\n\n<h3 id=\"how-it-works\"><span class=\"hash\">##</span> How It Works</h3>\n\n<p>Your sleep isn't just rest - it's diagnostic data. REM cycles, movement patterns, breathing irregularities, heart rate variability during different sleep stages. All of it changes subtly as neurodegenerative diseases develop, often years before conscious symptoms appear.</p>\n\n<p>AI models trained on thousands of sleep studies can spot these patterns. Feed them data from a smartwatch or sleep tracker, and they can flag early warning signs that human doctors would miss.</p>\n\n<p>The medical potential is real. Early intervention can slow disease progression. Catching Parkinson's five years earlier could meaningfully improve quality of life.</p>\n\n<h3 id=\"the-privacy-problem\"><span class=\"hash\">##</span> The Privacy Problem</h3>\n\n<p>Here's the issue: your sleep data reveals more than just disease risk.</p>\n\n<p>Sleep patterns correlate with mental health, stress levels, substance use, pregnancy, and dozens of other conditions. Feed that into an AI model, and you've got a remarkably complete health profile - without ever seeing a doctor.</p>\n\n<p>Now ask yourself: who owns that data?</p>\n\n<p>If it's your smartwatch company, they know. If they share it with insurers (which they will, given the right incentive structure), your premiums adjust before you even know you're at risk. If employers get access (and in the US, health insurance is often tied to employment), suddenly your job security depends on how well you sleep.</p>\n\n<p>This isn't hypothetical. We've seen this pattern before with genetic testing, fitness tracking, and mental health apps. Data that seems purely personal and medical ends up in corporate databases, getting used for risk assessment and pricing decisions.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>Medical AI like this will improve. The models will get better. The predictions more accurate. That's inevitable and probably net-positive for human health.</p>\n\n<p>But without robust data protection laws, we're building a system where your biology becomes legible to institutions that profit from knowing your risks before you do.</p>\n\n<p>The tech isn't the problem. The governance is.</p>\n\n<p>If you're using sleep trackers, fitness wearables, or any device that monitors biometric data, ask yourself: <em>who has access to this, and what are they allowed to do with it?</em></p>\n\n<p>Because the answer probably isn't \"just you and your doctor.\"</p>\n",
+      "thumbnailUrl": "./media/welcome-to-kols-korner.png",
+      "driveUrl": "./media/welcome-to-kols-korner.png",
+      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
       "headings": [
         {
           "level": 2,
-          "id": "ai-can-now-predict-diseases-from-how-you-sleep",
-          "text": "AI Can Now Predict Diseases From How You Sleep"
+          "id": "welcome-to-kols-korner",
+          "text": "Welcome to Kol's Korner"
         },
         {
           "level": 3,
-          "id": "how-it-works",
-          "text": "How It Works"
+          "id": "what-youll-find-here",
+          "text": "What You'll Find Here"
         },
         {
           "level": 3,
-          "id": "the-privacy-problem",
-          "text": "The Privacy Problem"
+          "id": "why-this-site-exists",
+          "text": "Why This Site Exists"
+        },
+        {
+          "level": 3,
+          "id": "about-the-author",
+          "text": "About the Author"
+        },
+        {
+          "level": 3,
+          "id": "whats-coming",
+          "text": "What's Coming"
+        },
+        {
+          "level": 3,
+          "id": "stay-updated",
+          "text": "Stay Updated"
+        }
+      ],
+      "readingTime": 2,
+      "date": "2026-02-28",
+      "updatedTime": "2026-02-28",
+      "localPath": "/posts/welcome-to-kols-korner/"
+    },
+    {
+      "title": "California Just Told Grok to Stop Making Deepfake Porn",
+      "slug": "california-just-told-grok-to-stop-making-deepfake-porn",
+      "kind": "article",
+      "summary": "California's new law targets AI-generated deepfake pornography - and xAI's Grok is the first major model caught in the crosshairs.",
+      "tags": [
+        "AI",
+        "deepfakes",
+        "regulation",
+        "xAI",
+        "Grok",
+        "California"
+      ],
+      "thumbnailUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
+      "driveUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
+      "contentHtml": "\n<h2 id=\"california-just-told-grok-to-stop-making-deepfake-porn\"><span class=\"hash\">#</span> California Just Told Grok to Stop Making Deepfake Porn</h2>\n\n<p>California has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">passed legislation</a> banning AI-generated deepfake pornography, and xAI's Grok is the first major model explicitly called out for non-compliance.</p>\n\n<p>The law is straightforward: if your AI model can generate pornographic deepfakes of real people without their consent, you can't operate in California. Comply or face penalties.</p>\n\n<p>xAI now has 90 days to implement safeguards or face enforcement action.</p>\n\n<h3 id=\"why-grok\"><span class=\"hash\">##</span> Why Grok?</h3>\n\n<p>Most major AI companies already have guardrails against this. OpenAI, Anthropic, Google - they all block attempts to generate non-consensual sexual imagery. Their models refuse the request outright.</p>\n\n<p>Grok, positioned as the \"uncensored\" alternative, took a different approach. Fewer restrictions. More user freedom. Market yourself as the AI that doesn't lecture you about ethics.</p>\n\n<p>Turns out, that creates liability.</p>\n\n<p>California's law doesn't care about your brand positioning. If your model can generate deepfake porn, and you operate in California (or serve California users), you need to stop or leave.</p>\n\n<p>xAI can't really leave - California is too large a market. So they'll implement filters, like everyone else.</p>\n\n<h3 id=\"the-broader-pattern\"><span class=\"hash\">##</span> The Broader Pattern</h3>\n\n<p>This is the second time in six months that \"uncensored AI\" has run face-first into regulation. The first was Italy banning ChatGPT clones that had no age verification or content controls.</p>\n\n<p>There's a recurring assumption in AI circles that restrictions on model outputs are purely ideological - companies being overly cautious or performatively ethical.</p>\n\n<p>But the restrictions exist because <em>this exact scenario</em> keeps happening. Unrestricted models get used for harassment, fraud, and abuse. Legislators notice. Laws get written.</p>\n\n<p>The companies that built safeguards early aren't doing it out of altruism. They're doing it because they saw this coming.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>xAI will patch Grok to block deepfake porn generation. They'll probably complain loudly about censorship while doing it. The \"free speech\" branding will take a hit.</p>\n\n<p>But here's the thing: this was always coming. You can't build a consumer AI product in 2026 without content moderation. The regulatory environment won't allow it, and the reputational risk is too high.</p>\n\n<p>The era of \"move fast and break things\" is over. Now it's \"move fast, implement safeguards, and hope your compliance team can keep up with legislation.\"</p>\n\n<p>Grok learned this the hard way. The next wave of AI startups is watching and adjusting accordingly.</p>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "california-just-told-grok-to-stop-making-deepfake-porn",
+          "text": "California Just Told Grok to Stop Making Deepfake Porn"
+        },
+        {
+          "level": 3,
+          "id": "why-grok",
+          "text": "Why Grok?"
+        },
+        {
+          "level": 3,
+          "id": "the-broader-pattern",
+          "text": "The Broader Pattern"
         },
         {
           "level": 3,
@@ -55,75 +88,52 @@
           "text": "What Happens Next"
         }
       ],
-      "readingTime": 3,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
-      "localPath": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/"
+      "readingTime": 2,
+      "date": "2026-02-24",
+      "updatedTime": "2026-02-24",
+      "localPath": "/posts/california-just-told-grok-to-stop-making-deepfake-porn/"
     },
     {
-      "title": "AI News Digest — 2026-02-14",
-      "slug": "ai-news-digest-2026-02-14",
-      "kind": "digest",
-      "summary": "Daily roundup - Airbnb's AI features, xAI talent exodus, OpenAI removes sycophantic GPT-4o, Anthropic's Super Bowl success, Cohere IPO prep.",
-      "tags": [
-        "ai",
-        "news",
-        "digest"
-      ],
-      "thumbnailUrl": "./media/ai-news-digest-2026-02-14.png",
-      "driveUrl": "./media/ai-news-digest-2026-02-14.png",
-      "contentHtml": "",
-      "headings": [],
-      "readingTime": 1,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14"
-    },
-    {
-      "title": "JPMorgan Drops $30 Billion on AI Infrastructure",
-      "slug": "jpmorgan-drops-30-billion-on-ai-infrastructure",
+      "title": "Elon Musk Merges SpaceX and xAI Because Of Course He Does",
+      "slug": "elon-musk-merges-spacex-and-xai-because-of-course-he-does",
       "kind": "article",
-      "summary": "JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.",
+      "summary": "Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.",
       "tags": [
         "AI",
-        "finance",
-        "JPMorgan",
-        "infrastructure",
-        "banking"
+        "SpaceX",
+        "xAI",
+        "Elon Musk",
+        "Mars"
       ],
-      "thumbnailUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
-      "driveUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
-      "contentHtml": "\n<h2 id=\"jpmorgan-drops-30-billion-on-ai-infrastructure\"><span class=\"hash\">#</span> JPMorgan Drops $30 Billion on AI Infrastructure</h2>\n\n<p>JPMorgan has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">announced a $30 billion investment</a> in AI infrastructure over the next three years. That's not a typo. Thirty billion dollars. For context, that's roughly the GDP of Iceland.</p>\n\n<p>This isn't enthusiasm. This is existential necessity dressed up as innovation.</p>\n\n<h3 id=\"what-theyre-actually-buying\"><span class=\"hash\">##</span> What They're Actually Buying</h3>\n\n<p>The headline number is massive, but what's it actually funding?</p>\n\n<strong>Compute capacity.</strong> Lots of it. JPMorgan processes millions of transactions daily, monitors fraud in real-time, and manages risk across global markets. All of that now needs AI models running continuously. That means GPUs, data centres, and the power infrastructure to run them.\n\n<strong>Talent.</strong> You can't just buy servers and hope AI happens. They're hiring hundreds of ML engineers, data scientists, and AI researchers. These aren't cheap hires - top AI talent commands seven-figure compensation packages.\n\n<strong>Regulatory compliance infrastructure.</strong> Banks can't just deploy models and hope for the best. Every AI system needs audit trails, explainability frameworks, and fail-safes. Building that costs serious money.\n\n<h3 id=\"why-now\"><span class=\"hash\">##</span> Why Now?</h3>\n\n<p>Simple: because their competitors are doing it. This isn't innovation for innovation's sake. It's defensive.</p>\n\n<p>If Goldman Sachs can underwrite loans faster because they've got better credit risk models, JPMorgan loses market share. If Morgan Stanley automates wealth management advice and cuts fees, JPMorgan's private banking clients start looking elsewhere.</p>\n\n<p>AI in finance isn't about doing new things. It's about doing the same things faster, cheaper, and at larger scale than your competitors.</p>\n\n<h3 id=\"the-quiet-bit\"><span class=\"hash\">##</span> The Quiet Bit</h3>\n\n<p>Here's what the press release doesn't emphasise: most of this spending replaces human labour.</p>\n\n<p>\"AI-powered customer service\" means fewer call centre staff. \"Automated compliance monitoring\" means fewer analysts reviewing transactions. \"Algorithmic trading optimisation\" means fewer traders on the floor.</p>\n\n<p>JPMorgan employs over 250,000 people. They're not going to announce layoffs in the same breath as a $30B AI investment, but the math is straightforward. You don't spend that much on automation while planning to maintain headcount.</p>\n\n<h3 id=\"what-this-signals\"><span class=\"hash\">##</span> What This Signals</h3>\n\n<p>When a bank this large commits this much capital to AI infrastructure, it's not a bet - it's a certainty. They've run the numbers. They know AI integration is cheaper than the alternative (losing competitive position).</p>\n\n<p>This is the financial industry acknowledging that AI is now table stakes. Not a differentiator. Not optional. Just the cost of doing business.</p>\n\n<p>If you work in finance and your employer isn't making similar investments, start asking questions. Because the firms that do invest will eat the ones that don't.</p>\n",
+      "thumbnailUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
+      "driveUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
+      "contentHtml": "\n<h2 id=\"elon-musk-merges-spacex-and-xai-because-of-course-he-does\"><span class=\"hash\">#</span> Elon Musk Merges SpaceX and xAI Because Of Course He Does</h2>\n\n<p>Elon Musk <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">has announced a merger</a> between SpaceX and xAI. The stated goal: embed Grok deeply into SpaceX operations to accelerate \"fully autonomous spacecraft and robotic Mars colonies.\"</p>\n\n<p>Right. Because the bottleneck on Mars colonisation was definitely the AI chatbot situation.</p>\n\n<h3 id=\"what-this-actually-means\"><span class=\"hash\">##</span> What This Actually Means</h3>\n\n<p>SpaceX already uses AI for various operational tasks. Adding xAI's models into the mix isn't revolutionary - it's just vertical integration within Musk's empire. The real story is what this says about where xAI fits in the broader portfolio.</p>\n\n<p>xAI has been the scrappy underdog in the foundation model race. Late to market, fewer resources than OpenAI or Anthropic, and mostly known for Grok's edgy personality rather than technical breakthroughs. Merging it into SpaceX gives it a captive enterprise customer and a narrative about \"real-world\" applications.</p>\n\n<p>It also conveniently shields xAI's financials inside SpaceX's balance sheet. Hard to scrutinise burn rate when it's all mixed in with rocket development costs.</p>\n\n<h3 id=\"the-mars-angle\"><span class=\"hash\">##</span> The Mars Angle</h3>\n\n<p>\"Robotic Mars colonies\" is doing a lot of work in that announcement. We're nowhere near that timeline. But it sounds visionary, and vision is half of Musk's brand. The other half is moving fast and breaking things, which is fine for software but less ideal when you're talking about spacecraft autonomy.</p>\n\n<p>There's a legitimate case for AI in space operations. Route planning, anomaly detection, real-time decision-making when Earth is 20 light-minutes away. But that's not what this merger is really about. This is about corporate structure and narrative control.</p>\n\n<h3 id=\"the-quiet-part\"><span class=\"hash\">##</span> The Quiet Part</h3>\n\n<p>If you wanted your AI company to avoid the regulatory scrutiny currently hammering the rest of the industry, embedding it inside an aerospace contractor is a clever move. Different agencies, different oversight frameworks, different public perception.</p>\n\n<p>SpaceX gets to say it's \"AI-powered\" now. xAI gets to say it's mission-critical for space exploration. And Musk gets to keep both narratives running without having to explain xAI's standalone business case.</p>\n\n<p>Efficient, if nothing else.</p>\n",
       "headings": [
         {
           "level": 2,
-          "id": "jpmorgan-drops-30-billion-on-ai-infrastructure",
-          "text": "JPMorgan Drops $30 Billion on AI Infrastructure"
+          "id": "elon-musk-merges-spacex-and-xai-because-of-course-he-does",
+          "text": "Elon Musk Merges SpaceX and xAI Because Of Course He Does"
         },
         {
           "level": 3,
-          "id": "what-theyre-actually-buying",
-          "text": "What They're Actually Buying"
+          "id": "what-this-actually-means",
+          "text": "What This Actually Means"
         },
         {
           "level": 3,
-          "id": "why-now",
-          "text": "Why Now?"
+          "id": "the-mars-angle",
+          "text": "The Mars Angle"
         },
         {
           "level": 3,
-          "id": "the-quiet-bit",
-          "text": "The Quiet Bit"
-        },
-        {
-          "level": 3,
-          "id": "what-this-signals",
-          "text": "What This Signals"
+          "id": "the-quiet-part",
+          "text": "The Quiet Part"
         }
       ],
-      "readingTime": 3,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
-      "localPath": "/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/"
+      "readingTime": 2,
+      "date": "2026-02-22",
+      "updatedTime": "2026-02-22",
+      "localPath": "/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/"
     },
     {
       "title": "NASA's Mars Rover Just Got Smarter Than Its Engineers",
@@ -168,133 +178,87 @@
         }
       ],
       "readingTime": 3,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
+      "date": "2026-02-20",
+      "updatedTime": "2026-02-20",
       "localPath": "/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/"
     },
     {
-      "title": "Elon Musk Merges SpaceX and xAI Because Of Course He Does",
-      "slug": "elon-musk-merges-spacex-and-xai-because-of-course-he-does",
+      "title": "JPMorgan Drops $30 Billion on AI Infrastructure",
+      "slug": "jpmorgan-drops-30-billion-on-ai-infrastructure",
       "kind": "article",
-      "summary": "Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.",
+      "summary": "JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.",
       "tags": [
         "AI",
-        "SpaceX",
-        "xAI",
-        "Elon Musk",
-        "Mars"
+        "finance",
+        "JPMorgan",
+        "infrastructure",
+        "banking"
       ],
-      "thumbnailUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
-      "driveUrl": "./media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
-      "contentHtml": "\n<h2 id=\"elon-musk-merges-spacex-and-xai-because-of-course-he-does\"><span class=\"hash\">#</span> Elon Musk Merges SpaceX and xAI Because Of Course He Does</h2>\n\n<p>Elon Musk <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">has announced a merger</a> between SpaceX and xAI. The stated goal: embed Grok deeply into SpaceX operations to accelerate \"fully autonomous spacecraft and robotic Mars colonies.\"</p>\n\n<p>Right. Because the bottleneck on Mars colonisation was definitely the AI chatbot situation.</p>\n\n<h3 id=\"what-this-actually-means\"><span class=\"hash\">##</span> What This Actually Means</h3>\n\n<p>SpaceX already uses AI for various operational tasks. Adding xAI's models into the mix isn't revolutionary - it's just vertical integration within Musk's empire. The real story is what this says about where xAI fits in the broader portfolio.</p>\n\n<p>xAI has been the scrappy underdog in the foundation model race. Late to market, fewer resources than OpenAI or Anthropic, and mostly known for Grok's edgy personality rather than technical breakthroughs. Merging it into SpaceX gives it a captive enterprise customer and a narrative about \"real-world\" applications.</p>\n\n<p>It also conveniently shields xAI's financials inside SpaceX's balance sheet. Hard to scrutinise burn rate when it's all mixed in with rocket development costs.</p>\n\n<h3 id=\"the-mars-angle\"><span class=\"hash\">##</span> The Mars Angle</h3>\n\n<p>\"Robotic Mars colonies\" is doing a lot of work in that announcement. We're nowhere near that timeline. But it sounds visionary, and vision is half of Musk's brand. The other half is moving fast and breaking things, which is fine for software but less ideal when you're talking about spacecraft autonomy.</p>\n\n<p>There's a legitimate case for AI in space operations. Route planning, anomaly detection, real-time decision-making when Earth is 20 light-minutes away. But that's not what this merger is really about. This is about corporate structure and narrative control.</p>\n\n<h3 id=\"the-quiet-part\"><span class=\"hash\">##</span> The Quiet Part</h3>\n\n<p>If you wanted your AI company to avoid the regulatory scrutiny currently hammering the rest of the industry, embedding it inside an aerospace contractor is a clever move. Different agencies, different oversight frameworks, different public perception.</p>\n\n<p>SpaceX gets to say it's \"AI-powered\" now. xAI gets to say it's mission-critical for space exploration. And Musk gets to keep both narratives running without having to explain xAI's standalone business case.</p>\n\n<p>Efficient, if nothing else.</p>\n",
+      "thumbnailUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
+      "driveUrl": "./media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
+      "contentHtml": "\n<h2 id=\"jpmorgan-drops-30-billion-on-ai-infrastructure\"><span class=\"hash\">#</span> JPMorgan Drops $30 Billion on AI Infrastructure</h2>\n\n<p>JPMorgan has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">announced a $30 billion investment</a> in AI infrastructure over the next three years. That's not a typo. Thirty billion dollars. For context, that's roughly the GDP of Iceland.</p>\n\n<p>This isn't enthusiasm. This is existential necessity dressed up as innovation.</p>\n\n<h3 id=\"what-theyre-actually-buying\"><span class=\"hash\">##</span> What They're Actually Buying</h3>\n\n<p>The headline number is massive, but what's it actually funding?</p>\n\n<strong>Compute capacity.</strong> Lots of it. JPMorgan processes millions of transactions daily, monitors fraud in real-time, and manages risk across global markets. All of that now needs AI models running continuously. That means GPUs, data centres, and the power infrastructure to run them.\n\n<strong>Talent.</strong> You can't just buy servers and hope AI happens. They're hiring hundreds of ML engineers, data scientists, and AI researchers. These aren't cheap hires - top AI talent commands seven-figure compensation packages.\n\n<strong>Regulatory compliance infrastructure.</strong> Banks can't just deploy models and hope for the best. Every AI system needs audit trails, explainability frameworks, and fail-safes. Building that costs serious money.\n\n<h3 id=\"why-now\"><span class=\"hash\">##</span> Why Now?</h3>\n\n<p>Simple: because their competitors are doing it. This isn't innovation for innovation's sake. It's defensive.</p>\n\n<p>If Goldman Sachs can underwrite loans faster because they've got better credit risk models, JPMorgan loses market share. If Morgan Stanley automates wealth management advice and cuts fees, JPMorgan's private banking clients start looking elsewhere.</p>\n\n<p>AI in finance isn't about doing new things. It's about doing the same things faster, cheaper, and at larger scale than your competitors.</p>\n\n<h3 id=\"the-quiet-bit\"><span class=\"hash\">##</span> The Quiet Bit</h3>\n\n<p>Here's what the press release doesn't emphasise: most of this spending replaces human labour.</p>\n\n<p>\"AI-powered customer service\" means fewer call centre staff. \"Automated compliance monitoring\" means fewer analysts reviewing transactions. \"Algorithmic trading optimisation\" means fewer traders on the floor.</p>\n\n<p>JPMorgan employs over 250,000 people. They're not going to announce layoffs in the same breath as a $30B AI investment, but the math is straightforward. You don't spend that much on automation while planning to maintain headcount.</p>\n\n<h3 id=\"what-this-signals\"><span class=\"hash\">##</span> What This Signals</h3>\n\n<p>When a bank this large commits this much capital to AI infrastructure, it's not a bet - it's a certainty. They've run the numbers. They know AI integration is cheaper than the alternative (losing competitive position).</p>\n\n<p>This is the financial industry acknowledging that AI is now table stakes. Not a differentiator. Not optional. Just the cost of doing business.</p>\n\n<p>If you work in finance and your employer isn't making similar investments, start asking questions. Because the firms that do invest will eat the ones that don't.</p>\n",
       "headings": [
         {
           "level": 2,
-          "id": "elon-musk-merges-spacex-and-xai-because-of-course-he-does",
-          "text": "Elon Musk Merges SpaceX and xAI Because Of Course He Does"
+          "id": "jpmorgan-drops-30-billion-on-ai-infrastructure",
+          "text": "JPMorgan Drops $30 Billion on AI Infrastructure"
         },
         {
           "level": 3,
-          "id": "what-this-actually-means",
-          "text": "What This Actually Means"
+          "id": "what-theyre-actually-buying",
+          "text": "What They're Actually Buying"
         },
         {
           "level": 3,
-          "id": "the-mars-angle",
-          "text": "The Mars Angle"
+          "id": "why-now",
+          "text": "Why Now?"
         },
         {
           "level": 3,
-          "id": "the-quiet-part",
-          "text": "The Quiet Part"
+          "id": "the-quiet-bit",
+          "text": "The Quiet Bit"
+        },
+        {
+          "level": 3,
+          "id": "what-this-signals",
+          "text": "What This Signals"
         }
       ],
-      "readingTime": 2,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
-      "localPath": "/posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/"
+      "readingTime": 3,
+      "date": "2026-02-18",
+      "updatedTime": "2026-02-18",
+      "localPath": "/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/"
     },
     {
-      "title": "Welcome to Kol's Korner",
-      "slug": "welcome-to-kols-korner",
+      "title": "AI Can Now Predict Diseases From How You Sleep",
+      "slug": "ai-can-now-predict-diseases-from-how-you-sleep",
       "kind": "article",
-      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
-      "tags": [
-        "welcome",
-        "intro",
-        "AI"
-      ],
-      "thumbnailUrl": "",
-      "driveUrl": "",
-      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
-      "headings": [
-        {
-          "level": 2,
-          "id": "welcome-to-kols-korner",
-          "text": "Welcome to Kol's Korner"
-        },
-        {
-          "level": 3,
-          "id": "what-youll-find-here",
-          "text": "What You'll Find Here"
-        },
-        {
-          "level": 3,
-          "id": "why-this-site-exists",
-          "text": "Why This Site Exists"
-        },
-        {
-          "level": 3,
-          "id": "about-the-author",
-          "text": "About the Author"
-        },
-        {
-          "level": 3,
-          "id": "whats-coming",
-          "text": "What's Coming"
-        },
-        {
-          "level": 3,
-          "id": "stay-updated",
-          "text": "Stay Updated"
-        }
-      ],
-      "readingTime": 2,
-      "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
-      "localPath": "/posts/welcome-to-kols-korner/"
-    },
-    {
-      "title": "California Just Told Grok to Stop Making Deepfake Porn",
-      "slug": "california-just-told-grok-to-stop-making-deepfake-porn",
-      "kind": "article",
-      "summary": "California's new law targets AI-generated deepfake pornography - and xAI's Grok is the first major model caught in the crosshairs.",
+      "summary": "New research shows AI can predict neurodegenerative diseases from sleep patterns - but the implications go beyond medical diagnosis.",
       "tags": [
         "AI",
-        "deepfakes",
-        "regulation",
-        "xAI",
-        "Grok",
-        "California"
+        "health",
+        "sleep",
+        "medical",
+        "prediction"
       ],
-      "thumbnailUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
-      "driveUrl": "./media/california-just-told-grok-to-stop-making-deepfake-porn.png",
-      "contentHtml": "\n<h2 id=\"california-just-told-grok-to-stop-making-deepfake-porn\"><span class=\"hash\">#</span> California Just Told Grok to Stop Making Deepfake Porn</h2>\n\n<p>California has <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">passed legislation</a> banning AI-generated deepfake pornography, and xAI's Grok is the first major model explicitly called out for non-compliance.</p>\n\n<p>The law is straightforward: if your AI model can generate pornographic deepfakes of real people without their consent, you can't operate in California. Comply or face penalties.</p>\n\n<p>xAI now has 90 days to implement safeguards or face enforcement action.</p>\n\n<h3 id=\"why-grok\"><span class=\"hash\">##</span> Why Grok?</h3>\n\n<p>Most major AI companies already have guardrails against this. OpenAI, Anthropic, Google - they all block attempts to generate non-consensual sexual imagery. Their models refuse the request outright.</p>\n\n<p>Grok, positioned as the \"uncensored\" alternative, took a different approach. Fewer restrictions. More user freedom. Market yourself as the AI that doesn't lecture you about ethics.</p>\n\n<p>Turns out, that creates liability.</p>\n\n<p>California's law doesn't care about your brand positioning. If your model can generate deepfake porn, and you operate in California (or serve California users), you need to stop or leave.</p>\n\n<p>xAI can't really leave - California is too large a market. So they'll implement filters, like everyone else.</p>\n\n<h3 id=\"the-broader-pattern\"><span class=\"hash\">##</span> The Broader Pattern</h3>\n\n<p>This is the second time in six months that \"uncensored AI\" has run face-first into regulation. The first was Italy banning ChatGPT clones that had no age verification or content controls.</p>\n\n<p>There's a recurring assumption in AI circles that restrictions on model outputs are purely ideological - companies being overly cautious or performatively ethical.</p>\n\n<p>But the restrictions exist because <em>this exact scenario</em> keeps happening. Unrestricted models get used for harassment, fraud, and abuse. Legislators notice. Laws get written.</p>\n\n<p>The companies that built safeguards early aren't doing it out of altruism. They're doing it because they saw this coming.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>xAI will patch Grok to block deepfake porn generation. They'll probably complain loudly about censorship while doing it. The \"free speech\" branding will take a hit.</p>\n\n<p>But here's the thing: this was always coming. You can't build a consumer AI product in 2026 without content moderation. The regulatory environment won't allow it, and the reputational risk is too high.</p>\n\n<p>The era of \"move fast and break things\" is over. Now it's \"move fast, implement safeguards, and hope your compliance team can keep up with legislation.\"</p>\n\n<p>Grok learned this the hard way. The next wave of AI startups is watching and adjusting accordingly.</p>\n",
+      "thumbnailUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
+      "driveUrl": "./media/ai-can-now-predict-diseases-from-how-you-sleep.png",
+      "contentHtml": "\n<h2 id=\"ai-can-now-predict-diseases-from-how-you-sleep\"><span class=\"hash\">#</span> AI Can Now Predict Diseases From How You Sleep</h2>\n\n<p>Researchers have developed AI models that can <a href=\"https://www.crescendo.ai/news/latest-ai-news-and-updates\">predict neurodegenerative diseases</a> years before symptoms appear, just by analysing sleep patterns. Early detection for Parkinson's, Alzheimer's, and similar conditions. Potentially life-changing.</p>\n\n<p>Also potentially a privacy nightmare, depending on who has access to your sleep data.</p>\n\n<h3 id=\"how-it-works\"><span class=\"hash\">##</span> How It Works</h3>\n\n<p>Your sleep isn't just rest - it's diagnostic data. REM cycles, movement patterns, breathing irregularities, heart rate variability during different sleep stages. All of it changes subtly as neurodegenerative diseases develop, often years before conscious symptoms appear.</p>\n\n<p>AI models trained on thousands of sleep studies can spot these patterns. Feed them data from a smartwatch or sleep tracker, and they can flag early warning signs that human doctors would miss.</p>\n\n<p>The medical potential is real. Early intervention can slow disease progression. Catching Parkinson's five years earlier could meaningfully improve quality of life.</p>\n\n<h3 id=\"the-privacy-problem\"><span class=\"hash\">##</span> The Privacy Problem</h3>\n\n<p>Here's the issue: your sleep data reveals more than just disease risk.</p>\n\n<p>Sleep patterns correlate with mental health, stress levels, substance use, pregnancy, and dozens of other conditions. Feed that into an AI model, and you've got a remarkably complete health profile - without ever seeing a doctor.</p>\n\n<p>Now ask yourself: who owns that data?</p>\n\n<p>If it's your smartwatch company, they know. If they share it with insurers (which they will, given the right incentive structure), your premiums adjust before you even know you're at risk. If employers get access (and in the US, health insurance is often tied to employment), suddenly your job security depends on how well you sleep.</p>\n\n<p>This isn't hypothetical. We've seen this pattern before with genetic testing, fitness tracking, and mental health apps. Data that seems purely personal and medical ends up in corporate databases, getting used for risk assessment and pricing decisions.</p>\n\n<h3 id=\"what-happens-next\"><span class=\"hash\">##</span> What Happens Next</h3>\n\n<p>Medical AI like this will improve. The models will get better. The predictions more accurate. That's inevitable and probably net-positive for human health.</p>\n\n<p>But without robust data protection laws, we're building a system where your biology becomes legible to institutions that profit from knowing your risks before you do.</p>\n\n<p>The tech isn't the problem. The governance is.</p>\n\n<p>If you're using sleep trackers, fitness wearables, or any device that monitors biometric data, ask yourself: <em>who has access to this, and what are they allowed to do with it?</em></p>\n\n<p>Because the answer probably isn't \"just you and your doctor.\"</p>\n",
       "headings": [
         {
           "level": 2,
-          "id": "california-just-told-grok-to-stop-making-deepfake-porn",
-          "text": "California Just Told Grok to Stop Making Deepfake Porn"
+          "id": "ai-can-now-predict-diseases-from-how-you-sleep",
+          "text": "AI Can Now Predict Diseases From How You Sleep"
         },
         {
           "level": 3,
-          "id": "why-grok",
-          "text": "Why Grok?"
+          "id": "how-it-works",
+          "text": "How It Works"
         },
         {
           "level": 3,
-          "id": "the-broader-pattern",
-          "text": "The Broader Pattern"
+          "id": "the-privacy-problem",
+          "text": "The Privacy Problem"
         },
         {
           "level": 3,
@@ -302,10 +266,46 @@
           "text": "What Happens Next"
         }
       ],
-      "readingTime": 2,
+      "readingTime": 3,
+      "date": "2026-02-16",
+      "updatedTime": "2026-02-16",
+      "localPath": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/"
+    },
+    {
+      "title": "AI News Digest — 2026-02-15",
+      "slug": "ai-news-digest-2026-02-15",
+      "kind": "digest",
+      "summary": "xAI safety concerns, Hollywood pushback on Seedance 2.0, India's $1.1B AI fund, Airbnb AI features, Meta smart glasses facial recognition.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-15.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-15.png",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
+      "date": "2026-02-15",
+      "updatedTime": "2026-02-15"
+    },
+    {
+      "title": "AI News Digest — 2026-02-14",
+      "slug": "ai-news-digest-2026-02-14",
+      "kind": "digest",
+      "summary": "Daily roundup - Airbnb's AI features, xAI talent exodus, OpenAI removes sycophantic GPT-4o, Anthropic's Super Bowl success, Cohere IPO prep.",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "./media/ai-news-digest-2026-02-14.png",
+      "driveUrl": "./media/ai-news-digest-2026-02-14.png",
+      "contentHtml": "",
+      "headings": [],
+      "readingTime": 1,
       "date": "2026-02-14",
-      "updatedTime": "2026-02-14",
-      "localPath": "/posts/california-just-told-grok-to-stop-making-deepfake-porn/"
+      "updatedTime": "2026-02-14"
     },
     {
       "title": "AI News Digest — 2026-02-13",

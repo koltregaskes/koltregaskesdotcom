@@ -1170,21 +1170,21 @@ async function writeAboutPage() {
     <!-- Hero Section -->
     <div class="about-hero">
       <div class="about-avatar">
-        <div class="about-avatar-placeholder">K</div>
+        <img src="../media/kol-profile.png" alt="Kol Tregaskes" width="120" height="120" />
       </div>
       <h1 class="page-title">Kol Tregaskes</h1>
-      <p class="about-intro">I'm a <strong>technology enthusiast</strong> and <strong>AI explorer</strong> based in the UK. I write about AI agents, creative tools, and the intersection of technology and daily life. This is my corner of the internet for sharing thoughts, experiments, and discoveries.</p>
+      <p class="about-intro">Technology writer, <strong>AI sceptic</strong> (the useful kind), and builder of systems that probably shouldn't work but somehow do. I write about AI because most AI writing is either uncritical hype or uninformed panic. This site is neither &mdash; it's clear analysis from someone who actually uses the technology daily and knows where it breaks.</p>
     </div>
 
     <!-- Content Sections -->
     <div class="about-sections">
       <section class="about-section">
-        <h2><span class="hash">#</span> What I'm Working On</h2>
+        <h2><span class="hash">#</span> What I Do</h2>
         <ul>
-          <li>Building AI agent workflows with Claude Code, Gemini, and other tools</li>
-          <li>Experimenting with multi-agent orchestration</li>
-          <li>Creating automated content pipelines</li>
-          <li>Exploring the future of human-AI collaboration</li>
+          <li>Run production multi-agent systems with Claude Code, Gemini, and other AI tools</li>
+          <li>Write daily AI news analysis and deep dives on industry developments</li>
+          <li>Build workflow automation that combines AI with real-world constraints</li>
+          <li>Track what works, what's oversold, and what's genuinely worth paying attention to</li>
         </ul>
       </section>
 
@@ -1267,7 +1267,7 @@ async function writeSubscribePage() {
     <div class="subscribe-form-card">
       <h2>Subscribe to the Newsletter</h2>
       <p class="coming-soon-badge" style="background: #ff6b35; color: white; padding: 8px 16px; border-radius: 4px; display: inline-block; margin-bottom: 16px; font-weight: 600;">Coming Soon</p>
-      <p style="color: var(--text-muted); margin-bottom: 24px;">Newsletter functionality is currently being set up. Check back soon for AI news and analysis delivered to your inbox.</p>
+      <p style="color: var(--color-text-secondary); margin-bottom: 24px; text-align: center;">Newsletter functionality is currently being set up. Check back soon for AI news and analysis delivered to your inbox.</p>
       <form
         action="https://buttondown.email/api/emails/embed-subscribe/koltregaskes"
         method="post"

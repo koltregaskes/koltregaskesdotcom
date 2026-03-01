@@ -1,7 +1,7 @@
 ---
 title: AI Can Now Predict Diseases From How You Sleep
 kind: article
-date: 2026-02-14
+date: 2026-02-16
 tags: [AI, health, sleep, medical, prediction]
 summary: New research shows AI can predict neurodegenerative diseases from sleep patterns - but the implications go beyond medical diagnosis.
 publish: true
