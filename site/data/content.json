@@ -1,206 +1,6 @@
 {
   "items": [
     {
-      "title": "Daily Digest: Monday, 2 March 2026",
-      "slug": "daily-digest-monday-2-march-2026",
-      "kind": "article",
-      "summary": "AI and technology news digest for Monday, 2 March 2026",
-      "tags": [
-        "ai",
-        "news",
-        "digest"
-      ],
-      "thumbnailUrl": "",
-      "driveUrl": "",
-      "contentHtml": "\n<h2 id=\"daily-digest-monday-2-march-2026\"><span class=\"hash\">#</span> Daily Digest: Monday, 2 March 2026</h2>\n\n<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>\n\n<h3 id=\"top-stories\"><span class=\"hash\">##</span> Top Stories</h3>\n\n<h4 id=\"google-looks-to-tackle-longstanding-rcs-spam-in-india-but-not-alone\"><span class=\"hash\">###</span> Google looks to tackle longstanding RCS spam in India — but not alone</h4>\n\n<p>Google is integrating carrier-level filtering into RCS in India through a partnership with Airtel to strengthen protections against spam.</p>\n\n<a href=\"https://techcrunch.com/2026/03/01/google-looks-to-tackle-longstanding-rcs-spam-in-india-but-not-alone/\">Read more</a>\n\n<hr />\n\n<h4 id=\"openai-reveals-more-details-about-its-agreement-with-the-pentagon\"><span class=\"hash\">###</span> OpenAI reveals more details about its agreement with the Pentagon</h4>\n\n<p>By CEO Sam Altman’s own admission, OpenAI’s deal with the Department of Defense was “definitely rushed,” and “the optics don’t look good.”</p>\n\n<a href=\"https://techcrunch.com/2026/03/01/openai-shares-more-details-about-its-agreement-with-the-pentagon/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-s-claude-rises-to-no-1-in-the-app-store-following-pentagon-dispute\"><span class=\"hash\">###</span> Anthropic’s Claude rises to No. 1 in the App Store following Pentagon dispute</h4>\n\n<p>Anthropic’s chatbot Claude seems to have benefited from the attention around the company’s fraught negotiations with the Pentagon.</p>\n\n<a href=\"https://techcrunch.com/2026/03/01/anthropics-claude-rises-to-no-2-in-the-app-store-following-pentagon-dispute/\">Read more</a>\n\n<hr />\n\n<h4 id=\"saas-in-saas-out-heres-whats-driving-the-saaspocalypse\"><span class=\"hash\">###</span> SaaS in, SaaS out: Here's what's driving the SaaSpocalypse</h4>\n\n<p>What's behind the SaaSpocalypse? It simply seems a new supreme has risen.</p>\n\n<a href=\"https://techcrunch.com/2026/03/01/saas-in-saas-out-heres-whats-driving-the-saaspocalypse/\">Read more</a>\n\n<hr />\n\n<h4 id=\"the-billion-dollar-infrastructure-deals-powering-the-ai-boom\"><span class=\"hash\">###</span> The billion-dollar infrastructure deals powering the AI boom</h4>\n\n<p>Here's everything we know about the biggest AI infrastructure projects, including major spending from Meta, Oracle, Microsoft, Google, and OpenAI.</p>\n\n<a href=\"https://techcrunch.com/2026/02/28/billion-dollar-infrastructure-deals-ai-boom-data-centers-openai-oracle-nvidia-microsoft-google-meta/\">Read more</a>\n\n<hr />\n\n<h4 id=\"openai-s-sam-altman-announces-pentagon-deal-with-technical-safeguards\"><span class=\"hash\">###</span> OpenAI’s Sam Altman announces Pentagon deal with ‘technical safeguards’</h4>\n\n<p>OpenAI's CEO claims its new defense contract includes protections addressing the same issues that became a flashpoint for Anthropic.</p>\n\n<a href=\"https://techcrunch.com/2026/02/28/openais-sam-altman-announces-pentagon-deal-with-technical-safeguards/\">Read more</a>\n\n<hr />\n\n<h4 id=\"pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk\"><span class=\"hash\">###</span> Pentagon moves to designate Anthropic as a supply-chain risk</h4>\n\n<p>\"We don't need it, we don't want it, and will not do business with them again,\" the president wrote in the post.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-vs-the-pentagon-what-s-actually-at-stake\"><span class=\"hash\">###</span> Anthropic vs. the Pentagon: What’s actually at stake?</h4>\n\n<p>Anthropic and the Pentagon are clashing over AI use in autonomous weapons and surveillance, raising high-stakes questions about national security, corporate control, and who sets the rules for military AI.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/anthropic-vs-the-pentagon-whats-actually-at-stake/\">Read more</a>\n\n<hr />\n\n<h3 id=\"industry\"><span class=\"hash\">##</span> Industry</h3>\n\n<h4 id=\"chatgpt-reaches-900m-weekly-active-users\"><span class=\"hash\">###</span> ChatGPT reaches 900M weekly active users</h4>\n\n<p>OpenAI shared the new numbers as part of its announcement that it has raised $110 billion in private funding.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/\">Read more</a>\n\n<hr />\n\n<h4 id=\"ai-music-generator-suno-hits-2m-paid-subscribers-and-300m-in-annual-recurring-re\"><span class=\"hash\">###</span> AI music generator Suno hits 2M paid subscribers and $300M in annual recurring revenue</h4>\n\n<p>Suno lets users create music using natural language prompts, making it possible for people with little experience to generate audio with little effort.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/ai-music-generator-suno-hits-2-million-paid-subscribers-and-300m-in-annual-recurring-revenue/\">Read more</a>\n\n<hr />\n\n<h4 id=\"employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter\"><span class=\"hash\">###</span> Employees at Google and OpenAI support Anthropic's Pentagon stand in open letter</h4>\n\n<p>While Anthropic has an existing partnership with the Pentagon, the AI company has remained firm that its technology not be used for mass domestic surveillance or fully autonomous weaponry.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter/\">Read more</a>\n\n<hr />\n\n<h4 id=\"last-24-hours-to-get-techcrunch-disrupt-2026-tickets-at-the-lowest-rates-of-the-\"><span class=\"hash\">###</span> Last 24 hours to get TechCrunch Disrupt 2026 tickets at the lowest rates of the year</h4>\n\n<p>The lowest rates of the year for TechCrunch Disrupt 2026 end after today. Prices go up at 11:59 p.m. PT. Don't miss connecting with 10,000 founders, investors, and operators, and key takeaways from 250+ industry leaders. Register now to save up to $680, or up to 30% on group passes.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/last-24-hours-to-get-techcrunch-disrupt-2026-tickets-at-the-lowest-rates-of-the-year/\">Read more</a>\n\n<hr />\n\n<h4 id=\"poor-implementation-of-ai-may-be-behind-workforce-reduction\"><span class=\"hash\">###</span> Poor implementation of AI may be behind workforce reduction</h4>\n\n<p>Many organisations are eroding the foundations of business &#8211; productivity, competitiveness, and efficiency. This is happening due to poor implementation of human-AI collaboration, according to cloud data and AI consultancy, Datatonic. The company says in the next phase of enterprise AI, succes</p>\n\n<a href=\"https://www.artificialintelligence-news.com/news/ai-workflows-need-human-in-the-loop-say-datatonic/\">Read more</a>\n\n<hr />\n\n<h3 id=\"research-products\"><span class=\"hash\">##</span> Research & Products</h3>\n\n<h4 id=\"perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models\"><span class=\"hash\">###</span> Perplexity's new Computer is another bet that users need many AI models</h4>\n\n<p>Perplexity Computer, in the company’s words, \"unifies every current AI capability into a single system.\"</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models/\">Read more</a>\n\n<hr />\n\n<h4 id=\"upgrading-agentic-ai-for-finance-workflows\"><span class=\"hash\">###</span> Upgrading agentic AI for finance workflows</h4>\n\n<p>Improving trust in agentic AI for finance workflows remains a major priority for technology leaders today. Over the past two years, enterprises have rushed to put automated agents into real workflows, spanning customer support and back-office operations. These tools excel at retrieving information,</p>\n\n<a href=\"https://www.artificialintelligence-news.com/news/upgrading-agentic-ai-for-finance-workflows/\">Read more</a>\n\n<hr />\n\n<h4 id=\"asmls-high-na-euv-tools-clear-the-runway-for-next-gen-ai-chips\"><span class=\"hash\">###</span> ASML's high-NA EUV tools clear the runway for next-gen AI chips</h4>\n\n<p>The machine that will make tomorrow&#8217;s AI chips possible has just been declared ready for mass production – and the clock for the industry&#8217;s next leap has officially started. ASML, the Dutch company that holds a global monopoly on commercial extreme ultraviolet lithography equipment, conf</p>\n\n<a href=\"https://www.artificialintelligence-news.com/news/asml-high-na-euv-production-ready-ai-chips/\">Read more</a>\n\n<hr />\n\n<h3 id=\"policy-ethics\"><span class=\"hash\">##</span> Policy & Ethics</h3>\n\n<h4 id=\"the-trap-anthropic-built-for-itself\"><span class=\"hash\">###</span> The trap Anthropic built for itself</h4>\n\n<p>Anthropic, OpenAI, Google DeepMind and others have long promised to govern themselves responsibly. Now, in the absence of rules, there's not a lot to protect them.</p>\n\n<a href=\"https://techcrunch.com/2026/02/28/the-trap-anthropic-built-for-itself/\">Read more</a>\n\n<hr />\n\n<h4 id=\"musk-bashes-openai-in-deposition-saying-nobody-committed-suicide-because-of-grok\"><span class=\"hash\">###</span> Musk bashes OpenAI in deposition, saying 'nobody committed suicide because of Grok'</h4>\n\n<p>In his lawsuit against OpenAI, Musk touted xAI safety compared with ChatGPT. A few months later, xAI's Grok flooded X with nonconsensual nude images.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/musk-bashes-openai-in-deposition-saying-nobody-committed-suicide-because-of-grok/\">Read more</a>\n\n<hr />\n\n<h4 id=\"whos-really-running-ai-inside-the-billion-dollar-battle-over-regulation-with-ale\"><span class=\"hash\">###</span> Who's really running AI? Inside the billion-dollar battle over regulation with Alex Bores</h4>\n\n<p>The Pentagon is playing chicken with Anthropic over who gets to control how the military uses AI while communities across the country are blocking data center construction. As the AI debate has been flattened to “doomers versus boomers,” one state legislator is attempting to walk a middle road. On t</p>\n\n<a href=\"https://techcrunch.com/podcast/whos-really-running-ai-inside-the-billion-dollar-battle-over-regulation-with-alex-bores/\">Read more</a>\n\n<hr />\n\n<h4 id=\"openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history\"><span class=\"hash\">###</span> OpenAI raises $110B in one of the largest private funding rounds in history</h4>\n\n<p>The new funding consists of a $50 billion investment from Amazon as well as $30 billion each from Nvidia and SoftBank, against a $730 billion valuation.</p>\n\n<a href=\"https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/\">Read more</a>\n\n<hr />\n\n<h4 id=\"goldman-sachs-and-deutsche-bank-test-agentic-ai-for-trade-surveillance\"><span class=\"hash\">###</span> Goldman Sachs and Deutsche Bank test agentic AI for trade surveillance</h4>\n\n<p>Banks are testing a new type of artificial intelligence, like agentic AI, that does more than scan for keywords or follow preset rules. Instead of relying only on static alerts, some trading desks are beginning to use systems designed to reason through patterns in real time and flag conduct that may</p>\n\n<a href=\"https://www.artificialintelligence-news.com/news/goldman-sachs-and-deutsche-bank-test-agentic-ai-for-trade-surveillance/\">Read more</a>\n\n<hr />\n\n\n<em>This digest was automatically generated.</em>\n",
-      "headings": [
-        {
-          "level": 2,
-          "id": "daily-digest-monday-2-march-2026",
-          "text": "Daily Digest: Monday, 2 March 2026"
-        },
-        {
-          "level": 3,
-          "id": "top-stories",
-          "text": "Top Stories"
-        },
-        {
-          "level": 4,
-          "id": "google-looks-to-tackle-longstanding-rcs-spam-in-india-but-not-alone",
-          "text": "Google looks to tackle longstanding RCS spam in India — but not alone"
-        },
-        {
-          "level": 4,
-          "id": "openai-reveals-more-details-about-its-agreement-with-the-pentagon",
-          "text": "OpenAI reveals more details about its agreement with the Pentagon"
-        },
-        {
-          "level": 4,
-          "id": "anthropic-s-claude-rises-to-no-1-in-the-app-store-following-pentagon-dispute",
-          "text": "Anthropic’s Claude rises to No. 1 in the App Store following Pentagon dispute"
-        },
-        {
-          "level": 4,
-          "id": "saas-in-saas-out-heres-whats-driving-the-saaspocalypse",
-          "text": "SaaS in, SaaS out: Here's what's driving the SaaSpocalypse"
-        },
-        {
-          "level": 4,
-          "id": "the-billion-dollar-infrastructure-deals-powering-the-ai-boom",
-          "text": "The billion-dollar infrastructure deals powering the AI boom"
-        },
-        {
-          "level": 4,
-          "id": "openai-s-sam-altman-announces-pentagon-deal-with-technical-safeguards",
-          "text": "OpenAI’s Sam Altman announces Pentagon deal with ‘technical safeguards’"
-        },
-        {
-          "level": 4,
-          "id": "pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk",
-          "text": "Pentagon moves to designate Anthropic as a supply-chain risk"
-        },
-        {
-          "level": 4,
-          "id": "anthropic-vs-the-pentagon-what-s-actually-at-stake",
-          "text": "Anthropic vs. the Pentagon: What’s actually at stake?"
-        },
-        {
-          "level": 3,
-          "id": "industry",
-          "text": "Industry"
-        },
-        {
-          "level": 4,
-          "id": "chatgpt-reaches-900m-weekly-active-users",
-          "text": "ChatGPT reaches 900M weekly active users"
-        },
-        {
-          "level": 4,
-          "id": "ai-music-generator-suno-hits-2m-paid-subscribers-and-300m-in-annual-recurring-re",
-          "text": "AI music generator Suno hits 2M paid subscribers and $300M in annual recurring revenue"
-        },
-        {
-          "level": 4,
-          "id": "employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter",
-          "text": "Employees at Google and OpenAI support Anthropic's Pentagon stand in open letter"
-        },
-        {
-          "level": 4,
-          "id": "last-24-hours-to-get-techcrunch-disrupt-2026-tickets-at-the-lowest-rates-of-the-",
-          "text": "Last 24 hours to get TechCrunch Disrupt 2026 tickets at the lowest rates of the year"
-        },
-        {
-          "level": 4,
-          "id": "poor-implementation-of-ai-may-be-behind-workforce-reduction",
-          "text": "Poor implementation of AI may be behind workforce reduction"
-        },
-        {
-          "level": 3,
-          "id": "research-products",
-          "text": "Research & Products"
-        },
-        {
-          "level": 4,
-          "id": "perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models",
-          "text": "Perplexity's new Computer is another bet that users need many AI models"
-        },
-        {
-          "level": 4,
-          "id": "upgrading-agentic-ai-for-finance-workflows",
-          "text": "Upgrading agentic AI for finance workflows"
-        },
-        {
-          "level": 4,
-          "id": "asmls-high-na-euv-tools-clear-the-runway-for-next-gen-ai-chips",
-          "text": "ASML's high-NA EUV tools clear the runway for next-gen AI chips"
-        },
-        {
-          "level": 3,
-          "id": "policy-ethics",
-          "text": "Policy & Ethics"
-        },
-        {
-          "level": 4,
-          "id": "the-trap-anthropic-built-for-itself",
-          "text": "The trap Anthropic built for itself"
-        },
-        {
-          "level": 4,
-          "id": "musk-bashes-openai-in-deposition-saying-nobody-committed-suicide-because-of-grok",
-          "text": "Musk bashes OpenAI in deposition, saying 'nobody committed suicide because of Grok'"
-        },
-        {
-          "level": 4,
-          "id": "whos-really-running-ai-inside-the-billion-dollar-battle-over-regulation-with-ale",
-          "text": "Who's really running AI? Inside the billion-dollar battle over regulation with Alex Bores"
-        },
-        {
-          "level": 4,
-          "id": "openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history",
-          "text": "OpenAI raises $110B in one of the largest private funding rounds in history"
-        },
-        {
-          "level": 4,
-          "id": "goldman-sachs-and-deutsche-bank-test-agentic-ai-for-trade-surveillance",
-          "text": "Goldman Sachs and Deutsche Bank test agentic AI for trade surveillance"
-        }
-      ],
-      "readingTime": 5,
-      "date": "2026-03-02",
-      "updatedTime": "2026-03-02",
-      "localPath": "/posts/daily-digest-monday-2-march-2026/"
-    },
-    {
-      "title": "Welcome to Kol's Korner",
-      "slug": "welcome-to-kols-korner",
-      "kind": "article",
-      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
-      "tags": [
-        "welcome",
-        "intro",
-        "AI"
-      ],
-      "thumbnailUrl": "./media/welcome-to-kols-korner.png",
-      "driveUrl": "./media/welcome-to-kols-korner.png",
-      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
-      "headings": [
-        {
-          "level": 2,
-          "id": "welcome-to-kols-korner",
-          "text": "Welcome to Kol's Korner"
-        },
-        {
-          "level": 3,
-          "id": "what-youll-find-here",
-          "text": "What You'll Find Here"
-        },
-        {
-          "level": 3,
-          "id": "why-this-site-exists",
-          "text": "Why This Site Exists"
-        },
-        {
-          "level": 3,
-          "id": "about-the-author",
-          "text": "About the Author"
-        },
-        {
-          "level": 3,
-          "id": "whats-coming",
-          "text": "What's Coming"
-        },
-        {
-          "level": 3,
-          "id": "stay-updated",
-          "text": "Stay Updated"
-        }
-      ],
-      "readingTime": 2,
-      "date": "2026-02-28",
-      "updatedTime": "2026-02-28",
-      "localPath": "/posts/welcome-to-kols-korner/"
-    },
-    {
       "title": "California Just Told Grok to Stop Making Deepfake Porn",
       "slug": "california-just-told-grok-to-stop-making-deepfake-porn",
       "kind": "article",
@@ -574,6 +374,56 @@
       "readingTime": 1,
       "date": "2026-02-10",
       "updatedTime": "2026-02-10"
+    },
+    {
+      "title": "Welcome to Kol's Korner",
+      "slug": "welcome-to-kols-korner",
+      "kind": "article",
+      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
+      "tags": [
+        "welcome",
+        "intro",
+        "AI"
+      ],
+      "thumbnailUrl": "./media/welcome-to-kols-korner.png",
+      "driveUrl": "./media/welcome-to-kols-korner.png",
+      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "welcome-to-kols-korner",
+          "text": "Welcome to Kol's Korner"
+        },
+        {
+          "level": 3,
+          "id": "what-youll-find-here",
+          "text": "What You'll Find Here"
+        },
+        {
+          "level": 3,
+          "id": "why-this-site-exists",
+          "text": "Why This Site Exists"
+        },
+        {
+          "level": 3,
+          "id": "about-the-author",
+          "text": "About the Author"
+        },
+        {
+          "level": 3,
+          "id": "whats-coming",
+          "text": "What's Coming"
+        },
+        {
+          "level": 3,
+          "id": "stay-updated",
+          "text": "Stay Updated"
+        }
+      ],
+      "readingTime": 2,
+      "date": "2026-02-10",
+      "updatedTime": "2026-02-10",
+      "localPath": "/posts/welcome-to-kols-korner/"
     },
     {
       "title": "AI News Digest — 2026-02-09",

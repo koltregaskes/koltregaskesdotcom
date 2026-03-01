@@ -5,29 +5,9 @@
     <link>https://koltregaskes.github.io/koltregaskesdotcom</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 02 Mar 2026 06:42:34 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2026 16:53:50 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.github.io/koltregaskesdotcom/feed.xml" rel="self" type="application/rss+xml"/>
     
-    <item>
-      <title>Daily Digest: Monday, 2 March 2026</title>
-      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/daily-digest-monday-2-march-2026/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/daily-digest-monday-2-march-2026/</guid>
-      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Monday, 2 March 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Welcome to Kol&#039;s Korner</title>
-      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</guid>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
-      <description>Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.</description>
-      <category>welcome</category>
-      <category>intro</category>
-      <category>AI</category>
-    </item>
     <item>
       <title>California Just Told Grok to Stop Making Deepfake Porn</title>
       <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/california-just-told-grok-to-stop-making-deepfake-porn/</link>
@@ -99,6 +79,16 @@
       <category>productivity</category>
       <category>burnout</category>
       <category>workplace</category>
+    </item>
+    <item>
+      <title>Welcome to Kol&#039;s Korner</title>
+      <link>https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/koltregaskesdotcom/posts/welcome-to-kols-korner/</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.</description>
+      <category>welcome</category>
+      <category>intro</category>
+      <category>AI</category>
     </item>
   </channel>
 </rss>
