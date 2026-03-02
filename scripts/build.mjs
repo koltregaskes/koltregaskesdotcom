@@ -51,9 +51,13 @@ async function generateAudioWaveform(audioPath, outputPath) {
 // Content source folder
 const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 
+// Supabase configuration (injected at build time from GitHub secrets)
+const SUPABASE_URL = process.env.SUPABASE_URL || '';
+const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; frame-src https://buttondown.com https://buttondown.email; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://buttondown.email;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -370,7 +374,7 @@ function getFooterHTML() {
   return `
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2026 All rights reserved.</p>
+      <p>&copy; 2026 Kol Tregaskes</p>
       <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
     </div>
     <div class="footer-social">
@@ -1159,7 +1163,7 @@ async function writeAboutPage() {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
   <title>About - Kol's Korner</title>
-  <meta name="description" content="About Kol Tregaskes - AI explorer, tech enthusiast, and builder based in the UK" />
+  <meta name="description" content="About Kol Tregaskes - news curator, AI artist, AI musician, content maker, and lover of technology" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -1173,7 +1177,7 @@ async function writeAboutPage() {
         <img src="../media/kol-profile.png" alt="Kol Tregaskes" width="120" height="120" />
       </div>
       <h1 class="page-title">Kol Tregaskes</h1>
-      <p class="about-intro">Technology writer, <strong>AI sceptic</strong> (the useful kind), and builder of systems that probably shouldn't work but somehow do. I write about AI because most AI writing is either uncritical hype or uninformed panic. This site is neither &mdash; it's clear analysis from someone who actually uses the technology daily and knows where it breaks.</p>
+      <p class="about-intro">News curator, AI artist, AI musician, content maker, and lover of technology. Just a bloke from the UK who got fascinated by what AI can actually do &mdash; and spends his days curating news, creating things, and sharing what he finds along the way.</p>
     </div>
 
     <!-- Content Sections -->
@@ -1181,10 +1185,10 @@ async function writeAboutPage() {
       <section class="about-section">
         <h2><span class="hash">#</span> What I Do</h2>
         <ul>
-          <li>Run production multi-agent systems with Claude Code, Gemini, and other AI tools</li>
-          <li>Write daily AI news analysis and deep dives on industry developments</li>
-          <li>Build workflow automation that combines AI with real-world constraints</li>
-          <li>Track what works, what's oversold, and what's genuinely worth paying attention to</li>
+          <li>Curate daily AI and technology news digests</li>
+          <li>Create art and music with AI tools</li>
+          <li>Make videos, posts, and commentary across social media</li>
+          <li>Build multi-agent systems and workflow automation</li>
         </ul>
       </section>
 
@@ -1266,18 +1270,11 @@ async function writeSubscribePage() {
     <!-- Subscribe Form Card -->
     <div class="subscribe-form-card">
       <h2>Subscribe to the Newsletter</h2>
-      <p class="coming-soon-badge" style="background: #ff6b35; color: white; padding: 8px 16px; border-radius: 4px; display: inline-block; margin-bottom: 16px; font-weight: 600;">Coming Soon</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 24px; text-align: center;">Newsletter functionality is currently being set up. Check back soon for AI news and analysis delivered to your inbox.</p>
-      <form
-        action="https://buttondown.email/api/emails/embed-subscribe/koltregaskes"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/koltregaskes', 'popupwindow')"
-        style="opacity: 0.5; pointer-events: none;"
-      >
-        <input type="email" name="email" id="bd-email" placeholder="your@email.com" disabled />
-        <button type="submit" disabled>Subscribe (Coming Soon)</button>
+      <form id="subscribe-form">
+        <input type="email" name="email" id="subscribe-email" placeholder="your@email.com" required />
+        <button type="submit" id="subscribe-btn">Subscribe</button>
       </form>
+      <p id="subscribe-message" style="margin-top: 16px; text-align: center; display: none;"></p>
     </div>
 
     <!-- RSS Alternative -->
@@ -1306,6 +1303,54 @@ async function writeSubscribePage() {
     });
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    // Newsletter subscription
+    const SUPABASE_URL = '${SUPABASE_URL}';
+    const SUPABASE_KEY = '${SUPABASE_PUBLISHABLE_KEY}';
+
+    document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('subscribe-email').value.trim();
+      const btn = document.getElementById('subscribe-btn');
+      const msg = document.getElementById('subscribe-message');
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      msg.style.display = 'none';
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/subscribers', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+          msg.textContent = 'You\\'re subscribed! Thanks for signing up.';
+          msg.style.color = 'var(--color-primary)';
+          msg.style.display = 'block';
+          document.getElementById('subscribe-email').value = '';
+        } else if (res.status === 409) {
+          msg.textContent = 'You\\'re already subscribed!';
+          msg.style.color = 'var(--color-text-secondary)';
+          msg.style.display = 'block';
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (err) {
+        msg.textContent = 'Something went wrong. Please try again.';
+        msg.style.color = '#ef4444';
+        msg.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      }
+    });
   </script>
 </body>
 </html>`;

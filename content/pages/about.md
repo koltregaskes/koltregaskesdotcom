@@ -5,37 +5,31 @@ slug: about
 
 # About Kol
 
-I'm Kol Tregaskes - technology writer, AI sceptic (the useful kind), and builder of systems that probably shouldn't work but somehow do.
+I'm Kol Tregaskes - news curator, AI artist, AI musician, content maker, and lover of technology. Just a bloke from the UK who got fascinated by what AI can actually do.
 
-I write about AI because most AI writing is either uncritical hype or uninformed panic. This site is neither. It's clear analysis from someone who actually uses the technology daily - and knows where it breaks.
+I spend my days curating AI and technology news, creating art and music with AI tools, and building systems that tie it all together. I'm not here to sell you anything or tell you AI will save the world. I just like making things with it and sharing what I find along the way.
 
-I work with AI agents in a hands-on, production capacity. Not in a "prompt ChatGPT occasionally" way - I've built multi-agent systems where Claude, Gemini, and other models collaborate on complex tasks. I automate workflows, curate content, and push these tools to see where they break and where they excel.
-
-That practical experience informs everything I write here. I know what works, what's oversold, and what's genuinely worth paying attention to. I'm not selling AI products, consulting services, or investment schemes. Just sharing what I learn from actually building with these tools.
+I prefer to see things in reality rather than following the hype. When something works, I'll tell you. When it's oversold, I'll tell you that too. No corporate speak, no breathless press releases - just honest takes from someone who uses these tools every day.
 
 ## What I Do
 
-**AI Agent Development:** I run production multi-agent systems for content creation, research, and automation. My workspace has Claude Code orchestrating tasks, Gemini handling research, and specialized agents for everything from news gathering to social media publishing.
+**News Curation:** I track AI and technology news daily, pulling together the stories that actually matter and cutting through the noise. You'll find daily digests and longer pieces when something deserves a proper look.
 
-**Content Creation:** Daily AI news analysis, deep dives on industry developments, and practical guides for working with AI tools. I track developments across the industry and explain what they mean beyond the press release.
+**AI Art & Music:** I create artwork and music using AI tools - experimenting with what's possible, pushing the boundaries, and sharing the results. It's genuinely fun and occasionally surprising.
 
-**Workflow Automation:** Building systems that combine AI capabilities with real-world constraints - deadlines, quality standards, fact-checking requirements. The unsexy infrastructure that makes AI useful instead of just interesting.
+**Content Creation:** Videos, posts, and commentary across social media. I share what I'm learning, what I'm building, and what's caught my eye in the world of technology.
+
+**Building Things:** I use AI agents and automation to put it all together - multi-agent systems, workflow automation, and whatever else seems like a good idea at the time.
 
 ## What You'll Find Here
 
-**AI news with actual insight.** I track developments across the industry and explain what they mean beyond the press release. No breathless hype about "revolutionary breakthroughs" - just clear thinking about what's changing and why you should care.
+**Daily AI news digests** curated from across the industry, with honest commentary on what it all means.
 
-**Sceptical but informed takes.** I use AI tools daily, so I know their potential. I also know their limitations, and I'm not selling you anything. You'll get both the potential and the problems.
+**Practical takes** from someone who actually uses these tools every day, not just writes about them theoretically.
 
-**Practical workflows.** How to actually use these tools effectively, not just theoretically. Real use cases, real limitations, real implications.
+**Creative work** - AI art, music, and experiments.
 
-**UK English.** Proper writing. No AI slop. No corporate speak. Just clear, direct communication that respects your intelligence.
-
-## Why This Matters
-
-AI is important - but not for the reasons most headlines claim. The real story isn't "AI will replace all jobs" or "AI will save humanity." It's more nuanced, more interesting, and more immediate than that.
-
-This site exists to explore that story properly, without the marketing nonsense or uninformed fear-mongering.
+**No hype, no panic.** Just a bloke sharing what he finds interesting about technology.
 
 ---
 

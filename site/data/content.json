@@ -151,56 +151,6 @@
       "localPath": "/posts/daily-digest-monday-2-march-2026/"
     },
     {
-      "title": "Welcome to Kol's Korner",
-      "slug": "welcome-to-kols-korner",
-      "kind": "article",
-      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
-      "tags": [
-        "welcome",
-        "intro",
-        "AI"
-      ],
-      "thumbnailUrl": "./media/welcome-to-kols-korner.png",
-      "driveUrl": "./media/welcome-to-kols-korner.png",
-      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
-      "headings": [
-        {
-          "level": 2,
-          "id": "welcome-to-kols-korner",
-          "text": "Welcome to Kol's Korner"
-        },
-        {
-          "level": 3,
-          "id": "what-youll-find-here",
-          "text": "What You'll Find Here"
-        },
-        {
-          "level": 3,
-          "id": "why-this-site-exists",
-          "text": "Why This Site Exists"
-        },
-        {
-          "level": 3,
-          "id": "about-the-author",
-          "text": "About the Author"
-        },
-        {
-          "level": 3,
-          "id": "whats-coming",
-          "text": "What's Coming"
-        },
-        {
-          "level": 3,
-          "id": "stay-updated",
-          "text": "Stay Updated"
-        }
-      ],
-      "readingTime": 2,
-      "date": "2026-02-28",
-      "updatedTime": "2026-02-28",
-      "localPath": "/posts/welcome-to-kols-korner/"
-    },
-    {
       "title": "California Just Told Grok to Stop Making Deepfake Porn",
       "slug": "california-just-told-grok-to-stop-making-deepfake-porn",
       "kind": "article",
@@ -574,6 +524,56 @@
       "readingTime": 1,
       "date": "2026-02-10",
       "updatedTime": "2026-02-10"
+    },
+    {
+      "title": "Welcome to Kol's Korner",
+      "slug": "welcome-to-kols-korner",
+      "kind": "article",
+      "summary": "Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.",
+      "tags": [
+        "welcome",
+        "intro",
+        "AI"
+      ],
+      "thumbnailUrl": "./media/welcome-to-kols-korner.png",
+      "driveUrl": "./media/welcome-to-kols-korner.png",
+      "contentHtml": "\n<h2 id=\"welcome-to-kols-korner\"><span class=\"hash\">#</span> Welcome to Kol's Korner</h2>\n\n<p>This is where I write about AI - the real stuff, not the marketing nonsense.</p>\n\n<h3 id=\"what-youll-find-here\"><span class=\"hash\">##</span> What You'll Find Here</h3>\n\n<strong>AI news with actual analysis.</strong> I track what's happening in AI and explain what it actually means. No breathless hype about \"revolutionary breakthroughs.\" Just clear thinking about what's changing and why you should care.\n\n<strong>Sceptical but informed.</strong> I use AI tools daily. I build with AI agents. I know what works and what's oversold. You'll get both the potential and the problems.\n\n<strong>UK English, proper writing.</strong> No AI slop. No corporate speak. Just clear, direct writing that respects your intelligence.\n\n<h3 id=\"why-this-site-exists\"><span class=\"hash\">##</span> Why This Site Exists</h3>\n\n<p>I got tired of AI news being either:</p>\n<ol>\n<li>Uncritical cheerleading from people selling AI products</li>\n<li>Uninformed fear-mongering from people who don't use the technology</li>\n<li>Bland aggregation with no actual insight</li>\n</ol>\n\n<p>This site is the alternative. Real use cases. Real limitations. Real implications.</p>\n\n<h3 id=\"about-the-author\"><span class=\"hash\">##</span> About the Author</h3>\n\n<p>I'm Kol Tregaskes. I work with AI agents, build automation systems, and write about what I learn. I've been in tech long enough to see hype cycles come and go.</p>\n\n<p>AI is genuinely important - but not for the reasons most headlines claim.</p>\n\n<h3 id=\"whats-coming\"><span class=\"hash\">##</span> What's Coming</h3>\n\n<ul>\n<li><strong>Daily AI news</strong> (currently in beta) - curated updates from credible sources</li>\n<li><strong>Deep dives</strong> on specific AI developments worth understanding</li>\n<li><strong>Practical guides</strong> for working with AI tools effectively</li>\n<li><strong>Sceptical analysis</strong> when the industry needs a reality check</li>\n</ul>\n\n<h3 id=\"stay-updated\"><span class=\"hash\">##</span> Stay Updated</h3>\n\n<ul>\n<li><strong>RSS feed</strong> - <a href=\"/feed.xml\">Subscribe here</a></li>\n<li><strong>Newsletter</strong> - Coming soon</li>\n<li><strong>Social</strong> - Find me on X, Bluesky, and Mastodon (links below)</li>\n</ul>\n\n<p>Thanks for reading. Let's figure out what AI actually means, together.</p>\n\n<hr />\n\n<em>This site is built from markdown files and hosted on GitHub Pages. No tracking, no ads, no bullshit.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "welcome-to-kols-korner",
+          "text": "Welcome to Kol's Korner"
+        },
+        {
+          "level": 3,
+          "id": "what-youll-find-here",
+          "text": "What You'll Find Here"
+        },
+        {
+          "level": 3,
+          "id": "why-this-site-exists",
+          "text": "Why This Site Exists"
+        },
+        {
+          "level": 3,
+          "id": "about-the-author",
+          "text": "About the Author"
+        },
+        {
+          "level": 3,
+          "id": "whats-coming",
+          "text": "What's Coming"
+        },
+        {
+          "level": 3,
+          "id": "stay-updated",
+          "text": "Stay Updated"
+        }
+      ],
+      "readingTime": 2,
+      "date": "2026-02-10",
+      "updatedTime": "2026-02-10",
+      "localPath": "/posts/welcome-to-kols-korner/"
     },
     {
       "title": "AI News Digest — 2026-02-09",
