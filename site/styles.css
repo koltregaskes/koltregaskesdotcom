@@ -2231,16 +2231,22 @@ del {
 
 /* Social Links as Pills */
 .social-links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-8);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .social-links li {
-  display: contents;
+  display: block;
 }
 
 .social-links li::before {
@@ -2250,7 +2256,9 @@ del {
 .social-links a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-6);
+  width: 100%;
   padding: var(--space-8) var(--space-16);
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -2271,6 +2279,7 @@ del {
 .social-links a svg {
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
 }
 
 /* ================================
