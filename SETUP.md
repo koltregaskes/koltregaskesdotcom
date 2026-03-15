@@ -1,198 +1,82 @@
-# Setup Guide
+# Setup
 
-Complete setup instructions for Kol's Korner static site.
+Setup instructions for local development and GitHub Pages deployment.
 
 ## Prerequisites
 
-- Notion account
-- GitHub account
-- Node.js 18+ (for local development)
+- Node.js 18+
+- GitHub repository with Pages enabled
+- Optional Supabase project for the newsletter form
 
-## Step 1: Create Notion Integration
-
-1. Go to [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
-2. Click **"+ New integration"**
-3. Name it: `Kol's Korner Site Generator`
-4. Select the workspace where your database will live
-5. Set capabilities:
-   - ✅ Read content
-   - ❌ Update content (not needed)
-   - ❌ Insert content (not needed)
-6. Click **"Submit"**
-7. Copy the **Internal Integration Token** (starts with `secret_`)
-   - ⚠️ **Save this securely** - you'll need it for GitHub secrets
-
-## Step 2: Create Notion Database
-
-1. Create a new database in Notion (full page)
-2. Name it: `Content` (or whatever you prefer)
-3. Add the following properties:
-
-### Required Properties
-
-| Property Name | Type | Description |
-|--------------|------|-------------|
-| **Name** | Title | Post/item title |
-| **Kind** | Select | Type: `article`, `image`, `video` |
-| **Publish** | Checkbox | Toggle to publish/unpublish |
-
-### Optional Properties
-
-| Property Name | Type | Description |
-|--------------|------|-------------|
-| **Summary** | Text | Short description (shown on listings) |
-| **Tags** | Multi-select | Category tags |
-| **Drive URL** | URL | External link (optional for galleries) |
-| **Upload** | Files & media | Upload images/videos here |
-
-### Property Setup Details
-
-**Kind (Select)**:
-- Add options: `article`, `image`, `video`
-- Default: `article`
-
-**Tags (Multi-select)**:
-- Add tags as you create posts
-- Examples: `tech`, `tutorial`, `personal`, `development`
-
-## Step 3: Share Database with Integration
-
-1. Open your Content database in Notion
-2. Click the **"..."** menu (top right)
-3. Click **"Connections"**
-4. Click **"Connect to"**
-5. Find and select your integration: `Kol's Korner Site Generator`
-6. Click **"Confirm"**
-
-## Step 4: Get Database ID
-
-1. Open your Content database in Notion
-2. Look at the URL in your browser:
-   ```
-   https://www.notion.so/your-workspace/abc123def456?v=xyz789
-   ```
-3. The database ID is the part between the last `/` and the `?`:
-   ```
-   abc123def456
-   ```
-4. Copy this ID - you'll need it for GitHub secrets
-
-## Step 5: Configure GitHub Repository
-
-### Add Secrets
-
-1. Go to your GitHub repository
-2. Click **Settings** → **Secrets and variables** → **Actions**
-3. Click **"New repository secret"**
-4. Add two secrets:
-
-**Secret 1: NOTION_TOKEN**
-- Name: `NOTION_TOKEN`
-- Value: Your integration token from Step 1 (starts with `secret_`)
-
-**Secret 2: NOTION_DATABASE_ID**
-- Name: `NOTION_DATABASE_ID`
-- Value: Your database ID from Step 4
-
-### Enable GitHub Pages
-
-1. Go to **Settings** → **Pages**
-2. Source: **GitHub Actions**
-3. The site will be available at: `https://<your-username>.github.io/<repo-name>/`
-
-## Step 6: Add Favicon (Optional)
-
-1. Create a `favicon.ico` file (16x16 or 32x32 pixels)
-2. Place it in the `site/` folder
-3. Commit and push
-
-The build script will automatically include it in all pages.
-
-## Step 7: Test Locally
-
-### Install Node.js
-
-Download from [nodejs.org](https://nodejs.org/) (v18 or higher)
-
-### Set Environment Variables
-
-**On macOS/Linux:**
-```bash
-export NOTION_TOKEN="secret_your_token_here"
-export NOTION_DATABASE_ID="your_database_id_here"
-```
-
-**On Windows (PowerShell):**
-```powershell
-$env:NOTION_TOKEN="secret_your_token_here"
-$env:NOTION_DATABASE_ID="your_database_id_here"
-```
-
-### Build the Site
+## Local Build
 
 ```bash
-node scripts/fetch-notion.mjs
+node scripts/build.mjs
 ```
 
-### Serve Locally
+Optional environment variables:
 
 ```bash
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_PUBLISHABLE_KEY=your-key
+CUSTOM_DOMAIN=koltregaskes.com
+```
+
+## Local Preview
+
+```bash
+node scripts/build.mjs
 cd site
 npx http-server -p 8080
 ```
 
-Visit: http://localhost:8080/koltregaskesdotcom/
+Visit `http://localhost:8080/`.
 
-## Step 8: Deploy
+## GitHub Repository Setup
 
-### Automatic Deployment
+### 1. Enable GitHub Pages
 
-Push any changes to the `main` branch:
+In GitHub:
 
-```bash
-git add .
-git commit -m "Update configuration"
-git push
-```
+1. Open the repository settings
+2. Go to Pages
+3. Set the source to GitHub Actions
 
-The site will rebuild automatically.
+### 2. Configure Secrets
 
-### Manual Trigger
+Only needed if you want the newsletter form to post to Supabase.
 
-1. Go to **Actions** tab in GitHub
-2. Select **"Build and deploy Pages (Notion -> JSON)"**
-3. Click **"Run workflow"**
-4. Click **"Run workflow"** button
+- `SUPABASE_URL`
+- `SUPABASE_PUBLISHABLE_KEY`
 
-## Troubleshooting Setup
+### 3. Configure the Domain
 
-### "Integration not found" error
+This repo now includes a committed [`CNAME`](/W:/Websites/sites/koltregaskesdotcom/CNAME) file for `koltregaskes.com`.
 
-- Make sure you shared the database with your integration (Step 3)
-- Verify the integration token is correct
+If you prefer variables-driven configuration, you can also set:
 
-### "Database not found" error
+- Repository variable: `CUSTOM_DOMAIN=koltregaskes.com`
 
-- Check that the database ID is correct
-- Ensure the database is shared with the integration
-- Database ID should be 32 characters (no dashes, no `?v=` part)
+After deployment, point the domain in GitHub Pages settings to the same hostname and update DNS accordingly.
 
-### Build fails in GitHub Actions
+## Deployment Flow
 
-- Check that secrets are set correctly (no extra spaces)
-- View the Actions logs for detailed error messages
-- Ensure your Notion database has at least one published item
+Push to `main` and GitHub Actions will:
 
-### No posts showing on site
+1. Build the site with `node scripts/build.mjs`
+2. Upload `site/`
+3. Deploy to GitHub Pages
 
-- Toggle the **Publish** checkbox on in Notion
-- Wait for the hourly sync or manually trigger the workflow
-- Check that `Kind` is set to `article`
+## Troubleshooting
 
-## Next Steps
+### Old pages still showing up
 
-See [USAGE.md](USAGE.md) for how to:
-- Add your first post
-- Upload images and videos
-- Customize the about page
-- Manage tags
+The build now clears generated output before rebuilding. Run `node scripts/build.mjs` again and redeploy.
+
+### Newsletter form is not working
+
+The committed site builds without real Supabase credentials unless `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` are set.
+
+### Custom domain mismatch
+
+Make sure the committed `CNAME`, the GitHub Pages custom domain setting, and your DNS records all use the same hostname.

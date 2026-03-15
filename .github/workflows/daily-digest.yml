@@ -61,6 +61,9 @@ jobs:
       - name: Build site
         run: node scripts/build.mjs
         env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
 

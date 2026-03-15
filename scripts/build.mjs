@@ -1,5 +1,6 @@
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
+import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -54,6 +55,27 @@ const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 // Supabase configuration (injected at build time from GitHub secrets)
 const SUPABASE_URL = process.env.SUPABASE_URL || '';
 const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const SITE_NAME = process.env.SITE_NAME || "Kol's Korner";
+const SITE_OWNER = process.env.SITE_OWNER || "Kol Tregaskes";
+const GITHUB_OWNER = process.env.GITHUB_OWNER || 'koltregaskes';
+const REPO_NAME = process.env.GITHUB_REPO || process.env.REPO_NAME || 'kols-korner';
+const ROOT_CNAME = fsSync.existsSync('CNAME') ? fsSync.readFileSync('CNAME', 'utf8').trim() : '';
+const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || ROOT_CNAME || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+const LEGACY_REPO_NAMES = ['koltregaskesdotcom', 'notion-site-test'];
+const SITE_BASE_PATH = CUSTOM_DOMAIN ? '' : `/${REPO_NAME}`;
+const SITE_URL = CUSTOM_DOMAIN
+  ? `https://${CUSTOM_DOMAIN}`
+  : `https://${GITHUB_OWNER}.github.io${SITE_BASE_PATH}`;
+
+function stripKnownBasePath(urlPath = '') {
+  const knownBasePaths = [REPO_NAME, ...LEGACY_REPO_NAMES]
+    .filter(Boolean)
+    .map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+
+  if (!knownBasePaths) return urlPath.replace(/^\/+/, '');
+  return urlPath.replace(new RegExp(`^\\/(${knownBasePaths})\\/`), '').replace(/^\/+/, '');
+}
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
@@ -344,7 +366,7 @@ function getHeaderHTML(basePath = '/') {
     <div class="header-content">
       <a href="${basePath}" class="site-logo">
         <span class="logo-icon">K</span>
-        <span class="logo-text">Kol's Korner</span>
+        <span class="logo-text">${SITE_NAME}</span>
       </a>
       <nav class="site-nav">
         <a href="${basePath}posts/">Posts</a>
@@ -374,8 +396,8 @@ function getFooterHTML() {
   return `
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2026 Kol Tregaskes</p>
-      <p class="footer-credit">Made in the UK by Kol Tregaskes. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+      <p>&copy; 2026 ${SITE_OWNER}</p>
+      <p class="footer-credit">Made in the UK by ${SITE_OWNER}. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
     </div>
     <div class="footer-social">
       <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
@@ -515,7 +537,7 @@ async function readContentFiles() {
         // Check if it's already an absolute URL path (starts with /)
         if (frontmatter.url.startsWith('/')) {
           // It's an existing deployed path - check if file exists and generate thumbnail
-          const existingPath = path.join('site', frontmatter.url.replace(/^\/(koltregaskesdotcom|notion-site-test)\//, ''));
+          const existingPath = path.join('site', stripKnownBasePath(frontmatter.url));
           try {
             await fs.access(existingPath);
             mediaUrl = frontmatter.url;
@@ -640,9 +662,9 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>${escapeHtml(title)} - Kol's Korner</title>
+  <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
-  <meta name="author" content="Kol Tregaskes" />
+  <meta name="author" content="${SITE_OWNER}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
   <meta property="og:type" content="article" />
@@ -666,7 +688,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
         <header class="post-header">
           <h1 class="post-title">${escapeHtml(title)}</h1>
           <div class="post-meta">
-            <span class="post-author">Kol Tregaskes</span>
+          <span class="post-author">${SITE_OWNER}</span>
             <span class="meta-sep">•</span>
             <time class="post-date">${date ? new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
             <span class="meta-sep">•</span>
@@ -747,9 +769,9 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>${escapeHtml(title)} - Kol's Korner</title>
+  <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="AI and technology news digest for ${displayDate}" />
-  <meta name="author" content="Kol Tregaskes" />
+  <meta name="author" content="${SITE_OWNER}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="AI and technology news digest for ${displayDate}" />
   <meta property="og:type" content="article" />
@@ -818,10 +840,10 @@ async function writeHomePage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>Kol's Korner - Tech, AI, Development & More</title>
-  <meta name="description" content="Hi. My name is Kol Tregaskes. I'm a software developer and AI enthusiast based in the UK. Writing about AI agents, creative tools, and technology." />
-  <meta name="author" content="Kol Tregaskes" />
-  <meta property="og:title" content="Kol's Korner" />
+  <title>${SITE_NAME} - Tech, AI, Development & More</title>
+  <meta name="description" content="Hi. My name is ${SITE_OWNER}. I'm a software developer and AI enthusiast based in the UK. Writing about AI agents, creative tools, and technology." />
+  <meta name="author" content="${SITE_OWNER}" />
+  <meta property="og:title" content="${SITE_NAME}" />
   <meta property="og:description" content="Tech, AI, Development & More" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
@@ -834,7 +856,7 @@ async function writeHomePage(items) {
 
   <main class="home-main">
     <div class="home-intro">
-      <h1 class="intro-title">Welcome to Kol's Korner</h1>
+      <h1 class="intro-title">Welcome to ${SITE_NAME}</h1>
       <p class="intro-text">Tech, AI, development, and creative experiments from a software developer and AI enthusiast based in the UK.</p>
     </div>
 
@@ -913,9 +935,9 @@ async function writePostsPage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>Posts - Kol's Korner</title>
-  <meta name="description" content="Browse all posts by Kol Tregaskes - Tech, Software Development & More" />
-  <meta name="author" content="Kol Tregaskes" />
+  <title>Posts - ${SITE_NAME}</title>
+  <meta name="description" content="Browse all posts by ${SITE_OWNER} - Tech, Software Development & More" />
+  <meta name="author" content="${SITE_OWNER}" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -984,7 +1006,7 @@ async function writeTagsPage(items) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>Tags - Kol's Korner</title>
+  <title>Tags - ${SITE_NAME}</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
@@ -1106,8 +1128,8 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>${escapeHtml(title)} - Kol's Korner</title>
-  <meta name="description" content="${escapeHtml(title)} - Kol Tregaskes" />
+  <title>${escapeHtml(title)} - ${SITE_NAME}</title>
+  <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -1162,8 +1184,8 @@ async function writeAboutPage() {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>About - Kol's Korner</title>
-  <meta name="description" content="About Kol Tregaskes - news curator, AI artist, AI musician, content maker, and lover of technology" />
+  <title>About - ${SITE_NAME}</title>
+  <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -1174,9 +1196,9 @@ async function writeAboutPage() {
     <!-- Hero Section -->
     <div class="about-hero">
       <div class="about-avatar">
-        <img src="../media/kol-profile.png" alt="Kol Tregaskes" width="120" height="120" />
+        <img src="../media/kol-profile.png" alt="${SITE_OWNER}" width="120" height="120" />
       </div>
-      <h1 class="page-title">Kol Tregaskes</h1>
+      <h1 class="page-title">${SITE_OWNER}</h1>
       <p class="about-intro">News curator, AI artist, AI musician, content maker, and lover of technology. Just a bloke from the UK who got fascinated by what AI can actually do &mdash; and spends his days curating news, creating things, and sharing what he finds along the way.</p>
     </div>
 
@@ -1236,8 +1258,8 @@ async function writeSubscribePage() {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
-  <title>Newsletter - Kol's Korner</title>
-  <meta name="description" content="Subscribe to Kol's Korner newsletter - Weekly digests, daily updates, or all new posts about tech, AI, and development" />
+  <title>Newsletter - ${SITE_NAME}</title>
+  <meta name="description" content="Subscribe to ${SITE_NAME} newsletter - Weekly digests, daily updates, or all new posts about tech, AI, and development" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -1349,7 +1371,6 @@ async function writeSubscribePage() {
 
 // Generate RSS feed
 async function writeRssFeed(items) {
-  const siteUrl = 'https://koltregaskes.github.io/koltregaskesdotcom';
   const articles = items
     .filter(item => item.kind === 'article')
     .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -1357,7 +1378,7 @@ async function writeRssFeed(items) {
 
   const rssItems = articles.map(item => {
     const pubDate = new Date(item.date).toUTCString();
-    const link = `${siteUrl}/posts/${item.slug}/`;
+    const link = `${SITE_URL}/posts/${item.slug}/`;
 
     return `
     <item>
@@ -1373,12 +1394,12 @@ async function writeRssFeed(items) {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kol's Korner</title>
-    <link>${siteUrl}</link>
-    <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
+    <title>${SITE_NAME}</title>
+    <link>${SITE_URL}</link>
+    <description>Tech, AI, Development &amp; More by ${SITE_OWNER}</description>
     <language>en-gb</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     ${rssItems}
   </channel>
 </rss>`;
@@ -1386,10 +1407,45 @@ async function writeRssFeed(items) {
   await fs.writeFile('site/feed.xml', rss, 'utf8');
 }
 
+async function writeCnameFile() {
+  const configuredDomain = CUSTOM_DOMAIN || (await fs.readFile('CNAME', 'utf8').catch(() => '')).trim();
+
+  if (!configuredDomain) {
+    await fs.rm('site/CNAME', { force: true }).catch(() => {});
+    return;
+  }
+
+  await fs.writeFile('site/CNAME', `${configuredDomain}\n`, 'utf8');
+}
+
+async function cleanGeneratedOutput() {
+  const generatedDirs = [
+    'site/about',
+    'site/data',
+    'site/images',
+    'site/music',
+    'site/posts',
+    'site/subscribe',
+    'site/tags',
+    'site/videos',
+    'site/news-digests'
+  ];
+  const generatedFiles = [
+    'site/CNAME',
+    'site/feed.xml',
+    'site/index.html'
+  ];
+
+  await Promise.all(generatedDirs.map((dir) => fs.rm(dir, { recursive: true, force: true })));
+  await Promise.all(generatedFiles.map((file) => fs.rm(file, { force: true })));
+}
+
 // Main build function
 (async () => {
   console.log('Building site from Obsidian markdown files...\n');
   console.log(`Content directory: ${CONTENT_DIR}\n`);
+
+  await cleanGeneratedOutput();
 
   // Read all content
   const items = await readContentFiles();
@@ -1435,6 +1491,7 @@ async function writeRssFeed(items) {
   await fs.mkdir("site/data", { recursive: true });
   await fs.writeFile("site/data/content.json", JSON.stringify({ items }, null, 2), "utf8");
   await writeRssFeed(items);
+  await writeCnameFile();
 
   // Copy news-digests to site folder for the /news page
   const newsDigestsDir = path.join(process.cwd(), 'news-digests');

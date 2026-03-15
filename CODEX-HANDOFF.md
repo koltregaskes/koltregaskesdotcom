@@ -5,8 +5,9 @@
 ## Project Overview
 
 **Site:** Kol's Korner — A personal blog and daily AI/tech news site
-**Live URL:** https://koltregaskes.github.io/koltregaskesdotcom/
-**Repo:** https://github.com/koltregaskes/koltregaskesdotcom
+**Production URL:** https://koltregaskes.com/
+**GitHub Pages URL:** https://koltregaskes.github.io/kols-korner/
+**Repo:** https://github.com/koltregaskes/kols-korner
 **Stack:** Custom Node.js static site generator, deployed to GitHub Pages
 **Owner:** Kol Tregaskes
 
@@ -19,6 +20,8 @@
 3. The `site/` directory is committed to the repo (it IS the deployable output)
 4. On push to `main`, GitHub Actions runs the build and deploys via GitHub Pages
 5. The build injects Supabase credentials from GitHub Secrets at build time
+6. Repo-aware URLs are derived from workflow env (`GITHUB_OWNER`, `GITHUB_REPO`) or fall back to `kols-korner`
+7. Custom domains can be supplied via `CUSTOM_DOMAIN` or a committed `CNAME` file
 
 ### Key files
 
@@ -56,6 +59,7 @@ The build script:
 - Posts with `publish: false` in frontmatter are excluded
 - Frontmatter fields: `title`, `date`, `tags`, `summary`, `image`, `publish`
 - Supabase URL and key are injected via environment variables: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`
+- Canonical URL generation is environment-aware, so a repo rename or custom domain does not require another hard-coded path sweep
 
 ## Design System
 
@@ -133,8 +137,8 @@ The subscribe page has a form that posts to Supabase, but there's no actual news
 - Category preference UI on the subscribe page
 - Integration with the daily digest pipeline
 
-### 3. News gathering system (Separate project — handled elsewhere)
-The current `scripts/fetch-news.mjs` uses RSS feeds with only 3 sources. This is wrong — the user has 60-70 curated website URLs. **This work is being handled in a separate local session with Supabase access.** See `NEWS-GATHERER-HANDOFF.md` for full context. Do not modify the news gathering scripts.
+### 3. News gathering system (Separate shared tool — handled elsewhere)
+The current `scripts/fetch-news.mjs` uses RSS feeds with only 3 sources. This is wrong — the user has 60-70 curated website URLs. **This work is being handled in a separate local session with Supabase access and is intended to become a shared tool across multiple websites.** See `NEWS-GATHERER-HANDOFF.md` for full context. This repo should consume generated digest outputs, not become the home for the shared news-gatherer logic.
 
 ### 4. Supabase credentials
 The subscribe page has empty Supabase credentials in the committed HTML:

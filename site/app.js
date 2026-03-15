@@ -6,14 +6,20 @@ const state = {
 };
 
 function getRepoBasePath() {
-  // Works for GitHub project pages like /koltregaskesdotcom/...
-  // and keeps working when you're on /koltregaskesdotcom/posts/slug/ too.
+  // GitHub project pages use "/repo-name/...".
+  // Custom domains and local preview should resolve from "/".
+  const knownRepoNames = new Set(["koltregaskesdotcom", "kols-korner", "notion-site-test"]);
+  const { hostname, pathname } = window.location;
+  if (hostname.endsWith("github.io")) {
+    const parts = pathname.split("/").filter(Boolean);
+    return parts.length ? `/${parts[0]}/` : "/";
+  }
   const parts = window.location.pathname.split("/").filter(Boolean);
-  return parts.length ? `/${parts[0]}/` : "/";
+  return parts.length && knownRepoNames.has(parts[0]) ? `/${parts[0]}/` : "/";
 }
 
 function joinBase(base, p) {
-  // base like "/koltregaskesdotcom/"
+  // base like "/kols-korner/"
   // p like "/posts/slug/" or "posts/slug/"
   const clean = (p || "").replace(/^\//, "");
   return `${base}${clean}`;

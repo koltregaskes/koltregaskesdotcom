@@ -1,162 +1,92 @@
 # Kol's Korner
 
-Personal website built from Obsidian markdown files, deployed to GitHub Pages.
+Personal website and publishing system for [koltregaskes.com](https://koltregaskes.com).
 
-**Live site:** https://koltregaskes.github.io/koltregaskesdotcom/
+## What This Repo Is
 
-## Features
+- A custom Node.js static site generator
+- Markdown content in `content/`
+- Daily digests in `news-digests/`
+- Generated, deployable output committed in `site/`
+- GitHub Pages deployment for the production domain `koltregaskes.com`
 
-- **Obsidian-powered** - Write content in Obsidian markdown
-- **Auto-deploy** - Push to main branch, site updates automatically
-- **Dark/Light mode** - Theme toggle with localStorage persistence
-- **Multiple content types** - Articles, images, videos, music
-- **Content filters** - Toggle content types on home page
-- **Gallery navigation** - Keyboard, mouse wheel, prev/next buttons
-- **SEO optimised** - Meta tags, Open Graph, Twitter Cards
-- **Security headers** - CSP, XSS protection, clickjacking protection
-- **Responsive design** - Works on desktop, tablet, and mobile
+The news-gathering pipeline is not maintained in this repo. This site only consumes the generated digest files.
 
-## Quick Start
-
-### 1. Add Content
-
-Create markdown files in the `content/` folder:
-
-```markdown
----
-title: My Post Title
-kind: article
-date: 2026-01-01
-tags: [tech, ai]
-summary: Brief description
-publish: true
----
-
-# My Post
-
-Write your content here in markdown...
-```
-
-### 2. Build Locally (Optional)
+## Build
 
 ```bash
 node scripts/build.mjs
 ```
 
-Then serve the `site/` folder:
+Optional environment variables:
 
 ```bash
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_PUBLISHABLE_KEY=your-key
+CUSTOM_DOMAIN=koltregaskes.com
+```
+
+## Preview Locally
+
+```bash
+node scripts/build.mjs
 cd site
 npx http-server -p 8080
 ```
 
-Visit: http://localhost:8080/koltregaskesdotcom/
+Visit `http://localhost:8080/`.
 
-### 3. Deploy
+## Deploy
 
-Push to the `main` branch. GitHub Actions will automatically build and deploy.
+Push to `main`. GitHub Actions will:
 
-```bash
-git add .
-git commit -m "Add new post"
-git push
-```
+1. Run `node scripts/build.mjs`
+2. Upload `site/`
+3. Deploy to GitHub Pages
 
-## Content Types
+The repo is configured for a custom domain via the committed [`CNAME`](/W:/Websites/sites/koltregaskesdotcom/CNAME) file and can also read `CUSTOM_DOMAIN` from repository variables.
 
-| Kind | Description | Frontmatter |
-|------|-------------|-------------|
-| `article` | Blog posts | `kind: article` |
-| `image` | Image gallery | `kind: image`, `image: path/to/file.jpg` |
-| `video` | Video gallery | `kind: video`, `url: https://...` |
-| `music` | Music gallery | `kind: music`, `url: https://...` |
+## Content Model
 
-## Frontmatter Reference
+Articles and digests use markdown with YAML frontmatter:
 
 ```yaml
 ---
-title: Post Title          # Required
-kind: article              # article|image|video|music
-date: 2026-01-01          # Publication date
-tags: [tag1, tag2]        # Array of tags
-summary: Brief text       # Preview text
-image: images/hero.jpg    # Thumbnail/hero image
-url: https://...          # External URL (for media)
-publish: true             # Set false to hide
+title: My Post Title
+kind: article
+date: 2026-03-15
+tags: [ai, tech]
+summary: Short description for listings and previews
+publish: true
+image: my-image.png
 ---
 ```
 
-## Folder Structure
+Supported fields:
 
-```
-koltregaskesdotcom/
-  content/              # Your markdown content
-    welcome.md
-    images/             # Images for posts
-  scripts/
-    build.mjs           # Build script
-  site/                 # Generated output (don't edit)
-    index.html
-    posts/
-    media/
-    styles.css
-  .github/workflows/    # GitHub Actions
-    pages.yml
-```
+- `title`
+- `kind`
+- `date`
+- `tags`
+- `summary`
+- `image`
+- `url`
+- `publish`
 
-## Site Pages
+Posts with `publish: false` are excluded from the build.
 
-- **Home** - Grid of all content with filters
-- **Posts** - List of articles
-- **Tags** - Articles grouped by tag
-- **Images** - Image gallery
-- **Videos** - Video gallery
-- **Music** - Music gallery
-- **About** - About page
-- **Newsletter** - Subscription form
+## Key Paths
 
-## Design
+- `scripts/build.mjs` - Main build script
+- `content/` - Source articles and static page markdown
+- `news-digests/` - Raw digest markdown used by the news section
+- `site/` - Generated output that GitHub Pages deploys
+- `.github/workflows/pages.yml` - Main Pages deploy workflow
+- `.github/workflows/daily-digest.yml` - Digest build workflow
 
-Inspired by [justoffbyone.com](https://justoffbyone.com/).
+## Notes
 
-## Development
-
-### Prerequisites
-
-- Node.js 18+
-
-### Local Development
-
-```bash
-# Build site
-node scripts/build.mjs
-
-# Serve locally
-cd site && npx http-server -p 8080
-
-# Visit http://localhost:8080/koltregaskesdotcom/
-```
-
-### Customisation
-
-- **Styles:** Edit `site/styles.css`
-- **Templates:** Edit page generation in `scripts/build.mjs`
-- **Content:** Add/edit files in `content/`
-
-## Deployment
-
-GitHub Actions automatically:
-1. Triggers on push to `main`
-2. Runs `node scripts/build.mjs`
-3. Deploys `site/` to GitHub Pages
-
-Manual trigger: Go to Actions tab → "Build and deploy" → "Run workflow"
-
-## Documentation
-
-- [ARCHITECTURE.md](ARCHITECTURE.md) - Technical details
-- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues
-
----
-
-Made in the UK by Kol Tregaskes
+- UK English throughout
+- No external runtime framework
+- `site/` is intentionally committed
+- Internal agent files such as `AGENTS.md`, `CLAUDE.md`, and local Claude settings are ignored and not part of the published project

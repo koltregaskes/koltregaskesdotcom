@@ -9,6 +9,12 @@
 # Node
 node_modules/
 
+# Local agent instructions and machine-specific config
+AGENTS.md
+CLAUDE.md
+content/CLAUDE.md
+.claude/settings.local.json
+
 # OS files
 .DS_Store
 Thumbs.db

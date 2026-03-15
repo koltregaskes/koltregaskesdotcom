@@ -6,9 +6,11 @@ Copy everything below the line into a new Claude Code session running on your lo
 
 ## Context
 
-I'm building a personal blog/news site called **Kol's Korner** (https://koltregaskes.github.io/koltregaskesdotcom/). The site is a custom Node.js static site generator deployed to GitHub Pages.
+I'm building a personal blog/news site called **Kol's Korner** (https://koltregaskes.com/). The site is a custom Node.js static site generator deployed to GitHub Pages.
 
-The repo is at: `https://github.com/koltregaskes/koltregaskesdotcom`
+The repo is at: `https://github.com/koltregaskes/kols-korner`
+
+This news-gatherer is not just for this site. It is intended to become a shared tool used by multiple websites, with this repo acting as one consumer of its generated outputs.
 
 ## The News Gatherer / News Scout
 
