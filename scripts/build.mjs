@@ -1277,17 +1277,6 @@ async function writeSubscribePage() {
       <p id="subscribe-message" style="margin-top: 16px; text-align: center; display: none;"></p>
     </div>
 
-    <!-- RSS Alternative -->
-    <div class="subscribe-rss">
-      <h3>Prefer RSS?</h3>
-      <p>Subscribe via your favourite feed reader instead.</p>
-      <a href="../feed.xml" class="rss-link">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36m0-12.64a14.18 14.18 0 0 1 14.18 14.18h-3.64a10.55 10.55 0 0 0-10.54-10.55V3m0 5.09a9.09 9.09 0 0 1 9.09 9.09H11.64a5.45 5.45 0 0 0-5.46-5.45V8.09z"/>
-        </svg>
-        RSS Feed
-      </a>
-    </div>
   </main>
 
   ${getFooterHTML()}
