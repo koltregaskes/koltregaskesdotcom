@@ -9,6 +9,9 @@ This file is a short, session-specific handoff for the next Codex session after 
 - The local folder has not been renamed yet. The current working path is still `W:\Websites\sites\koltregaskesdotcom`.
 - The user plans to rename the local folder next and then start a new Codex session.
 - Domain work is intentionally deferred for now. The focus is finishing the site and the news system first.
+- This workspace runs on a Windows mini PC that is on 24/7.
+- The repo lives on a NAS that is also on 24/7.
+- Local scheduled jobs are allowed and preferred where useful.
 
 ## What We Did In This Session
 
@@ -33,6 +36,7 @@ This file is a short, session-specific handoff for the next Codex session after 
 3. Continue the website cleanup and launch polish before returning to domain cutover.
 4. Replace the current stopgap news fetcher with the real shared news gatherer.
 5. Build the Supabase-backed version of the news system.
+6. Set up local scheduling on Windows for any long-running or recurring jobs instead of relying only on GitHub Actions.
 
 ## News Gatherer Status
 
@@ -42,6 +46,8 @@ This file is a short, session-specific handoff for the next Codex session after 
 - This repo also does not contain the real Supabase news schema or ingestion code.
 - There is no `.env` file in this repo containing Supabase credentials.
 - The handoff doc `NEWS-GATHERER-HANDOFF.md` says the source list previously lived in `SOURCE-TESTING-TRACKER.md`.
+- Because this machine is always on, the real gatherer should probably run as a local Windows Scheduled Task once the shared scraper exists.
+- The user explicitly wants Codex to handle recurring jobs if possible rather than delegating that work elsewhere.
 
 ## What The Next Session Will Need From The User
 
@@ -54,6 +60,12 @@ This file is a short, session-specific handoff for the next Codex session after 
 - The canonical long-form project handoff is still `CODEX-HANDOFF.md`.
 - The news-specific long-form brief is `NEWS-GATHERER-HANDOFF.md`.
 - The repo is now named `kols-korner`, but some local filesystem paths may still use the old folder name until the user renames the folder.
+
+## Scheduling Note
+
+- Do not create the permanent local scheduled task until after the folder rename, otherwise the task will point at the wrong path.
+- After the rename, create the recurring local jobs directly on Windows if the next session needs them.
+- The most likely first local scheduled job is the shared news gatherer running twice daily, followed by digest generation and site rebuild/publish steps.
 
 ## Dirty Working Tree Note
 
