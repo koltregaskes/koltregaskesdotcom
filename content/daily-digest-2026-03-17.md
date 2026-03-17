@@ -11,6 +11,54 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### The Pentagon is developing alternatives to Anthropic, report says
+
+After their dramatic falling-out, it doesn't seem as though Anthropic and the Pentagon are getting back together.
+
+[Read more](https://techcrunch.com/2026/03/17/the-pentagon-is-developing-alternatives-to-anthropic-report-says/)
+
+---
+
+### BuzzFeed debuts AI slop apps in bid for new revenue
+
+BuzzFeed unveiled new AI-powered social apps at SXSW, but its demos drew muted reactions.
+
+[Read more](https://techcrunch.com/2026/03/17/buzzfeed-ai-slop-apps-sxsw-bf-island-conjure/)
+
+---
+
+### AI's 'boys' club' could widen the wealth gap for women, says Rana el Kaliouby
+
+AI investor Rana el Kaliouby warns that if women are shut out of AI funding and leadership, the consequences will be grim.
+
+[Read more](https://techcrunch.com/2026/03/17/ais-boys-club-could-widen-the-wealth-gap-for-women-says-rana-el-kaliouby/)
+
+---
+
+### Niv-AI exits stealth to wring more power performance out of GPUs
+
+The company raised $12 million in seed funding to measure and manage GPU power surges.
+
+[Read more](https://techcrunch.com/2026/03/17/niv-ai-exits-stealth-to-wring-more-power-performance-out-of-gpus/)
+
+---
+
+### Trustpilot partners with AI companies as traditional search declines
+
+Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&
+
+[Read more](https://www.artificialintelligence-news.com/news/ai-in-ecommerce-trustpilot-partnerships-integration-news-trad-search-declines/)
+
+---
+
+### Goldman Sachs sees AI investment shift to data centres
+
+Artificial intelligence investment is entering a more selective phase as companies and investors look beyond early excitement and focus on the data centre infrastructure required to run AI systems. Recent analysis from Goldman Sachs suggests the market is moving toward what the firm describes as a &
+
+[Read more](https://www.artificialintelligence-news.com/news/goldman-sachs-sees-ai-investment-shift-to-data-centres/)
+
+---
+
 ### Jensen Huang just put Nvidia's Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere
 
 Nvidia CEO Jensen Huang said he expects $1 trillion worth of orders for the chips.
@@ -26,6 +74,8 @@ Sen. Elizabeth Warren noted that Grok, xAI's controversial chatbot, has created 
 [Read more](https://techcrunch.com/2026/03/16/warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks/)
 
 ---
+
+## Industry
 
 ### Nvidia’s DLSS 5 uses generative AI to boost photorealism in video games, with ambitions beyond gaming
 
@@ -67,8 +117,6 @@ Encyclopedia Britannica and Merriam-Webster say that OpenAI violated the copyrig
 
 ---
 
-## Industry
-
 ### Google, Accel India accelerator chooses 5 startups and none are 'AI wrappers'
 
 Google and Accel say about 70% of AI startup pitches tied to India were "wrappers" as they reviewed more than 4,000 applications for their Atoms cohort.
@@ -77,39 +125,31 @@ Google and Accel say about 70% of AI startup pitches tied to India were "wrapper
 
 ---
 
-### Wiz investor unpacks Google’s $32B acquisition
-
-Shardul Shah of Index Ventures walks us through Google's biggest acquisition ever.
-
-[Read more](https://techcrunch.com/2026/03/15/wiz-investor-unpacks-googles-32b-acquisition/)
-
----
-
-### US Army announces contract with Anduril worth up to $20B
-
-The Army described this as a single enterprise contract consolidating more than 120 separate "procurement actions."
-
-[Read more](https://techcrunch.com/2026/03/14/us-army-announces-contract-with-anduril-worth-up-to-20b/)
-
----
-
-### Meta reportedly considering layoffs that could affect 20% of the company
-
-These layoffs could help Facebook's parent company offset its aggressive spending on AI infrastructure, as well as AI-related acquisitions and hiring.
-
-[Read more](https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/)
-
----
-
-### How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others
-
-Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.
-
-[Read more](https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/)
-
----
-
 ## Research & Products
+
+### Google's Personal Intelligence feature is expanding to all US users
+
+Personal Intelligence allows Google's AI assistant to tap into your Google ecosystem, such as Gmail and Google Photos, to provide more tailored responses.
+
+[Read more](https://techcrunch.com/2026/03/17/googles-personal-intelligence-feature-is-expanding-to-all-us-users/)
+
+---
+
+### World launches tool to verify humans behind AI shopping agents
+
+As AI agents take the reins for online shoppers, Sam Altman's unconventional startup is looking to expand its verification offerings to support agentic commerce.
+
+[Read more](https://techcrunch.com/2026/03/17/world-launches-tool-to-verify-humans-behind-ai-shopping-agents/)
+
+---
+
+### Gamma adds AI image-generation tools in bid to take on Canva and Adobe
+
+The company's new product, called Gamma Imagine, will let users employ text prompts to create brand-specific assets like interactive charts and visualizations, marketing collateral, social graphics, and infographics.
+
+[Read more](https://techcrunch.com/2026/03/17/gamma-adds-ai-image-generation-tools-in-bid-to-take-on-canva-and-adobe/)
+
+---
 
 ### Picsart now allows creators to 'hire' AI assistants through agent marketplace
 
@@ -143,15 +183,15 @@ When OpenAI launched Frontier in February, the announcement was described as a p
 
 ---
 
-### 'Not built right the first time' &#8212; Musk's xAI is starting over again, again
+## Policy & Ethics
 
-The AI lab is revamping its effort to build an AI coding tool, with two new executives joining from Cursor.
+### OpenAI expands government footprint with AWS deal, report says
 
-[Read more](https://techcrunch.com/2026/03/13/not-built-right-the-first-time-musks-xai-is-starting-over-again-again/)
+OpenAI has reportedly signed a partnership with AWS to sell its AI systems to the U.S. government for classified and unclassified work, marking an expansion beyond its Pentagon deal last month.
+
+[Read more](https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/)
 
 ---
-
-## Policy & Ethics
 
 ### Nvidia's version of OpenClaw could solve its biggest problem: security
 
@@ -174,22 +214,6 @@ The three plaintiffs are seeking to represent anyone who had real images of them
 The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man
 
 [Read more](https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/)
-
----
-
-### ByteDance reportedly pauses global launch of its Seedance 2.0 video generator
-
-The company is reportedly delaying the launch as its engineers and lawyers work to avert further legal issues.
-
-[Read more](https://techcrunch.com/2026/03/15/bytedance-reportedly-pauses-global-launch-of-its-seedance-2-0-video-generator/)
-
----
-
-### Lawyer behind AI psychosis cases warns of mass casualty risks
-
-AI chatbots have been linked to suicides for years. Now one lawyer says they are showing up in mass casualty cases too, and the technology is moving faster than the safeguards.
-
-[Read more](https://techcrunch.com/2026/03/15/lawyer-behind-ai-psychosis-cases-warns-of-mass-casualty-risks/)
 
 ---
 
