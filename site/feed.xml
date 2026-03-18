@@ -5,9 +5,19 @@
     <link>https://koltregaskes.com</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 17 Mar 2026 18:59:12 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 06:59:43 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.com/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>Daily Digest: Wednesday, 18 March 2026</title>
+      <link>https://koltregaskes.com/posts/daily-digest-wednesday-18-march-2026/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-wednesday-18-march-2026/</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Wednesday, 18 March 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+    </item>
     <item>
       <title>Daily Digest: Tuesday, 17 March 2026</title>
       <link>https://koltregaskes.com/posts/daily-digest-tuesday-17-march-2026/</link>
@@ -204,18 +214,6 @@
       <category>Mars</category>
       <category>space</category>
       <category>robotics</category>
-    </item>
-    <item>
-      <title>JPMorgan Drops $30 Billion on AI Infrastructure</title>
-      <link>https://koltregaskes.com/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/jpmorgan-drops-30-billion-on-ai-infrastructure/</guid>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate>
-      <description>JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</description>
-      <category>AI</category>
-      <category>finance</category>
-      <category>JPMorgan</category>
-      <category>infrastructure</category>
-      <category>banking</category>
     </item>
   </channel>
 </rss>
