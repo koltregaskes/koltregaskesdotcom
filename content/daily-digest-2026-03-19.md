@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Meta rolls out new AI content enforcement systems while reducing reliance on third-party vendors
+
+Meta believes these AI systems can detect more violations with greater accuracy, better prevent scams, respond more quickly to real-world events, and reduce over-enforcement.
+
+[Read more](https://techcrunch.com/2026/03/19/meta-rolls-out-new-ai-content-enforcement-systems-while-reducing-reliance-on-third-party-vendors/)
+
+---
+
+### TechCrunch Startup Battlefield 200 nominations are still open
+
+Nominate your startup, or one you know, for TechCrunch Startup Battlefield 200 before May 27. Chance to win $100,000 equity-free funding and VC access.
+
+[Read more](https://techcrunch.com/2026/03/19/techcrunch-startup-battlefield-200-nominations-are-still-open/)
+
+---
+
+### Amazon brings Alexa+ to the UK
+
+The company is currently letting users in the U.K. try out Alexa+ for free via an early access program.
+
+[Read more](https://techcrunch.com/2026/03/19/amazon-brings-alexa-to-the-uk/)
+
+---
+
 ### Meta is having trouble with rogue AI agents
 
 A rogue AI agent inadvertently exposed Meta company and user data to engineers who didn't have permission to see it.
@@ -51,6 +75,8 @@ Patreon CEO Jack Conte says AI companies should pay creators for training data, 
 
 ---
 
+## Industry
+
 ### This startup wants to make enterprise software look more like a prompt
 
 The company has raised $12 million in seed funding to build an AI operating system for enterprise.
@@ -74,8 +100,6 @@ AI collaboration startup Cove is shutting down after its team joined Microsoft, 
 [Read more](https://techcrunch.com/2026/03/18/microsoft-hires-the-team-of-sequioa-backed-ai-collaboration-platform-cove/)
 
 ---
-
-## Industry
 
 ### For effective AI, insurance needs to get its data house in order
 
@@ -101,30 +125,6 @@ Thousands of people are trying Garry Tan's Claude Code setup, which was shared o
 
 ---
 
-### The Pentagon is developing alternatives to Anthropic, report says
-
-After their dramatic falling-out, it doesn't seem as though Anthropic and the Pentagon are getting back together.
-
-[Read more](https://techcrunch.com/2026/03/17/the-pentagon-is-developing-alternatives-to-anthropic-report-says/)
-
----
-
-### BuzzFeed debuts AI slop apps in bid for new revenue
-
-BuzzFeed unveiled new AI-powered social apps at SXSW, but its demos drew muted reactions.
-
-[Read more](https://techcrunch.com/2026/03/17/buzzfeed-ai-slop-apps-sxsw-bf-island-conjure/)
-
----
-
-### AI's 'boys' club' could widen the wealth gap for women, says Rana el Kaliouby
-
-AI investor Rana el Kaliouby warns that if women are shut out of AI funding and leadership, the consequences will be grim.
-
-[Read more](https://techcrunch.com/2026/03/17/ais-boys-club-could-widen-the-wealth-gap-for-women-says-rana-el-kaliouby/)
-
----
-
 ### Trustpilot partners with AI companies as traditional search declines
 
 Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&
@@ -142,6 +142,30 @@ Artificial intelligence investment is entering a more selective phase as compani
 ---
 
 ## Research & Products
+
+### DoorDash launches a new 'Tasks' app that pays couriers to submit videos to train AI
+
+Delivery couriers will be able to earn money by completing activities like filming everyday tasks or recording themselves speaking in another language.
+
+[Read more](https://techcrunch.com/2026/03/19/doordash-launches-a-new-tasks-app-that-pays-couriers-to-submit-videos-to-train-ai/)
+
+---
+
+### Multiverse Computing pushes its compressed AI models into the mainstream
+
+After compressing models from major AI labs, including OpenAI, Meta, DeepSeek, and Mistral AI, Multiverse Computing has launched both an app that showcases the capabilities of its compressed models and an API that makes them more widely available.
+
+[Read more](https://techcrunch.com/2026/03/19/multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstream/)
+
+---
+
+### NVIDIA wants enterprise AI agents safer to deploy
+
+The NVIDIA Agent Toolkit is Jensen Huang&#8217;s answer to the question enterprises keep asking: how do we put AI agents to work without losing control of our data and our liability? Announced at GTC 2026 in San Jose on March 16, the NVIDIA Agent Toolkit is an open-source software stack designed to
+
+[Read more](https://www.artificialintelligence-news.com/news/nvidia-agent-toolkit-enterprise-ai-agents/)
+
+---
 
 ### Rebel Audio is a new AI podcasting tool aimed at first-time creators
 
@@ -191,14 +215,6 @@ Mistral Forge lets enterprises train custom AI models from scratch on their own 
 
 ---
 
-### Google's Personal Intelligence feature is expanding to all US users
-
-Personal Intelligence allows Google's AI assistant to tap into your Google ecosystem, such as Gmail and Google Photos, to provide more tailored responses.
-
-[Read more](https://techcrunch.com/2026/03/17/googles-personal-intelligence-feature-is-expanding-to-all-us-users/)
-
----
-
 ### NTT DATA and NVIDIA bring enterprise AI factories to production scale
 
 NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including
@@ -217,11 +233,11 @@ When OpenAI launched Frontier in February, the announcement was described as a p
 
 ## Policy & Ethics
 
-### OpenAI expands government footprint with AWS deal, report says
+### Visa prepares payment systems for AI agent-initiated transactions
 
-OpenAI has reportedly signed a partnership with AWS to sell its AI systems to the U.S. government for classified and unclassified work, marking an expansion beyond its Pentagon deal last month.
+Payments rely on a simple model: a person decides to buy something, and a bank or card network processes the transaction. That model is starting to change as Visa tests how AI agents can initiate payments. New work in the banking sector suggests that, in some cases, software agents may soon take on
 
-[Read more](https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/)
+[Read more](https://www.artificialintelligence-news.com/news/visa-prepares-payment-systems-for-ai-agent-initiated-transactions/)
 
 ---
 
