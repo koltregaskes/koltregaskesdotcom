@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### WordPress.com now lets AI agents write and publish posts, and more
+
+New AI agents on WordPress.com could lower barriers to publishing while increasing machine-generated content across the web.
+
+[Read more](https://techcrunch.com/2026/03/20/wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more/)
+
+---
+
+### The best AI investment might be in energy tech
+
+Power has become one of the biggest bottlenecks in rolling out new AI data centers. That's creating an opening for investors.
+
+[Read more](https://techcrunch.com/2026/03/20/the-best-ai-investment-might-be-in-energy-tech/)
+
+---
+
+### These AI notetaking devices can help you record and transcribe your meetings
+
+These physical notetakers transcribe audio and give users summaries and action items of meetings using AI. Some even offer live translation.
+
+[Read more](https://techcrunch.com/2026/03/20/ai-notetaker-hardware-devices-pins-pendants-record-transcribe/)
+
+---
+
 ### Jeff Bezos reportedly wants $100 billion to buy and transform old manufacturing firms with AI
 
 The Amazon magnate has a new project centered around acquiring industrial firms and revamping them with AI technology.
@@ -51,6 +75,8 @@ The company is currently letting users in the U.K. try out Alexa+ for free via a
 
 ---
 
+## Industry
+
 ### Meta is having trouble with rogue AI agents
 
 A rogue AI agent inadvertently exposed Meta company and user data to engineers who didn't have permission to see it.
@@ -74,8 +100,6 @@ Nothing CEO Carl Pei says AI agents will eventually replace apps, shifting smart
 [Read more](https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/)
 
 ---
-
-## Industry
 
 ### Nvidia is quietly building a multibillion-dollar behemoth to rival its chips business
 
@@ -101,35 +125,11 @@ The company has raised $12 million in seed funding to build an AI operating syst
 
 ---
 
-### Sequen snags $16M to bring TikTok-style personalization tech to any consumer company
-
-With its Series A, Sequen is bringing its proprietary AI ranking and personalization technology to large consumer business.
-
-[Read more](https://techcrunch.com/2026/03/18/sequen-snags-16m-to-bring-tiktok-style-personalization-tech-to-any-consumer-company/)
-
----
-
-### Microsoft hires the team of Sequoia-backed AI collaboration platform, Cove
-
-AI collaboration startup Cove is shutting down after its team joined Microsoft, with service ending April 1 and customer data set for deletion.
-
-[Read more](https://techcrunch.com/2026/03/18/microsoft-hires-the-team-of-sequioa-backed-ai-collaboration-platform-cove/)
-
----
-
 ### For effective AI, insurance needs to get its data house in order
 
 A report from Autorek, a provider of AI solutions to the insurance industry has produced a report that describes operational drag in companies&#8217; internal processes that not only affect overall efficiency but cause an impediment to the effective implementation of AI in insurance concerns. Insura
 
 [Read more](https://www.artificialintelligence-news.com/news/for-effective-ai-insurance-needs-a-better-data-layer-and-integration/)
-
----
-
-### DOD says Anthropic’s ‘red lines’ make it an ‘unacceptable risk to national security’
-
-The Defense Department said concerns that Anthropic might "attempt to disable its technology" during "warfighting operations" validate its decision to label the AI firm a supply-chain risk.
-
-[Read more](https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/)
 
 ---
 
@@ -207,15 +207,15 @@ Mastercard has developed a large tabular model (an LTM as opposed to an LLM) tha
 
 ---
 
-### The PhD students who became the judges of the AI industry
+## Policy & Ethics
 
-Artificial intelligence models are multiplying fast, and competition is stiff. With so many players crowding the space, which one will be the best — and who decides that? Arena, formerly LM Arena, has emerged as the de facto public leaderboard for frontier LLMs, influencing funding, launches, and PR
+### Trump's AI framework targets state laws, shifts child safety burden to parents
 
-[Read more](https://techcrunch.com/podcast/the-phd-students-who-became-the-judges-of-the-ai-industry/)
+Trump’s AI framework pushes federal preemption of state laws, emphasizes innovation, and shifts responsibility for child safety toward parents while laying out lighter-touch rules for tech companies.
+
+[Read more](https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/)
 
 ---
-
-## Policy & Ethics
 
 ### Visa prepares payment systems for AI agent-initiated transactions
 
