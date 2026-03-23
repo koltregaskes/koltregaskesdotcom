@@ -1,6 +1,131 @@
 {
   "items": [
     {
+      "title": "Daily Digest: Monday, 23 March 2026",
+      "slug": "daily-digest-monday-23-march-2026",
+      "kind": "article",
+      "summary": "AI and technology news digest for Monday, 23 March 2026",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"daily-digest-monday-23-march-2026\"><span class=\"hash\">#</span> Daily Digest: Monday, 23 March 2026</h2>\n\n<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>\n\n<h3 id=\"top-stories\"><span class=\"hash\">##</span> Top Stories</h3>\n\n<h4 id=\"do-you-want-to-build-a-robot-snowman\"><span class=\"hash\">###</span> Do you want to build a robot snowman?</h4>\n\n<p>On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.</p>\n\n<a href=\"https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/\">Read more</a>\n\n<hr />\n\n<h4 id=\"elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla\"><span class=\"hash\">###</span> Elon Musk unveils chip manufacturing plans for SpaceX and Tesla</h4>\n\n<p>Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.</p>\n\n<a href=\"https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/\">Read more</a>\n\n<hr />\n\n<h4 id=\"an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-open\"><span class=\"hash\">###</span> An exclusive tour of Amazon's Trainium lab, the chip that's won over Anthropic, OpenAI, even Apple</h4>\n\n<p>Shortly after Amazon announced its $50 billion investment in OpenAI, AWS invited me on a private tour of the chip lab at the heart of the deal.</p>\n\n<a href=\"https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/\">Read more</a>\n\n<hr />\n\n<h4 id=\"are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business\"><span class=\"hash\">###</span> Are AI tokens the new signing bonus or just a cost of doing business?</h4>\n\n<p>Maybe tokens really will become the fourth pillar of engineering compensation. But engineers might want to hold the line before embracing this as a straightforward win.</p>\n\n<a href=\"https://techcrunch.com/2026/03/21/are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business/\">Read more</a>\n\n<hr />\n\n<h4 id=\"publisher-pulls-horror-novel-shy-girl-over-ai-concerns\"><span class=\"hash\">###</span> Publisher pulls horror novel ‘Shy Girl’ over AI concerns</h4>\n\n<p>Hachette Book Group said it will not be publishing “Shy Girl” over concerns that artificial intelligence was used to generate the text.</p>\n\n<a href=\"https://techcrunch.com/2026/03/21/publisher-pulls-horror-novel-shy-girl-over-ai-concerns/\">Read more</a>\n\n<hr />\n\n<h3 id=\"industry\"><span class=\"hash\">##</span> Industry</h3>\n\n<h4 id=\"why-wall-street-wasnt-won-over-by-nvidias-big-conference\"><span class=\"hash\">###</span> Why Wall Street wasn't won over by Nvidia's big conference</h4>\n\n<p>Despite investor fears of an AI bubble, Nvidia's latest conference shows that most in the industry aren't concerned by that possibility.</p>\n\n<a href=\"https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/\">Read more</a>\n\n<hr />\n\n<h4 id=\"microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows\"><span class=\"hash\">###</span> Microsoft rolls back some of its Copilot AI bloat on Windows</h4>\n\n<p>The company is reducing Copilot entry points on Windows, starting with Photos, Widgets, Notepad, and other apps.</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/\">Read more</a>\n\n<hr />\n\n<h4 id=\"wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more\"><span class=\"hash\">###</span> WordPress.com now lets AI agents write and publish posts, and more</h4>\n\n<p>New AI agents on WordPress.com could lower barriers to publishing while increasing machine-generated content across the web.</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more/\">Read more</a>\n\n<hr />\n\n<h4 id=\"the-best-ai-investment-might-be-in-energy-tech\"><span class=\"hash\">###</span> The best AI investment might be in energy tech</h4>\n\n<p>Power has become one of the biggest bottlenecks in rolling out new AI data centers. That's creating an opening for investors.</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/the-best-ai-investment-might-be-in-energy-tech/\">Read more</a>\n\n<hr />\n\n<h4 id=\"these-ai-notetaking-devices-can-help-you-record-and-transcribe-your-meetings\"><span class=\"hash\">###</span> These AI notetaking devices can help you record and transcribe your meetings</h4>\n\n<p>These physical notetakers transcribe audio and give users summaries and action items of meetings using AI. Some even offer live translation.</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/ai-notetaker-hardware-devices-pins-pendants-record-transcribe/\">Read more</a>\n\n<hr />\n\n<h3 id=\"research-products\"><span class=\"hash\">##</span> Research & Products</h3>\n\n<h4 id=\"cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ai-s-kimi\"><span class=\"hash\">###</span> Cursor admits its new coding model was built on top of Moonshot AI’s Kimi</h4>\n\n<p>Building on top of a Chinese model feels particularly fraught right now.</p>\n\n<a href=\"https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/\">Read more</a>\n\n<hr />\n\n<h3 id=\"policy-ethics\"><span class=\"hash\">##</span> Policy & Ethics</h3>\n\n<h4 id=\"delve-accused-of-misleading-customers-with-fake-compliance\"><span class=\"hash\">###</span> Delve accused of misleading customers with ‘fake compliance’</h4>\n\n<p>An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.</p>\n\n<a href=\"https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/\">Read more</a>\n\n<hr />\n\n<h4 id=\"new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-align\"><span class=\"hash\">###</span> New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput</h4>\n\n<p>Anthropic submitted two sworn declarations to a California federal court late Friday afternoon, pushing back on the Pentagon's assertion that the AI company poses an \"unacceptable risk to national security\" and arguing that the government's case relies on technical misunderstandings and claims that</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-aligned-a-week-after-trump-declared-the-relationship-kaput/\">Read more</a>\n\n<hr />\n\n<h4 id=\"what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet\"><span class=\"hash\">###</span> What happened at Nvidia GTC: NemoClaw, Robot Olaf, and a $1 trillion bet</h4>\n\n<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>\n\n<a href=\"https://techcrunch.com/video/what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet/\">Read more</a>\n\n<hr />\n\n<h4 id=\"nvidia-has-an-openclaw-strategy-do-you\"><span class=\"hash\">###</span> Nvidia has an OpenClaw strategy. Do you?</h4>\n\n<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>\n\n<a href=\"https://techcrunch.com/podcast/nvidia-has-an-openclaw-strategy-do-you/\">Read more</a>\n\n<hr />\n\n<h4 id=\"trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents\"><span class=\"hash\">###</span> Trump's AI framework targets state laws, shifts child safety burden to parents</h4>\n\n<p>Trump’s AI framework pushes federal preemption of state laws, emphasizes innovation, and shifts responsibility for child safety toward parents while laying out lighter-touch rules for tech companies.</p>\n\n<a href=\"https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/\">Read more</a>\n\n<hr />\n\n\n<em>This digest was automatically generated.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "daily-digest-monday-23-march-2026",
+          "text": "Daily Digest: Monday, 23 March 2026"
+        },
+        {
+          "level": 3,
+          "id": "top-stories",
+          "text": "Top Stories"
+        },
+        {
+          "level": 4,
+          "id": "do-you-want-to-build-a-robot-snowman",
+          "text": "Do you want to build a robot snowman?"
+        },
+        {
+          "level": 4,
+          "id": "elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla",
+          "text": "Elon Musk unveils chip manufacturing plans for SpaceX and Tesla"
+        },
+        {
+          "level": 4,
+          "id": "an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-open",
+          "text": "An exclusive tour of Amazon's Trainium lab, the chip that's won over Anthropic, OpenAI, even Apple"
+        },
+        {
+          "level": 4,
+          "id": "are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business",
+          "text": "Are AI tokens the new signing bonus or just a cost of doing business?"
+        },
+        {
+          "level": 4,
+          "id": "publisher-pulls-horror-novel-shy-girl-over-ai-concerns",
+          "text": "Publisher pulls horror novel ‘Shy Girl’ over AI concerns"
+        },
+        {
+          "level": 3,
+          "id": "industry",
+          "text": "Industry"
+        },
+        {
+          "level": 4,
+          "id": "why-wall-street-wasnt-won-over-by-nvidias-big-conference",
+          "text": "Why Wall Street wasn't won over by Nvidia's big conference"
+        },
+        {
+          "level": 4,
+          "id": "microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows",
+          "text": "Microsoft rolls back some of its Copilot AI bloat on Windows"
+        },
+        {
+          "level": 4,
+          "id": "wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more",
+          "text": "WordPress.com now lets AI agents write and publish posts, and more"
+        },
+        {
+          "level": 4,
+          "id": "the-best-ai-investment-might-be-in-energy-tech",
+          "text": "The best AI investment might be in energy tech"
+        },
+        {
+          "level": 4,
+          "id": "these-ai-notetaking-devices-can-help-you-record-and-transcribe-your-meetings",
+          "text": "These AI notetaking devices can help you record and transcribe your meetings"
+        },
+        {
+          "level": 3,
+          "id": "research-products",
+          "text": "Research & Products"
+        },
+        {
+          "level": 4,
+          "id": "cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ai-s-kimi",
+          "text": "Cursor admits its new coding model was built on top of Moonshot AI’s Kimi"
+        },
+        {
+          "level": 3,
+          "id": "policy-ethics",
+          "text": "Policy & Ethics"
+        },
+        {
+          "level": 4,
+          "id": "delve-accused-of-misleading-customers-with-fake-compliance",
+          "text": "Delve accused of misleading customers with ‘fake compliance’"
+        },
+        {
+          "level": 4,
+          "id": "new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-align",
+          "text": "New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput"
+        },
+        {
+          "level": 4,
+          "id": "what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet",
+          "text": "What happened at Nvidia GTC: NemoClaw, Robot Olaf, and a $1 trillion bet"
+        },
+        {
+          "level": 4,
+          "id": "nvidia-has-an-openclaw-strategy-do-you",
+          "text": "Nvidia has an OpenClaw strategy. Do you?"
+        },
+        {
+          "level": 4,
+          "id": "trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents",
+          "text": "Trump's AI framework targets state laws, shifts child safety burden to parents"
+        }
+      ],
+      "readingTime": 4,
+      "date": "2026-03-23",
+      "updatedTime": "2026-03-23",
+      "localPath": "/posts/daily-digest-monday-23-march-2026/"
+    },
+    {
       "title": "Daily Digest: Sunday, 22 March 2026",
       "slug": "daily-digest-sunday-22-march-2026",
       "kind": "article",

@@ -5,9 +5,19 @@
     <link>https://koltregaskes.com</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 22 Mar 2026 18:34:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 07:06:43 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.com/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>Daily Digest: Monday, 23 March 2026</title>
+      <link>https://koltregaskes.com/posts/daily-digest-monday-23-march-2026/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-monday-23-march-2026/</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Monday, 23 March 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+    </item>
     <item>
       <title>Daily Digest: Sunday, 22 March 2026</title>
       <link>https://koltregaskes.com/posts/daily-digest-sunday-22-march-2026/</link>
@@ -194,16 +204,6 @@
       <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-wednesday-4-march-2026/</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description>AI and technology news digest for Wednesday, 4 March 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Tuesday, 3 March 2026</title>
-      <link>https://koltregaskes.com/posts/daily-digest-tuesday-3-march-2026/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-tuesday-3-march-2026/</guid>
-      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Tuesday, 3 March 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
