@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Doss raises $55M for AI inventory management that plugs into ERP
+
+Doss's AI-powered inventory management system integrates with existing ERP systems. The Series B round was co-led by Madrona and Premji Invest.
+
+[Read more](https://techcrunch.com/2026/03/24/doss-raises-55m-for-ai-inventory-management-that-plugs-into-erp/)
+
+---
+
+### Automating complex finance workflows with multimodal AI
+
+Finance leaders are automating their complex workflows by actively adopting powerful new multimodal AI frameworks. Extracting text from unstructured documents presents a frequent headache for developers. Historically, standard optical character recognition systems failed to accurately digitise compl
+
+[Read more](https://www.artificialintelligence-news.com/news/automating-complex-finance-workflows-with-multimodal-ai/)
+
+---
+
+### Securing AI systems under today's and tomorrow's conditions
+
+Evidence cited in an eBook titled &#8220;AI Quantum Resilience&#8221;, published by Utimaco [email wall], shows organisations consider security risks as the leading barrier to effective adoption of AI on data they hold. AI&#8217;s value depends on data amassed by an organisation. However, there are
+
+[Read more](https://www.artificialintelligence-news.com/news/quantum-resilient-ai-needs-migration-and-hardware-protected-data-enclaves/)
+
+---
+
 ### Bernie Sanders' AI 'gotcha' video flops, but the memes are great
 
 Sen. Bernie Sanders thinks he's tricked Claude into revealing the AI industry's secrets, but he really just exposed how agreeable chatbots can become.
@@ -51,6 +75,8 @@ OpenAI CEO Sam Altman is stepping down as board chair of Helion. His departure c
 
 ---
 
+## Industry
+
 ### Palantir AI to support UK finance operations
 
 UK authorities believe improving efficiency across national finance operations requires applying AI platforms from vendors like Palantir. The country&#8217;s financial regulator, the FCA, has initiated a project leveraging AI to identify illicit activities. The FCA is currently testing the Foundry p
@@ -66,8 +92,6 @@ On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GT
 [Read more](https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/)
 
 ---
-
-## Industry
 
 ### Elon Musk unveils chip manufacturing plans for SpaceX and Tesla
 
@@ -93,23 +117,39 @@ Maybe tokens really will become the fourth pillar of engineering compensation. B
 
 ---
 
-### Publisher pulls horror novel ‘Shy Girl’ over AI concerns
-
-Hachette Book Group said it will not be publishing “Shy Girl” over concerns that artificial intelligence was used to generate the text.
-
-[Read more](https://techcrunch.com/2026/03/21/publisher-pulls-horror-novel-shy-girl-over-ai-concerns/)
-
----
-
-### Why Wall Street wasn't won over by Nvidia's big conference
-
-Despite investor fears of an AI bubble, Nvidia's latest conference shows that most in the industry aren't concerned by that possibility.
-
-[Read more](https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/)
-
----
-
 ## Research & Products
+
+### Talat's AI meeting notes stay on your machine, not in the cloud
+
+The subscription-free AI meeting notes app is a local-first twist on notetaking tools like Granola.
+
+[Read more](https://techcrunch.com/2026/03/24/talats-ai-meeting-notes-stay-on-your-machine-not-in-the-cloud/)
+
+---
+
+### Meet the former Apple designer building a new AI interface at Hark
+
+The company said it would design models, hardware, and interfaces in tandem to deliver a "seamless end-to-end personal intelligence product."
+
+[Read more](https://techcrunch.com/2026/03/24/meet-the-former-apple-designer-building-a-new-ai-interface-at-hark/)
+
+---
+
+### Mirage raises $75M to continue building models for its AI video-editing app Captions
+
+Mirage, the maker of video-editing app Captions, has raised $75 million in growth financing from General Catalyst's Customer Value Fund (CVF).
+
+[Read more](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/)
+
+---
+
+### Agile Robots becomes the latest robotics company to partner with Google DeepMind
+
+Agile Robots will incorporate Google DeepMind's robotics foundation models into its bots while collecting data for the AI research lab.
+
+[Read more](https://techcrunch.com/2026/03/24/agile-robots-becomes-the-latest-robotics-company-to-partner-with-google-deepmind/)
+
+---
 
 ### Air Street becomes one of the largest solo VCs in Europe with $232M fund
 
@@ -145,19 +185,19 @@ Building on top of a Chinese model feels particularly fraught right now.
 
 ## Policy & Ethics
 
+### OpenAI adds open source tools to help developers build for teen safety
+
+Rather than working from scratch to figure out how to make AI safer for teens, developers can use these policies to fortify what they build.
+
+[Read more](https://techcrunch.com/2026/03/24/openai-adds-open-source-tools-to-help-developers-build-for-teen-safety/)
+
+---
+
 ### Delve accused of misleading customers with ‘fake compliance’
 
 An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.
 
 [Read more](https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/)
-
----
-
-### New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput
-
-Anthropic submitted two sworn declarations to a California federal court late Friday afternoon, pushing back on the Pentagon's assertion that the AI company poses an "unacceptable risk to national security" and arguing that the government's case relies on technical misunderstandings and claims that
-
-[Read more](https://techcrunch.com/2026/03/20/new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-aligned-a-week-after-trump-declared-the-relationship-kaput/)
 
 ---
 
