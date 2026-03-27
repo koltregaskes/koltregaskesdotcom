@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### VCs are betting billions on AI's next wave, so why is OpenAI killing Sora?
+
+When an 82-year-old Kentucky woman was offered $26 million from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone 2,000 acres nearby anyway, but as AI infrastructure stretches further into the real world, the real world is starting t
+
+[Read more](https://techcrunch.com/podcast/vcs-are-betting-billions-on-ais-next-wave-so-why-is-openai-killing-sora/)
+
+---
+
+### OpenAI shuts down Sora while Meta gets shut out in court
+
+When an 82-year-old Kentucky woman was offered $26 million from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone 2,000 acres nearby anyway, but as AI infrastructure stretches further into the real world, the real world is starting t
+
+[Read more](https://techcrunch.com/video/openai-shuts-down-sora-while-meta-gets-shut-out-in-court/)
+
+---
+
+### David Sacks is done as AI czar &#8212; here's what he's doing instead
+
+Sacks will be much further from the power center in Washington than since the outset of this second Trump administration.
+
+[Read more](https://techcrunch.com/2026/03/26/david-sacks-is-done-as-ai-czar-heres-what-hes-doing-instead/)
+
+---
+
 ### Anthropic wins injunction against Trump administration over Defense Department saga
 
 A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.
@@ -51,6 +75,8 @@ RPA (robotic process automation) is a practical and proven way to reduce manual 
 
 ---
 
+## Industry
+
 ### The least surprising chapter of the Manus story is what's happening right now
 
 Did anyone think there would not be a reckoning over this tie-up?
@@ -75,8 +101,6 @@ Anthropic finds AI isn’t replacing jobs yet, but early data shows growing ineq
 
 ---
 
-## Industry
-
 ### Google unveils TurboQuant, a new AI memory compression algorithm — and yes, the internet is calling it 'Pied Piper'
 
 Google’s TurboQuant has the internet joking about Pied Piper from HBO's "Silicon Valley." The compression algorithm promises to shrink AI’s “working memory” by up to 6x, but it’s still just a lab experiment for now.
@@ -93,35 +117,11 @@ The first lady sees AI and robotics playing a prominent role in the future of Am
 
 ---
 
-### Reddit takes on the bots with new 'human verification' requirements for fishy behavior
-
-Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.
-
-[Read more](https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/)
-
----
-
-### Harvey confirms $11B valuation: Sequoia triples down
-
-Investors like Sequoia, Andreessen Horowitz, Kleiner Perkins, and Elad Gil can't get enough of AI legal tech startup Harvey.
-
-[Read more](https://techcrunch.com/2026/03/25/harvey-confirms-11b-valuation-sequoia-triples-down/)
-
----
-
 ### Ocorian: Family offices turn to AI for financial data insights
 
 To gain financial data insights, the majority of family offices now turn to AI, according to new research from Ocorian. The global study reveals 86 percent of these private wealth groups are utilising AI to improve their daily operations and data analysis. Representing a combined wealth of $119.37 b
 
 [Read more](https://www.artificialintelligence-news.com/news/ocorian-family-offices-ai-for-financial-data-insights/)
-
----
-
-### Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app
-
-Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.
-
-[Read more](https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/)
 
 ---
 
