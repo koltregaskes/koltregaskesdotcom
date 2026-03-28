@@ -248,7 +248,7 @@ Instead of a standard blog homepage, think of it as a **personal brand command c
 1. **Multi-format content showcase** — not just articles. Videos, images, music, and news all appear on the homepage.
 2. **Personal presence** — Kol's identity is front and centre. A cinematic hero that says "this is a person who builds things."
 3. **Activity indicators** — subtle signals that this site is alive (latest news timestamp, recent activity, "currently working on" widget).
-4. **Cross-site connections** — links to Axy Lusion (art), Synthetic Thoughts (AI blog), AI Resource Hub (models).
+4. **Cross-site connections** — links to Axy Lusion (art), Synthetic Dispatch (AI blog), AI Resource Hub (models).
 
 ### Proposed Homepage Redesign
 ```
@@ -337,7 +337,7 @@ Produce a complete redesigned homepage that departs from justoffbyone.com while 
 3. **"What's New" section** — asymmetric 2-column layout mixing articles, videos, and music
 4. **Latest articles grid** — 3-column, card-based
 5. **AI News ticker** — horizontal scrolling headlines from daily digests
-6. **Connected Projects section** — cards linking to Axy Lusion, Synthetic Thoughts, AI Resource Hub
+6. **Connected Projects section** — cards linking to Axy Lusion, Synthetic Dispatch, AI Resource Hub
 7. **Newsletter CTA** — warm accent background strip with email input
 8. **CSS** — all homepage-specific styles using existing design tokens
 
@@ -379,7 +379,7 @@ Before submitting, verify every item:
 - [ ] "What's New" section shows mixed content (articles + videos + music)
 - [ ] Latest articles grid displays correctly (3 columns desktop, responsive)
 - [ ] AI News ticker scrolls smoothly and pauses on hover
-- [ ] Connected Projects section links to Axy Lusion, Synthetic Thoughts, AI Resource Hub
+- [ ] Connected Projects section links to Axy Lusion, Synthetic Dispatch, AI Resource Hub
 - [ ] Newsletter CTA has warm accent styling
 - [ ] Footer includes social links and copyright
 

@@ -66,6 +66,13 @@ const SITE_BASE_PATH = CUSTOM_DOMAIN ? '' : `/${REPO_NAME}`;
 const SITE_URL = CUSTOM_DOMAIN
   ? `https://${CUSTOM_DOMAIN}`
   : `https://${GITHUB_OWNER}.github.io${SITE_BASE_PATH}`;
+const NAV_ITEMS = [
+  { key: 'posts', label: 'Posts', path: 'posts/' },
+  { key: 'news', label: 'News', path: 'news/' },
+  { key: 'tags', label: 'Tags', path: 'tags/' },
+  { key: 'about', label: 'About', path: 'about/' },
+  { key: 'subscribe', label: 'Newsletter', path: 'subscribe/' }
+];
 
 function stripKnownBasePath(urlPath = '') {
   const knownBasePaths = [REPO_NAME, ...LEGACY_REPO_NAMES]
@@ -116,6 +123,70 @@ function getAnimationScript() {
       }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
       document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
     }`;
+}
+
+function getSiteChromeScript({ animations = false } = {}) {
+  return `
+    const html = document.documentElement;
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
+
+    ${animations ? getAnimationScript() : ''}
+  `;
 }
 
 function escapeHtml(s) {
@@ -360,7 +431,7 @@ function generateTOC(headings) {
 }
 
 // Reusable header/navigation HTML (blog-only navigation)
-function getHeaderHTML(basePath = '/') {
+function getHeaderHTML(basePath = '/', activePage = '') {
   return `
   <header class="site-header">
     <div class="header-content">
@@ -368,12 +439,7 @@ function getHeaderHTML(basePath = '/') {
         <span class="logo-icon">K</span>
         <span class="logo-text">${SITE_NAME}</span>
       </a>
-      <nav class="site-nav">
-        <a href="${basePath}posts/">Posts</a>
-        <a href="${basePath}news/">News</a>
-        <a href="${basePath}tags/">Tags</a>
-        <a href="${basePath}about/">About</a>
-        <a href="${basePath}subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -386,6 +452,14 @@ function getHeaderHTML(basePath = '/') {
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        ${NAV_ITEMS.map((item) => `<a href="${basePath}${item.path}"${item.key === activePage ? ' class="active"' : ''}>${item.label}</a>`).join('\n        ')}
       </nav>
     </div>
   </header>`;
@@ -674,7 +748,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../../')}
+  ${getHeaderHTML('../../', 'posts')}
 
   <div class="page-container">
     ${toc ? `<aside class="sidebar">
@@ -706,20 +780,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   ${getFooterHTML()}
 
   <script>
-    // Theme toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    ${getSiteChromeScript()}
 
     // TOC highlight on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -781,7 +842,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../../')}
+  ${getHeaderHTML('../../', 'posts')}
 
   <main class="content-main">
     <article class="post">
@@ -789,7 +850,12 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">${displayDate}</h1>
-        <p class="digest-subtitle">Today's AI news, curated by Kol</p>
+        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <div class="digest-meta">
+          <span>${readingTime} min read</span>
+          <span class="meta-sep">â€¢</span>
+          <span>Updated daily</span>
+        </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
           <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
@@ -813,16 +879,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   ${getFooterHTML()}
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    ${getSiteChromeScript()}
   </script>
 </body>
 </html>`;
@@ -832,7 +889,19 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
 }
 
 async function writeHomePage(items) {
-  const sortedItems = items.sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
+  const sortedItems = [...items].sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
+  const articles = sortedItems.filter(item => (item.kind || 'article').toLowerCase() === 'article');
+  const digestPosts = articles.filter(item => item.slug.startsWith('daily-digest-'));
+  const featurePosts = articles.filter(item => !item.slug.startsWith('daily-digest-'));
+  const leadStory = featurePosts[0] || digestPosts[0] || articles[0];
+  const latestDigest = digestPosts[0];
+  const featuredWriting = featurePosts.slice(0, 3);
+  const digestArchive = digestPosts.slice(0, 6);
+  const recentArchive = articles.slice(0, 8);
+  const tagCount = new Set(articles.flatMap(item => item.tags || [])).size;
+  const lastUpdated = articles[0]?.updatedTime
+    ? new Date(articles[0].updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+    : 'Today';
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -855,10 +924,140 @@ async function writeHomePage(items) {
   ${getHeaderHTML('./')}
 
   <main class="home-main">
-    <div class="home-intro">
-      <h1 class="intro-title">Welcome to ${SITE_NAME}</h1>
-      <p class="intro-text">Tech, AI, development, and creative experiments from a software developer and AI enthusiast based in the UK.</p>
-    </div>
+    <section class="home-hero fade-in-up">
+      <div class="home-shell home-hero-grid">
+        <div class="home-hero-copy">
+          <p class="home-kicker">Kol Tregaskes &bull; UK-based developer, builder, and daily AI curator</p>
+          <h1 class="home-hero-title">Sharp daily AI digests, grounded essays, and creative experiments worth your time.</h1>
+          <p class="home-hero-text">Kol's Korner is where I track the signal across AI, products, research, and the weird edges of the tools we all keep testing.</p>
+          <div class="home-hero-actions">
+            <a href="./news/" class="button-primary">Browse today's news</a>
+            <a href="./posts/" class="button-secondary">Read the archive</a>
+          </div>
+        </div>
+        <aside class="home-hero-panel">
+          ${leadStory ? `
+          <p class="home-panel-label">Featured read</p>
+          <a href="./posts/${leadStory.slug}/" class="home-panel-story">
+            <h2>${escapeHtml(leadStory.title)}</h2>
+            <p>${escapeHtml(leadStory.summary || 'Latest writing from Kol on AI, tools, and building with new technology.')}</p>
+            <div class="home-panel-meta">
+              <span>${new Date(leadStory.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+              <span class="meta-sep">&bull;</span>
+              <span>${leadStory.readingTime || 3} min read</span>
+            </div>
+          </a>
+          ` : ''}
+          ${latestDigest ? `
+          <div class="home-panel-digest">
+            <p class="home-panel-label">Latest digest</p>
+            <a href="./posts/${latestDigest.slug}/">${escapeHtml(latestDigest.title)}</a>
+          </div>
+          ` : ''}
+        </aside>
+      </div>
+    </section>
+
+    <section class="home-metrics fade-in-up">
+      <div class="home-shell home-metrics-grid">
+        <div>
+          <span class="home-metric-value">${articles.length}</span>
+          <span class="home-metric-label">Published pieces</span>
+        </div>
+        <div>
+          <span class="home-metric-value">${digestPosts.length}</span>
+          <span class="home-metric-label">Daily digests live</span>
+        </div>
+        <div>
+          <span class="home-metric-value">${tagCount}</span>
+          <span class="home-metric-label">Topics tracked</span>
+        </div>
+        <div>
+          <span class="home-metric-value">${lastUpdated}</span>
+          <span class="home-metric-label">Latest update</span>
+        </div>
+      </div>
+    </section>
+
+    ${featuredWriting.length ? `
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow">Latest writing</p>
+            <h2>Essays and opinion pieces with a point of view</h2>
+          </div>
+          <a href="./posts/" class="section-link">View all posts</a>
+        </div>
+        <div class="home-feature-grid">
+          ${featuredWriting.map(item => {
+            const title = escapeHtml(item.title);
+            const summary = escapeHtml(item.summary || '');
+            const hasImage = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+
+            return `
+            <article class="home-feature-card">
+              <a href="./posts/${item.slug}/" class="home-feature-link">
+                ${hasImage ? `
+                <div class="home-feature-media">
+                  <img src="${escapeHtml(item.thumbnailUrl)}" alt="${title}" loading="lazy" />
+                </div>` : ''}
+                <div class="home-feature-body">
+                  <p class="home-feature-date">${new Date(item.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+                  <h3>${title}</h3>
+                  ${summary ? `<p>${summary}</p>` : ''}
+                </div>
+              </a>
+            </article>`;
+          }).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
+
+    ${digestArchive.length ? `
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow">Daily digests</p>
+            <h2>Fast catch-ups when you only have a few minutes</h2>
+          </div>
+          <a href="./news/" class="section-link">Open the news browser</a>
+        </div>
+        <div class="home-list">
+          ${digestArchive.map(item => `
+          <a href="./posts/${item.slug}/" class="home-list-row">
+            <div>
+              <strong>${escapeHtml(item.title)}</strong>
+              <p>${escapeHtml(item.summary || 'AI and technology news digest.')}</p>
+            </div>
+            <span>${item.readingTime || 4} min</span>
+          </a>`).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
+
+    ${recentArchive.length ? `
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow">Browse more</p>
+            <h2>The wider archive</h2>
+          </div>
+        </div>
+        <div class="home-archive-grid">
+          ${recentArchive.map(item => `
+          <a href="./posts/${item.slug}/" class="home-archive-card">
+            <span>${new Date(item.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            <strong>${escapeHtml(item.title)}</strong>
+          </a>`).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
 
     <!-- Article Grid -->
     <div class="content-grid" id="contentGrid">
@@ -901,22 +1100,7 @@ async function writeHomePage(items) {
   ${getFooterHTML()}
 
   <script>
-    // Theme toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-
-    ${getAnimationScript()}
+    ${getSiteChromeScript({ animations: true })}
   </script>
 </body>
 </html>`;
@@ -942,7 +1126,7 @@ async function writePostsPage(items) {
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../')}
+  ${getHeaderHTML('../', 'posts')}
 
   <main class="content-main">
     <h1 class="page-title">Posts</h1>
@@ -969,18 +1153,7 @@ async function writePostsPage(items) {
   ${getFooterHTML()}
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-
-    ${getAnimationScript()}
+    ${getSiteChromeScript({ animations: true })}
   </script>
 </body>
 </html>`;
@@ -1012,7 +1185,7 @@ async function writeTagsPage(items) {
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../')}
+  ${getHeaderHTML('../', 'tags')}
 
   <main class="content-main">
     <h1 class="page-title">Tags</h1>
@@ -1053,17 +1226,7 @@ async function writeTagsPage(items) {
   ${getFooterHTML()}
 
   <script>
-    // Theme toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    ${getSiteChromeScript()}
 
     // Tag filtering
     const tagCloud = document.querySelector('.tag-cloud');
@@ -1134,7 +1297,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../')}
+  ${getHeaderHTML('../', slug === 'about' ? 'about' : '')}
 
   <main class="content-main">
     <article class="about-content">
@@ -1147,16 +1310,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   ${getFooterHTML()}
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    ${getSiteChromeScript()}
   </script>
 </body>
 </html>`;
@@ -1190,9 +1344,23 @@ async function writeAboutPage() {
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../')}
+  ${getHeaderHTML('../', 'about')}
 
   <main class="content-main">
+    <section class="subscribe-launch-note">
+      <span class="subscribe-status-badge">On hold</span>
+      <h1 class="page-title">The newsletter is taking a pause.</h1>
+      <p class="subscribe-hero-text">The site is still publishing every day. For now, the fastest way to keep up is through the live news browser and the daily digests already on the site.</p>
+      <div class="subscribe-actions">
+        <a href="../news/" class="button-primary">Open the news browser</a>
+        <a href="../posts/" class="button-secondary">Read recent posts</a>
+      </div>
+      <div class="subscribe-note">
+        <h2>What to expect</h2>
+        <p>News gathering is the current priority. The email product is intentionally paused so the site can launch with a cleaner focus and fewer moving parts.</p>
+      </div>
+    </section>
+
     <!-- Hero Section -->
     <div class="about-hero">
       <div class="about-avatar">
@@ -1232,16 +1400,7 @@ async function writeAboutPage() {
   ${getFooterHTML()}
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    ${getSiteChromeScript()}
   </script>
 </body>
 </html>`;
@@ -1259,14 +1418,27 @@ async function writeSubscribePage() {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
-  <meta name="description" content="Subscribe to ${SITE_NAME} newsletter - Weekly digests, daily updates, or all new posts about tech, AI, and development" />
+  <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email list is currently on hold, but the daily digests and news archive are live on-site." />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  ${getHeaderHTML('../')}
+  ${getHeaderHTML('../', 'subscribe')}
 
-  <main class="content-main">
+  <main class="content-main subscribe-main">
+    <section class="subscribe-launch-note">
+      <span class="subscribe-status-badge">Newsletter paused</span>
+      <h1 class="page-title">The newsletter is on hold while the site relaunches.</h1>
+      <p class="subscribe-hero-text">The daily news browser and the on-site digest archive are live now, so that is where every new update lands first.</p>
+      <div class="subscribe-actions">
+        <a href="../news/" class="button-primary">Open AI news</a>
+        <a href="../posts/" class="button-secondary">Read the archive</a>
+      </div>
+      <div class="subscribe-note">
+        <h2>What you can use today</h2>
+        <p>Track the shared AI news feed, read fresh daily digests on the site, and keep up with essays and experiments without waiting for email delivery.</p>
+      </div>
+    </section>
     <!-- Hero Section -->
     <div class="subscribe-hero">
       <h1 class="page-title">Stay in the Loop</h1>
@@ -1304,64 +1476,7 @@ async function writeSubscribePage() {
   ${getFooterHTML()}
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-
-    // Newsletter subscription
-    const SUPABASE_URL = '${SUPABASE_URL}';
-    const SUPABASE_KEY = '${SUPABASE_PUBLISHABLE_KEY}';
-
-    document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('subscribe-email').value.trim();
-      const btn = document.getElementById('subscribe-btn');
-      const msg = document.getElementById('subscribe-message');
-
-      btn.disabled = true;
-      btn.textContent = 'Subscribing...';
-      msg.style.display = 'none';
-
-      try {
-        const res = await fetch(SUPABASE_URL + '/rest/v1/subscribers', {
-          method: 'POST',
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_KEY,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({ email })
-        });
-
-        if (res.ok) {
-          msg.textContent = 'You\\'re subscribed! Thanks for signing up.';
-          msg.style.color = 'var(--color-primary)';
-          msg.style.display = 'block';
-          document.getElementById('subscribe-email').value = '';
-        } else if (res.status === 409) {
-          msg.textContent = 'You\\'re already subscribed!';
-          msg.style.color = 'var(--color-text-secondary)';
-          msg.style.display = 'block';
-        } else {
-          throw new Error('Subscription failed');
-        }
-      } catch (err) {
-        msg.textContent = 'Something went wrong. Please try again.';
-        msg.style.color = '#ef4444';
-        msg.style.display = 'block';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Subscribe';
-      }
-    });
+    ${getSiteChromeScript()}
   </script>
 </body>
 </html>`;

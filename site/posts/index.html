@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -23,12 +23,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../posts/">Posts</a>
-        <a href="../news/">News</a>
-        <a href="../tags/">Tags</a>
-        <a href="../about/">About</a>
-        <a href="../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -41,6 +36,18 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../posts/" class="active">Posts</a>
+        <a href="../news/">News</a>
+        <a href="../tags/">Tags</a>
+        <a href="../about/">About</a>
+        <a href="../subscribe/">Newsletter</a>
       </nav>
     </div>
   </header>
@@ -51,371 +58,11 @@
     <div class="posts-list">
       
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-28-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 28 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 28 March 2026</p>
+            <a href="./ais-efficiency-promise-has-a-catch-you/" class="post-link">
+              <h3 class="post-item-title">AI&#039;s Efficiency Promise Has a Catch - You</h3>
+              <p class="post-item-summary">AI makes work faster, but that speed comes with a hidden cost - you&#039;re expected to do more, not less.</p>
               <div class="post-item-meta">
-                <time>28 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-27-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 27 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 27 March 2026</p>
-              <div class="post-item-meta">
-                <time>27 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-26-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 26 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 26 March 2026</p>
-              <div class="post-item-meta">
-                <time>26 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-wednesday-25-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Wednesday, 25 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Wednesday, 25 March 2026</p>
-              <div class="post-item-meta">
-                <time>25 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-24-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 24 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 24 March 2026</p>
-              <div class="post-item-meta">
-                <time>24 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>5 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-23-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 23 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 23 March 2026</p>
-              <div class="post-item-meta">
-                <time>23 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>5 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-sunday-22-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Sunday, 22 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Sunday, 22 March 2026</p>
-              <div class="post-item-meta">
-                <time>22 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>5 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-21-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 21 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 21 March 2026</p>
-              <div class="post-item-meta">
-                <time>21 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-20-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 20 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 20 March 2026</p>
-              <div class="post-item-meta">
-                <time>20 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-19-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 19 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 19 March 2026</p>
-              <div class="post-item-meta">
-                <time>19 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-wednesday-18-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Wednesday, 18 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Wednesday, 18 March 2026</p>
-              <div class="post-item-meta">
-                <time>18 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-17-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 17 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 17 March 2026</p>
-              <div class="post-item-meta">
-                <time>17 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-16-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 16 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 16 March 2026</p>
-              <div class="post-item-meta">
-                <time>16 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-sunday-15-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Sunday, 15 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Sunday, 15 March 2026</p>
-              <div class="post-item-meta">
-                <time>15 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-14-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 14 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 14 March 2026</p>
-              <div class="post-item-meta">
-                <time>14 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-13-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 13 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 13 March 2026</p>
-              <div class="post-item-meta">
-                <time>13 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-12-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 12 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 12 March 2026</p>
-              <div class="post-item-meta">
-                <time>12 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-wednesday-11-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Wednesday, 11 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Wednesday, 11 March 2026</p>
-              <div class="post-item-meta">
-                <time>11 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-10-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 10 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 10 March 2026</p>
-              <div class="post-item-meta">
-                <time>10 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>4 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-9-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 9 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 9 March 2026</p>
-              <div class="post-item-meta">
-                <time>9 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>5 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-sunday-8-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Sunday, 8 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Sunday, 8 March 2026</p>
-              <div class="post-item-meta">
-                <time>8 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-7-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 7 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 7 March 2026</p>
-              <div class="post-item-meta">
-                <time>7 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-6-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 6 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 6 March 2026</p>
-              <div class="post-item-meta">
-                <time>6 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-5-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 5 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 5 March 2026</p>
-              <div class="post-item-meta">
-                <time>5 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-wednesday-4-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Wednesday, 4 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Wednesday, 4 March 2026</p>
-              <div class="post-item-meta">
-                <time>4 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>6 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-3-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 3 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 3 March 2026</p>
-              <div class="post-item-meta">
-                <time>3 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>4 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-2-march-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 2 March 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 2 March 2026</p>
-              <div class="post-item-meta">
-                <time>2 March 2026</time>
-                <span class="meta-sep">•</span>
-                <span>5 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./california-just-told-grok-to-stop-making-deepfake-porn/" class="post-link">
-              <h3 class="post-item-title">California Just Told Grok to Stop Making Deepfake Porn</h3>
-              <p class="post-item-summary">California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
-              <div class="post-item-meta">
-                <time>24 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>2 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./elon-musk-merges-spacex-and-xai-because-of-course-he-does/" class="post-link">
-              <h3 class="post-item-title">Elon Musk Merges SpaceX and xAI Because Of Course He Does</h3>
-              <p class="post-item-summary">Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.</p>
-              <div class="post-item-meta">
-                <time>22 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>2 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./nasas-mars-rover-just-got-smarter-than-its-engineers/" class="post-link">
-              <h3 class="post-item-title">NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h3>
-              <p class="post-item-summary">NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</p>
-              <div class="post-item-meta">
-                <time>20 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>3 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./jpmorgan-drops-30-billion-on-ai-infrastructure/" class="post-link">
-              <h3 class="post-item-title">JPMorgan Drops $30 Billion on AI Infrastructure</h3>
-              <p class="post-item-summary">JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</p>
-              <div class="post-item-meta">
-                <time>18 February 2026</time>
+                <time>12 February 2026</time>
                 <span class="meta-sep">•</span>
                 <span>3 min read</span>
               </div>
@@ -435,23 +82,23 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./ais-efficiency-promise-has-a-catch-you/" class="post-link">
-              <h3 class="post-item-title">AI&#039;s Efficiency Promise Has a Catch - You</h3>
-              <p class="post-item-summary">AI makes work faster, but that speed comes with a hidden cost - you&#039;re expected to do more, not less.</p>
+            <a href="./daily-digest-saturday-10-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Saturday, 10 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Saturday, 10 January 2026</p>
               <div class="post-item-meta">
-                <time>12 February 2026</time>
+                <time>10 January 2026</time>
                 <span class="meta-sep">•</span>
-                <span>3 min read</span>
+                <span>1 min read</span>
               </div>
             </a>
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./welcome-to-kols-korner/" class="post-link">
-              <h3 class="post-item-title">Welcome to Kol&#039;s Korner</h3>
-              <p class="post-item-summary">Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.</p>
+            <a href="./daily-digest-monday-12-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Monday, 12 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Monday, 12 January 2026</p>
               <div class="post-item-meta">
-                <time>10 February 2026</time>
+                <time>12 January 2026</time>
                 <span class="meta-sep">•</span>
                 <span>2 min read</span>
               </div>
@@ -459,95 +106,35 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-7-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 7 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 7 February 2026</p>
+            <a href="./daily-digest-friday-23-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Friday, 23 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Friday, 23 January 2026</p>
               <div class="post-item-meta">
-                <time>7 February 2026</time>
+                <time>23 January 2026</time>
                 <span class="meta-sep">•</span>
-                <span>8 min read</span>
+                <span>2 min read</span>
               </div>
             </a>
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-6-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 6 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 6 February 2026</p>
+            <a href="./daily-digest-tuesday-27-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Tuesday, 27 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Tuesday, 27 January 2026</p>
               <div class="post-item-meta">
-                <time>6 February 2026</time>
+                <time>27 January 2026</time>
                 <span class="meta-sep">•</span>
-                <span>7 min read</span>
+                <span>9 min read</span>
               </div>
             </a>
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-5-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 5 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 5 February 2026</p>
+            <a href="./daily-digest-thursday-29-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Thursday, 29 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Thursday, 29 January 2026</p>
               <div class="post-item-meta">
-                <time>5 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-wednesday-4-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Wednesday, 4 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Wednesday, 4 February 2026</p>
-              <div class="post-item-meta">
-                <time>4 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>7 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-3-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 3 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 3 February 2026</p>
-              <div class="post-item-meta">
-                <time>3 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>8 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-2-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 2 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 2 February 2026</p>
-              <div class="post-item-meta">
-                <time>2 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>8 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-sunday-1-february-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Sunday, 1 February 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Sunday, 1 February 2026</p>
-              <div class="post-item-meta">
-                <time>1 February 2026</time>
-                <span class="meta-sep">•</span>
-                <span>8 min read</span>
-              </div>
-            </a>
-          </article>
-        
-          <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-31-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 31 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 31 January 2026</p>
-              <div class="post-item-meta">
-                <time>31 January 2026</time>
+                <time>29 January 2026</time>
                 <span class="meta-sep">•</span>
                 <span>8 min read</span>
               </div>
@@ -567,11 +154,11 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-thursday-29-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Thursday, 29 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Thursday, 29 January 2026</p>
+            <a href="./daily-digest-saturday-31-january-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Saturday, 31 January 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Saturday, 31 January 2026</p>
               <div class="post-item-meta">
-                <time>29 January 2026</time>
+                <time>31 January 2026</time>
                 <span class="meta-sep">•</span>
                 <span>8 min read</span>
               </div>
@@ -579,23 +166,299 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-tuesday-27-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Tuesday, 27 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Tuesday, 27 January 2026</p>
+            <a href="./daily-digest-sunday-1-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Sunday, 1 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Sunday, 1 February 2026</p>
               <div class="post-item-meta">
-                <time>27 January 2026</time>
+                <time>1 February 2026</time>
                 <span class="meta-sep">•</span>
-                <span>9 min read</span>
+                <span>8 min read</span>
               </div>
             </a>
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-friday-23-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Friday, 23 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Friday, 23 January 2026</p>
+            <a href="./daily-digest-monday-2-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Monday, 2 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Monday, 2 February 2026</p>
               <div class="post-item-meta">
-                <time>23 January 2026</time>
+                <time>2 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>8 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-tuesday-3-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Tuesday, 3 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Tuesday, 3 February 2026</p>
+              <div class="post-item-meta">
+                <time>3 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>8 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-wednesday-4-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Wednesday, 4 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Wednesday, 4 February 2026</p>
+              <div class="post-item-meta">
+                <time>4 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-thursday-5-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Thursday, 5 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Thursday, 5 February 2026</p>
+              <div class="post-item-meta">
+                <time>5 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-friday-6-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Friday, 6 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Friday, 6 February 2026</p>
+              <div class="post-item-meta">
+                <time>6 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-saturday-7-february-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Saturday, 7 February 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Saturday, 7 February 2026</p>
+              <div class="post-item-meta">
+                <time>7 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>8 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-monday-2-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Monday, 2 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Monday, 2 March 2026</p>
+              <div class="post-item-meta">
+                <time>2 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>5 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-tuesday-3-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Tuesday, 3 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Tuesday, 3 March 2026</p>
+              <div class="post-item-meta">
+                <time>3 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>4 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-wednesday-4-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Wednesday, 4 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Wednesday, 4 March 2026</p>
+              <div class="post-item-meta">
+                <time>4 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>6 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-thursday-5-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Thursday, 5 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Thursday, 5 March 2026</p>
+              <div class="post-item-meta">
+                <time>5 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-friday-6-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Friday, 6 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Friday, 6 March 2026</p>
+              <div class="post-item-meta">
+                <time>6 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-saturday-7-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Saturday, 7 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Saturday, 7 March 2026</p>
+              <div class="post-item-meta">
+                <time>7 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-sunday-8-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Sunday, 8 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Sunday, 8 March 2026</p>
+              <div class="post-item-meta">
+                <time>8 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>6 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-monday-9-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Monday, 9 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Monday, 9 March 2026</p>
+              <div class="post-item-meta">
+                <time>9 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>5 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-tuesday-10-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Tuesday, 10 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Tuesday, 10 March 2026</p>
+              <div class="post-item-meta">
+                <time>10 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>4 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-wednesday-11-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Wednesday, 11 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Wednesday, 11 March 2026</p>
+              <div class="post-item-meta">
+                <time>11 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>6 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-thursday-12-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Thursday, 12 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Thursday, 12 March 2026</p>
+              <div class="post-item-meta">
+                <time>12 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-friday-13-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Friday, 13 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Friday, 13 March 2026</p>
+              <div class="post-item-meta">
+                <time>13 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-saturday-14-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Saturday, 14 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Saturday, 14 March 2026</p>
+              <div class="post-item-meta">
+                <time>14 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>7 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-sunday-15-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Sunday, 15 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Sunday, 15 March 2026</p>
+              <div class="post-item-meta">
+                <time>15 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>6 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./daily-digest-friday-27-march-2026/" class="post-link">
+              <h3 class="post-item-title">Daily Digest: Friday, 27 March 2026</h3>
+              <p class="post-item-summary">AI and technology news digest for Friday, 27 March 2026</p>
+              <div class="post-item-meta">
+                <time>27 March 2026</time>
+                <span class="meta-sep">•</span>
+                <span>8 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./jpmorgan-drops-30-billion-on-ai-infrastructure/" class="post-link">
+              <h3 class="post-item-title">JPMorgan Drops $30 Billion on AI Infrastructure</h3>
+              <p class="post-item-summary">JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</p>
+              <div class="post-item-meta">
+                <time>18 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>3 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./nasas-mars-rover-just-got-smarter-than-its-engineers/" class="post-link">
+              <h3 class="post-item-title">NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h3>
+              <p class="post-item-summary">NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</p>
+              <div class="post-item-meta">
+                <time>20 February 2026</time>
+                <span class="meta-sep">•</span>
+                <span>3 min read</span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="post-item fade-in-up">
+            <a href="./elon-musk-merges-spacex-and-xai-because-of-course-he-does/" class="post-link">
+              <h3 class="post-item-title">Elon Musk Merges SpaceX and xAI Because Of Course He Does</h3>
+              <p class="post-item-summary">Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.</p>
+              <div class="post-item-meta">
+                <time>22 February 2026</time>
                 <span class="meta-sep">•</span>
                 <span>2 min read</span>
               </div>
@@ -603,11 +466,11 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-monday-12-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Monday, 12 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Monday, 12 January 2026</p>
+            <a href="./welcome-to-kols-korner/" class="post-link">
+              <h3 class="post-item-title">Welcome to Kol&#039;s Korner</h3>
+              <p class="post-item-summary">Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.</p>
               <div class="post-item-meta">
-                <time>12 January 2026</time>
+                <time>10 February 2026</time>
                 <span class="meta-sep">•</span>
                 <span>2 min read</span>
               </div>
@@ -615,13 +478,13 @@
           </article>
         
           <article class="post-item fade-in-up">
-            <a href="./daily-digest-saturday-10-january-2026/" class="post-link">
-              <h3 class="post-item-title">Daily Digest: Saturday, 10 January 2026</h3>
-              <p class="post-item-summary">AI and technology news digest for Saturday, 10 January 2026</p>
+            <a href="./california-just-told-grok-to-stop-making-deepfake-porn/" class="post-link">
+              <h3 class="post-item-title">California Just Told Grok to Stop Making Deepfake Porn</h3>
+              <p class="post-item-summary">California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
               <div class="post-item-meta">
-                <time>10 January 2026</time>
+                <time>24 February 2026</time>
                 <span class="meta-sep">•</span>
-                <span>1 min read</span>
+                <span>2 min read</span>
               </div>
             </a>
           </article>
@@ -682,16 +545,64 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
 
     
     // Entrance animations
@@ -706,6 +617,7 @@
       }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
       document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
     }
+  
   </script>
 </body>
 </html>

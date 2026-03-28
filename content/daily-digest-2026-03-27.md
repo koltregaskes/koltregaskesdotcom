@@ -11,35 +11,59 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
-### VCs are betting billions on AI's next wave, so why is OpenAI killing Sora?
-
-When an 82-year-old Kentucky woman was offered $26 million from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone 2,000 acres nearby anyway, but as AI infrastructure stretches further into the real world, the real world is starting t
-
-[Read more](https://techcrunch.com/podcast/vcs-are-betting-billions-on-ais-next-wave-so-why-is-openai-killing-sora/)
-
----
-
-### OpenAI shuts down Sora while Meta gets shut out in court
-
-When an 82-year-old Kentucky woman was offered $26 million from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone 2,000 acres nearby anyway, but as AI infrastructure stretches further into the real world, the real world is starting t
-
-[Read more](https://techcrunch.com/video/openai-shuts-down-sora-while-meta-gets-shut-out-in-court/)
-
----
-
-### David Sacks is done as AI czar &#8212; here's what he's doing instead
-
-Sacks will be much further from the power center in Washington than since the outset of this second Trump administration.
-
-[Read more](https://techcrunch.com/2026/03/26/david-sacks-is-done-as-ai-czar-heres-what-hes-doing-instead/)
-
----
-
 ### Anthropic wins injunction against Trump administration over Defense Department saga
 
 A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.
 
 [Read more](https://techcrunch.com/2026/03/26/anthropic-wins-injunction-against-trump-administration-over-defense-department-saga/)
+
+---
+
+### Introducing Sonnet 4.6
+
+Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.
+
+[Read more](https://www.anthropic.com/news/claude-sonnet-4-6)
+
+---
+
+### Claude Opus 4.6
+
+We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+
+[Read more](https://www.anthropic.com/news/claude-opus-4-6)
+
+---
+
+### Claude is a space to think | Anthropic
+
+We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+
+[Read more](https://www.anthropic.com/news/claude-is-a-space-to-think)
+
+---
+
+### Anthropic invests $100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](https://www.anthropic.com/news/claude-partner-network)
+
+---
+
+### Introducing The Anthropic Institute
+
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
+
+[Read more](https://www.anthropic.com/news/the-anthropic-institute)
+
+---
+
+### You can now transfer your chats and personal information from other chatbots directly into Gemini
+
+Google is launching "switching tools" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.
+
+[Read more](https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/)
 
 ---
 
@@ -51,6 +75,14 @@ The site, whose policies are subject to change, has struggled with the issue of 
 
 ---
 
+### OpenAI abandons yet another side quest: ChatGPT’s erotic mode
+
+It's only the latest of several side projects that the AI startup has ditched over the past week.
+
+[Read more](https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/)
+
+---
+
 ### Data centers get ready — the Senate wants to see your power bills
 
 Senators Josh Hawley and Elizabeth Warren want the Energy Information Administration to gather more details about how data centers use power — and how that affects the grid.
@@ -59,161 +91,221 @@ Senators Josh Hawley and Elizabeth Warren want the Energy Information Administra
 
 ---
 
-### A ‘pound of flesh’ from data centers: one senator's answer to AI job losses
-
-Fears of AI-driven job loss are growing fast, and they’re fueling backlash against data centers. Sen. Mark Warner suggests taxing them to help workers survive the transition.
-
-[Read more](https://techcrunch.com/2026/03/26/a-pound-of-flesh-from-data-centers-one-senators-answer-to-ai-job-losses/)
-
----
-
-### RPA matters, but AI changes how automation works
-
-RPA (robotic process automation) is a practical and proven way to reduce manual work in business processes without AI systems. By using software bots to follow fixed rules, companies can automate repetitive tasks like data entry and invoice processing, and to a certain extent, report generation. Ado
-
-[Read more](https://www.artificialintelligence-news.com/news/rpa-still-matters-but-ai-is-changing-how-automation-works/)
-
----
-
 ## Industry
 
-### The least surprising chapter of the Manus story is what's happening right now
+### A peek inside CLI tools
 
-Did anyone think there would not be a reckoning over this tie-up?
+No more funny videos at OpenAI
 
-[Read more](https://techcrunch.com/2026/03/25/the-least-surprising-chapter-of-the-manus-story-is-whats-happening-right-now/)
-
----
-
-### Mercor competitor Deccan AI raises $25M, sources experts from India
-
-Deccan AI concentrates its workforce in India to manage quality in a fast-growing but fragmented AI training market.
-
-[Read more](https://techcrunch.com/2026/03/25/deccan-ai-raises-25m-as-ai-training-push-relies-on-india-based-workforce/)
+[Read more](https://www.bensbites.com/p/a-peek-inside-cli-tools)
 
 ---
 
-### The AI skills gap is here, says AI company, and power users are pulling ahead
+### Agents should interview you
 
-Anthropic finds AI isn’t replacing jobs yet, but early data shows growing inequality as experienced users gain an edge, raising concerns about future displacement and workforce divides.
+is claude trying to become openclaw?
 
-[Read more](https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/)
-
----
-
-### Google unveils TurboQuant, a new AI memory compression algorithm — and yes, the internet is calling it 'Pied Piper'
-
-Google’s TurboQuant has the internet joking about Pied Piper from HBO's "Silicon Valley." The compression algorithm promises to shrink AI’s “working memory” by up to 6x, but it’s still just a lab experiment for now.
-
-[Read more](https://techcrunch.com/2026/03/25/google-turboquant-ai-memory-compression-silicon-valley-pied-piper/)
+[Read more](https://www.bensbites.com/p/agents-should-interview-you)
 
 ---
 
-### Melania Trump wants a robot to homeschool your child
+### The debut of Gemini 3.1 Flash Live could make it harder to know if you're talking to a robot
 
-The first lady sees AI and robotics playing a prominent role in the future of American education.
+Google's new conversational audio AI is rolling out in search, Gemini, and developer tools today.
 
-[Read more](https://techcrunch.com/2026/03/25/melania-trump-wants-a-robot-to-homeschool-your-child/)
-
----
-
-### Ocorian: Family offices turn to AI for financial data insights
-
-To gain financial data insights, the majority of family offices now turn to AI, according to new research from Ocorian. The global study reveals 86 percent of these private wealth groups are utilising AI to improve their daily operations and data analysis. Representing a combined wealth of $119.37 b
-
-[Read more](https://www.artificialintelligence-news.com/news/ocorian-family-offices-ai-for-financial-data-insights/)
+[Read more](https://arstechnica.com/ai/2026/03/the-debut-of-gemini-3-1-flash-live-could-make-it-harder-to-know-if-youre-talking-to-a-robot/)
 
 ---
 
-### Automating complex finance workflows with multimodal AI
+### Google's TurboQuant AI-compression algorithm can reduce LLM memory usage by 6x
 
-Finance leaders are automating their complex workflows by actively adopting powerful new multimodal AI frameworks. Extracting text from unstructured documents presents a frequent headache for developers. Historically, standard optical character recognition systems failed to accurately digitise compl
+TurboQuant makes AI models more efficient but doesn't reduce output quality like other methods.
 
-[Read more](https://www.artificialintelligence-news.com/news/automating-complex-finance-workflows-with-multimodal-ai/)
+[Read more](https://arstechnica.com/ai/2026/03/google-says-new-turboquant-compression-can-lower-ai-memory-usage-without-sacrificing-quality/)
 
 ---
 
-### Securing AI systems under today's and tomorrow's conditions
+### This startup wants to change how mathematicians do math
 
-Evidence cited in an eBook titled &#8220;AI Quantum Resilience&#8221;, published by Utimaco [email wall], shows organisations consider security risks as the leading barrier to effective adoption of AI on data they hold. AI&#8217;s value depends on data amassed by an organisation. However, there are
+Axiom Math, a startup based in Palo Alto, California, has released a free new AI tool for mathematicians, designed to discover mathematical patterns that could unlock solutions to long-standing problems. The tool, called Axplorer, is a redesign of an existing one called PatternBoost that François...
 
-[Read more](https://www.artificialintelligence-news.com/news/quantum-resilient-ai-needs-migration-and-hardware-protected-data-enclaves/)
+[Read more](https://www.technologyreview.com/2026/03/25/1134642/this-startup-wants-to-change-how-mathematicians-do-math/)
+
+---
+
+### Agentic commerce runs on truth and context
+
+Imagine telling a digital agent, “Use my points and book a family trip to Italy. Keep it within budget, pick hotels we’ve liked before, and handle the details.” Instead of returning a list of links, the agent assembles an itinerary and executes the purchase. That shift, from assistance to executi...
+
+[Read more](https://www.technologyreview.com/2026/03/25/1134516/agentic-commerce-runs-on-truth-and-context/)
+
+---
+
+### The AI Hype Index: AI goes to war
+
+AI is at war. Anthropic and the Pentagon feuded over how to weaponize Anthropic’s AI model Claude; then OpenAI swept the Pentagon off its feet with an “opportunistic and sloppy” deal. Users quit ChatGPT in droves. People marched through London in the biggest protest against AI to date. If you’re...
+
+[Read more](https://www.technologyreview.com/2026/03/25/1134571/the-ai-hype-index-ai-goes-to-war/)
+
+---
+
+### Electronic Frontier Foundation to swap leaders as AI, ICE fights escalate
+
+Public interest in government tech abuses is peaking. EFF's new leader plans to build on that.
+
+[Read more](https://arstechnica.com/tech-policy/2026/03/trump-made-opposing-government-spying-cool-again-effs-departing-chief-says/)
 
 ---
 
 ## Research & Products
 
-### You can now transfer your chats and personal information from other chatbots directly into Gemini
+### AlphaGenome: AI for better understanding the genome — Google DeepMind
 
-Google is launching "switching tools" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.
+Ziga Avsec and Natasha Latysheva
 
-[Read more](https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/)
-
----
-
-### ByteDance's new AI video generation model, Dreamina Seedance 2.0, comes to CapCut
-
-The new model in CapCut will have built-in protections for making video from real faces or unauthorized intellectual property.
-
-[Read more](https://techcrunch.com/2026/03/26/bytedances-new-ai-video-generation-model-dreamina-seedance-2-0-comes-to-capcut/)
+[Read more](https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/)
 
 ---
 
-### Conntour raises $7M from General Catalyst, YC to build an AI search engine for security video systems
+### A catalogue of genetic mutations to help pinpoint the cause of diseases — Google DeepMind
 
-Conntour uses AI models to let security teams query camera feeds using natural language to find any object, person, or situation.
+New AI tool classifies the effects of 71 million ‘missense’ mutations
 
-[Read more](https://techcrunch.com/2026/03/26/conntour-raises-7m-from-general-catalyst-yc-to-build-an-ai-search-engine-for-security-video-systems/)
-
----
-
-### Cohere launches an open source voice model specifically for transcription
-
-Relatively light at just 2 billion parameters, the model is meant for use with consumer-grade GPUs for those who want to self-host it. It currently supports 14 languages.
-
-[Read more](https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/)
+[Read more](https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/)
 
 ---
 
-### Mistral releases a new open source model for speech generation
+### AlphaEarth Foundations helps map our planet in unprecedented detail — Google DeepMind
 
-The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI.
+The AlphaEarth Foundations team
 
-[Read more](https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/)
-
----
-
-### Google launches Lyria 3 Pro music generation model
-
-Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.
-
-[Read more](https://techcrunch.com/2026/03/25/google-launches-lyria-3-pro-music-generation-model/)
+[Read more](https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/)
 
 ---
 
-## Policy & Ethics
+### Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli
 
-### OpenAI abandons yet another side quest: ChatGPT's erotic mode
+TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...
 
-It's only the latest of several side projects that the AI startup has ditched over the past week.
-
-[Read more](https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/)
+[Read more](https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/)
 
 ---
 
-### Bernie Sanders and AOC propose a ban on data center construction
+### Four MTIA Chips in Two Years: Scaling AI Experiences for Billions
 
-Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.
+Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...
 
-[Read more](https://techcrunch.com/2026/03/25/bernie-sanders-and-aoc-propose-a-ban-on-data-center-construction/)
+[Read more](https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/)
 
 ---
 
-### AI agents enter banking roles at Bank of America
+### Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2
 
-AI agents are starting to take on a more direct role in how financial advice is delivered, as large banks move into systems that support client interactions. Bank of America is now deploying an internal AI-powered advisory platform to a subset of financial advisers, rolled out to around 1,000 financ
+Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...
 
-[Read more](https://www.artificialintelligence-news.com/news/ai-agents-enter-banking-roles-at-bank-of-america/)
+[Read more](https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/)
+
+---
+
+### Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO
+
+Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...
+
+[Read more](https://ai.meta.com/blog/forest-research-dino/)
+
+---
+
+### How DINO and SAM are Helping Modernize Essential Medical Triage Practices
+
+By leveraging advanced AI models, teams at the University of Pennsylvania are aiming to bring cutting-edge automation to emergency response.
+
+[Read more](https://ai.meta.com/blog/upenn-dino-sam-helping-medical-triage/)
+
+---
+
+### PLDR-LLMs Reason At Self-Organized Criticality
+
+arXiv:2603.23539v1 Announce Type: new Abstract: We show that PLDR-LLMs pretrained at self-organized criticality exhibit reasoning at inference time. The characteristics of PLDR-LLM deductive outputs at criticality is similar to second-order phase transitions. At criticality, the correlation lengt...
+
+[Read more](https://arxiv.org/abs/2603.23539)
+
+---
+
+### Environment Maps: Structured Environmental Representations for Long-Horizon Agents
+
+arXiv:2603.23610v2 Announce Type: new Abstract: Although large language models (LLMs) have advanced rapidly, robust automation of complex software workflows remains an open problem. In long-horizon settings, agents frequently suffer from cascading errors and environmental stochasticity; a single...
+
+[Read more](https://arxiv.org/abs/2603.23610)
+
+---
+
+### Evaluating a Multi-Agent Voice-Enabled Smart Speaker for Care Homes: A Safety-Focused Framework
+
+arXiv:2603.23625v1 Announce Type: new Abstract: Artificial intelligence (AI) is increasingly being explored in health and social care to reduce administrative workload and allow staff to spend more time on patient care. This paper evaluates a voice-enabled Care Home Smart Speaker designed to supp...
+
+[Read more](https://arxiv.org/abs/2603.23625)
+
+---
+
+### Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments
+
+arXiv:2603.23638v1 Announce Type: new Abstract: Large language models (LLMs) have enabled agentic systems that can reason, plan, and act across complex tasks, but it remains unclear whether they can allocate resources effectively under uncertainty. Unlike short-horizon reactive decisions, allocat...
+
+[Read more](https://arxiv.org/abs/2603.23638)
+
+---
+
+### GTO Wizard Benchmark
+
+arXiv:2603.23660v1 Announce Type: new Abstract: We introduce GTO Wizard Benchmark, a public API and standardized evaluation framework for benchmarking algorithms in Heads-Up No-Limit Texas Hold'em (HUNL). The benchmark evaluates agents against GTO Wizard AI, a state-of-the-art superhuman poker ag...
+
+[Read more](https://arxiv.org/abs/2603.23660)
+
+---
+
+### Beyond Accuracy: Introducing a Symbolic-Mechanistic Approach to Interpretable Evaluation
+
+arXiv:2603.23517v1 Announce Type: new Abstract: Accuracy-based evaluation cannot reliably distinguish genuine generalization from shortcuts like memorization, leakage, or brittle heuristics, especially in small-data regimes. In this position paper, we argue for mechanism-aware evaluation that com...
+
+[Read more](https://arxiv.org/abs/2603.23517)
+
+---
+
+### Implicit Turn-Wise Policy Optimization for Proactive User-LLM Interaction
+
+arXiv:2603.23550v1 Announce Type: new Abstract: Multi-turn human-AI collaboration is fundamental to deploying interactive services such as adaptive tutoring, conversational recommendation, and professional consultation. However, optimizing these interactions via reinforcement learning is hindered...
+
+[Read more](https://arxiv.org/abs/2603.23550)
+
+---
+
+### Upper Entropy for 2-Monotone Lower Probabilities
+
+arXiv:2603.23558v1 Announce Type: new Abstract: Uncertainty quantification is a key aspect in many tasks such as model selection/regularization, or quantifying prediction uncertainties to perform active learning or OOD detection. Within credal approaches that consider modeling uncertainty as prob...
+
+[Read more](https://arxiv.org/abs/2603.23558)
+
+---
+
+### Synthetic Mixed Training: Scaling Parametric Knowledge Acquisition Beyond RAG
+
+arXiv:2603.23562v1 Announce Type: new Abstract: Synthetic data augmentation helps language models learn new knowledge in data-constrained domains. However, naively scaling existing synthetic data methods by training on more synthetic tokens or using stronger generators yields diminishing returns...
+
+[Read more](https://arxiv.org/abs/2603.23562)
+
+---
+
+### Safe Reinforcement Learning with Preference-based Constraint Inference
+
+arXiv:2603.23565v1 Announce Type: new Abstract: Safe reinforcement learning (RL) is a standard paradigm for safety-critical decision making. However, real-world safety constraints can be complex, subjective, and even hard to explicitly specify. Existing works on constraint inference rely on restr...
+
+[Read more](https://arxiv.org/abs/2603.23565)
+
+---
+
+### A New Framework for Evaluating Voice Agents (EVA)
+
+[Read more](https://huggingface.co/blog/ServiceNow-AI/eva)
 
 ---
 

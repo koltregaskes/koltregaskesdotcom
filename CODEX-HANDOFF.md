@@ -163,20 +163,6 @@ See `NEWS-GATHERER-HANDOFF.md` for the dedicated brief.
 
 ### 4. Supabase credentials
 The subscribe page has empty Supabase credentials in the committed HTML:
-```javascript
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
-```
-This is by design — the build script injects real values from GitHub Secrets (`SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`) at build time. The committed HTML will always show empty strings. The CSP header in the build script adds the Supabase URL to `connect-src` when configured.
-
-### 5. Feed.xml
-An RSS feed exists at `site/feed.xml`. The user hasn't explicitly asked for it to be removed, but they don't want RSS promoted on the subscribe page. Leave `feed.xml` in place but don't link to it from the UI.
-
-## How to Build & Test
-
-```bash
-# Install dependencies (there are none — pure Node.js)
-# Just run the build:
 node scripts/build.mjs
 
 # The output goes to site/

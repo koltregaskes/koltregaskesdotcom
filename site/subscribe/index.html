@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Newsletter - Kol's Korner</title>
-  <meta name="description" content="Subscribe to Kol's Korner newsletter - Weekly digests, daily updates, or all new posts about tech, AI, and development" />
+  <meta name="description" content="Newsletter updates for Kol's Korner. The email list is currently on hold, but the daily digests and news archive are live on-site." />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -22,12 +22,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../posts/">Posts</a>
-        <a href="../news/">News</a>
-        <a href="../tags/">Tags</a>
-        <a href="../about/">About</a>
-        <a href="../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -40,11 +35,36 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../posts/">Posts</a>
+        <a href="../news/">News</a>
+        <a href="../tags/">Tags</a>
+        <a href="../about/">About</a>
+        <a href="../subscribe/" class="active">Newsletter</a>
       </nav>
     </div>
   </header>
 
-  <main class="content-main">
+  <main class="content-main subscribe-main">
+    <section class="subscribe-launch-note">
+      <span class="subscribe-status-badge">Newsletter paused</span>
+      <h1 class="page-title">The newsletter is on hold while the site relaunches.</h1>
+      <p class="subscribe-hero-text">The daily news browser and the on-site digest archive are live now, so that is where every new update lands first.</p>
+      <div class="subscribe-actions">
+        <a href="../news/" class="button-primary">Open AI news</a>
+        <a href="../posts/" class="button-secondary">Read the archive</a>
+      </div>
+      <div class="subscribe-note">
+        <h2>What you can use today</h2>
+        <p>Track the shared AI news feed, read fresh daily digests on the site, and keep up with essays and experiments without waiting for email delivery.</p>
+      </div>
+    </section>
     <!-- Hero Section -->
     <div class="subscribe-hero">
       <h1 class="page-title">Stay in the Loop</h1>
@@ -132,64 +152,67 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
 
-    // Newsletter subscription
-    const SUPABASE_URL = 'https://gdktukmraxaircugxnls.supabase.co';
-    const SUPABASE_KEY = 'sb_publishable_OjciRZP43NRfJlVSBuCwHw_Fh8iZ0AM';
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
 
-    document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('subscribe-email').value.trim();
-      const btn = document.getElementById('subscribe-btn');
-      const msg = document.getElementById('subscribe-message');
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
 
-      btn.disabled = true;
-      btn.textContent = 'Subscribing...';
-      msg.style.display = 'none';
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
 
-      try {
-        const res = await fetch(SUPABASE_URL + '/rest/v1/subscribers', {
-          method: 'POST',
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_KEY,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({ email })
-        });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
 
-        if (res.ok) {
-          msg.textContent = 'You\'re subscribed! Thanks for signing up.';
-          msg.style.color = 'var(--color-primary)';
-          msg.style.display = 'block';
-          document.getElementById('subscribe-email').value = '';
-        } else if (res.status === 409) {
-          msg.textContent = 'You\'re already subscribed!';
-          msg.style.color = 'var(--color-text-secondary)';
-          msg.style.display = 'block';
-        } else {
-          throw new Error('Subscription failed');
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
         }
-      } catch (err) {
-        msg.textContent = 'Something went wrong. Please try again.';
-        msg.style.color = '#ef4444';
-        msg.style.display = 'block';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Subscribe';
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
       }
-    });
+    }
+
+    
+  
   </script>
 </body>
 </html>
