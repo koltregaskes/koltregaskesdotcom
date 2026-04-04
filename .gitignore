@@ -11,10 +11,35 @@ node_modules/
 logs/
 
 # Local agent instructions and machine-specific config
+.claude/
+.codex/
+.cursor/
+.agents/
+.antigravity/
 AGENTS.md
 CLAUDE.md
+CODEX-HANDOFF.md
+HANDOFF*.md
+*HANDOFF*.md
+ACTION-PLAN.md
+DESIGN-PLAN.md
+NEXT-SESSION-HANDOFF.md
+SESSION-*.md
+TODO.md
+docs/DEEP-THINK-*.md
+docs/DT*-prompt*.md
+docs/DT*-response*.md
+docs/prompt-*.md
 content/CLAUDE.md
 .claude/settings.local.json
+
+# Legacy local digest/source artefacts
+news-digests/digest-*.md
+site/news-digests/digest-*.md
+
+# Local CMS/media upload staging
+public/media/admin-uploads/
+public/media/library/
 
 # OS files
 .DS_Store
