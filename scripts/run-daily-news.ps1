@@ -1,9 +1,77 @@
-$ErrorActionPreference = 'Stop'
-
 param(
   [string]$TargetDate = '',
-  [switch]$SkipPush
+  [switch]$SkipPush,
+  [switch]$SkipCommit
 )
+
+$ErrorActionPreference = 'Stop'
+
+function Get-GitStatusLines {
+  param(
+    [string[]]$Paths
+  )
+
+  $statusArgs = @('status', '--porcelain', '--')
+  if ($Paths) {
+    $statusArgs += $Paths
+  }
+
+  $lines = @(& git @statusArgs)
+  if ($LASTEXITCODE -ne 0) { throw "git status failed with exit code $LASTEXITCODE" }
+
+  return $lines
+}
+
+function Get-GitStatusPath {
+  param(
+    [string]$StatusLine
+  )
+
+  if ([string]::IsNullOrWhiteSpace($StatusLine) -or $StatusLine.Length -lt 4) {
+    return ''
+  }
+
+  $pathText = $StatusLine.Substring(3).Trim()
+
+  if ($pathText.StartsWith('"') -and $pathText.EndsWith('"')) {
+    $pathText = $pathText.Substring(1, $pathText.Length - 2)
+  }
+
+  if ($pathText -like '* -> *') {
+    $pathText = ($pathText -split ' -> ', 2)[1]
+  }
+
+  return $pathText.Replace('\', '/')
+}
+
+function Test-IsGeneratedDigestArtifact {
+  param(
+    [string]$Path
+  )
+
+  return (
+    $Path -like 'news-digests/*' -or
+    $Path -like 'site/*' -or
+    $Path -like 'content/daily-digest-*.md'
+  )
+}
+
+function Invoke-NativeStep {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$FilePath,
+    [string[]]$ArgumentList = @(),
+    [Parameter(Mandatory = $true)]
+    [string]$FailureLabel
+  )
+
+  Write-Host ">> $FilePath $($ArgumentList -join ' ')"
+  & $FilePath @ArgumentList
+  $exitCode = $LASTEXITCODE
+  if ($exitCode -ne 0) {
+    throw "$FailureLabel failed with exit code $exitCode"
+  }
+}
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $logsDir = Join-Path $repoRoot 'logs'
@@ -20,44 +88,69 @@ Start-Transcript -Path $logPath -Force | Out-Null
 try {
   Push-Location $repoRoot
 
-  $preExistingGeneratedChanges = @(& git status --porcelain -- news-digests content site)
-  if ($LASTEXITCODE -ne 0) { throw "git status failed with exit code $LASTEXITCODE" }
+  $preExistingChanges = @(Get-GitStatusLines -Paths @('news-digests', 'content', 'site'))
+  $preExistingManualChanges = @(
+    $preExistingChanges | Where-Object {
+      -not (Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_))
+    }
+  )
 
-  if ($preExistingGeneratedChanges.Count -gt 0) {
-    Write-Warning 'Refusing to run while generated news or site files already have uncommitted changes.'
-    $preExistingGeneratedChanges | ForEach-Object { Write-Warning $_ }
-    throw 'Clean or commit existing changes in news-digests, content, and site before running the scheduled digest job.'
+  if ($preExistingManualChanges.Count -gt 0) {
+    Write-Warning 'Refusing to run while manually maintained content already has uncommitted changes.'
+    $preExistingManualChanges | ForEach-Object { Write-Warning $_ }
+    throw 'Clean or commit existing manual content changes before running the scheduled digest job.'
   }
 
-  & git pull --ff-only origin main
-  if ($LASTEXITCODE -ne 0) { throw "git pull failed with exit code $LASTEXITCODE" }
+  $preExistingGeneratedChanges = @(
+    $preExistingChanges | Where-Object {
+      Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_)
+    }
+  )
+
+  if ($preExistingGeneratedChanges.Count -gt 0) {
+    Write-Warning 'Existing generated digest artifacts detected. Continuing because this job regenerates them.'
+    $preExistingGeneratedChanges | ForEach-Object { Write-Warning $_ }
+  }
+
+  Invoke-NativeStep -FilePath 'git' -ArgumentList @('pull', '--ff-only', 'origin', 'main') -FailureLabel 'git pull'
 
   Write-Host "Running shared news pipeline for $TargetDate"
 
-  & node scripts/fetch-news.mjs --date $TargetDate
-  if ($LASTEXITCODE -ne 0) { throw "fetch-news failed with exit code $LASTEXITCODE" }
+  Invoke-NativeStep -FilePath 'node' -ArgumentList @('scripts/fetch-news.mjs', '--date', $TargetDate) -FailureLabel 'fetch-news'
 
-  & node scripts/generate-daily-digest.mjs --date $TargetDate --allow-empty --force
-  if ($LASTEXITCODE -ne 0) { throw "generate-daily-digest failed with exit code $LASTEXITCODE" }
+  Invoke-NativeStep -FilePath 'node' -ArgumentList @('scripts/generate-daily-digest.mjs', '--date', $TargetDate, '--allow-empty', '--force') -FailureLabel 'generate-daily-digest'
 
-  & node scripts/build.mjs
-  if ($LASTEXITCODE -ne 0) { throw "build failed with exit code $LASTEXITCODE" }
+  Invoke-NativeStep -FilePath 'node' -ArgumentList @('scripts/build.mjs') -FailureLabel 'build'
 
-  & git diff --quiet -- news-digests content site
-  if ($LASTEXITCODE -eq 0) {
+  $generatedChanges = @(
+    Get-GitStatusLines -Paths @('news-digests', 'content', 'site') | Where-Object {
+      Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_)
+    }
+  )
+
+  if ($generatedChanges.Count -eq 0) {
     Write-Host 'No digest changes detected.'
     return
   }
 
-  & git add news-digests content site
-  if ($LASTEXITCODE -ne 0) { throw "git add failed with exit code $LASTEXITCODE" }
+  $pathsToStage = @('news-digests', 'site', 'content')
+  Invoke-NativeStep -FilePath 'git' -ArgumentList (@('add', '--all', '--') + $pathsToStage) -FailureLabel 'git add'
 
-  & git commit -m "chore: refresh daily digest for $TargetDate"
-  if ($LASTEXITCODE -ne 0) { throw "git commit failed with exit code $LASTEXITCODE" }
+  & git diff --cached --quiet --
+  if ($LASTEXITCODE -eq 0) {
+    Write-Host 'No staged digest changes remain after refresh.'
+    return
+  }
+
+  if ($SkipCommit) {
+    Write-Host 'Skipping commit and push because -SkipCommit was provided.'
+    return
+  }
+
+  Invoke-NativeStep -FilePath 'git' -ArgumentList @('-c', 'commit.gpgsign=false', 'commit', '--no-verify', '-m', "chore: refresh daily digest for $TargetDate") -FailureLabel 'git commit'
 
   if (-not $SkipPush) {
-    & git push origin main
-    if ($LASTEXITCODE -ne 0) { throw "git push failed with exit code $LASTEXITCODE" }
+    Invoke-NativeStep -FilePath 'git' -ArgumentList @('push', 'origin', 'main') -FailureLabel 'git push'
   }
 }
 finally {
