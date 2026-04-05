@@ -1,6 +1,12 @@
 # Kol's Korner
 
-Personal website and publishing system for [koltregaskes.com](https://koltregaskes.com).
+Personal website and publishing system for Kol Tregaskes.
+
+## Deployment State
+
+- Live GitHub Pages URL: https://koltregaskes.github.io/kols-korner/
+- Intended production domain: https://koltregaskes.com/
+- Custom-domain cutover still depends on external DNS changes and GitHub Pages domain verification
 
 ## What This Repo Is
 
@@ -8,9 +14,10 @@ Personal website and publishing system for [koltregaskes.com](https://koltregask
 - Markdown content in `content/`
 - Daily digests in `news-digests/`
 - Generated, deployable output committed in `site/`
-- GitHub Pages deployment for the production domain `koltregaskes.com`
+- GitHub Actions deployment to GitHub Pages on push to `main`
+- Local Windows Task Scheduler automation for the twice-daily digest refresh
 
-The shared news-gathering pipeline now runs outside this repo, with this repo consuming the generated digest output and publishing the site.
+The shared news-gathering pipeline runs outside this repo. This repo consumes the generated digest inputs, publishes digest posts, builds the site, and deploys the finished static output.
 
 ## Build
 
@@ -22,15 +29,16 @@ node scripts/build.mjs
 
 ```bash
 node scripts/fetch-news.mjs --date YYYY-MM-DD
-node scripts/generate-daily-digest.mjs --date YYYY-MM-DD --force
+node scripts/generate-daily-digest.mjs --date YYYY-MM-DD --allow-empty --force
 node scripts/backfill-digests.mjs
 ```
 
 - Raw digest files live in `news-digests/`
 - Published digest posts live in `content/daily-digest-YYYY-MM-DD.md`
 - `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
-- `scripts/run-daily-news.ps1` is the primary local Windows scheduled runner for digest refreshes
-- `.github/workflows/daily-digest.yml` is now a manual build-check workflow, not the production scheduler
+- `scripts/run-daily-news.ps1` is the primary production runner for digest refreshes
+- The Windows scheduled task runs at 07:00 and 19:00 Europe/London
+- `.github/workflows/daily-digest.yml` is a manual build-check workflow only
 
 Optional environment variables:
 
@@ -58,7 +66,7 @@ Push to `main`. GitHub Actions will:
 2. Upload `site/`
 3. Deploy to GitHub Pages
 
-The repo can publish with a committed [`CNAME`](/W:/Websites/sites/kols-korner/CNAME) file or via the `CUSTOM_DOMAIN` repository variable when the production domain is ready.
+The repo already includes a root `CNAME` file for `koltregaskes.com`, but final cutover also requires the domain DNS and the GitHub Pages custom-domain setting to be configured externally.
 
 ## Content Model
 
@@ -92,15 +100,18 @@ Posts with `publish: false` are excluded from the build.
 ## Key Paths
 
 - `scripts/build.mjs` - Main build script
+- `scripts/run-daily-news.ps1` - Production digest runner
 - `content/` - Source articles and static page markdown
 - `news-digests/` - Raw digest markdown used by the news section
 - `site/` - Generated output that GitHub Pages deploys
+- `site/data/news-digests.json` - Generated manifest for the news browser
 - `.github/workflows/pages.yml` - Main Pages deploy workflow
 - `.github/workflows/daily-digest.yml` - Manual digest build-check workflow
 
 ## Notes
 
 - UK English throughout
-- No external runtime framework
+- Dark mode only; do not reintroduce the old theme toggle without a clear product decision
+- No Notion content pipeline in the current architecture
 - `site/` is intentionally committed
 - Internal agent files such as `AGENTS.md`, `CLAUDE.md`, and local Claude settings are ignored and not part of the published project
