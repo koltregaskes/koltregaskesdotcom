@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-04-05T06:08:30.646Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-04-05",
+  "count": 9,
+  "items": [
+    {
+      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-05",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "tags": [
+        "model_release",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
+      "title": "Introducing Sonnet 4.6",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-05",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "tags": [
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-opus-4-6-https-www-anthropic-com-news-claude-opus-4-6",
+      "title": "Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-05",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "tags": [
+        "api_update",
+        "ai_agents",
+        "tool_use"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-australian-government-and-anthropic-sign-mou-for-ai-safety-and-research-https-www-anthropic-com-news-australia-mou",
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-05",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "research_paper",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-tribe-v2-a-predictive-foundation-model-trained-to-understand-how-the-human-brain-processes-complex-stimuli-https-ai-meta-com-blog-tribe-v2-brain-predictive-foundation-model",
+      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-05",
+      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "tags": [
+        "model_release"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-05",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports-https-techcrunch-com-2026-04-03-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports",
+      "title": "Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-03",
+      "summary": "Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.",
+      "tags": [
+        "industry",
+        "ai",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-anthropic-ramps-up-its-political-activities-with-a-new-pac-https-techcrunch-com-2026-04-03-anthropic-ramps-up-its-political-activities-with-a-new-pac",
+      "title": "Anthropic ramps up its political activities with a new PAC",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-03",
+      "summary": "With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.",
+      "tags": [
+        "industry",
+        "ai",
+        "policy"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "ars-technica-ai-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license-https-arstechnica-com-ai-2026-04-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license",
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-04-02",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "tags": [
+        "product_launch",
+        "announcement",
+        "open_source"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

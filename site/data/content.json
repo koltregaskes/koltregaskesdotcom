@@ -9683,6 +9683,91 @@
       "localPath": "/posts/daily-digest-saturday-4-april-2026/"
     },
     {
+      "title": "Daily Digest: Sunday, 5 April 2026",
+      "slug": "daily-digest-sunday-5-april-2026",
+      "kind": "article",
+      "summary": "AI and technology news digest for Sunday, 5 April 2026",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"daily-digest-sunday-5-april-2026\"><span class=\"hash\">#</span> Daily Digest: Sunday, 5 April 2026</h2>\n\n<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>\n\n<h3 id=\"top-stories\"><span class=\"hash\">##</span> Top Stories</h3>\n\n<h4 id=\"introducing-sonnet-4-6\"><span class=\"hash\">###</span> Introducing Sonnet 4.6</h4>\n\n<p>Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-sonnet-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"claude-opus-4-6\"><span class=\"hash\">###</span> Claude Opus 4.6</h4>\n\n<p>We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-opus-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"australian-government-and-anthropic-sign-mou-for-ai-safety-and-research\"><span class=\"hash\">###</span> Australian government and Anthropic sign MOU for AI safety and research</h4>\n\n<p>Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.</p>\n\n<a href=\"https://www.anthropic.com/news/australia-MOU\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports\"><span class=\"hash\">###</span> Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports</h4>\n\n<p>Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.</p>\n\n<a href=\"https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-ramps-up-its-political-activities-with-a-new-pac\"><span class=\"hash\">###</span> Anthropic ramps up its political activities with a new PAC</h4>\n\n<p>With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.</p>\n\n<a href=\"https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/\">Read more</a>\n\n<hr />\n\n<h3 id=\"industry\"><span class=\"hash\">##</span> Industry</h3>\n\n<h4 id=\"google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license\"><span class=\"hash\">###</span> Google announces Gemma 4 open AI models, switches to Apache 2.0 license</h4>\n\n<p>Gemma 4 brings the first major update to Google's open models in a year.</p>\n\n<a href=\"https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/\">Read more</a>\n\n<hr />\n\n<h3 id=\"research-products\"><span class=\"hash\">##</span> Research & Products</h3>\n\n<h4 id=\"mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps\"><span class=\"hash\">###</span> Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2</h4>\n\n<p>Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...</p>\n\n<a href=\"https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/\">Read more</a>\n\n<hr />\n\n<h4 id=\"introducing-tribe-v2-a-predictive-foundation-model-trained-to-understand-how-the\"><span class=\"hash\">###</span> Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</h4>\n\n<p>TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...</p>\n\n<a href=\"https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/\">Read more</a>\n\n<hr />\n\n<h4 id=\"sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m\"><span class=\"hash\">###</span> SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning</h4>\n\n<p>Update March 27, 2026:</p>\n\n<a href=\"https://ai.meta.com/blog/segment-anything-model-3/\">Read more</a>\n\n<hr />\n\n\n<em>This digest was automatically generated.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "daily-digest-sunday-5-april-2026",
+          "text": "Daily Digest: Sunday, 5 April 2026"
+        },
+        {
+          "level": 3,
+          "id": "top-stories",
+          "text": "Top Stories"
+        },
+        {
+          "level": 4,
+          "id": "introducing-sonnet-4-6",
+          "text": "Introducing Sonnet 4.6"
+        },
+        {
+          "level": 4,
+          "id": "claude-opus-4-6",
+          "text": "Claude Opus 4.6"
+        },
+        {
+          "level": 4,
+          "id": "australian-government-and-anthropic-sign-mou-for-ai-safety-and-research",
+          "text": "Australian government and Anthropic sign MOU for AI safety and research"
+        },
+        {
+          "level": 4,
+          "id": "anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports",
+          "text": "Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports"
+        },
+        {
+          "level": 4,
+          "id": "anthropic-ramps-up-its-political-activities-with-a-new-pac",
+          "text": "Anthropic ramps up its political activities with a new PAC"
+        },
+        {
+          "level": 3,
+          "id": "industry",
+          "text": "Industry"
+        },
+        {
+          "level": 4,
+          "id": "google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license",
+          "text": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license"
+        },
+        {
+          "level": 3,
+          "id": "research-products",
+          "text": "Research & Products"
+        },
+        {
+          "level": 4,
+          "id": "mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps",
+          "text": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2"
+        },
+        {
+          "level": 4,
+          "id": "introducing-tribe-v2-a-predictive-foundation-model-trained-to-understand-how-the",
+          "text": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli"
+        },
+        {
+          "level": 4,
+          "id": "sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m",
+          "text": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning"
+        }
+      ],
+      "readingTime": 2,
+      "date": "2026-04-05",
+      "updatedTime": "2026-04-05",
+      "localPath": "/posts/daily-digest-sunday-5-april-2026/"
+    },
+    {
       "title": "JPMorgan Drops $30 Billion on AI Infrastructure",
       "slug": "jpmorgan-drops-30-billion-on-ai-infrastructure",
       "kind": "article",
