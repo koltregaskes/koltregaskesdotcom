@@ -1,61 +1,97 @@
 {
-  "generatedAt": "2026-04-06T06:00:36.633Z",
+  "generatedAt": "2026-04-06T18:04:21.798Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-06",
-  "count": 14,
+  "count": 15,
   "items": [
     {
-      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
-      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
-      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
+      "id": "techcrunch-ai-openai-s-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week-https-techcrunch-com-2026-04-06-openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week",
+      "title": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day work week",
+      "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
       "publishedAt": "2026-04-06",
-      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "summary": "OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.",
       "tags": [
-        "model_release",
-        "industry_move",
-        "open_source"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "arxiv-cs-ai-holos-a-web-scale-llm-based-multi-agent-system-for-the-agentic-web-https-arxiv-org-abs-2604-02334",
-      "title": "Holos: A Web-Scale LLM-Based Multi-Agent System for the Agentic Web",
-      "url": "https://arxiv.org/abs/2604.02334",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02334v1 Announce Type: new Abstract: As large language models (LLM)-driven agents transition from isolated task solvers to persistent digital entities, the emergence of the Agentic Web, an ecosystem where heterogeneous agents autonomously interact and co-evolve, marks a pivotal shift toward Artificial General Intelligence (AGI). However, LLM-based multi-agent systems (LaMAS) are hindered by open-world issues such as scaling friction, coordination breakdown, and value dissipation. To address these challenges, we introduce Holos, a web-scale LaMAS architected for long-term ecological persistence. Holos adopts a five-layer architecture, with core modules primarily featuring the Nuwa engine for high-efficiency agent generation and hosting, a market-driven Orchestrator for resilient coordination, and an endogenous value cycle to achieve incentive compatibility. By bridging the gap between micro-level collaboration and macro-scale emergence, Holos hopes to lay the foundation for the next generation of the self-organizing and continuously evolving Agentic Web. We have publicly released Holos (accessible at https://holosai.io), providing a resource for the community and a testbed for future research in large-scale agentic ecosystems.",
-      "tags": [
-        "research_paper",
-        "architecture",
-        "ai_agents",
-        "multi_agent",
-        "autonomous_systems",
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
         "industry_move"
       ],
       "adapter": "rss"
     },
     {
-      "id": "arxiv-cs-ai-compositional-neuro-symbolic-reasoning-https-arxiv-org-abs-2604-02434",
-      "title": "Compositional Neuro-Symbolic Reasoning",
-      "url": "https://arxiv.org/abs/2604.02434",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
+      "id": "techcrunch-ai-startup-battlefield-200-applications-open-a-chance-for-vc-access-techcrunch-coverage-and-100k-https-techcrunch-com-2026-04-06-startup-battlefield-200-applications-open-get-vc-access-techcrunch-coverage-and-100k",
+      "title": "Startup Battlefield 200 applications open: a chance for VC access, TechCrunch coverage, and $100K",
+      "url": "https://techcrunch.com/2026/04/06/startup-battlefield-200-applications-open-get-vc-access-techcrunch-coverage-and-100k/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
       "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02434v1 Announce Type: new Abstract: We study structured abstraction-based reasoning for the Abstraction and Reasoning Corpus (ARC) and compare its generalization to test-time approaches. Purely neural architectures lack reliable combinatorial generalization, while strictly symbolic systems struggle with perceptual grounding. We therefore propose a neuro-symbolic architecture that extracts object-level structure from grids, uses neural priors to propose candidate transformations from a fixed domain-specific language (DSL) of atomic patterns, and filters hypotheses using cross-example consistency. Instantiated as a compositional reasoning framework based on unit patterns inspired by human visual abstraction, the system augments large language models (LLMs) with object representations and transformation proposals. On ARC-AGI-2, it improves base LLM performance from 16% to 24.4% on the public evaluation set, and to 30.8% when combined with ARC Lang Solver via a meta-classifier. These results demonstrate that separating perception, neural-guided transformation proposal, and symbolic consistency filtering improves generalization without task-specific finetuning or reinforcement learning, while reducing reliance on brute-force search and sampling-based test-time scaling. We open-source the ARC-AGI-2 Reasoner code (https://github.com/CoreThink-AI/arc-agi-2-reasoner).",
+      "summary": "Nominate your startup, or one you know that deserves the spotlight, and finish the process by applying. Selected 200 have a chance at VC access, TechCrunch coverage, and $100K for Startup Battlefield 200. Applications close on May 27.",
       "tags": [
-        "evaluation",
-        "research_paper",
-        "architecture",
-        "autonomous_systems",
-        "reasoning",
-        "open_source"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others-https-techcrunch-com-2026-04-06-how-to-use-chatgpt-apps-doordash-spotify-uber",
+      "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+      "url": "https://techcrunch.com/2026/04/06/how-to-use-chatgpt-apps-doordash-spotify-uber/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-ticket-savings-of-up-to-500-this-week-for-techcrunch-disrupt-2026-https-techcrunch-com-2026-04-06-massive-ticket-savings-of-up-to-500-this-week-for-techcrunch-disrupt-2026",
+      "title": "Ticket savings of up to $500 this week for TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/04/06/massive-ticket-savings-of-up-to-500-this-week-for-techcrunch-disrupt-2026/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "Starting today, you have 5 days to save nearly $500 on your ticket to TechCrunch Disrupt 2026. This offer disappears Friday, April 10, at 11:59 p.m. PT. Register here to secure these low rates.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-spain-s-xoople-raises-130-million-series-b-to-map-the-earth-for-ai-https-techcrunch-com-2026-04-06-spains-xoople-raises-130-million-series-b-to-map-the-earth-for-ai",
+      "title": "Spain’s Xoople raises $130 million Series B to map the Earth for AI",
+      "url": "https://techcrunch.com/2026/04/06/spains-xoople-raises-130-million-series-b-to-map-the-earth-for-ai/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "The company is also announcing a deal with L3Harris to build the sensors for Xoople's spacecraft.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "adapter": "rss"
     },
@@ -69,8 +105,46 @@
       "publishedAt": "2026-04-06",
       "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
       "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
         "tool_use",
         "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
+      "title": "Inside the leaked Claude Code files",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-06",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-one-breach-after-another-https-www-bensbites-com-p-one-breach-after-another",
+      "title": "One breach after another",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-06",
+      "summary": "separate and sandbox your agent's access",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
       ],
       "adapter": "html"
     },
@@ -84,9 +158,28 @@
       "publishedAt": "2026-04-06",
       "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
       "tags": [
+        "model_release",
         "api_update",
         "ai_agents",
+        "ai_safety",
         "tool_use"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
       ],
       "adapter": "html"
     },
@@ -100,22 +193,28 @@
       "publishedAt": "2026-04-06",
       "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
       "tags": [
-        "research_paper",
-        "ai_safety"
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper"
       ],
       "adapter": "html"
     },
     {
-      "id": "meta-ai-blog-introducing-tribe-v2-a-predictive-foundation-model-trained-to-understand-how-the-human-brain-processes-complex-stimuli-https-ai-meta-com-blog-tribe-v2-brain-predictive-foundation-model",
-      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
-      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
+      "id": "anthropic-news-anthropic-invests-100-million-into-the-claude-partner-network-https-www-anthropic-com-news-claude-partner-network",
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
       "publishedAt": "2026-04-06",
-      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "summary": "We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.",
       "tags": [
-        "model_release"
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
       ],
       "adapter": "html"
     },
@@ -129,112 +228,46 @@
       "publishedAt": "2026-04-06",
       "summary": "Update March 27, 2026:",
       "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
         "reasoning"
       ],
       "adapter": "html"
     },
     {
-      "id": "arxiv-cs-ai-xpertbench-expert-level-tasks-with-rubrics-based-evaluation-https-arxiv-org-abs-2604-02368",
-      "title": "Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation",
-      "url": "https://arxiv.org/abs/2604.02368",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
+      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
       "section": "Research & Products",
       "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02368v1 Announce Type: new Abstract: As Large Language Models (LLMs) exhibit plateauing performance on conventional benchmarks, a pivotal challenge persists: evaluating their proficiency in complex, open-ended tasks characterizing genuine expert-level cognition. Existing frameworks suffer from narrow domain coverage, reliance on generalist tasks, or self-evaluation biases. To bridge this gap, we present XpertBench, a high-fidelity benchmark engineered to assess LLMs across authentic professional domains. XpertBench consists of 1,346 meticulously curated tasks across 80 categories, spanning finance, healthcare, legal services, education, and dual-track research (STEM and Humanities). These tasks are derived from over 1,000 submissions by domain experts--including researchers from elite institutions and practitioners with extensive clinical or industrial experience--ensuring superior ecological validity. Each task uses detailed rubrics with mostly 15-40 weighted checkpoints to assess professional rigor. To facilitate scalable yet human-aligned assessment, we introduce ShotJudge, a novel evaluation paradigm that employs LLM judges calibrated with expert few-shot exemplars to mitigate self-rewarding biases. Our empirical evaluation of state-of-the-art LLMs reveals a pronounced performance ceiling: even leading models achieve a peak success rate of only ~66%, with a mean score around 55%. Models also exhibit domain-specific divergence, showing non-overlapping strengths in quantitative reasoning versus linguistic synthesis.. These findings underscore a significant \"expert-gap\" in current AI systems and establish XpertBench as a critical instrument for navigating the transition from general-purpose assistants to specialized professional collaborators.",
-      "tags": [
-        "benchmark",
-        "evaluation",
-        "research_paper",
-        "reasoning"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-understanding-the-nature-of-generative-ai-as-threshold-logic-in-high-dimensional-space-https-arxiv-org-abs-2604-02476",
-      "title": "Understanding the Nature of Generative AI as Threshold Logic in High-Dimensional Space",
-      "url": "https://arxiv.org/abs/2604.02476",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02476v1 Announce Type: new Abstract: This paper examines the role of threshold logic in understanding generative artificial intelligence. Threshold functions, originally studied in the 1960s in digital circuit synthesis, provide a structurally transparent model of neural computation: a weighted sum of inputs compared to a threshold, geometrically realized as a hyperplane partitioning a space. The paper shows that this operation undergoes a qualitative transition as dimensionality increases. In low dimensions, the perceptron acts as a determinate logical classifier, separating classes when possible, as decided by linear programming. In high dimensions, however, a single hyperplane can separate almost any configuration of points (Cover, 1965); the space becomes saturated with potential classifiers, and the perceptron shifts from a logical device to a navigational one, functioning as an indexical indicator in the sense of Peirce. The limitations of the perceptron identified by Minsky and Papert (1969) were historically addressed by introducing multilayer architectures. This paper considers an alternative path: increasing dimensionality while retaining a single threshold element. It argues that this shift has equally significant implications for understanding neural computation. The role of depth is reinterpreted as a mechanism for the sequential deformation of data manifolds through iterated threshold operations, preparing them for linear separability already afforded by high-dimensional geometry. The resulting triadic account - threshold function as ontological unit, dimensionality as enabling condition, and depth as preparatory mechanism - provides a unified perspective on generative AI grounded in established mathematics.",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
       "tags": [
         "research_paper",
-        "opinion"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-convolutional-surrogate-for-3d-discrete-fracture-matrix-tensor-upscaling-https-arxiv-org-abs-2604-02335",
-      "title": "Convolutional Surrogate for 3D Discrete Fracture-Matrix Tensor Upscaling",
-      "url": "https://arxiv.org/abs/2604.02335",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02335v1 Announce Type: new Abstract: Modeling groundwater flow in three-dimensional fractured crystalline media requires accounting for strong spatial heterogeneity induced by fractures. Fine-scale discrete fracture-matrix (DFM) simulations can capture this complexity but are computationally expensive, especially when repeated evaluations are needed. To address this, we aim to employ a multilevel Monte Carlo (MLMC) framework in which numerical homogenization is used to upscale sub-resolution fracture effects when transitioning between accuracy levels. To reduce the cost of conventional 3D numerical homogenization, we develop a surrogate model that predicts the equivalent hydraulic conductivity tensor Keq from a voxelized 3D domain representing tensor-valued random fields of matrix and fracture conductivities. Fracture size, orientation, and aperture are sampled from distributions informed by natural observations. The surrogate architecture combines a 3D convolutional neural network with feed-forward layers, enabling it to capture both local spatial features and global interactions. Three surrogates are trained on data generated by DFM simulations, each corresponding to a different fracture-to-matrix conductivity contrast. Performance is evaluated across a wide range of fracture network parameters and matrix-field correlation lengths. The trained models achieve high accuracy, with normalized root-mean-square errors below 0.22 across most test cases. Practical applicability is demonstrated by comparing numerically homogenized conductivities with surrogate predictions in two macro-scale problems: computing equivalent conductivity tensors and predicting outflow from a constrained 3D domain. In both cases, surrogate-based upscaling preserves accuracy while substantially reducing computational cost, achieving speedups exceeding 100x when inference is performed on a GPU.",
-      "tags": [
-        "evaluation",
-        "research_paper",
+        "model_release",
+        "open_source",
         "architecture",
-        "training",
-        "inference",
-        "hardware",
-        "photography"
+        "industry_move"
       ],
-      "adapter": "rss"
+      "adapter": "html"
     },
     {
-      "id": "arxiv-cs-lg-lime-lightweight-mixture-of-experts-for-efficient-multimodal-multi-task-learning-https-arxiv-org-abs-2604-02338",
-      "title": "LiME: Lightweight Mixture of Experts for Efficient Multimodal Multi-task Learning",
-      "url": "https://arxiv.org/abs/2604.02338",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
+      "id": "mit-technology-review-ai-the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai-https-www-technologyreview-com-2026-04-06-1135187-the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai",
+      "title": "The one piece of data that could actually shed light on your job and AI",
+      "url": "https://www.technologyreview.com/2026/04/06/1135187/the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
       "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02338v1 Announce Type: new Abstract: MoE-PEFT methods combine Mixture of Experts with parameter-efficient fine-tuning for multi-task adaptation, but require separate adapters per expert causing trainable parameters to scale linearly with expert count and limiting applicability to adapter-based architectures. We propose LiME (Lightweight Mixture of Experts), which achieves expert specialization through lightweight modulation rather than adapter replication. Instead of separate adapters, LiME uses a single shared PEFT module and modulates its output with lightweight expert vectors, reducing expert parameters while generalizing to any PEFT method. Notably, LiME introduces zero-parameter routing by leveraging existing frozen and adapted representations eliminating learned router parameters typically required per layer. Theoretically, we prove that (i) more experts preserve more task-relevant information and (ii) modulation approximates full expert-specific PEFT with bounded error. LiME further incorporates n-gram windowed routing and adaptive expert selection (Auto Top-K) based on routing confidence. Experiments on MMT-47, a multimodal multi-task benchmark with 47 tasks spanning text, image, and video, demonstrate that LiME achieves competitive or superior performance while using up to 4x fewer trainable parameters and up to 29% faster training compared to corresponding MoE-PEFT baselines.",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Within Silicon Valley’s orbit, an AI-fueled jobs apocalypse is spoken about as a given. The mood is so grim that a societal impacts researcher at Anthropic, responding Wednesday to a call for…",
       "tags": [
-        "benchmark",
-        "evaluation",
+        "policy",
         "research_paper",
-        "architecture",
-        "dataset",
-        "product_launch"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-sieve-sample-efficient-parametric-learning-from-natural-language-https-arxiv-org-abs-2604-02339",
-      "title": "SIEVE: Sample-Efficient Parametric Learning from Natural Language",
-      "url": "https://arxiv.org/abs/2604.02339",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-06",
-      "summary": "arXiv:2604.02339v1 Announce Type: new Abstract: Natural language context-such as instructions, knowledge, or feedback-contains rich signal for adapting language models. While in-context learning provides adaptation via the prompt, parametric learning persists into model weights and can improve performance further, though is data hungry and heavily relies on either high-quality traces or automated verifiers. We propose SIEVE, a method for sample-efficient parametric learning from natural language context that requires as few as three query examples. SIEVE uses a novel synthetic data generation pipeline, SIEVE-GEN, that leverages the insight that context is decomposable. Decomposing context allows us to generate higher quality rollouts by pairing synthetic queries with only the applicable context rather than the entirety, then using context distillation to internalize context into the model. We evaluate in reasoning settings where context is necessary, including custom domains and the RuleArena and Machine Translation from One Book tasks. Our results show that SIEVE outperforms prior context distillation methods using just three query examples, demonstrating how to achieve sample-efficient parametric learning from natural language.",
-      "tags": [
-        "evaluation",
-        "research_paper",
-        "dataset",
-        "creative_workflow",
-        "reasoning"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex-https-techcrunch-com-2026-04-05-can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex",
-      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
-      "url": "https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-05",
-      "summary": "On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.",
-      "tags": [
-        "industry",
-        "ai",
-        "funding"
+        "industry_move",
+        "ai_safety"
       ],
       "adapter": "rss"
     }
