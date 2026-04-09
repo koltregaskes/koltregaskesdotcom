@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://koltregaskes.com/sitemap.xml
+Sitemap: https://koltregaskes.github.io/kols-korner/sitemap.xml

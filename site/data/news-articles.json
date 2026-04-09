@@ -1,0 +1,3017 @@
+{
+  "articles": [
+    {
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "Anthropic",
+        "Google"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "No Claude for Claws",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/no-claude-for-claws",
+      "summary": "in 3 months, Anthropic added $6B ARR",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Inside the leaked Claude Code files",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "models",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Rules",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.06233",
+      "summary": "arXiv:2604.06233v1 Announce Type: new Abstract: Safety-trained language models routinely refuse requests for help circumventing rules. But not all rules deserve compliance. When users ask for help evading rules imposed by an illegitimate authority, rules that are deeply unjust or absurd in their...",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/",
+      "summary": "OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "product",
+        "safety",
+        "OpenAI"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Poke makes using AI agents as easy as sending a text",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+      "summary": "Poke brings AI agents to everyday users via text message by handling tasks and automations without complex setup, apps, or technical know-how.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/",
+      "summary": "AWS has an ingrained culture of handling competition, he explained, because the cloud giant also competes with its partners.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Tubi is the first streamer to launch a native app within ChatGPT",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/",
+      "summary": "Tubi becomes the first streaming service to offer an app integration within ChatGPT, the AI chatbot that millions of users turn to for answers.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "product",
+        "OpenAI"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Astropad’s Workbench reimagines remote desktop for AI agents, not IT support",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/",
+      "summary": "Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/",
+      "summary": "OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.",
+      "category": "Top Stories",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "product",
+        "safety",
+        "OpenAI"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Astropad’s Workbench reimagines remote desktop for AI agents, not IT support",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/",
+      "summary": "Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.",
+      "category": "Top Stories",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Databricks co-founder wins prestigious ACM award, says ‘AGI is here already’",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/",
+      "summary": "Matei Zaharia has won the top honor from the Association for Computing Machinery. Now he's working on AI for research and says AGI is simply misunderstood.",
+      "category": "Top Stories",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
+      "summary": "Save up to $500 on your TechCrunch Disrupt 2026 pass until April 10, 11:59 p.m. PT. Secure your spot at the center of the tech ecosystem. Register today.",
+      "category": "Top Stories",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Atlassian launches visual AI tools and third-party agents in Confluence",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/",
+      "summary": "Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.",
+      "category": "Top Stories",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "agents",
+        "vision"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "Anthropic",
+        "Google"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "To beat Altman in court, Musk offers to give all damages to OpenAI nonprofit",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/tech-policy/2026/04/to-beat-altman-in-court-musk-offers-to-give-all-damages-to-open-ai-nonprofit/",
+      "summary": "Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "OpenAI"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+      "summary": "We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time...",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Operational Noncommutativity in Sequential Metacognitive Judgments",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.04938",
+      "summary": "arXiv:2604.04938v1 Announce Type: new Abstract: Metacognition, understood as the monitoring and regulation of one's own cognitive processes, is inherently sequential: an agent evaluates an internal state, updates it, and may then re-evaluate under modified criteria. Order effects in cognition are...",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-08T00:00:00.000Z",
+      "dateString": "Wednesday, 8 April 2026",
+      "filename": "2026-04-08-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Wednesday, 8 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/",
+      "summary": "Anthropic bulked up its compute deal with Google and Broadcom as the company has seen its run-rate revenue surge to $30 billion.",
+      "category": "Top Stories",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "Anthropic",
+        "Google"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Uber is the latest to be won over by Amazon’s AI chips",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/07/uber-is-the-latest-to-be-won-over-by-amazons-ai-chips/",
+      "summary": "Uber is expanding its AWS contract to run more of its ride-sharing features on Amazon's chips. This is a thumb-of-the nose at Oracle and Google.",
+      "category": "Top Stories",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google Maps can now write captions for your photos using AI",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/07/google-maps-can-now-write-captions-for-your-photos-using-ai/",
+      "summary": "Google is rolling out new features to make it easier for users to contribute local knowledge to Maps. Most notably, Gemini can now create captions when users are looking to share a photo or video about a place.",
+      "category": "Top Stories",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "4 days left to save close to $500 on TechCrunch Disrupt 2026 passes",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/07/4-days-left-to-save-close-to-500-on-techcrunch-disrupt-2026-passes/",
+      "summary": "Four days left to save up to $482 on your TechCrunch Disrupt 2026 ticket. These low rates will disappear on April 10 at 11:59 p.m. PT. Register now.",
+      "category": "Top Stories",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The AI gold rush is pulling private wealth into riskier, earlier bets",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/07/the-ai-gold-rush-is-pulling-private-wealth-into-riskier-earlier-bets/",
+      "summary": "On a recent episode of Equity, we talked to Arena Private Wealth to explore a growing trend: family offices bypassing VCs to gain direct exposure to AI startups, turning them from passive investors into active participants.",
+      "category": "Top Stories",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "Anthropic",
+        "Google"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "No Claude for Claws",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/no-claude-for-claws",
+      "summary": "in 3 months, Anthropic added $6B ARR",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Inside the leaked Claude Code files",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "models",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Testing suggests Google's AI Overviews tells millions of lies per hour",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/",
+      "summary": "Is 90 percent accuracy good enough for a search robot?",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-07T00:00:00.000Z",
+      "dateString": "Tuesday, 7 April 2026",
+      "filename": "2026-04-07-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 7 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day work week",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
+      "summary": "OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.",
+      "category": "Top Stories",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "robotics",
+        "vision",
+        "OpenAI"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Startup Battlefield 200 applications open: a chance for VC access, TechCrunch coverage, and $100K",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/06/startup-battlefield-200-applications-open-get-vc-access-techcrunch-coverage-and-100k/",
+      "summary": "Nominate your startup, or one you know that deserves the spotlight, and finish the process by applying. Selected 200 have a chance at VC access, TechCrunch coverage, and $100K for Startup Battlefield 200. Applications close on May 27.",
+      "category": "Top Stories",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/06/how-to-use-chatgpt-apps-doordash-spotify-uber/",
+      "summary": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
+      "category": "Top Stories",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "product",
+        "OpenAI"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Ticket savings of up to $500 this week for TechCrunch Disrupt 2026",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/06/massive-ticket-savings-of-up-to-500-this-week-for-techcrunch-disrupt-2026/",
+      "summary": "Starting today, you have 5 days to save nearly $500 on your ticket to TechCrunch Disrupt 2026. This offer disappears Friday, April 10, at 11:59 p.m. PT. Register here to secure these low rates.",
+      "category": "Top Stories",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Spain’s Xoople raises $130 million Series B to map the Earth for AI",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/06/spains-xoople-raises-130-million-series-b-to-map-the-earth-for-ai/",
+      "summary": "The company is also announcing a deal with L3Harris to build the sensors for Xoople's spacecraft.",
+      "category": "Top Stories",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "funding"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "summary": "We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "models",
+        "funding",
+        "Anthropic"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Inside the leaked Claude Code files",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "models",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "One breach after another",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "summary": "separate and sandbox your agent's access",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The one piece of data that could actually shed light on your job and AI",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/04/06/1135187/the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai/",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Within Silicon Valley’s orbit, an AI-fueled jobs apocalypse is spoken about as a given. The mood is so grim that a societal impacts researcher at Anthropic, re...",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-06T00:00:00.000Z",
+      "dateString": "Monday, 6 April 2026",
+      "filename": "2026-04-06-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Monday, 6 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/",
+      "summary": "On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.",
+      "category": "Top Stories",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "funding"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "category": "News",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-05T00:00:00.000Z",
+      "dateString": "Sunday, 5 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Sunday, 5 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "category": "News",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-04T00:00:00.000Z",
+      "dateString": "Saturday, 4 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Saturday, 4 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
+      "summary": "Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic ramps up its political activities with a new PAC",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
+      "summary": "With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "product",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The Facebook insider building content moderation for the AI era",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/",
+      "summary": "Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Meta"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "summary": "We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models",
+        "funding",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Inside the leaked Claude Code files",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "One breach after another",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "summary": "separate and sandbox your agent's access",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AlphaGenome: AI for better understanding the genome — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+      "summary": "Ziga Avsec and Natasha Latysheva",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "A catalogue of genetic mutations to help pinpoint the cause of diseases — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
+      "summary": "New AI tool classifies the effects of 71 million ‘missense’ mutations",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AlphaEarth Foundations helps map our planet in unprecedented detail — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
+      "summary": "The AlphaEarth Foundations team",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Four MTIA Chips in Two Years: Scaling AI Experiences for Billions",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/",
+      "summary": "Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/forest-research-dino/",
+      "summary": "Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00005",
+      "summary": "arXiv:2604.00005v1 Announce Type: new Abstract: Emotion plays an important role in human cognition and performance. Motivated by this, we investigate whether analogous emotional signals can shape the behavior of large language models (LLMs) and agents. Existing emotion-aware studies mainly treat...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "agents",
+        "research"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "One Panel Does Not Fit All: Case-Adaptive Multi-Agent Deliberation for Clinical Prediction",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00085",
+      "summary": "arXiv:2604.00085v1 Announce Type: new Abstract: Large language models applied to clinical prediction exhibit case-level heterogeneity: simple cases yield consistent outputs, while complex cases produce divergent predictions under minor prompt changes. Existing single-agent strategies sample from...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00137",
+      "summary": "arXiv:2604.00137v1 Announce Type: new Abstract: Tool-integrated LLMs can retrieve, compute, and take real-world actions via external tools, but reliability remains a key bottleneck. We argue that failures stem from both tool-use accuracy (how well an agent invokes a tool) and intrinsic tool accur...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "A Safety-Aware Role-Orchestrated Multi-Agent LLM Framework for Behavioral Health Communication Simulation",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00249",
+      "summary": "arXiv:2604.00249v1 Announce Type: new Abstract: Single-agent large language model (LLM) systems struggle to simultaneously support diverse conversational functions and maintain safety in behavioral health communication. We propose a safety-aware, role-orchestrated multi-agent LLM framework design...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "agents",
+        "models",
+        "safety",
+        "healthcare"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Human-in-the-Loop Control of Objective Drift in LLM-Assisted Computer Science Education",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00281",
+      "summary": "arXiv:2604.00281v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly embedded in computer science education through AI-assisted programming tools, yet such workflows often exhibit objective drift, in which locally plausible outputs diverge from stated task specifications....",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "DySCo: Dynamic Semantic Compression for Effective Long-term Time Series Forecasting",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.01261",
+      "summary": "arXiv:2604.01261v1 Announce Type: new Abstract: Time series forecasting (TSF) is critical across domains such as finance, meteorology, and energy. While extending the lookback window theoretically provides richer historical context, in practice, it often introduces irrelevant noise and computatio...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Sven: Singular Value Descent as a Computationally Efficient Natural Gradient Method",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.01279",
+      "summary": "arXiv:2604.01279v1 Announce Type: new Abstract: We introduce Sven (Singular Value dEsceNt), a new optimization algorithm for neural networks that exploits the natural decomposition of loss functions into a sum over individual data points, rather than reducing the full loss to a single scalar befo...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Forecasting Supply Chain Disruptions with Foresight Learning",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.01298",
+      "summary": "arXiv:2604.01298v1 Announce Type: new Abstract: Anticipating supply chain disruptions before they materialize is a core challenge for firms and policymakers alike. A key difficulty is learning to reason reliably about infrequent, high-impact events from noisy and unstructured inputs - a setting w...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "UQ-SHRED: uncertainty quantification of shallow recurrent decoder networks for sparse sensing via engression",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.01305",
+      "summary": "arXiv:2604.01305v1 Announce Type: new Abstract: Reconstructing high-dimensional spatiotemporal fields from sparse sensor measurements is critical in a wide range of scientific applications. The SHallow REcurrent Decoder (SHRED) architecture is a recent state-of-the-art architecture that reconstru...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "An Online Machine Learning Multi-resolution Optimization Framework for Energy System Design Limit of Performance Analysis",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.01308",
+      "summary": "arXiv:2604.01308v1 Announce Type: new Abstract: Designing reliable integrated energy systems for industrial processes requires optimization and verification models across multiple fidelities, from architecture-level sizing to high-fidelity dynamic operation. However, model mismatch across fidelit...",
+      "category": "News",
+      "date": "2026-04-03T00:00:00.000Z",
+      "dateString": "Friday, 3 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 3 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-05-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-04-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI acquires TBPN, the buzzy founder-led business talk show",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/",
+      "summary": "TBPN, Silicon Valley's cult-favorite tech podcast, will operate independently, even as it's overseen by chief political operative Chris Lehane.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "enterprise",
+        "OpenAI"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Microsoft takes on AI rivals with three new foundational models",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+      "summary": "MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "product",
+        "Microsoft"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google now lets you direct avatars through prompts in its Vids app",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
+      "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/gemma4",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Microsoft takes on AI rivals with three new foundational models",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+      "summary": "MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "product",
+        "Microsoft"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google now lets you direct avatars through prompts in its Vids app",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
+      "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models",
+        "Anthropic"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "research",
+        "safety",
+        "Anthropic"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "summary": "We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models",
+        "funding",
+        "Anthropic"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Inside the leaked Claude Code files",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "One breach after another",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "summary": "separate and sandbox your agent's access",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AlphaGenome: AI for better understanding the genome — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+      "summary": "Ziga Avsec and Natasha Latysheva",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "A catalogue of genetic mutations to help pinpoint the cause of diseases — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
+      "summary": "New AI tool classifies the effects of 71 million ‘missense’ mutations",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AlphaEarth Foundations helps map our planet in unprecedented detail — Google DeepMind",
+      "source": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
+      "summary": "The AlphaEarth Foundations team",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/",
+      "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Four MTIA Chips in Two Years: Scaling AI Experiences for Billions",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/",
+      "summary": "Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/forest-research-dino/",
+      "summary": "Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/gemma4",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00005",
+      "summary": "arXiv:2604.00005v1 Announce Type: new Abstract: Emotion plays an important role in human cognition and performance. Motivated by this, we investigate whether analogous emotional signals can shape the behavior of large language models (LLMs) and agents. Existing emotion-aware studies mainly treat...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "agents",
+        "research"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "One Panel Does Not Fit All: Case-Adaptive Multi-Agent Deliberation for Clinical Prediction",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00085",
+      "summary": "arXiv:2604.00085v1 Announce Type: new Abstract: Large language models applied to clinical prediction exhibit case-level heterogeneity: simple cases yield consistent outputs, while complex cases produce divergent predictions under minor prompt changes. Existing single-agent strategies sample from...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00137",
+      "summary": "arXiv:2604.00137v1 Announce Type: new Abstract: Tool-integrated LLMs can retrieve, compute, and take real-world actions via external tools, but reliability remains a key bottleneck. We argue that failures stem from both tool-use accuracy (how well an agent invokes a tool) and intrinsic tool accur...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "A Safety-Aware Role-Orchestrated Multi-Agent LLM Framework for Behavioral Health Communication Simulation",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00249",
+      "summary": "arXiv:2604.00249v1 Announce Type: new Abstract: Single-agent large language model (LLM) systems struggle to simultaneously support diverse conversational functions and maintain safety in behavioral health communication. We propose a safety-aware, role-orchestrated multi-agent LLM framework design...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "agents",
+        "models",
+        "safety",
+        "healthcare"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Human-in-the-Loop Control of Objective Drift in LLM-Assisted Computer Science Education",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.00281",
+      "summary": "arXiv:2604.00281v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly embedded in computer science education through AI-assisted programming tools, yet such workflows often exhibit objective drift, in which locally plausible outputs diverge from stated task specifications....",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Two-Stage Optimizer-Aware Online Data Selection for Large Language Models",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.00001",
+      "summary": "arXiv:2604.00001v1 Announce Type: new Abstract: Gradient-based data selection offers a principled framework for estimating sample utility in large language model (LLM) fine-tuning, but existing methods are mostly designed for offline settings. They are therefore less suited to online fine-tuning,...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Task-Centric Personalized Federated Fine-Tuning of Language Models",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.00050",
+      "summary": "arXiv:2604.00050v1 Announce Type: new Abstract: Federated Learning (FL) has emerged as a promising technique for training language models on distributed and private datasets of diverse tasks. However, aggregating models trained on heterogeneous tasks often degrades the overall performance of indi...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Evolution Strategies for Deep RL pretraining",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.00066",
+      "summary": "arXiv:2604.00066v1 Announce Type: new Abstract: Although Deep Reinforcement Learning has proven highly effective for complex decision-making problems, it demands significant computational resources and careful parameter adjustment in order to develop successful strategies. Evolution strategies of...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Temporal Memory for Resource-Constrained Agents: Continual Learning via Stochastic Compress-Add-Smooth",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.00067",
+      "summary": "arXiv:2604.00067v1 Announce Type: new Abstract: An agent that operates sequentially must incorporate new experience without forgetting old experience, under a fixed memory budget. We propose a framework in which memory is not a parameter vector but a stochastic process: a Bridge Diffusion on a re...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Perspective: Towards sustainable exploration of chemical spaces with machine learning",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.00069",
+      "summary": "arXiv:2604.00069v1 Announce Type: new Abstract: Artificial intelligence is transforming molecular and materials science, but its growing computational and data demands raise critical sustainability challenges. In this Perspective, we examine resource considerations across the AI-driven discovery...",
+      "category": "News",
+      "date": "2026-04-02T00:00:00.000Z",
+      "dateString": "Thursday, 2 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 2 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code — a move the company says was an accident",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+      "summary": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "enterprise",
+        "open-source",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The gig workers who are training humanoid robots at home",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/",
+      "summary": "When Zeus, a medical student living in a hilltop city in central Nigeria, returns to his studio apartment from a long day at the hospital, he turns on his ring light, straps his iPhone to his forehead, and starts recording himself. He raises his hands in front of him like a sleepwalker and puts a…",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "robotics"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Holo3: Breaking the Computer Use Frontier",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/Hcompany/holo3",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Falcon Perception",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-perception",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code — a move the company says was an accident",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+      "summary": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "enterprise",
+        "open-source",
+        "coding",
+        "Anthropic"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Meta’s natural gas binge could power South Dakota",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/01/metas-natural-gas-binge-could-power-south-dakota/",
+      "summary": "Meta's upcoming Hyperion AI data center will be powered by 10 new natural gas plants.",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Meta"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Cognichip wants AI to design the chips that power AI, and just raised $60M to try",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/01/cognichip-wants-ai-to-design-the-chips-that-power-ai-and-just-raised-60m-to-try/",
+      "summary": "The firm says it can reduce the cost of chip development by more than 75% and cut the timeline by more than half.",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The gig workers who are training humanoid robots at home",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/",
+      "summary": "When Zeus, a medical student living in a hilltop city in central Nigeria, returns to his studio apartment from a long day at the hospital, he turns on his ring light, straps his iPhone to his forehead, and starts recording himself. He raises his hands in front of him like a sleepwalker and puts a…",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "robotics"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Holo3: Breaking the Computer Use Frontier",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/Hcompany/holo3",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Falcon Perception",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-perception",
+      "summary": "",
+      "category": "News",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateString": "Wednesday, 1 April 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Wednesday, 1 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How did Anthropic measure AI's \"theoretical capabilities\" in the job market?",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/03/how-did-anthropic-measure-ais-theoretical-capabilities-in-the-job-market/",
+      "summary": "2023 study made a lot of assumptions about future \"anticipated LLM-powered software.\"",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "Anthropic"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Shifting to AI model customization is an architectural imperative",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/",
+      "summary": "In the early days of large language models (LLMs), we grew accustomed to massive 10x jumps in reasoning and coding capability with every new model iteration. Today, those jumps have flattened into incremental gains. The exception is domain-specialized intelligence, where true step-function improv...",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AI benchmarks are broken. Here’s what we need instead.",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/",
+      "summary": "For decades, artificial intelligence has been evaluated through the question of whether machines outperform humans. From chess to advanced math, from coding to essay writing, the performance of AI models and applications is tested against that of individual humans completing tasks. This framing i...",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Granite 4.0 3B Vision: Compact Multimodal Intelligence for Enterprise Documents",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/ibm-granite/granite-4-vision",
+      "summary": "",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "enterprise",
+        "vision"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "TRL v1.0: Post-Training Library Built to Move with the Field",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/trl-v1",
+      "summary": "",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-03-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How did Anthropic measure AI's \"theoretical capabilities\" in the job market?",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/03/how-did-anthropic-measure-ais-theoretical-capabilities-in-the-job-market/",
+      "summary": "2023 study made a lot of assumptions about future \"anticipated LLM-powered software.\"",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Anthropic"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Shifting to AI model customization is an architectural imperative",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/",
+      "summary": "In the early days of large language models (LLMs), we grew accustomed to massive 10x jumps in reasoning and coding capability with every new model iteration. Today, those jumps have flattened into incremental gains. The exception is domain-specialized intelligence, where true step-function improv...",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "models"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "AI benchmarks are broken. Here’s what we need instead.",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/",
+      "summary": "For decades, artificial intelligence has been evaluated through the question of whether machines outperform humans. From chess to advanced math, from coding to essay writing, the performance of AI models and applications is tested against that of individual humans completing tasks. This framing i...",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Granite 4.0 3B Vision: Compact Multimodal Intelligence for Enterprise Documents",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/ibm-granite/granite-4-vision",
+      "summary": "",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "enterprise",
+        "vision"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "TRL v1.0: Post-Training Library Built to Move with the Field",
+      "source": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/trl-v1",
+      "summary": "",
+      "category": "News",
+      "date": "2026-03-31T00:00:00.000Z",
+      "dateString": "Tuesday, 31 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Tuesday, 31 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "There are more AI health tools than ever—but how well do they work?",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/30/1134795/there-are-more-ai-health-tools-than-ever-but-how-well-do-they-work/",
+      "summary": "Earlier this month, Microsoft launched Copilot Health, a new space within its Copilot app where users will be able to connect their medical records and ask specific questions about their health. A couple of days earlier, Amazon had announced that Health AI, an LLM-based tool previously restricted...",
+      "category": "News",
+      "date": "2026-03-30T00:00:00.000Z",
+      "dateString": "Monday, 30 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "healthcare"
+      ],
+      "time": "Monday, 30 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The Pentagon’s culture war tactic against Anthropic has backfired",
+      "source": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/2026/03/30/1134881/the-pentagons-culture-war-tactic-against-anthropic-has-backfired/",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last Thursday, a California judge temporarily blocked the Pentagon from labeling Anthropic a supply chain risk and ordering government agencies to stop using i...",
+      "category": "News",
+      "date": "2026-03-30T00:00:00.000Z",
+      "dateString": "Monday, 30 March 2026",
+      "filename": "2026-04-02-digest.md",
+      "tags": [
+        "Anthropic"
+      ],
+      "time": "Monday, 30 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Wiz investor unpacks Google’s $32B acquisition",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/15/wiz-investor-unpacks-googles-32b-acquisition/",
+      "summary": "Shardul Shah of Index Ventures walks us through Google's biggest acquisition ever.",
+      "category": "Top Stories",
+      "date": "2026-03-15T00:00:00.000Z",
+      "dateString": "Sunday, 15 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "Google"
+      ],
+      "time": "Sunday, 15 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Lawyer behind AI psychosis cases warns of mass casualty risks",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/15/lawyer-behind-ai-psychosis-cases-warns-of-mass-casualty-risks/",
+      "summary": "AI chatbots have been linked to suicides for years. Now one lawyer says they are showing up in mass casualty cases too, and the technology is moving faster than the safeguards.",
+      "category": "News",
+      "date": "2026-03-15T00:00:00.000Z",
+      "dateString": "Sunday, 15 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Sunday, 15 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "US Army announces contract with Anduril worth up to $20B",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/14/us-army-announces-contract-with-anduril-worth-up-to-20b/",
+      "summary": "The Army described this as a single enterprise contract consolidating more than 120 separate \"procurement actions.\"",
+      "category": "Top Stories",
+      "date": "2026-03-14T00:00:00.000Z",
+      "dateString": "Saturday, 14 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Saturday, 14 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Meta reportedly considering layoffs that could affect 20% of the company",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/",
+      "summary": "These layoffs could help Facebook's parent company offset its aggressive spending on AI infrastructure, as well as AI-related acquisitions and hiring.",
+      "category": "Top Stories",
+      "date": "2026-03-14T00:00:00.000Z",
+      "dateString": "Saturday, 14 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "enterprise",
+        "Meta"
+      ],
+      "time": "Saturday, 14 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/",
+      "summary": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
+      "category": "Top Stories",
+      "date": "2026-03-14T00:00:00.000Z",
+      "dateString": "Saturday, 14 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "product",
+        "OpenAI"
+      ],
+      "time": "Saturday, 14 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "'Not built right the first time' &#8212; Musk's xAI is starting over again, again",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/not-built-right-the-first-time-musks-xai-is-starting-over-again-again/",
+      "summary": "The AI lab is revamping its effort to build an AI coding tool, with two new executives joining from Cursor.",
+      "category": "News",
+      "date": "2026-03-14T00:00:00.000Z",
+      "dateString": "Saturday, 14 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Saturday, 14 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Nyne, founded by a father-son duo, gives AI agents the human context they’re missing",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/nyne-founded-by-a-father-son-duo-gives-ai-agents-the-human-context-theyre-missing/",
+      "summary": "The data infrastructure startup raised $5.3 million in seed funding led by Wischoff Ventures and South Park Commons.",
+      "category": "Top Stories",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "agents"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Steven Spielberg says he's 'never used AI' in any of his films",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/steven-spielberg-says-hes-never-used-ai-in-any-of-his-films/",
+      "summary": "At SXSW, Steven Spielberg said AI has uses in many fields, but not when it comes to replacing creative people in film and TV writing.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The biggest AI stories of the year (so far)",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/the-biggest-ai-stories-of-the-year-so-far/",
+      "summary": "The AI industry is constantly churning out news, like major acquisitions, indie developer successes, public outcry, and existentially dangerous contract negotiations.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Spotify will let you edit your Taste Profile to control your recommendations",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/spotify-will-let-you-edit-your-taste-profile-to-control-your-recommendations/",
+      "summary": "When you edit your Taste Profile, you'll impact your personalized playlists like Discover Weekly, recommendations, and Wrapped.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The $32B acquisition that one VC is calling the 'Deal of the Decade'",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/video/the-32b-acquisition-that-one-vc-is-calling-the-deal-of-the-decade/",
+      "summary": "According to Index Ventures Partner Shardul Shah, cybersecurity startup Wiz sits “at the center of three tailwinds: AI, cloud, and security spend.” Those tailwinds powered what just became the largest venture-backed acquisition in history — Google&#8217;s $32 billion deal, finalized after a declined",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Peacock expands into AI-driven video, mobile-first live sports, and gaming",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/peacock-expands-into-ai-driven-video-mobile-first-live-sports-and-gaming/",
+      "summary": "Peacock is betting on new AI-powered video experiences, vertical clips, and mobile games to help its growth.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "vision"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Before quantum computing arrives, this startup wants enterprises already running on it",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/before-quantum-computing-arrives-this-startup-wants-enterprises-already-running-on-it/",
+      "summary": "After selling his AI startup to AMD for $665 million, Peter Sarlin is back with Qutwo, a new venture building the infrastructure it believes enterprises will need when quantum computing finally arrives.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "BMW puts humanoid robots to work in Germany–and Europe's factories are watching",
+      "source": "AI News",
+      "url": "https://www.artificialintelligence-news.com/news/bmw-humanoid-robots-manufacturing-europe-leipzig/",
+      "summary": "Europe&#8217;s factory floors have a new kind of colleague. BMW Group has deployed humanoid robots in manufacturing in Germany for the first time, launching a pilot project at its Leipzig plant with AEON–a wheeled humanoid built by Hexagon Robotics. It is the first automotive deployment of AEON anyw",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "robotics"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Truecaller now lets you hang up on scammers — on behalf of your family",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/truecallers-now-lets-you-hang-up-on-scammers-on-behalf-of-your-family/",
+      "summary": "Caller identity platform Truecaller recently launched a new feature that lets one person become an admin of a family group, get alerts about fraud calls received by other members, and even end a call on their behalf if they suspect a family member might get scammed.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The wild six weeks for NanoClaw’s creator that led to a deal with Docker",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/13/the-wild-six-weeks-for-nanoclaws-creator-that-led-to-a-deal-with-docker/",
+      "summary": "Gavriel Cohen is living an open source developer's dream as his project has achieved acclaim and a partnership with Docker in a matter of weeks.",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "E.SUN Bank and IBM build AI governance framework for banking",
+      "source": "AI News",
+      "url": "https://www.artificialintelligence-news.com/news/e-sun-bank-and-ibm-build-ai-governance-framework-for-banking/",
+      "summary": "E.SUN Bank is working with IBM to build clearer AI governance rules for how artificial intelligence can be used inside a bank. The effort reflects a wider shift in finance. Many firms already use AI for fraud checks and credit scoring, and some also use it to handle customer service queries. The new",
+      "category": "News",
+      "date": "2026-03-13T00:00:00.000Z",
+      "dateString": "Friday, 13 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Friday, 13 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How to watch Jensen Huang’s Nvidia GTC 2026 keynote",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/how-to-watch-jensen-huangs-nvidia-gtc-2026-keynote/",
+      "summary": "GTC — which stands for GPU Technology Conference — is Nvidia's flagship annual event, where the chipmaker typically uses the spotlight to announce new products, champion partnerships, and lay out its vision for the future of computing. Huang's keynote will focus on Nvidia's role in the future of com",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Facebook Marketplace now lets Meta AI respond to buyers' messages",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/facebook-marketplace-now-lets-meta-ai-respond-to-buyers-messages/",
+      "summary": "When buyers inquire about an item’s availability, sellers can use Meta AI to automatically draft replies using information from their listing, such as the description, availability, pickup location, and price.",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "Meta"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Tinder tries to lure people back to online dating with IRL events, virtual speed dating",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/tinder-tries-to-lure-people-back-to-online-dating-with-irl-events-virtual-speed-dating/",
+      "summary": "Tinder just got a major revamp as it attempts to reengage its user base and attract younger daters. This includes in-person events, AI enhancements, and even virtual speed dating.",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Atlassian follows Block’s footsteps and cuts staff in the name of AI",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-ai/",
+      "summary": "Atlassian laid off 10% of its workforce, around 1,600 people, as the company looks to funnel more funds to AI.",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How multi-agent AI economics influence business automation",
+      "source": "AI News",
+      "url": "https://www.artificialintelligence-news.com/news/how-multi-agent-ai-economics-business-automation/",
+      "summary": "Managing the economics of multi-agent AI now dictates the financial viability of modern business automation workflows. Organisations progressing past standard chat interfaces into multi-agent applications face two primary constraints. The first issue is the thinking tax; complex autonomous agents ne",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "agents",
+        "enterprise"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "FIFA is rebuilding world football operations on AI. The World Cup is just the first test",
+      "source": "AI News",
+      "url": "https://www.artificialintelligence-news.com/news/fifa-ai-world-cup-2026-lenovo/",
+      "summary": "When Romy Gai, FIFA&#8217;s chief business officer, described the operational challenge of running a 48-team World Cup across Canada, Mexico and the United States, he was not talking about technology. He was talking about complexity. Previous World Cups relied on local organising committees to absor",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Sales automation startup Rox AI hits $1.2B valuation, sources say",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/03/12/sales-automation-startup-rox-ai-hits-1-2b-valuation-sources-say/",
+      "summary": "Rox, founded in 2024 by the former chief growth officer of New Relic, offers an AI-native alternative to CRM tools.",
+      "category": "News",
+      "date": "2026-03-12T00:00:00.000Z",
+      "dateString": "Thursday, 12 March 2026",
+      "filename": "2026-03-15-digest.md",
+      "tags": [
+        "funding"
+      ],
+      "time": "Thursday, 12 March 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    }
+  ]
+}

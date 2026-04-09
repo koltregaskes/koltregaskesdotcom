@@ -14,7 +14,7 @@ Current URLs:
 - GitHub Pages: https://koltregaskes.github.io/kols-korner/
 - Intended production domain: https://koltregaskes.com/
 
-Important: as of 5 April 2026, the custom domain has not yet been cut over to this GitHub Pages deployment. Treat the GitHub Pages URL as the canonical live site until DNS and GitHub Pages domain verification are complete.
+Important: as of 5 April 2026, the custom domain has not yet been cut over to this GitHub Pages deployment. Treat the GitHub Pages URL as the canonical live site until DNS and GitHub Pages domain verification are complete. The build only switches canonical URLs to the custom domain when `CUSTOM_DOMAIN` is set in the environment.
 
 ---
 
@@ -58,9 +58,11 @@ Visit `http://localhost:8080/` for a local preview.
 ### Generated artifacts
 
 - `site/` - deployable static output
-- `site/data/content.json` - generated content index
 - `site/data/news-digests.json` - generated manifest for the news browser
+- `site/data/news-articles.json` - generated article payload for the news browser
 - `site/feed.xml` - generated RSS feed
+- `site/sitemap.xml` - generated sitemap
+- `site/robots.txt` - generated robots file
 
 ---
 
@@ -68,7 +70,7 @@ Visit `http://localhost:8080/` for a local preview.
 
 ### Main generator
 - `scripts/build.mjs`
-  - Main build script for homepage, posts, tags, about page, support pages, RSS feed, and the news browser data files
+  - Main build script for homepage, posts, tags, about page, support pages, RSS feed, sitemap, robots file, and the news browser data files
   - Reusable page chrome comes from `getHeaderHTML(basePath)` and `getFooterHTML()`
 
 ### Digest operations
@@ -83,10 +85,8 @@ Visit `http://localhost:8080/` for a local preview.
 ### Frontend
 - `site/styles.css`
   - Global styling and homepage layout
-- `site/app.js`
-  - Shared client-side behaviour and entrance animations
 - `site/news/news-app.js`
-  - Client-side news browser using the generated manifest
+  - Client-side news browser using the generated prebuilt article payload, with raw-digest fallback
 
 ### Content
 - `content/`

@@ -19,7 +19,7 @@ content/*.md + content/pages/*.md + news-digests/*.md
             GitHub Pages deployment
                     |
                     v
-             https://koltregaskes.com
+             GitHub Pages deployment
 ```
 
 ## Source of Truth
@@ -33,28 +33,29 @@ The news-gatherer itself is separate infrastructure. This repo only uses the dig
 
 ## Build Pipeline
 
-[`scripts/build.mjs`](/W:/Websites/sites/koltregaskesdotcom/scripts/build.mjs) is responsible for:
+[`scripts/build.mjs`](/W:/Websites/sites/kols-korner/scripts/build.mjs) is responsible for:
 
 1. Reading markdown content from `content/`
 2. Parsing frontmatter and skipping unpublished posts
 3. Converting markdown to HTML with the custom renderer
 4. Generating article pages, digest pages, the homepage, posts index, tags page, about page, and newsletter page
 5. Copying digest files into `site/news-digests/`
-6. Writing `site/data/content.json`, `site/feed.xml`, and `site/CNAME`
+6. Writing `site/data/news-articles.json`, `site/feed.xml`, `site/sitemap.xml`, `site/robots.txt`, and `site/CNAME`
 7. Cleaning old generated output first so stale pages from previous builds are not deployed
 
 ## Deployment
 
 GitHub Actions runs the build on pushes to `main`.
 
-- [`.github/workflows/pages.yml`](/W:/Websites/sites/koltregaskesdotcom/.github/workflows/pages.yml) builds and deploys the site
-- [`.github/workflows/daily-digest.yml`](/W:/Websites/sites/koltregaskesdotcom/.github/workflows/daily-digest.yml) builds digests and then rebuilds the site
+- [`.github/workflows/pages.yml`](/W:/Websites/sites/kols-korner/.github/workflows/pages.yml) builds and deploys the site
+- [`.github/workflows/daily-digest.yml`](/W:/Websites/sites/kols-korner/.github/workflows/daily-digest.yml) is a manual build-check workflow
 
 The build can derive its canonical URL from:
 
 - `CUSTOM_DOMAIN`
-- the committed [`CNAME`](/W:/Websites/sites/koltregaskesdotcom/CNAME) file
 - or the current GitHub owner/repo in Actions
+
+The committed [`CNAME`](/W:/Websites/sites/kols-korner/CNAME) file is copied into the published output, but canonical URLs only switch to the custom domain when `CUSTOM_DOMAIN` is set in the environment.
 
 ## Generated Output
 
@@ -65,15 +66,16 @@ Common generated paths:
 - `site/tags/`
 - `site/about/`
 - `site/subscribe/`
-- `site/data/content.json`
+- `site/data/news-articles.json`
 - `site/feed.xml`
+- `site/sitemap.xml`
+- `site/robots.txt`
 - `site/news-digests/`
 - `site/CNAME`
 
 Static assets that are maintained directly in `site/` include:
 
 - `site/styles.css`
-- `site/app.js`
 - `site/news/`
 
 ## Frontmatter

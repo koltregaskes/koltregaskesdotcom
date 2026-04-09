@@ -37,6 +37,18 @@ class NewsApp {
     }
 
     async loadArticles() {
+        const prebuiltArticles = await this.loadPrebuiltArticles();
+        if (prebuiltArticles) {
+            this.articles = prebuiltArticles.map((article) => this.hydrateArticle(article));
+            this.refreshDerivedCollections();
+            this.filteredArticles = [...this.articles];
+            this.populateFilters();
+
+            const loading = document.getElementById('loading');
+            if (loading) loading.style.display = 'none';
+            return;
+        }
+
         const fileList = await this.getDigestFileList();
 
         // Load files in parallel for much faster performance
@@ -59,14 +71,52 @@ class NewsApp {
 
         // Sort articles by date (newest first)
         this.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.refreshDerivedCollections();
         this.filteredArticles = [...this.articles];
-
-        // Populate filter options
         this.populateFilters();
 
         // Hide loading
         const loading = document.getElementById('loading');
         if (loading) loading.style.display = 'none';
+    }
+
+    async loadPrebuiltArticles() {
+        try {
+            const response = await fetch('../data/news-articles.json', { cache: 'no-store' });
+            if (!response.ok) {
+                throw new Error(`Prebuilt article request failed with ${response.status}`);
+            }
+
+            const payload = await response.json();
+            if (payload && Array.isArray(payload.articles) && payload.articles.length > 0) {
+                return payload.articles;
+            }
+        } catch (error) {
+            console.warn('Prebuilt news archive unavailable, falling back to raw digest loading.', error);
+        }
+
+        return null;
+    }
+
+    hydrateArticle(article) {
+        return {
+            ...article,
+            date: new Date(article.date)
+        };
+    }
+
+    refreshDerivedCollections() {
+        this.sources = new Set();
+        this.dates = new Set();
+        this.tags = new Set();
+
+        this.articles.forEach((article) => {
+            if (article.source) this.sources.add(article.source);
+            if (article.dateString) this.dates.add(article.dateString);
+            if (Array.isArray(article.tags)) {
+                article.tags.forEach((tag) => this.tags.add(tag));
+            }
+        });
     }
 
     async getDigestFileList() {
@@ -481,8 +531,16 @@ class NewsApp {
                 article.source.toLowerCase().includes(searchTerm);
 
             let matchesRange = true;
-            if (fromDate) matchesRange = matchesRange && articleDate >= new Date(fromDate);
-            if (toDate) matchesRange = matchesRange && articleDate <= new Date(toDate);
+            if (fromDate) {
+                const fromDateValue = new Date(fromDate);
+                fromDateValue.setHours(0, 0, 0, 0);
+                matchesRange = matchesRange && articleDate >= fromDateValue;
+            }
+            if (toDate) {
+                const toDateValue = new Date(toDate);
+                toDateValue.setHours(23, 59, 59, 999);
+                matchesRange = matchesRange && articleDate <= toDateValue;
+            }
 
             let matchesArchive = true;
             if (archive) {

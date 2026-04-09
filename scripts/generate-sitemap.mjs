@@ -6,7 +6,12 @@ import { readdirSync, writeFileSync, statSync } from 'fs';
 import path from 'path';
 
 const SITE_DIR = path.join(process.cwd(), 'site');
-const DOMAIN = 'https://koltregaskes.com';
+const GITHUB_OWNER = process.env.GITHUB_OWNER || 'koltregaskes';
+const REPO_NAME = process.env.GITHUB_REPO || process.env.REPO_NAME || 'kols-korner';
+const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+const DOMAIN = CUSTOM_DOMAIN
+  ? `https://${CUSTOM_DOMAIN}`
+  : `https://${GITHUB_OWNER}.github.io/${REPO_NAME}`;
 const OUTPUT = path.join(SITE_DIR, 'sitemap.xml');
 
 const urls = [];

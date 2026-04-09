@@ -60,7 +60,8 @@ const SITE_OWNER = process.env.SITE_OWNER || "Kol Tregaskes";
 const GITHUB_OWNER = process.env.GITHUB_OWNER || 'koltregaskes';
 const REPO_NAME = process.env.GITHUB_REPO || process.env.REPO_NAME || 'kols-korner';
 const ROOT_CNAME = fsSync.existsSync('CNAME') ? fsSync.readFileSync('CNAME', 'utf8').trim() : '';
-const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || ROOT_CNAME || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+const DEPLOY_CNAME = (CUSTOM_DOMAIN || ROOT_CNAME || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
 const LEGACY_REPO_NAMES = ['koltregaskesdotcom', 'notion-site-test'];
 const SITE_BASE_PATH = CUSTOM_DOMAIN ? '' : `/${REPO_NAME}`;
 const SITE_URL = CUSTOM_DOMAIN
@@ -120,6 +121,181 @@ function getDigestDateKey(filename = '') {
 
   const [, year, month, day] = match;
   return `${year}-${month}-${day}`;
+}
+
+function formatDisplayDate(date) {
+  return date.toLocaleDateString('en-GB', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+function isJunkDigestItem(title = '', url = '') {
+  const junkTitles = [
+    'Browse Business',
+    'Browse Sustainability',
+    'Sponsored Content',
+    'View All Latest',
+    'Momentum AI'
+  ];
+
+  const junkUrlPatterns = [
+    /\/business\/?$/i,
+    /\/sustainability\/?$/i,
+    /\/sponsored\/?$/i,
+    /events\.reutersevents\.com/i,
+    /artificial-intelligence-news\/?$/i
+  ];
+
+  if (junkTitles.some((junkTitle) => title.includes(junkTitle))) return true;
+  if (junkUrlPatterns.some((pattern) => pattern.test(url))) return true;
+
+  return false;
+}
+
+function extractDigestSource(url = '') {
+  if (!url) return 'Unknown';
+
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    const sourceMap = {
+      'techcrunch.com': 'TechCrunch',
+      'theinformation.com': 'The Information',
+      'reuters.com': 'Reuters',
+      'wsj.com': 'Wall Street Journal',
+      'bloomberg.com': 'Bloomberg',
+      'theguardian.com': 'The Guardian',
+      'nytimes.com': 'New York Times',
+      'bbc.com': 'BBC',
+      'bbc.co.uk': 'BBC',
+      'nature.com': 'Nature',
+      'mit.edu': 'MIT News',
+      'stanford.edu': 'Stanford HAI',
+      'wired.com': 'Wired',
+      'economist.com': 'The Economist',
+      'ft.com': 'Financial Times',
+      'theatlantic.com': 'The Atlantic',
+      'technologyreview.com': 'MIT Technology Review',
+      'hbr.org': 'Harvard Business Review',
+      'newscientist.com': 'New Scientist',
+      'arstechnica.com': 'Ars Technica',
+      'theverge.com': 'The Verge',
+      'venturebeat.com': 'VentureBeat',
+      'anthropic.com': 'Anthropic',
+      'openai.com': 'OpenAI',
+      'deepmind.com': 'DeepMind'
+    };
+
+    for (const [domain, name] of Object.entries(sourceMap)) {
+      if (hostname.includes(domain)) return name;
+    }
+
+    return hostname.replace('www.', '').split('.')[0];
+  } catch {
+    return 'Unknown';
+  }
+}
+
+function generateDigestTags(title = '') {
+  const tagPatterns = {
+    agents: /\b(agent|agents|agentic)\b/i,
+    models: /\b(gpt|claude|gemini|llama|mistral|model|llm|foundation)\b/i,
+    research: /\b(research|paper|study|breakthrough|discover)\b/i,
+    funding: /\b(raises|funding|invest|valuation|series [a-c]|million|billion|\$\d+[mb])\b/i,
+    product: /\b(launch|release|announce|feature|update|new|beta)\b/i,
+    enterprise: /\b(enterprise|business|company|corporate|b2b)\b/i,
+    'open-source': /\b(open source|open-source|opensource|github|hugging face)\b/i,
+    safety: /\b(safety|alignment|ethics|regulation|govern|policy)\b/i,
+    robotics: /\b(robot|robotics|hardware|humanoid|physical)\b/i,
+    vision: /\b(image|video|vision|multimodal|visual)\b/i,
+    voice: /\b(voice|speech|audio|sound|music)\b/i,
+    coding: /\b(code|coding|developer|programming|github copilot)\b/i,
+    healthcare: /\b(health|medical|doctor|patient|diagnos)\b/i,
+    Anthropic: /\b(anthropic|claude)\b/i,
+    OpenAI: /\b(openai|gpt|chatgpt)\b/i,
+    Google: /\b(google|deepmind|gemini)\b/i,
+    Meta: /\b(meta|llama|facebook)\b/i,
+    Microsoft: /\b(microsoft|copilot|azure)\b/i
+  };
+
+  const tags = [];
+  for (const [tag, pattern] of Object.entries(tagPatterns)) {
+    if (pattern.test(title)) tags.push(tag);
+  }
+
+  if (tags.length === 0) tags.push('news');
+  return tags.slice(0, 4);
+}
+
+function parseDigestArticles(content, filename) {
+  const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})-digest\.md/);
+  if (!dateMatch) return [];
+
+  const [, year, month, day] = dateMatch;
+  const fileDate = new Date(Number(year), Number(month) - 1, Number(day));
+  const fallbackDateString = formatDisplayDate(fileDate);
+  const articles = [];
+  const lines = content.split('\n');
+  let articleCountInDigest = 0;
+  const topStoriesLimit = 5;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+
+    if (/^##\s+(.+)$/.test(line)) {
+      continue;
+    }
+
+    const itemMatch = line.match(/^-\s+\*\*(.+?)\*\*\s+\(\[(.+?)\]\((.+?)\)\)(?:\s+_(.+?)_)?$/);
+    if (!itemMatch) continue;
+
+    const [, title, sourceName, url, itemDate] = itemMatch;
+
+    if (isJunkDigestItem(title, url)) {
+      continue;
+    }
+
+    articleCountInDigest += 1;
+
+    let summary = '';
+    let nextLineIndex = i + 1;
+    while (nextLineIndex < lines.length && /^\s{2,}/.test(lines[nextLineIndex])) {
+      summary += `${lines[nextLineIndex].trim()} `;
+      nextLineIndex += 1;
+    }
+
+    let articleDate = fileDate;
+    let dateString = fallbackDateString;
+
+    if (itemDate && itemDate.trim()) {
+      const parsedDate = new Date(itemDate.trim());
+      if (!Number.isNaN(parsedDate.getTime())) {
+        articleDate = parsedDate;
+        dateString = formatDisplayDate(parsedDate);
+      }
+    }
+
+    articles.push({
+      title: title.trim(),
+      source: sourceName.trim() || extractDigestSource(url),
+      url: url.trim(),
+      summary: summary.trim(),
+      category: articleCountInDigest <= topStoriesLimit ? 'Top Stories' : 'News',
+      date: articleDate.toISOString(),
+      dateString,
+      filename,
+      tags: generateDigestTags(title),
+      time: dateString,
+      imageUrl: null,
+      isNoNews: false
+    });
+
+    i = nextLineIndex - 1;
+  }
+
+  return articles;
 }
 
 // Security headers for all pages
@@ -767,7 +943,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
@@ -861,7 +1037,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
@@ -940,7 +1116,7 @@ async function writeHomePage(items) {
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -1167,7 +1343,7 @@ async function writePostsPage(items) {
   <title>Posts - ${SITE_NAME}</title>
   <meta name="description" content="Browse all posts by ${SITE_OWNER} - Tech, Software Development & More" />
   <meta name="author" content="${SITE_OWNER}" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1226,7 +1402,7 @@ async function writeTagsPage(items) {
   ${getSecurityHeaders()}
   <title>Tags - ${SITE_NAME}</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1338,7 +1514,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1385,7 +1561,7 @@ async function writeAboutPage() {
   ${getSecurityHeaders()}
   <title>About - ${SITE_NAME}</title>
   <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1464,7 +1640,7 @@ async function writeSubscribePage() {
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
   <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email list is currently on hold, but the daily digests and news archive are live on-site." />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -1568,7 +1744,7 @@ async function writeRssFeed(items) {
 }
 
 async function writeCnameFile() {
-  const configuredDomain = CUSTOM_DOMAIN || (await fs.readFile('CNAME', 'utf8').catch(() => '')).trim();
+  const configuredDomain = DEPLOY_CNAME || (await fs.readFile('CNAME', 'utf8').catch(() => '')).trim();
 
   if (!configuredDomain) {
     await fs.rm('site/CNAME', { force: true }).catch(() => {});
@@ -1576,6 +1752,46 @@ async function writeCnameFile() {
   }
 
   await fs.writeFile('site/CNAME', `${configuredDomain}\n`, 'utf8');
+}
+
+async function writeRobotsTxt() {
+  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  await fs.writeFile('site/robots.txt', robots, 'utf8');
+}
+
+async function writeSitemap(items) {
+  const urls = [
+    { loc: '/', changefreq: 'daily', priority: '1.0' },
+    { loc: '/about/', changefreq: 'monthly', priority: '0.6' },
+    { loc: '/posts/', changefreq: 'daily', priority: '0.8' },
+    { loc: '/tags/', changefreq: 'weekly', priority: '0.5' },
+    { loc: '/news/', changefreq: 'daily', priority: '0.8' },
+    { loc: '/subscribe/', changefreq: 'monthly', priority: '0.4' },
+    { loc: '/privacy.html', changefreq: 'yearly', priority: '0.2' }
+  ];
+
+  for (const item of items.filter((entry) => entry.kind === 'article' && entry.localPath)) {
+    urls.push({
+      loc: item.localPath,
+      changefreq: item.slug.startsWith('daily-digest-') ? 'daily' : 'monthly',
+      priority: item.slug.startsWith('daily-digest-') ? '0.4' : '0.7',
+      lastmod: item.updatedTime || item.date || ''
+    });
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url>\n    <loc>${SITE_URL}${url.loc}</loc>\n    ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>\n    ` : ''}<changefreq>${url.changefreq}</changefreq>\n    <priority>${url.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
+  await fs.writeFile('site/sitemap.xml', xml, 'utf8');
+}
+
+async function removeWithRetries(targetPath, options = {}) {
+  await fs.rm(targetPath, {
+    force: true,
+    maxRetries: 10,
+    retryDelay: 200,
+    ...options
+  }).catch((error) => {
+    if (error.code !== 'ENOENT') throw error;
+  });
 }
 
 async function cleanGeneratedOutput() {
@@ -1591,13 +1807,17 @@ async function cleanGeneratedOutput() {
     'site/news-digests'
   ];
   const generatedFiles = [
+    'site/admin.html',
+    'site/app.js',
     'site/CNAME',
     'site/feed.xml',
-    'site/index.html'
+    'site/index.html',
+    'site/robots.txt',
+    'site/sitemap.xml'
   ];
 
-  await Promise.all(generatedDirs.map((dir) => fs.rm(dir, { recursive: true, force: true })));
-  await Promise.all(generatedFiles.map((file) => fs.rm(file, { force: true })));
+  await Promise.all(generatedDirs.map((dir) => removeWithRetries(dir, { recursive: true })));
+  await Promise.all(generatedFiles.map((file) => removeWithRetries(file)));
 }
 
 // Main build function
@@ -1647,10 +1867,11 @@ async function cleanGeneratedOutput() {
   await writeTagsPage(items);
   await writeAboutPage();
   await writeSubscribePage();
-  // Write JSON data and RSS feed
+  // Write machine-readable data, feed, and crawl files
   await fs.mkdir("site/data", { recursive: true });
-  await fs.writeFile("site/data/content.json", JSON.stringify({ items }, null, 2), "utf8");
   await writeRssFeed(items);
+  await writeSitemap(items);
+  await writeRobotsTxt();
   await writeCnameFile();
 
   // Copy news-digests to site folder for the /news page
@@ -1679,17 +1900,29 @@ async function cleanGeneratedOutput() {
     const digestFiles = Array.from(digestMap.entries())
       .sort((a, b) => b[0].localeCompare(a[0]))
       .map(([, entry]) => entry);
+    const newsArticles = [];
 
     for (const digestFile of digestFiles) {
+      const sourcePath = path.join(newsDigestsDir, digestFile.sourceFile);
       await fs.copyFile(
-        path.join(newsDigestsDir, digestFile.sourceFile),
+        sourcePath,
         path.join(siteNewsDigestsDir, digestFile.outputFile)
       );
+
+      const digestContent = await fs.readFile(sourcePath, 'utf8');
+      newsArticles.push(...parseDigestArticles(digestContent, digestFile.outputFile));
     }
+
+    newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     await fs.writeFile(
       path.join(process.cwd(), 'site', 'data', 'news-digests.json'),
       JSON.stringify({ files: digestFiles.map((entry) => entry.outputFile) }, null, 2),
+      'utf8'
+    );
+    await fs.writeFile(
+      path.join(process.cwd(), 'site', 'data', 'news-articles.json'),
+      JSON.stringify({ articles: newsArticles }, null, 2),
       'utf8'
     );
 
@@ -1705,6 +1938,8 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] About page: site/about/index.html`);
   console.log(`[ok] Newsletter page: site/subscribe/index.html`);
   console.log(`[ok] RSS feed: site/feed.xml`);
-  console.log(`[ok] JSON data: site/data/content.json`);
+  console.log(`[ok] Sitemap: site/sitemap.xml`);
+  console.log(`[ok] Robots: site/robots.txt`);
+  console.log(`[ok] News data: site/data/news-articles.json`);
   console.log('\nBuild complete!');
 })();

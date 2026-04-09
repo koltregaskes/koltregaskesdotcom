@@ -39,6 +39,7 @@ node scripts/backfill-digests.mjs
 - `scripts/run-daily-news.ps1` is the primary production runner for digest refreshes
 - The Windows scheduled task runs at 07:00 and 19:00 Europe/London
 - `.github/workflows/daily-digest.yml` is a manual build-check workflow only
+- `site/data/news-articles.json` is generated during build so the news page can load from one prebuilt payload instead of fetching every raw digest separately
 
 Optional environment variables:
 
@@ -66,7 +67,7 @@ Push to `main`. GitHub Actions will:
 2. Upload `site/`
 3. Deploy to GitHub Pages
 
-The repo already includes a root `CNAME` file for `koltregaskes.com`, but final cutover also requires the domain DNS and the GitHub Pages custom-domain setting to be configured externally.
+The repo already includes a root `CNAME` file for `koltregaskes.com`, but the build only switches canonical URLs to the custom domain when `CUSTOM_DOMAIN` is set in the environment. Until then, the generated feed, sitemap, and robots file stay aligned with the working GitHub Pages URL.
 
 ## Content Model
 
@@ -105,6 +106,7 @@ Posts with `publish: false` are excluded from the build.
 - `news-digests/` - Raw digest markdown used by the news section
 - `site/` - Generated output that GitHub Pages deploys
 - `site/data/news-digests.json` - Generated manifest for the news browser
+- `site/data/news-articles.json` - Prebuilt article payload for the news browser
 - `.github/workflows/pages.yml` - Main Pages deploy workflow
 - `.github/workflows/daily-digest.yml` - Manual digest build-check workflow
 

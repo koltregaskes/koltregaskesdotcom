@@ -44,8 +44,8 @@ AI is genuinely important - but not for the reasons most headlines claim.
 
 ## Stay Updated
 
-- **RSS feed** - [Subscribe here](/feed.xml)
-- **Newsletter** - Coming soon
+- **Daily archive** - Browse the latest updates on the [News page](/news/)
+- **Newsletter** - Currently on pause while the site relaunch settles
 - **Social** - Find me on X, Bluesky, and Mastodon (links below)
 
 Thanks for reading. Let's figure out what AI actually means, together.
