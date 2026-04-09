@@ -2,7 +2,7 @@
 title: JPMorgan Drops $30 Billion on AI Infrastructure
 kind: article
 date: 2026-02-18
-tags: [AI, finance, JPMorgan, infrastructure, banking]
+tags: [AI, finance, infrastructure, enterprise, banking]
 summary: JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.
 publish: true
 image: Kol_Tregaskes_Editorial_photography_of_modern_banking_server_ro_c24e6a2e-8f73-4707-be0f-4a55f09f1c36.png

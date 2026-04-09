@@ -23,7 +23,7 @@ I prefer to see things in reality rather than following the hype. When something
 
 ## What You'll Find Here
 
-**Daily AI news digests** curated from across the industry, with honest commentary on what it all means.
+**Daily AI news and digests** curated from across the industry, with honest commentary on what it all means.
 
 **Practical takes** from someone who actually uses these tools every day, not just writes about them theoretically.
 

@@ -2,7 +2,7 @@
 title: NASA's Mars Rover Just Got Smarter Than Its Engineers
 kind: article
 date: 2026-02-20
-tags: [AI, NASA, Mars, space, robotics]
+tags: [AI, robotics, autonomy, space, research]
 summary: NASA's latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.
 publish: true
 image: Kol_Tregaskes_Editorial_photography_of_Mars_rover_on_rust-red_t_a3578ffd-4e16-4150-af88-c57c1bc5e500.png

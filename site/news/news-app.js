@@ -33,7 +33,7 @@ class NewsApp {
 
         this.updateQuickFilterButtons('24h');
         this.filterArticles();
-        this.displayArticles();
+        this.renderFeaturedNow();
     }
 
     async loadArticles() {
@@ -101,8 +101,39 @@ class NewsApp {
     hydrateArticle(article) {
         return {
             ...article,
+            title: this.fixCommonEncoding(article.title || ''),
+            source: this.fixCommonEncoding(article.source || ''),
+            summary: this.fixCommonEncoding(article.summary || ''),
+            tags: Array.isArray(article.tags) ? article.tags.map((tag) => String(tag).toLowerCase()) : [],
             date: new Date(article.date)
         };
+    }
+
+    fixCommonEncoding(text) {
+        const value = String(text || '');
+        if (!value) return '';
+
+        if (/[\u00c3\u00c2\u00e2]/.test(value)) {
+            try {
+                const bytes = Uint8Array.from(value, (char) => char.charCodeAt(0) & 0xff);
+                const repaired = new TextDecoder('utf-8').decode(bytes);
+                if (repaired && !repaired.includes('\uFFFD')) {
+                    return repaired;
+                }
+            } catch {
+                // Fall back to the targeted replacements below.
+            }
+        }
+
+        return value
+            .replace(/\u00e2\u20ac\u2122/g, "'")
+            .replace(/\u00e2\u20ac\u02dc/g, "'")
+            .replace(/\u00e2\u20ac\u0153/g, '"')
+            .replace(/\u00e2\u20ac\u009d/g, '"')
+            .replace(/\u00e2\u20ac"/g, '-')
+            .replace(/\u00e2\u20ac\u201c/g, '-')
+            .replace(/\u00e2\u20ac\u00a6/g, '...')
+            .replace(/\u00c2/g, '');
     }
 
     refreshDerivedCollections() {
@@ -180,6 +211,7 @@ class NewsApp {
     }
 
     parseDigest(content, filename) {
+        content = this.fixCommonEncoding(content);
         // Extract date from filename (YYYY-MM-DD-digest.md)
         const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})-digest\.md/);
         if (!dateMatch) return [];
@@ -211,14 +243,16 @@ class NewsApp {
             // Parse news items: - **Title** ([Source](URL)) _date_
             const itemMatch = line.match(/^-\s+\*\*(.+?)\*\*\s+\(\[(.+?)\]\((.+?)\)\)(?:\s+_(.+?)_)?$/);
             if (itemMatch) {
-                const [, title, sourceName, url, itemDate] = itemMatch;
+                const [, rawTitle, rawSourceName, url, itemDate] = itemMatch;
+                const title = this.fixCommonEncoding(rawTitle).trim();
+                const sourceName = this.fixCommonEncoding(rawSourceName).trim();
                 articleCountInDigest++;
 
                 // Get summary from next line(s) - indented text
                 let summary = '';
                 let j = i + 1;
                 while (j < lines.length && lines[j].match(/^\s{2,}/)) {
-                    summary += lines[j].trim() + ' ';
+                    summary += this.fixCommonEncoding(lines[j].trim()) + ' ';
                     j++;
                 }
 
@@ -228,7 +262,7 @@ class NewsApp {
                 }
 
                 // Extract source from URL if not provided
-                const source = sourceName.trim() || this.extractSource(url);
+                const source = sourceName || this.extractSource(url);
 
                 // Generate tags from title
                 const tags = this.generateTags(title);
@@ -254,7 +288,7 @@ class NewsApp {
                 const category = articleCountInDigest <= TOP_STORIES_LIMIT ? 'Top Stories' : 'News';
 
                 articles.push({
-                    title: title.trim(),
+                    title,
                     source: source,
                     url: url.trim(),
                     summary: summary.trim(),
@@ -282,7 +316,8 @@ class NewsApp {
             'Browse Sustainability',
             'Sponsored Content',
             'View All Latest',
-            'Momentum AI'
+            'Momentum AI',
+            'Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket'
         ];
 
         const junkUrlPatterns = [
@@ -290,7 +325,8 @@ class NewsApp {
             /\/sustainability\/?$/,
             /\/sponsored\/?$/,
             /events\.reutersevents\.com/,
-            /artificial-intelligence-news\/?$/
+            /artificial-intelligence-news\/?$/,
+            /techcrunch\.com\/\d{4}\/\d{2}\/\d{2}\/.*disrupt.*ticket/i
         ];
 
         if (junkTitles.some(t => title.includes(t))) return true;
@@ -300,42 +336,36 @@ class NewsApp {
     }
 
     generateTags(title) {
-        // Semantic tag categories instead of keyword matching
+        const cleanedTitle = this.fixCommonEncoding(title);
         const tagPatterns = {
-            'agents': /\b(agent|agents|agentic)\b/i,
-            'models': /\b(gpt|claude|gemini|llama|mistral|model|llm|foundation)\b/i,
-            'research': /\b(research|paper|study|breakthrough|discover)\b/i,
-            'funding': /\b(raises|funding|invest|valuation|series [a-c]|million|billion|\$\d+[mb])\b/i,
-            'product': /\b(launch|release|announce|feature|update|new|beta)\b/i,
-            'enterprise': /\b(enterprise|business|company|corporate|b2b)\b/i,
+            agents: /\b(agent|agents|agentic)\b/i,
+            models: /\b(gpt|claude|gemini|llama|mistral|model|llm|foundation)\b/i,
+            research: /\b(research|paper|study|breakthrough|discover)\b/i,
+            funding: /\b(raises|funding|invest|valuation|series [a-c]|million|billion|\$\d+[mb])\b/i,
+            product: /\b(launch|release|announce|feature|update|new|beta)\b/i,
+            enterprise: /\b(enterprise|business|company|corporate|b2b)\b/i,
             'open-source': /\b(open source|open-source|opensource|github|hugging face)\b/i,
-            'safety': /\b(safety|alignment|ethics|regulation|govern|policy)\b/i,
-            'robotics': /\b(robot|robotics|hardware|humanoid|physical)\b/i,
-            'vision': /\b(image|video|vision|multimodal|visual)\b/i,
-            'voice': /\b(voice|speech|audio|sound|music)\b/i,
-            'coding': /\b(code|coding|developer|programming|github copilot)\b/i,
-            'healthcare': /\b(health|medical|doctor|patient|diagnos)\b/i,
-            'Anthropic': /\b(anthropic|claude)\b/i,
-            'OpenAI': /\b(openai|gpt|chatgpt)\b/i,
-            'Google': /\b(google|deepmind|gemini)\b/i,
-            'Meta': /\b(meta|llama|facebook)\b/i,
-            'Microsoft': /\b(microsoft|copilot|azure)\b/i
+            safety: /\b(safety|alignment|ethics|regulation|govern|policy)\b/i,
+            robotics: /\b(robot|robotics|hardware|humanoid|physical)\b/i,
+            vision: /\b(image|video|vision|multimodal|visual)\b/i,
+            voice: /\b(voice|speech|audio|sound|music)\b/i,
+            coding: /\b(code|coding|developer|programming|github copilot)\b/i,
+            healthcare: /\b(health|medical|doctor|patient|diagnos)\b/i,
+            regulation: /\b(law|lawsuit|legal|court|regulation|regulator|policy)\b/i,
+            infrastructure: /\b(compute|gpu|data center|datacentre|infrastructure|chip|chips|semiconductor)\b/i,
+            startups: /\b(startup|startups|founder|venture)\b/i
         };
 
-        const tags = [];
+        const tags = ['ai'];
         for (const [tag, pattern] of Object.entries(tagPatterns)) {
-            if (pattern.test(title)) {
+            if (pattern.test(cleanedTitle)) {
                 tags.push(tag);
             }
         }
 
-        // Fallback tag if none matched - at least give it "news"
-        if (tags.length === 0) {
-            tags.push('news');
-        }
-
-        // Limit to 4 most relevant tags
-        return tags.slice(0, 4);
+        const uniqueTags = Array.from(new Set(tags));
+        if (uniqueTags.length === 1) uniqueTags.push('news');
+        return uniqueTags.slice(0, 5);
     }
 
     extractSource(url) {
@@ -386,25 +416,16 @@ class NewsApp {
     }
 
     populateFilters() {
-        const sourceContainer = document.getElementById('sourceCheckboxes');
         const archivePicker = document.getElementById('archivePicker');
 
-        if (!sourceContainer || !archivePicker) return;
-
-        const sortedSources = Array.from(this.sources).sort();
-        sourceContainer.innerHTML = '';
-        sortedSources.forEach(source => {
-            const label = document.createElement('label');
-            label.innerHTML = `<input type="checkbox" value="${source}" checked> ${source}`;
-            sourceContainer.appendChild(label);
-        });
+        if (!archivePicker) return;
 
         const months = new Set(Array.from(this.dates).map(d => {
             const dt = new Date(d);
             return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}`;
         }));
 
-        archivePicker.innerHTML = '<option value="">All Months</option>';
+        archivePicker.innerHTML = '<option value="">All months</option>';
         Array.from(months).sort().reverse().forEach(m => {
             const option = document.createElement('option');
             option.value = m;
@@ -418,12 +439,10 @@ class NewsApp {
         const searchInput = document.getElementById('searchInput');
         const fromDate = document.getElementById('fromDate');
         const toDate = document.getElementById('toDate');
-        const sourceContainer = document.getElementById('sourceCheckboxes');
         const archivePicker = document.getElementById('archivePicker');
         const quick24h = document.getElementById('quick24h');
         const quickLastWeek = document.getElementById('quickLastWeek');
         const quickAll = document.getElementById('quickAll');
-        const groupBy = document.getElementById('groupBy');
         const highlightOnly = document.getElementById('highlightOnly');
         const hideNotAI = document.getElementById('hideNotAI');
 
@@ -436,9 +455,7 @@ class NewsApp {
             this.updateQuickFilterButtons();
             this.filterArticles();
         });
-        if (sourceContainer) sourceContainer.addEventListener('change', () => this.filterArticles());
         if (archivePicker) archivePicker.addEventListener('change', () => this.filterArticles());
-        if (groupBy) groupBy.addEventListener('change', () => this.displayArticles());
         if (highlightOnly) highlightOnly.addEventListener('change', () => this.filterArticles());
         if (hideNotAI) hideNotAI.addEventListener('change', () => this.filterArticles());
 
@@ -480,9 +497,6 @@ class NewsApp {
             if (archivePicker) archivePicker.value = '';
             if (highlightOnly) highlightOnly.checked = false;
             if (hideNotAI) hideNotAI.checked = false;
-
-            document.querySelectorAll('#sourceCheckboxes input').forEach(cb => cb.checked = true);
-
             this.updateQuickFilterButtons('all');
             this.filterArticles();
         });
@@ -520,8 +534,6 @@ class NewsApp {
         const archive = archiveEl ? archiveEl.value : '';
         const highlightOnly = highlightOnlyEl ? highlightOnlyEl.checked : false;
         const hideNotAI = hideNotAIEl ? hideNotAIEl.checked : false;
-        const selectedSources = Array.from(document.querySelectorAll('#sourceCheckboxes input:checked')).map(i => i.value);
-
         this.filteredArticles = this.articles.filter(article => {
             const articleDate = new Date(article.date);
 
@@ -548,11 +560,10 @@ class NewsApp {
                 matchesArchive = articleDate.getFullYear() === parseInt(year) && (articleDate.getMonth() + 1) === parseInt(month);
             }
 
-            const matchesSource = selectedSources.length === 0 || selectedSources.includes(article.source);
             const isFavorite = this.favorites.has(article.title);
             const flaggedNotAI = (this.flags[article.title] || []).includes('not-ai');
 
-            return matchesSearch && matchesRange && matchesArchive && matchesSource && !article.isNoNews &&
+            return matchesSearch && matchesRange && matchesArchive && !article.isNoNews &&
                 (!highlightOnly || isFavorite) && !(hideNotAI && flaggedNotAI);
         });
 
@@ -574,9 +585,6 @@ class NewsApp {
         const archive = archiveEl ? archiveEl.value : '';
         const highlightOnly = highlightOnlyEl ? highlightOnlyEl.checked : false;
         const hideNotAI = hideNotAIEl ? hideNotAIEl.checked : false;
-        const selectedSources = Array.from(document.querySelectorAll('#sourceCheckboxes input:checked')).map(i => i.value);
-        const totalSources = Array.from(document.querySelectorAll('#sourceCheckboxes input')).length;
-
         const filterSummary = document.getElementById('filterSummary');
         const filterSummaryText = document.getElementById('filterSummaryText');
         const filters = [];
@@ -601,22 +609,12 @@ class NewsApp {
             filters.push(`Archive: ${monthName}`);
         }
 
-        if (selectedSources.length < totalSources && selectedSources.length > 0) {
-            if (selectedSources.length <= 3) {
-                filters.push(`Sources: ${selectedSources.join(', ')}`);
-            } else {
-                filters.push(`Sources: ${selectedSources.length} selected`);
-            }
-        } else if (selectedSources.length === 0) {
-            filters.push('No sources selected');
-        }
-
         if (highlightOnly) filters.push('Highlights only');
         if (hideNotAI) filters.push('Hide "Not AI"');
 
         if (filterSummary && filterSummaryText) {
             if (filters.length > 0) {
-                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles • ${filters.join(' • ')}`;
+                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles - ${filters.join(' - ')}`;
                 filterSummary.style.display = 'block';
             } else {
                 filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles`;
@@ -625,21 +623,65 @@ class NewsApp {
         }
     }
 
+    getRelativeDateLabel(dateString) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        const parts = dateString.match(/(\d+)\s+(\w+)\s+(\d+)/);
+        if (parts) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            const day = parseInt(parts[1], 10);
+            const month = months.indexOf(parts[2]);
+            const year = parseInt(parts[3], 10);
+            const articleDate = new Date(year, month, day);
+
+            if (articleDate.getTime() === today.getTime()) return 'Today';
+            if (articleDate.getTime() === yesterday.getTime()) return 'Yesterday';
+        }
+
+        return dateString;
+    }
+
+    renderFeaturedNow() {
+        const featuredTitle = document.getElementById('featuredNowTitle');
+        const featuredIntro = document.getElementById('featuredNowIntro');
+        const featuredList = document.getElementById('featuredNowList');
+
+        if (!featuredTitle || !featuredIntro || !featuredList) return;
+
+        const featuredArticles = this.articles.slice(0, 4);
+        if (!featuredArticles.length) {
+            featuredTitle.textContent = 'No featured stories available yet';
+            featuredIntro.textContent = 'The archive is waiting for the next refresh.';
+            featuredList.innerHTML = '';
+            return;
+        }
+
+        const latestLabel = this.getRelativeDateLabel(featuredArticles[0].dateString);
+        featuredTitle.textContent = `Start with ${latestLabel.toLowerCase()}'s biggest stories`;
+        featuredIntro.textContent = 'A quick top rail for the links most worth opening first.';
+        featuredList.innerHTML = featuredArticles.map((article) => `
+            <a href="${article.url}" class="news-featured-link" target="_blank" rel="noopener noreferrer">
+                <span>${article.source}</span>
+                <strong>${article.title}</strong>
+            </a>
+        `).join('');
+    }
+
     displayArticles() {
         const highlightOnlyEl = document.getElementById('highlightOnly');
         const highlightOnly = highlightOnlyEl ? highlightOnlyEl.checked : false;
-        const groupByEl = document.getElementById('groupBy');
-        const groupBy = groupByEl ? groupByEl.value : 'none';
         const favoriteArticles = this.filteredArticles.filter(a => this.favorites.has(a.title));
         const remainingArticles = this.filteredArticles.filter(a => !this.favorites.has(a.title));
 
-        // Display highlighted favorites
         const favSection = document.getElementById('favoriteNews');
         const favGrid = document.getElementById('favoriteGrid');
-
         if (favSection && favGrid) {
             if (favoriteArticles.length > 0) {
-                favSection.style.display = 'block';
+                favSection.style.display = 'grid';
                 favGrid.innerHTML = '';
                 favoriteArticles.forEach(article => {
                     favGrid.appendChild(this.createArticleCard(article, false, true));
@@ -649,115 +691,81 @@ class NewsApp {
             }
         }
 
-        // Hide the legacy "Today's News" section - we now group by date dynamically
         const todaysSection = document.getElementById('todaysNews');
-        if (todaysSection) todaysSection.style.display = 'none';
-
+        const todaysGrid = document.getElementById('todaysGrid');
+        const todaysLabel = document.getElementById('todaysNewsLabel');
         const allSection = document.getElementById('allNews');
         const allGrid = document.getElementById('allGrid');
         const noResults = document.getElementById('noResults');
 
         if (highlightOnly) {
-            if (favSection) favSection.style.display = favoriteArticles.length > 0 ? 'block' : 'none';
+            if (todaysSection) todaysSection.style.display = 'none';
             if (allSection) allSection.style.display = 'none';
             if (noResults) noResults.style.display = favoriteArticles.length ? 'none' : 'block';
             return;
         }
 
-        // Display articles - always grouped by date for clarity
+        if (!remainingArticles.length) {
+            if (todaysSection) todaysSection.style.display = 'none';
+            if (allSection) allSection.style.display = 'none';
+            if (noResults) noResults.style.display = 'block';
+            return;
+        }
+
+        if (noResults) noResults.style.display = 'none';
+
+        const leadDate = remainingArticles[0].dateString;
+        const leadArticles = remainingArticles.filter((article) => article.dateString === leadDate).slice(0, 4);
+        const leadTitles = new Set(leadArticles.map((article) => article.title));
+        const archiveArticles = remainingArticles.filter((article) => !leadTitles.has(article.title));
+
+        if (todaysSection && todaysGrid) {
+            todaysSection.style.display = leadArticles.length > 0 ? 'grid' : 'none';
+            todaysGrid.innerHTML = '';
+            leadArticles.forEach((article) => {
+                todaysGrid.appendChild(this.createArticleCard(article, true));
+            });
+            if (todaysLabel) {
+                todaysLabel.textContent = `Freshly filed under ${this.getRelativeDateLabel(leadDate)}`;
+            }
+        }
+
         if (allSection && allGrid) {
-            if (remainingArticles.length > 0) {
-                allSection.style.display = 'block';
-                if (noResults) noResults.style.display = 'none';
-                allGrid.innerHTML = '';
+            allSection.style.display = archiveArticles.length > 0 ? 'grid' : 'none';
+            allGrid.innerHTML = '';
 
-                // Helper to get relative date label
-                const getDateLabel = (dateString) => {
-                    const today = new Date();
-                    today.setHours(0, 0, 0, 0);
-                    const yesterday = new Date(today);
-                    yesterday.setDate(yesterday.getDate() - 1);
+            const groups = {};
+            archiveArticles.forEach((article) => {
+                groups[article.dateString] = groups[article.dateString] || [];
+                groups[article.dateString].push(article);
+            });
 
-                    // Parse the dateString back to compare
+            const sortedDates = Object.keys(groups).sort((a, b) => {
+                const parseDate = (dateString) => {
+                    const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
                     const parts = dateString.match(/(\d+)\s+(\w+)\s+(\d+)/);
-                    if (parts) {
-                        const months = ['January', 'February', 'March', 'April', 'May', 'June',
-                                        'July', 'August', 'September', 'October', 'November', 'December'];
-                        const day = parseInt(parts[1]);
-                        const month = months.indexOf(parts[2]);
-                        const year = parseInt(parts[3]);
-                        const articleDate = new Date(year, month, day);
-
-                        if (articleDate.getTime() === today.getTime()) {
-                            return 'Today';
-                        } else if (articleDate.getTime() === yesterday.getTime()) {
-                            return 'Yesterday';
-                        }
-                    }
-                    return dateString;
+                    if (!parts) return new Date(0);
+                    return new Date(parseInt(parts[3], 10), months.indexOf(parts[2]), parseInt(parts[1], 10));
                 };
+                return parseDate(b) - parseDate(a);
+            });
 
-                if (groupBy === 'source') {
-                    const groups = {};
-                    remainingArticles.forEach(a => {
-                        groups[a.source] = groups[a.source] || [];
-                        groups[a.source].push(a);
-                    });
-                    Object.keys(groups).sort().forEach(src => {
-                        const h = document.createElement('h3');
-                        h.className = 'group-title';
-                        h.textContent = src;
-                        allGrid.appendChild(h);
-                        const g = document.createElement('div');
-                        g.className = 'news-grid';
-                        groups[src].forEach(a => g.appendChild(this.createArticleCard(a, false)));
-                        allGrid.appendChild(g);
-                    });
-                } else {
-                    // Default: Always group by date with relative labels
-                    const groups = {};
-                    remainingArticles.forEach(a => {
-                        groups[a.dateString] = groups[a.dateString] || [];
-                        groups[a.dateString].push(a);
-                    });
-
-                    // Sort dates newest first
-                    const sortedDates = Object.keys(groups).sort((a, b) => {
-                        const parseDate = (str) => {
-                            const months = ['January', 'February', 'March', 'April', 'May', 'June',
-                                            'July', 'August', 'September', 'October', 'November', 'December'];
-                            const parts = str.match(/(\d+)\s+(\w+)\s+(\d+)/);
-                            if (parts) {
-                                return new Date(parseInt(parts[3]), months.indexOf(parts[2]), parseInt(parts[1]));
-                            }
-                            return new Date(0);
-                        };
-                        return parseDate(b) - parseDate(a);
-                    });
-
-                    sortedDates.forEach(date => {
-                        const h = document.createElement('h3');
-                        h.className = 'group-title';
-                        h.textContent = getDateLabel(date);
-                        allGrid.appendChild(h);
-                        const g = document.createElement('div');
-                        g.className = 'news-grid';
-                        groups[date].forEach(a => g.appendChild(this.createArticleCard(a, false)));
-                        allGrid.appendChild(g);
-                    });
-                }
-            } else {
-                allSection.style.display = 'none';
-            }
-
-            if (noResults && this.filteredArticles.length === 0) {
-                noResults.style.display = 'block';
-            }
+            sortedDates.forEach((date) => {
+                const heading = document.createElement('h3');
+                heading.className = 'group-title';
+                heading.textContent = this.getRelativeDateLabel(date);
+                allGrid.appendChild(heading);
+                const group = document.createElement('div');
+                group.className = 'news-grid';
+                groups[date].forEach((article) => group.appendChild(this.createArticleCard(article, false)));
+                allGrid.appendChild(group);
+            });
         }
     }
 
     createArticleCard(article, isToday, isFavorite = false) {
-        const card = document.createElement('div');
+        const card = document.createElement('article');
         card.className = `news-card ${isToday ? 'today' : ''} ${article.isNoNews ? 'no-news' : ''} ${isFavorite ? 'highlight' : ''}`;
 
         const tagsHtml = article.tags && article.tags.length > 0
@@ -771,22 +779,19 @@ class NewsApp {
                     <span class="card-source">${article.source}</span>
                 </div>
                 <div class="card-actions">
-                    <button class="flag-btn" title="Report"><i class="fas fa-flag"></i></button>
-                    <button class="fav-btn ${isFavorite ? 'active' : ''}" title="Highlight">${isFavorite ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>'}</button>
+                    <button class="news-action-btn flag-btn" type="button">Report</button>
+                    <button class="news-action-btn fav-btn ${isFavorite ? 'active' : ''}" type="button">${isFavorite ? 'Saved' : 'Save'}</button>
                 </div>
                 <h3 class="card-title">
                     <a href="${article.url}" target="_blank" rel="noopener noreferrer">
                         ${article.title}
                     </a>
                 </h3>
-                ${article.summary ? `<p class="card-summary">${article.summary.slice(0, 150)}${article.summary.length > 150 ? '...' : ''}</p>` : ''}
+                ${article.summary ? `<p class="card-summary">${article.summary.slice(0, 180)}${article.summary.length > 180 ? '...' : ''}</p>` : ''}
                 <div class="card-meta">
-                    <span class="card-time">
-                        <i class="fas fa-clock"></i>
-                        ${article.category || 'News'}
-                    </span>
+                    <span class="card-time">${article.category || 'News'}</span>
                     <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="external-link">
-                        Read more <i class="fas fa-external-link-alt"></i>
+                        Open story
                     </a>
                 </div>
                 ${tagsHtml}
@@ -839,6 +844,7 @@ class NewsApp {
             localStorage.setItem('news-flags', JSON.stringify(this.flags));
         }
         alert(`Reported "${article.title}" as ${reason}`);
+        this.filterArticles();
     }
 
     showDuplicateDialog(article) {

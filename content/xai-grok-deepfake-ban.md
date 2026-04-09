@@ -2,7 +2,7 @@
 title: California Just Told Grok to Stop Making Deepfake Porn
 kind: article
 date: 2026-02-24
-tags: [AI, deepfakes, regulation, xAI, Grok, California]
+tags: [AI, deepfakes, regulation, safety, models]
 summary: California's new law targets AI-generated deepfake pornography - and xAI's Grok is the first major model caught in the crosshairs.
 publish: true
 image: Kol_Tregaskes_Editorial_photography_of_a_broken_digital_mask_fr_d59b4659-fd95-48d0-851f-4b64e0a3faef.png

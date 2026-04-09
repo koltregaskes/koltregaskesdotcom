@@ -2,7 +2,7 @@
 title: Elon Musk Merges SpaceX and xAI Because Of Course He Does
 kind: article
 date: 2026-02-22
-tags: [AI, SpaceX, xAI, Elon Musk, Mars]
+tags: [AI, enterprise, models, autonomy, space]
 summary: Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.
 publish: true
 image: Kol_Tregaskes_Editorial_photography_of_a_SpaceX_rocket_on_launc_6f6877ca-c4ec-4f0d-be34-021e95494973.png

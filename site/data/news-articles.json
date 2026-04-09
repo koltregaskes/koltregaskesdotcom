@@ -10,6 +10,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 9 April 2026",
@@ -26,22 +27,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "news"
-      ],
-      "time": "Thursday, 9 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/09/final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket/",
-      "summary": "Ticket discounts of up to $500 will end tomorrow, April 10, at 11:59 p.m. PT. After that, prices for TechCrunch Disrupt 2026 go up again. Miss this, and you’ll be paying more for the same access to one of the most anticipated tech events of the year. Register now to lock in these savings.",
-      "category": "Top Stories",
-      "date": "2026-04-09T00:00:00.000Z",
-      "dateString": "Thursday, 9 April 2026",
-      "filename": "2026-04-09-digest.md",
-      "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 9 April 2026",
@@ -58,8 +44,8 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "Anthropic",
-        "Google"
+        "ai",
+        "infrastructure"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -75,6 +61,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 9 April 2026",
@@ -86,13 +73,13 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-opus-4-6",
       "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
-      "category": "News",
+      "category": "Top Stories",
       "date": "2026-04-09T00:00:00.000Z",
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -108,8 +95,8 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -125,9 +112,9 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -143,9 +130,9 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "models",
-        "product",
-        "Anthropic"
+        "product"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -161,8 +148,8 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -178,6 +165,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 9 April 2026",
@@ -194,6 +182,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 9 April 2026",
@@ -210,6 +199,7 @@
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Thursday, 9 April 2026",
@@ -226,6 +216,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -242,8 +233,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "Anthropic",
-        "OpenAI"
+        "ai",
+        "news"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -259,9 +250,9 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "product",
-        "safety",
-        "OpenAI"
+        "safety"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -277,6 +268,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -293,7 +285,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "startups"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -309,6 +302,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -325,6 +319,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "agents",
         "vision"
       ],
@@ -342,8 +337,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
-        "Anthropic",
-        "Google"
+        "ai",
+        "infrastructure"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -359,6 +354,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -375,8 +371,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -392,8 +388,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -409,9 +405,9 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -427,7 +423,8 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
-        "OpenAI"
+        "ai",
+        "regulation"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,
@@ -443,6 +440,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -459,6 +457,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -475,6 +474,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -491,6 +491,7 @@
       "dateString": "Wednesday, 8 April 2026",
       "filename": "2026-04-08-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Wednesday, 8 April 2026",
@@ -507,8 +508,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "Anthropic",
-        "Google"
+        "ai",
+        "infrastructure"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -524,7 +525,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "infrastructure"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -540,7 +542,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -556,6 +559,7 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 7 April 2026",
@@ -572,6 +576,7 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 7 April 2026",
@@ -588,8 +593,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "Anthropic",
-        "Google"
+        "ai",
+        "infrastructure"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -605,6 +610,7 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 7 April 2026",
@@ -621,8 +627,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -638,8 +644,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -655,9 +661,9 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -673,8 +679,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -690,9 +696,9 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "models",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -708,7 +714,8 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Tuesday, 7 April 2026",
       "imageUrl": null,
@@ -724,6 +731,7 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Tuesday, 7 April 2026",
@@ -740,6 +748,7 @@
       "dateString": "Tuesday, 7 April 2026",
       "filename": "2026-04-07-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 7 April 2026",
@@ -756,9 +765,9 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "robotics",
-        "vision",
-        "OpenAI"
+        "vision"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -774,7 +783,8 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "startups"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -790,8 +800,8 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
-        "product",
-        "OpenAI"
+        "ai",
+        "product"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -807,6 +817,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Monday, 6 April 2026",
@@ -823,6 +834,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "funding"
       ],
       "time": "Monday, 6 April 2026",
@@ -839,6 +851,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Monday, 6 April 2026",
@@ -855,8 +868,8 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -872,8 +885,8 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -889,9 +902,9 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -907,9 +920,9 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "models",
-        "funding",
-        "Anthropic"
+        "funding"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -925,9 +938,9 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "models",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Monday, 6 April 2026",
       "imageUrl": null,
@@ -943,6 +956,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Monday, 6 April 2026",
@@ -959,6 +973,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Monday, 6 April 2026",
@@ -975,6 +990,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Monday, 6 April 2026",
@@ -991,6 +1007,7 @@
       "dateString": "Monday, 6 April 2026",
       "filename": "2026-04-06-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Monday, 6 April 2026",
@@ -1007,6 +1024,7 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "funding"
       ],
       "time": "Sunday, 5 April 2026",
@@ -1023,6 +1041,7 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Sunday, 5 April 2026",
@@ -1039,8 +1058,8 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Sunday, 5 April 2026",
       "imageUrl": null,
@@ -1056,9 +1075,9 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Sunday, 5 April 2026",
       "imageUrl": null,
@@ -1074,6 +1093,7 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Sunday, 5 April 2026",
@@ -1090,6 +1110,7 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Sunday, 5 April 2026",
@@ -1106,6 +1127,7 @@
       "dateString": "Sunday, 5 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Sunday, 5 April 2026",
@@ -1122,6 +1144,7 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Saturday, 4 April 2026",
@@ -1138,8 +1161,8 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Saturday, 4 April 2026",
       "imageUrl": null,
@@ -1155,9 +1178,9 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Saturday, 4 April 2026",
       "imageUrl": null,
@@ -1173,6 +1196,7 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Saturday, 4 April 2026",
@@ -1189,6 +1213,7 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Saturday, 4 April 2026",
@@ -1205,6 +1230,7 @@
       "dateString": "Saturday, 4 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Saturday, 4 April 2026",
@@ -1221,7 +1247,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
-        "Anthropic"
+        "ai",
+        "startups"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1237,8 +1264,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
-        "product",
-        "Anthropic"
+        "ai",
+        "product"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1254,7 +1281,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Meta"
+        "ai",
+        "news"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1270,6 +1298,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1286,8 +1315,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1303,8 +1332,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1320,9 +1349,9 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1338,9 +1367,9 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "models",
-        "funding",
-        "Anthropic"
+        "funding"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1356,9 +1385,9 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "models",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1374,6 +1403,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1390,7 +1420,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1406,7 +1437,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1422,7 +1454,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1438,6 +1471,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Friday, 3 April 2026",
@@ -1454,6 +1488,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Friday, 3 April 2026",
@@ -1470,7 +1505,8 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "infrastructure"
       ],
       "time": "Friday, 3 April 2026",
       "imageUrl": null,
@@ -1486,6 +1522,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1502,6 +1539,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1518,6 +1556,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "agents",
         "research"
       ],
@@ -1535,6 +1574,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Friday, 3 April 2026",
@@ -1551,6 +1591,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Friday, 3 April 2026",
@@ -1567,6 +1608,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "agents",
         "models",
         "safety",
@@ -1586,6 +1628,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Friday, 3 April 2026",
@@ -1602,6 +1645,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1618,6 +1662,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1634,6 +1679,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1650,6 +1696,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1666,6 +1713,7 @@
       "dateString": "Friday, 3 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 3 April 2026",
@@ -1682,7 +1730,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-05-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1698,7 +1747,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-04-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1714,8 +1764,9 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "enterprise",
-        "OpenAI"
+        "startups"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1731,8 +1782,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "product",
-        "Microsoft"
+        "ai",
+        "product"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1748,7 +1799,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1764,7 +1816,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1780,6 +1833,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Thursday, 2 April 2026",
@@ -1796,8 +1850,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "product",
-        "Microsoft"
+        "ai",
+        "product"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1813,7 +1867,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1829,6 +1884,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -1845,8 +1901,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1862,8 +1918,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "models",
-        "Anthropic"
+        "ai",
+        "models"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1879,9 +1935,9 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "research",
-        "safety",
-        "Anthropic"
+        "safety"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1897,9 +1953,9 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "models",
-        "funding",
-        "Anthropic"
+        "funding"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1915,7 +1971,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1931,9 +1988,9 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "models",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1949,6 +2006,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -1965,7 +2023,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1981,7 +2040,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -1997,7 +2057,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -2013,6 +2074,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2029,6 +2091,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2045,7 +2108,8 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "infrastructure"
       ],
       "time": "Thursday, 2 April 2026",
       "imageUrl": null,
@@ -2061,6 +2125,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2077,6 +2142,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2093,6 +2159,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2109,6 +2176,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "agents",
         "research"
       ],
@@ -2126,6 +2194,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2142,6 +2211,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2158,6 +2228,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "agents",
         "models",
         "safety",
@@ -2177,6 +2248,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2193,6 +2265,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2209,6 +2282,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2225,6 +2299,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2241,6 +2316,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2257,6 +2333,7 @@
       "dateString": "Thursday, 2 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 2 April 2026",
@@ -2273,10 +2350,10 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "enterprise",
         "open-source",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Wednesday, 1 April 2026",
       "imageUrl": null,
@@ -2292,6 +2369,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "robotics"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2308,6 +2386,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2324,6 +2403,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2340,10 +2420,10 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "enterprise",
         "open-source",
-        "coding",
-        "Anthropic"
+        "coding"
       ],
       "time": "Wednesday, 1 April 2026",
       "imageUrl": null,
@@ -2359,7 +2439,8 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Meta"
+        "ai",
+        "news"
       ],
       "time": "Wednesday, 1 April 2026",
       "imageUrl": null,
@@ -2375,7 +2456,8 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "infrastructure"
       ],
       "time": "Wednesday, 1 April 2026",
       "imageUrl": null,
@@ -2391,6 +2473,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "robotics"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2407,6 +2490,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2423,6 +2507,7 @@
       "dateString": "Wednesday, 1 April 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Wednesday, 1 April 2026",
@@ -2439,7 +2524,8 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
-        "Anthropic"
+        "ai",
+        "news"
       ],
       "time": "Tuesday, 31 March 2026",
       "imageUrl": null,
@@ -2455,6 +2541,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2471,6 +2558,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2487,6 +2575,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "enterprise",
         "vision"
       ],
@@ -2504,6 +2593,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-03-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2520,7 +2610,8 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Anthropic"
+        "ai",
+        "news"
       ],
       "time": "Tuesday, 31 March 2026",
       "imageUrl": null,
@@ -2536,6 +2627,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "models"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2552,6 +2644,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2568,6 +2661,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "enterprise",
         "vision"
       ],
@@ -2585,6 +2679,7 @@
       "dateString": "Tuesday, 31 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Tuesday, 31 March 2026",
@@ -2601,6 +2696,7 @@
       "dateString": "Monday, 30 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
+        "ai",
         "healthcare"
       ],
       "time": "Monday, 30 March 2026",
@@ -2617,7 +2713,8 @@
       "dateString": "Monday, 30 March 2026",
       "filename": "2026-04-02-digest.md",
       "tags": [
-        "Anthropic"
+        "ai",
+        "news"
       ],
       "time": "Monday, 30 March 2026",
       "imageUrl": null,
@@ -2633,7 +2730,8 @@
       "dateString": "Sunday, 15 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "Google"
+        "ai",
+        "news"
       ],
       "time": "Sunday, 15 March 2026",
       "imageUrl": null,
@@ -2649,6 +2747,7 @@
       "dateString": "Sunday, 15 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Sunday, 15 March 2026",
@@ -2665,6 +2764,7 @@
       "dateString": "Saturday, 14 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Saturday, 14 March 2026",
@@ -2681,8 +2781,8 @@
       "dateString": "Saturday, 14 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "enterprise",
-        "Meta"
+        "ai",
+        "enterprise"
       ],
       "time": "Saturday, 14 March 2026",
       "imageUrl": null,
@@ -2698,8 +2798,8 @@
       "dateString": "Saturday, 14 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "product",
-        "OpenAI"
+        "ai",
+        "product"
       ],
       "time": "Saturday, 14 March 2026",
       "imageUrl": null,
@@ -2715,6 +2815,7 @@
       "dateString": "Saturday, 14 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Saturday, 14 March 2026",
@@ -2731,6 +2832,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "agents"
       ],
       "time": "Friday, 13 March 2026",
@@ -2747,6 +2849,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2763,6 +2866,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2779,6 +2883,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2795,6 +2900,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2811,6 +2917,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "vision"
       ],
       "time": "Friday, 13 March 2026",
@@ -2827,7 +2934,8 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "news"
+        "ai",
+        "startups"
       ],
       "time": "Friday, 13 March 2026",
       "imageUrl": null,
@@ -2843,6 +2951,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "robotics"
       ],
       "time": "Friday, 13 March 2026",
@@ -2859,6 +2968,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2875,6 +2985,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2891,6 +3002,7 @@
       "dateString": "Friday, 13 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Friday, 13 March 2026",
@@ -2907,6 +3019,7 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 12 March 2026",
@@ -2923,7 +3036,8 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "Meta"
+        "ai",
+        "news"
       ],
       "time": "Thursday, 12 March 2026",
       "imageUrl": null,
@@ -2939,6 +3053,7 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 12 March 2026",
@@ -2955,6 +3070,7 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 12 March 2026",
@@ -2971,6 +3087,7 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "agents",
         "enterprise"
       ],
@@ -2988,6 +3105,7 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
+        "ai",
         "news"
       ],
       "time": "Thursday, 12 March 2026",
@@ -3004,7 +3122,9 @@
       "dateString": "Thursday, 12 March 2026",
       "filename": "2026-03-15-digest.md",
       "tags": [
-        "funding"
+        "ai",
+        "funding",
+        "startups"
       ],
       "time": "Thursday, 12 March 2026",
       "imageUrl": null,

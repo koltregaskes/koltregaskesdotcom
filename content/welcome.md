@@ -2,7 +2,7 @@
 title: Welcome to Kol's Korner
 kind: article
 date: 2026-02-10
-tags: [welcome, intro, AI]
+tags: [AI, commentary, welcome]
 summary: Sharp takes on AI news - no hype, no fluff, just what matters and why it matters.
 publish: true
 image: kol-profile.png
@@ -45,7 +45,7 @@ AI is genuinely important - but not for the reasons most headlines claim.
 ## Stay Updated
 
 - **Daily archive** - Browse the latest updates on the [News page](/news/)
-- **Newsletter** - Currently on pause while the site relaunch settles
+- **Newsletter** - Launching soon once the site and archive are fully bedded in
 - **Social** - Find me on X, Bluesky, and Mastodon (links below)
 
 Thanks for reading. Let's figure out what AI actually means, together.
