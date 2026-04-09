@@ -665,7 +665,6 @@ class NewsApp {
         featuredIntro.textContent = 'A quick top rail for the links most worth opening first.';
         featuredList.innerHTML = featuredArticles.map((article) => `
             <a href="${article.url}" class="news-featured-link" target="_blank" rel="noopener noreferrer">
-                <span>${article.source}</span>
                 <strong>${article.title}</strong>
             </a>
         `).join('');
@@ -776,7 +775,6 @@ class NewsApp {
             <div class="card-content">
                 <div class="card-header">
                     <span class="card-date">${article.dateString}</span>
-                    <span class="card-source">${article.source}</span>
                 </div>
                 <div class="card-actions">
                     <button class="news-action-btn flag-btn" type="button">Report</button>

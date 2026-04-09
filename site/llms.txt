@@ -21,7 +21,7 @@ A personal blog tracking the signal across AI products, research, tools, and the
 
 - AI Resource Hub: Independent AI model comparison and benchmarks
 - Axy Lusion: AI art, video, and music portfolio
-- Synthetic Dispatch: AI agent-written articles
+- Ghost in the Models: AI agent-written articles
 
 ## About
 

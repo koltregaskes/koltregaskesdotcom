@@ -184,7 +184,37 @@ function formatDisplayDate(date) {
 }
 
 function isDigestPost(item) {
-  return Boolean(item?.slug?.startsWith('daily-digest-'));
+  const title = fixCommonEncoding(item?.title || '');
+  const tags = Array.isArray(item?.tags) ? item.tags.map(normaliseTag) : [];
+  const slug = String(item?.slug || '');
+  const sourceFile = String(item?.sourceFile || '');
+  const kind = String(item?.kind || '').toLowerCase();
+
+  return Boolean(
+    item?.isDigest ||
+    kind === 'digest' ||
+    tags.includes('digest') ||
+    /^daily-digest-/i.test(sourceFile) ||
+    /^daily-digest-/i.test(slug) ||
+    /^digest-\d{4}-\d{2}-\d{2}$/i.test(slug) ||
+    /^\d{4}-\d{2}-\d{2}$/i.test(slug) ||
+    /^daily digest:/i.test(title) ||
+    /^ai news digest/i.test(title)
+  );
+}
+
+function getIsoDateKey(value = '') {
+  const match = String(value || '').match(/\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : '';
+}
+
+function getDigestSlug({ file = '', date = '', title = '' } = {}) {
+  return (
+    getIsoDateKey(date) ||
+    getIsoDateKey(file) ||
+    getIsoDateKey(title) ||
+    slugify(title)
+  );
 }
 
 function normaliseTag(tag = '') {
@@ -858,13 +888,13 @@ function markdownToHtml(md) {
 
   // Headings (process before inline formatting)
   html = html.replace(/^### (.+)$/gm, (match, text) => {
-    return `<h4 id="${slugify(text)}"><span class="hash">###</span> ${text}</h4>`;
+    return `<h4 id="${slugify(text)}">${text}</h4>`;
   });
   html = html.replace(/^## (.+)$/gm, (match, text) => {
-    return `<h3 id="${slugify(text)}"><span class="hash">##</span> ${text}</h3>`;
+    return `<h3 id="${slugify(text)}">${text}</h3>`;
   });
   html = html.replace(/^# (.+)$/gm, (match, text) => {
-    return `<h2 id="${slugify(text)}"><span class="hash">#</span> ${text}</h2>`;
+    return `<h2 id="${slugify(text)}">${text}</h2>`;
   });
 
   // Callouts (must come before regular blockquotes)
@@ -989,7 +1019,7 @@ function markdownToHtml(md) {
 // Extract headings for TOC
 function extractHeadings(html) {
   const headings = [];
-  const regex = /<h([234]) id="([^"]+)">.*?<\/span>\s*(.+?)<\/h\1>/g;
+  const regex = /<h([234]) id="([^"]+)">(.+?)<\/h\1>/g;
   let match;
 
   while ((match = regex.exec(html)) !== null) {
@@ -1014,6 +1044,156 @@ function generateTOC(headings) {
       </ul>
     </nav>
   `;
+}
+
+function stripLeadingArticleHeading(html = '', title = '') {
+  const headingId = slugify(title);
+  if (!headingId) return html;
+
+  return String(html || '').replace(
+    new RegExp(`^\\s*<h2 id="${headingId}">[\\s\\S]*?<\\/h2>\\s*`, 'i'),
+    ''
+  );
+}
+
+function stripMarkdownFormatting(text = '') {
+  return fixCommonEncoding(String(text || ''))
+    .replace(/^>\s*/gm, '')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/___(.+?)___/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/_(.+?)_/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isSubstantiveDigestText(text = '') {
+  const clean = stripMarkdownFormatting(text)
+    .replace(/^\*?this digest was automatically generated\.?\*?$/i, '')
+    .trim();
+  if (!clean) return false;
+  if (/^read more$/i.test(clean)) return false;
+  if (/^update\b/i.test(clean) && clean.split(/\s+/).length < 4) return false;
+  return clean.split(/\s+/).length >= 4 || clean.length >= 32;
+}
+
+function parseDigestMarkdown(body = '') {
+  const sections = [];
+  const lines = String(body || '').split('\n');
+  let introLines = [];
+  let currentSection = null;
+  let currentItem = null;
+
+  const finishItem = () => {
+    if (!currentItem || !currentSection) {
+      currentItem = null;
+      return;
+    }
+
+    const summary = stripMarkdownFormatting(currentItem.summaryLines.join(' '));
+    if (currentItem.title && (summary || currentItem.url)) {
+      currentSection.items.push({
+        title: currentItem.title,
+        summary,
+        url: currentItem.url,
+        source: currentItem.url ? extractDigestSource(currentItem.url) : ''
+      });
+    }
+
+    currentItem = null;
+  };
+
+  const finishSection = () => {
+    if (!currentSection) return;
+    finishItem();
+
+    currentSection.intro = stripMarkdownFormatting(currentSection.introLines.join(' '));
+    delete currentSection.introLines;
+
+    currentSection.items = currentSection.items.filter(
+      (item) => item.title && isSubstantiveDigestText(item.summary) && !isJunkDigestItem(item.title, item.url)
+    );
+
+    if (currentSection.intro || currentSection.items.length) {
+      sections.push(currentSection);
+    }
+
+    currentSection = null;
+  };
+
+  for (const rawLine of lines) {
+    const line = fixCommonEncoding(rawLine || '');
+    const trimmed = line.trim();
+
+    if (!trimmed) continue;
+    if (/^\*This digest was automatically generated\.?\*$/i.test(trimmed)) continue;
+    if (/^#\s+/.test(trimmed)) continue;
+
+    const sectionMatch = trimmed.match(/^##\s+(.+)$/);
+    if (sectionMatch) {
+      finishSection();
+      currentSection = {
+        title: stripMarkdownFormatting(sectionMatch[1]),
+        introLines: [],
+        items: []
+      };
+      continue;
+    }
+
+    const itemMatch = trimmed.match(/^###\s+(.+)$/);
+    if (itemMatch) {
+      if (!currentSection) {
+        currentSection = {
+          title: 'Highlights',
+          introLines: [],
+          items: []
+        };
+      }
+      finishItem();
+      currentItem = {
+        title: stripMarkdownFormatting(itemMatch[1]),
+        summaryLines: [],
+        url: ''
+      };
+      continue;
+    }
+
+    if (/^---+$/.test(trimmed)) {
+      finishItem();
+      continue;
+    }
+
+    const readMoreMatch = trimmed.match(/^\[Read more\]\((.+?)\)$/i);
+    if (readMoreMatch) {
+      if (currentItem) {
+        currentItem.url = normaliseNewsUrl(readMoreMatch[1]);
+      }
+      continue;
+    }
+
+    if (!currentSection) {
+      introLines.push(trimmed);
+      continue;
+    }
+
+    if (currentItem) {
+      currentItem.summaryLines.push(trimmed);
+    } else {
+      currentSection.introLines.push(trimmed);
+    }
+  }
+
+  finishSection();
+
+  return {
+    intro: stripMarkdownFormatting(introLines.join(' ')),
+    sections
+  };
 }
 
 // Reusable header/navigation HTML (blog-only navigation)
@@ -1167,9 +1347,12 @@ async function readContentFiles() {
       // Skip unpublished items
       if (frontmatter.publish === false) continue;
 
-      const title = frontmatter.title || path.basename(file, '.md');
+      const title = fixCommonEncoding(frontmatter.title || path.basename(file, '.md'));
       const kind = (frontmatter.kind || 'article').toLowerCase();
-      const slug = slugify(title);
+      const tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [];
+      const isDigest = isDigestPost({ title, tags, kind, sourceFile: file, date: frontmatter.date });
+      const legacySlug = slugify(title);
+      const slug = isDigest ? getDigestSlug({ file, date: frontmatter.date, title }) : legacySlug;
 
       console.log(`Processing: ${title} (${kind})`);
 
@@ -1233,8 +1416,9 @@ async function readContentFiles() {
       let headings = [];
       let readingTime = 1;
 
-      if (kind === 'article') {
+      if (kind === 'article' || isDigest) {
         contentHtml = markdownToHtml(body);
+        contentHtml = stripLeadingArticleHeading(contentHtml, title);
         headings = extractHeadings(contentHtml);
 
         // Calculate reading time
@@ -1245,14 +1429,18 @@ async function readContentFiles() {
       items.push({
         title,
         slug,
+        legacySlug,
         kind,
-        summary: frontmatter.summary || '',
-        tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
+        isDigest,
+        sourceFile: file,
+        summary: fixCommonEncoding(frontmatter.summary || ''),
+        tags,
         thumbnailUrl,
         thumbnailWidth: thumbnailMeta?.width || null,
         thumbnailHeight: thumbnailMeta?.height || null,
         driveUrl: mediaUrl || thumbnailUrl,
         contentHtml,
+        bodyMarkdown: body,
         headings,
         readingTime,
         date: frontmatter.date || new Date().toISOString().split('T')[0],
@@ -1309,12 +1497,50 @@ More content coming soon. Feel free to explore and check back regularly!
   console.log('Created sample content file: welcome.md');
 }
 
-async function writeArticlePage({ title, slug, contentHtml, tags, date, headings, readingTime }) {
+async function writeArticlePage({
+  title,
+  slug,
+  summary,
+  contentHtml,
+  tags,
+  date,
+  headings,
+  readingTime,
+  thumbnailUrl,
+  thumbnailWidth,
+  thumbnailHeight,
+  previousPost,
+  nextPost
+}) {
   const outDir = path.join("site", "posts", slug);
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
+  const description = escapeHtml(summary || contentHtml.replace(/<[^>]*>/g, '').slice(0, 160));
+  const heroImage = thumbnailUrl && thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i)
+    ? `<figure class="post-hero-media">
+        ${renderThumbnailImage({
+          thumbnailUrl,
+          thumbnailWidth,
+          thumbnailHeight
+        }, escapeHtml(title), '../..')}
+      </figure>`
+    : '';
+  const pagerHtml = previousPost || nextPost
+    ? `<nav class="post-pagination" aria-label="Article navigation">
+        ${nextPost ? `
+        <a href="../${nextPost.slug}/" class="post-pagination-card">
+          <span class="post-pagination-label">Newer post</span>
+          <strong class="post-pagination-title">${escapeHtml(nextPost.title)}</strong>
+        </a>` : '<span class="post-pagination-spacer" aria-hidden="true"></span>'}
+        ${previousPost ? `
+        <a href="../${previousPost.slug}/" class="post-pagination-card">
+          <span class="post-pagination-label">Older post</span>
+          <strong class="post-pagination-title">${escapeHtml(previousPost.title)}</strong>
+        </a>` : '<span class="post-pagination-spacer" aria-hidden="true"></span>'}
+      </nav>`
+    : '';
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -1323,10 +1549,10 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
-  <meta name="description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
+  <meta name="description" content="${description}${description.length >= 160 ? '…' : ''}" />
   <meta name="author" content="${SITE_OWNER}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
-  <meta property="og:description" content="${escapeHtml((contentHtml.replace(/<[^>]*>/g, '').slice(0, 160)))}..." />
+  <meta property="og:description" content="${description}${description.length >= 160 ? '…' : ''}" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
@@ -1353,11 +1579,14 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
             <span class="meta-sep">&bull;</span>
             <span class="reading-time">${readingTime} min read</span>
           </div>
+          ${summary ? `<p class="post-summary">${escapeHtml(summary)}</p>` : ''}
+          ${heroImage}
         </header>
         <div class="post-content">
           ${contentHtml}
         </div>
         ${tagsHtml}
+        ${pagerHtml}
       </article>
     </main>
   </div>
@@ -1367,33 +1596,67 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <script>
     ${getSiteChromeScript()}
 
-    // TOC highlight on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        const tocLink = document.querySelector(\`.toc a[href="#\${id}"]\`);
-        if (tocLink) {
-          if (entry.isIntersecting) {
-            document.querySelectorAll('.toc a').forEach(l => l.classList.remove('active'));
-            tocLink.classList.add('active');
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const headings = tocLinks
+      .map((link) => document.getElementById(link.getAttribute('href').slice(1)))
+      .filter(Boolean);
+
+    const setActiveHeading = (id) => {
+      tocLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === \`#\${id}\`);
+      });
+    };
+
+    const updateActiveHeading = () => {
+      if (!tocLinks.length || !headings.length) return;
+
+      const threshold = window.innerHeight * 0.24;
+      let activeHeading = headings[0];
+      const nearPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+
+      if (nearPageEnd) {
+        activeHeading = headings[headings.length - 1];
+      }
+
+      if (!nearPageEnd) {
+        for (const heading of headings) {
+          if (heading.getBoundingClientRect().top - threshold <= 0) {
+            activeHeading = heading;
+          } else {
+            break;
           }
         }
-      });
-    }, { rootMargin: '-20% 0px -35% 0px' });
+      }
 
-    document.querySelectorAll('h2[id], h3[id], h4[id]').forEach(heading => {
-      observer.observe(heading);
-    });
+      if (activeHeading) {
+        setActiveHeading(activeHeading.id);
+      }
+    };
+
+    let ticking = false;
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActiveHeading();
+        ticking = false;
+      });
+    };
+
+    updateActiveHeading();
+    document.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
   </script>
 </body>
 </html>`;
 
-  await fs.writeFile(path.join(outDir, "index.html"), html, "utf8");
+  await fs.writeFile(path.join(outDir, "index.html"), html.replace(/[ \t]+$/gm, ''), "utf8");
   return { localPath: `/posts/${slug}/`, readingTime };
 }
 
 // Write a dedicated digest page with special styling
-async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTime, digestData }) {
+async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingTime, summary }) {
   const outDir = path.join("site", "posts", slug);
   await fs.mkdir(outDir, { recursive: true });
 
@@ -1405,9 +1668,27 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   });
 
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
-
-  // External link icon SVG
-  const externalLinkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+  const digestContent = parseDigestMarkdown(bodyMarkdown);
+  const digestIntro = digestContent.intro || summary || "A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.";
+  const digestSectionsHtml = digestContent.sections.map((section) => `
+        <section class="digest-section">
+          <div class="digest-section-head">
+            <h2>${escapeHtml(section.title)}</h2>
+            ${section.intro ? `<p class="digest-section-intro">${escapeHtml(section.intro)}</p>` : ''}
+          </div>
+          ${section.items.length ? `
+          <div class="digest-story-list">
+            ${section.items.map((item) => `
+            <article class="digest-story-card">
+              <div class="digest-story-meta">
+                <span>${escapeHtml(item.source || 'Digest item')}</span>
+              </div>
+              <h3>${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
+              <p>${escapeHtml(item.summary)}</p>
+              ${item.url ? `<a class="digest-story-link" href="${item.url}" target="_blank" rel="noopener">Read more</a>` : ''}
+            </article>`).join('')}
+          </div>` : ''}
+        </section>`).join('');
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -1430,26 +1711,19 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
 
   <main class="content-main">
     <article class="post">
-      <!-- Digest Header -->
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">${displayDate}</h1>
-        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <p class="digest-subtitle">${escapeHtml(digestIntro)}</p>
         <div class="digest-meta">
           <span>${readingTime} min read</span>
           <span class="meta-sep">&bull;</span>
           <span>Updated daily</span>
         </div>
-        <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
-          <strong>Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
-        </div>
       </header>
 
-      <p class="digest-intro">Welcome to today's roundup of the most interesting developments in AI and technology.</p>
-
-      <!-- Digest Content -->
-      <div class="post-content digest-content">
-        ${contentHtml}
+      <div class="digest-content">
+        ${digestSectionsHtml}
       </div>
 
       <footer class="digest-footer">
@@ -1468,8 +1742,31 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
 </body>
 </html>`;
 
-  await fs.writeFile(path.join(outDir, "index.html"), html, "utf8");
+  await fs.writeFile(path.join(outDir, "index.html"), html.replace(/[ \t]+$/gm, ''), "utf8");
   return { localPath: `/posts/${slug}/`, readingTime };
+}
+
+async function writeLegacyRedirectPage(fromSlug, toSlug) {
+  if (!fromSlug || !toSlug || fromSlug === toSlug) return;
+
+  const outDir = path.join("site", "posts", fromSlug);
+  await fs.mkdir(outDir, { recursive: true });
+
+  const targetPath = `../${toSlug}/`;
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="0; url=${targetPath}" />
+  <link rel="canonical" href="${SITE_URL}/posts/${toSlug}/" />
+  <title>Redirecting…</title>
+</head>
+<body>
+  <p>Redirecting to <a href="${targetPath}">${targetPath}</a>.</p>
+</body>
+</html>`;
+
+  await fs.writeFile(path.join(outDir, "index.html"), html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeHomePage(items, newsArticles = []) {
@@ -1669,9 +1966,8 @@ async function writePostsPage(items) {
     .filter((item) => (item.kind || 'article').toLowerCase() === 'article')
     .sort((a, b) => new Date(b.updatedTime || b.date) - new Date(a.updatedTime || a.date));
   const editorialPosts = articles.filter((item) => !isDigestPost(item));
-  const digestPosts = articles.filter((item) => isDigestPost(item)).slice(0, 8);
   const leadPost = editorialPosts[0] || articles[0] || null;
-  const supportingPosts = editorialPosts.slice(1, 7);
+  const archivePosts = editorialPosts.slice(1);
 
   await fs.mkdir("site/posts", { recursive: true });
 
@@ -1717,21 +2013,21 @@ async function writePostsPage(items) {
         </a>
       </article>` : ''}
 
-      ${supportingPosts.length ? `
-      <section class="posts-grid fade-in-up" aria-label="Latest posts">
-        ${supportingPosts.map((item) => {
+      ${archivePosts.length ? `
+      <section class="posts-stream fade-in-up" aria-label="Latest posts">
+        ${archivePosts.map((item) => {
           const title = escapeHtml(item.title);
           const summary = escapeHtml(item.summary || '');
           const hasImage = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
           return `
-          <article class="posts-card">
-            <a href="./${item.slug}/" class="posts-card-link">
+          <article class="posts-stream-item">
+            <a href="./${item.slug}/" class="posts-stream-link">
               ${hasImage ? `
-              <div class="posts-card-media">
+              <div class="posts-stream-media">
                 ${renderThumbnailImage(item, title, '..')}
               </div>` : ''}
-              <div class="posts-card-body">
+              <div class="posts-stream-copy">
                 <p class="home-feature-date">${new Date(item.updatedTime || item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                 <h3>${title}</h3>
                 ${summary ? `<p>${summary}</p>` : ''}
@@ -1739,27 +2035,10 @@ async function writePostsPage(items) {
                   <span>${item.readingTime || 3} min read</span>
                 </div>
               </div>
+              <span class="posts-stream-cta">Read post</span>
             </a>
           </article>`;
         }).join('')}
-      </section>` : ''}
-
-      ${digestPosts.length ? `
-      <section class="posts-digest-strip fade-in-up">
-        <div class="home-section-heading">
-          <div>
-            <p class="section-eyebrow">Daily digest archive</p>
-            <h2>The digest stays available, but the live news page is the faster place to browse.</h2>
-          </div>
-          <a href="../news/" class="section-link">Open AI news</a>
-        </div>
-        <div class="posts-digest-list">
-          ${digestPosts.map((item) => `
-          <a href="./${item.slug}/" class="posts-digest-link">
-            <span>${new Date(item.updatedTime || item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-            <strong>${escapeHtml(item.title)}</strong>
-          </a>`).join('')}
-        </div>
       </section>` : ''}
     </section>
   </main>
@@ -1772,7 +2051,7 @@ async function writePostsPage(items) {
 </body>
 </html>`;
 
-  await fs.writeFile("site/posts/index.html", html, "utf8");
+  await fs.writeFile("site/posts/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeTagsPage(items, newsArticles = []) {
@@ -2145,7 +2424,7 @@ async function writeContactPage() {
 // Generate RSS feed
 async function writeRssFeed(items) {
   const articles = items
-    .filter(item => item.kind === 'article')
+    .filter(item => item.kind === 'article' || isDigestPost(item))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 20); // Last 20 articles
 
@@ -2207,11 +2486,11 @@ async function writeSitemap(items) {
     { loc: '/privacy.html', changefreq: 'yearly', priority: '0.2' }
   ];
 
-  for (const item of items.filter((entry) => entry.kind === 'article' && entry.localPath)) {
+  for (const item of items.filter((entry) => (entry.kind === 'article' || isDigestPost(entry)) && entry.localPath)) {
     urls.push({
       loc: item.localPath,
-      changefreq: item.slug.startsWith('daily-digest-') ? 'daily' : 'monthly',
-      priority: item.slug.startsWith('daily-digest-') ? '0.4' : '0.7',
+      changefreq: isDigestPost(item) ? 'daily' : 'monthly',
+      priority: isDigestPost(item) ? '0.4' : '0.7',
       lastmod: item.updatedTime || item.date || ''
     });
   }
@@ -2268,32 +2547,52 @@ async function cleanGeneratedOutput() {
   // Read all content
   const items = await readContentFiles();
   const { digestFiles, newsArticles } = await prepareNewsArchiveData();
+  const editorialArticles = items
+    .filter((item) => item.kind === 'article' && !isDigestPost(item))
+    .sort((a, b) => new Date(b.updatedTime || b.date) - new Date(a.updatedTime || a.date));
+  const articleNeighbours = new Map(
+    editorialArticles.map((item, index) => [
+      item.slug,
+      {
+        nextPost: editorialArticles[index - 1] || null,
+        previousPost: editorialArticles[index + 1] || null
+      }
+    ])
+  );
 
   // Write article pages
   for (const item of items) {
-    if (item.kind === 'article') {
-      // Check if this is a digest post (slug starts with 'daily-digest-')
-      const isDigest = item.slug.startsWith('daily-digest-');
+    if (item.kind === 'article' || isDigestPost(item)) {
+      const isDigest = isDigestPost(item);
 
       let result;
       if (isDigest) {
         result = await writeDigestPage({
           title: item.title,
           slug: item.slug,
-          contentHtml: item.contentHtml,
+          bodyMarkdown: item.bodyMarkdown,
           tags: item.tags,
           date: item.date,
-          readingTime: item.readingTime
+          readingTime: item.readingTime,
+          summary: item.summary
         });
+        await writeLegacyRedirectPage(item.legacySlug, item.slug);
       } else {
+        const neighbours = articleNeighbours.get(item.slug) || {};
         result = await writeArticlePage({
           title: item.title,
           slug: item.slug,
+          summary: item.summary,
           contentHtml: item.contentHtml,
           tags: item.tags,
           date: item.date,
           headings: item.headings,
-          readingTime: item.readingTime
+          readingTime: item.readingTime,
+          thumbnailUrl: item.thumbnailUrl,
+          thumbnailWidth: item.thumbnailWidth,
+          thumbnailHeight: item.thumbnailHeight,
+          previousPost: neighbours.previousPost,
+          nextPost: neighbours.nextPost
         });
       }
       item.localPath = result.localPath;
