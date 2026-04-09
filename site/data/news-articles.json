@@ -1,6 +1,54 @@
 {
   "articles": [
     {
+      "title": "Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/",
+      "summary": "Andy Jassy's annual shareholder letter reads something like a diss track to a wide range of competitors as he defends spending $200 billion in capex.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Sierra’s Bret Taylor says the era of clicking buttons is over",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/",
+      "summary": "Co-founder of Sierra predicts that AI agents will make software interfaces obsolete.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket/",
+      "summary": "Ticket discounts of up to $500 will end tomorrow, April 10, at 11:59 p.m. PT. After that, prices for TechCrunch Disrupt 2026 go up again. Miss this, and you’ll be paying more for the same access to one of the most anticipated tech events of the year. Register now to lock in these savings.",
+      "category": "Top Stories",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
@@ -38,7 +86,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-opus-4-6",
       "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-09T00:00:00.000Z",
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
@@ -55,7 +103,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
       "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-09T00:00:00.000Z",
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
@@ -72,13 +120,31 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/australia-MOU",
       "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-09T00:00:00.000Z",
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
         "research",
         "safety",
+        "Anthropic"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic built a model too risky to release",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/anthropic-built-a-model-too-risky",
+      "summary": "and Meta makes an unexpected entry",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-09-digest.md",
+      "tags": [
+        "models",
+        "product",
         "Anthropic"
       ],
       "time": "Thursday, 9 April 2026",
@@ -103,18 +169,16 @@
       "isNoNews": false
     },
     {
-      "title": "Inside the leaked Claude Code files",
-      "source": "Ben's Bites",
-      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
-      "summary": "Docs as files, a new markdown editor and April fools",
+      "title": "First man convicted under Take It Down Act kept making AI nudes after arrest",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/tech-policy/2026/04/first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest/",
+      "summary": "Ohio man used more than 100 AI tools to make fake nudes of women and minors.",
       "category": "News",
       "date": "2026-04-09T00:00:00.000Z",
       "dateString": "Thursday, 9 April 2026",
       "filename": "2026-04-09-digest.md",
       "tags": [
-        "models",
-        "coding",
-        "Anthropic"
+        "news"
       ],
       "time": "Thursday, 9 April 2026",
       "imageUrl": null,
@@ -153,40 +217,6 @@
       "isNoNews": false
     },
     {
-      "title": "Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Rules",
-      "source": "arXiv cs.AI",
-      "url": "https://arxiv.org/abs/2604.06233",
-      "summary": "arXiv:2604.06233v1 Announce Type: new Abstract: Safety-trained language models routinely refuse requests for help circumventing rules. But not all rules deserve compliance. When users ask for help evading rules imposed by an illegitimate authority, rules that are deeply unjust or absurd in their...",
-      "category": "News",
-      "date": "2026-04-09T00:00:00.000Z",
-      "dateString": "Thursday, 9 April 2026",
-      "filename": "2026-04-09-digest.md",
-      "tags": [
-        "news"
-      ],
-      "time": "Thursday, 9 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/",
-      "summary": "OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.",
-      "category": "News",
-      "date": "2026-04-08T00:00:00.000Z",
-      "dateString": "Wednesday, 8 April 2026",
-      "filename": "2026-04-09-digest.md",
-      "tags": [
-        "product",
-        "safety",
-        "OpenAI"
-      ],
-      "time": "Wednesday, 8 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
       "title": "Poke makes using AI agents as easy as sending a text",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
@@ -214,39 +244,6 @@
       "tags": [
         "Anthropic",
         "OpenAI"
-      ],
-      "time": "Wednesday, 8 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Tubi is the first streamer to launch a native app within ChatGPT",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/",
-      "summary": "Tubi becomes the first streaming service to offer an app integration within ChatGPT, the AI chatbot that millions of users turn to for answers.",
-      "category": "News",
-      "date": "2026-04-08T00:00:00.000Z",
-      "dateString": "Wednesday, 8 April 2026",
-      "filename": "2026-04-09-digest.md",
-      "tags": [
-        "product",
-        "OpenAI"
-      ],
-      "time": "Wednesday, 8 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Astropad’s Workbench reimagines remote desktop for AI agents, not IT support",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/",
-      "summary": "Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.",
-      "category": "News",
-      "date": "2026-04-08T00:00:00.000Z",
-      "dateString": "Wednesday, 8 April 2026",
-      "filename": "2026-04-09-digest.md",
-      "tags": [
-        "agents"
       ],
       "time": "Wednesday, 8 April 2026",
       "imageUrl": null,

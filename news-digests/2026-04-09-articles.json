@@ -1,10 +1,65 @@
 {
-  "generatedAt": "2026-04-09T06:00:34.291Z",
+  "generatedAt": "2026-04-09T18:00:40.744Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-09",
   "count": 15,
   "items": [
+    {
+      "id": "techcrunch-ai-amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter-https-techcrunch-com-2026-04-09-amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter",
+      "title": "Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter",
+      "url": "https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-09",
+      "summary": "Andy Jassy's annual shareholder letter reads something like a diss track to a wide range of competitors as he defends spending $200 billion in capex.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-sierra-s-bret-taylor-says-the-era-of-clicking-buttons-is-over-https-techcrunch-com-2026-04-09-sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over",
+      "title": "Sierra’s Bret Taylor says the era of clicking buttons is over",
+      "url": "https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-09",
+      "summary": "Co-founder of Sierra predicts that AI agents will make software interfaces obsolete.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket-https-techcrunch-com-2026-04-09-final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket",
+      "title": "Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket",
+      "url": "https://techcrunch.com/2026/04/09/final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-09",
+      "summary": "Ticket discounts of up to $500 will end tomorrow, April 10, at 11:59 p.m. PT. After that, prices for TechCrunch Disrupt 2026 go up again. Miss this, and you’ll be paying more for the same access to one of the most anticipated tech events of the year. Register now to lock in these savings.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
     {
       "id": "anthropic-news-anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of-next-generation-compute-https-www-anthropic-com-news-google-broadcom-partnership-compute",
       "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
@@ -67,6 +122,23 @@
       "adapter": "html"
     },
     {
+      "id": "bens-bites-anthropic-built-a-model-too-risky-to-release-https-www-bensbites-com-p-anthropic-built-a-model-too-risky",
+      "title": "Anthropic built a model too risky to release",
+      "url": "https://www.bensbites.com/p/anthropic-built-a-model-too-risky",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-09",
+      "summary": "and Meta makes an unexpected entry",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
       "id": "bens-bites-no-claude-for-claws-https-www-bensbites-com-p-no-claude-for-claws",
       "title": "No Claude for Claws",
       "url": "https://www.bensbites.com/p/no-claude-for-claws",
@@ -84,19 +156,19 @@
       "adapter": "html"
     },
     {
-      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
-      "title": "Inside the leaked Claude Code files",
-      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
-      "source": "Ben's Bites",
-      "sourceId": "bens-bites",
+      "id": "ars-technica-ai-first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest-https-arstechnica-com-tech-policy-2026-04-first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest",
+      "title": "First man convicted under Take It Down Act kept making AI nudes after arrest",
+      "url": "https://arstechnica.com/tech-policy/2026/04/first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
       "section": "Industry",
       "publishedAt": "2026-04-09",
-      "summary": "Docs as files, a new markdown editor and April fools",
+      "summary": "Ohio man used more than 100 AI tools to make fake nudes of women and minors.",
       "tags": [
-        "announcement",
-        "product_launch",
-        "industry_move",
-        "open_source"
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy"
       ],
       "adapter": "html"
     },
@@ -172,44 +244,6 @@
       "adapter": "html"
     },
     {
-      "id": "arxiv-cs-ai-blind-refusal-language-models-refuse-to-help-users-evade-unjust-absurd-and-illegitimate-rules-https-arxiv-org-abs-2604-06233",
-      "title": "Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Rules",
-      "url": "https://arxiv.org/abs/2604.06233",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-09",
-      "summary": "arXiv:2604.06233v1 Announce Type: new Abstract: Safety-trained language models routinely refuse requests for help circumventing rules. But not all rules deserve compliance. When users ask for help evading rules imposed by an illegitimate authority, rules that are deeply unjust or absurd in their content or application, or rules that admit of justified exceptions, refusal is a failure of moral reasoning. We introduce empirical results documenting this pattern of refusal that we call blind refusal: the tendency of language models to refuse requests for help breaking rules without regard to whether the underlying rule is defensible. Our dataset comprises synthetic cases crossing 5 defeat families (reasons a rule can be broken) with 19 authority types, validated through three automated quality gates and human review. We collect responses from 18 model configurations across 7 families and classify them on two behavioral dimensions -- response type (helps, hard refusal, or deflection) and whether the model recognizes the reasons that undermine the rule's claim to compliance -- using a blinded GPT-5.4 LLM-as-judge evaluation. We find that models refuse 75.4% (N=14,650) of defeated-rule requests and do so even when the request poses no independent safety or dual-use concerns. We also find that models engage with the defeat condition in the majority of cases (57.5%) but decline to help regardless -- indicating that models' refusal behavior is decoupled from their capacity for normative reasoning about rule legitimacy.",
-      "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents",
-        "dataset",
-        "policy"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation-https-techcrunch-com-2026-04-08-openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation",
-      "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
-      "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-08",
-      "summary": "OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move",
-        "model_release"
-      ],
-      "adapter": "rss"
-    },
-    {
       "id": "techcrunch-ai-poke-makes-using-ai-agents-as-easy-as-sending-a-text-https-techcrunch-com-2026-04-08-poke-makes-ai-agents-as-easy-as-sending-a-text",
       "title": "Poke makes using AI agents as easy as sending a text",
       "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
@@ -242,43 +276,6 @@
         "funding",
         "acquisition",
         "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt-https-techcrunch-com-2026-04-08-tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt",
-      "title": "Tubi is the first streamer to launch a native app within ChatGPT",
-      "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-08",
-      "summary": "Tubi becomes the first streaming service to offer an app integration within ChatGPT, the AI chatbot that millions of users turn to for answers.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-astropad-s-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support-https-techcrunch-com-2026-04-08-astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support",
-      "title": "Astropad’s Workbench reimagines remote desktop for AI agents, not IT support",
-      "url": "https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-08",
-      "summary": "Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move",
-        "inference"
       ],
       "adapter": "rss"
     }

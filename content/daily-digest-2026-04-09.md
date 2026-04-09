@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter
+
+Andy Jassy's annual shareholder letter reads something like a diss track to a wide range of competitors as he defends spending $200 billion in capex.
+
+[Read more](https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/)
+
+---
+
+### Sierra’s Bret Taylor says the era of clicking buttons is over
+
+Co-founder of Sierra predicts that AI agents will make software interfaces obsolete.
+
+[Read more](https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/)
+
+---
+
+### Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket
+
+Ticket discounts of up to $500 will end tomorrow, April 10, at 11:59 p.m. PT. After that, prices for TechCrunch Disrupt 2026 go up again. Miss this, and you’ll be paying more for the same access to one of the most anticipated tech events of the year. Register now to lock in these savings.
+
+[Read more](https://techcrunch.com/2026/04/09/final-2-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-ticket/)
+
+---
+
 ### Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute
 
 Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.
@@ -51,14 +75,6 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### OpenAI releases a new safety blueprint to address the rise in child sexual exploitation
-
-OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.
-
-[Read more](https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/)
-
----
-
 ### Poke makes using AI agents as easy as sending a text
 
 Poke brings AI agents to everyday users via text message by handling tasks and automations without complex setup, apps, or technical know-how.
@@ -75,23 +91,15 @@ AWS has an ingrained culture of handling competition, he explained, because the 
 
 ---
 
-### Tubi is the first streamer to launch a native app within ChatGPT
-
-Tubi becomes the first streaming service to offer an app integration within ChatGPT, the AI chatbot that millions of users turn to for answers.
-
-[Read more](https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/)
-
----
-
-### Astropad’s Workbench reimagines remote desktop for AI agents, not IT support
-
-Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.
-
-[Read more](https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/)
-
----
-
 ## Industry
+
+### Anthropic built a model too risky to release
+
+and Meta makes an unexpected entry
+
+[Read more](https://www.bensbites.com/p/anthropic-built-a-model-too-risky)
+
+---
 
 ### No Claude for Claws
 
@@ -101,11 +109,11 @@ in 3 months, Anthropic added $6B ARR
 
 ---
 
-### Inside the leaked Claude Code files
+### First man convicted under Take It Down Act kept making AI nudes after arrest
 
-Docs as files, a new markdown editor and April fools
+Ohio man used more than 100 AI tools to make fake nudes of women and minors.
 
-[Read more](https://www.bensbites.com/p/inside-the-leaked-claude-code-files)
+[Read more](https://arstechnica.com/tech-policy/2026/04/first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest/)
 
 ---
 
@@ -124,14 +132,6 @@ Today, we’re excited to introduce Muse Spark, the first in the Muse family of 
 Update March 27, 2026:
 
 [Read more](https://ai.meta.com/blog/segment-anything-model-3/)
-
----
-
-### Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Rules
-
-arXiv:2604.06233v1 Announce Type: new Abstract: Safety-trained language models routinely refuse requests for help circumventing rules. But not all rules deserve compliance. When users ask for help evading rules imposed by an illegitimate authority, rules that are deeply unjust or absurd in their...
-
-[Read more](https://arxiv.org/abs/2604.06233)
 
 ---
 
